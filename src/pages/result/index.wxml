@@ -1,7 +1,7 @@
 <view>
     <!--头部-->
     <view class="header">
-        <image class="header-bg"></image>
+        <image class="header-bg" src="../../assets/images/jgym-header-bg.jpg"></image>
         <view class="user-head">
             <image class="user-image"></image>
         </view>

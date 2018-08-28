@@ -7,12 +7,12 @@
     padding: 0 60rpx;
 }
 .header-bg{
+    @extend %db;
     @extend %pa;
     @extend %t0;
     @extend %l0;
     @extend %r0;
     @extend %b0;
-    background-color: red;
 }
 .user-head{
     @extend %pr;

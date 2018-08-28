@@ -43,7 +43,7 @@ class Copy {
             let to_full_path = Path.join(to, file);
             let from_ext_name = Path.extname(from_full_path);
             let from_file_stat = fs.statSync(from_full_path);
-            if (from_file_stat.isFile() && [].indexOf(from_ext_name) === -1) {
+            if (from_file_stat.isFile() && ['.scss'].indexOf(from_ext_name) === -1) {
                 this.readable = fs.createReadStream(from_full_path);       // 创建读取流
                 this.writable = fs.createWriteStream(to_full_path);      // 创建写入流
                 this.readable.pipe(this.writable);
