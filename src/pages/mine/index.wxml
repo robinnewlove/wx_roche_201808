@@ -2,46 +2,48 @@
     <view class="header">
         <image class="user-image"></image>
         <view class="user-info">
-            <text class="user-level">VIP</text>、
-            <div class="user-name">张先生</div>
+            <text>VIP用户</text>
+            <text class="user-name">张先生</text>
         </view>
     </view>
     <view class="button">
-        <text class="button-text"></text>
+        <text class="button-text">续订专业服务</text>
     </view>
     <view class="base-info">
         <view class="base-item">
-            <text class="base-label"></text>
-            <text class="base-value"></text>
+            <text class="base-label">登陆天数</text>
+            <text class="base-value">21</text>
         </view>
+        <view class="base-border"></view>
         <view class="base-item">
-            <text class="base-label"></text>
-            <text class="base-value"></text>
+            <text class="base-label">登陆天数</text>
+            <text class="base-value">21</text>
         </view>
+        <view class="base-border"></view>
         <view class="base-item">
-            <text class="base-label"></text>
-            <text class="base-value"></text>
+            <text class="base-label">登陆天数</text>
+            <text class="base-value">21</text>
         </view>
     </view>
     <view class="entry">
         <view class="entry-item">
-            <text class="entry-label"></text>
-            <text class="entry-value"></text>
+            <text class="entry-label">我的测糖方案</text>
+            <text class="entry-value">我的测糖方案</text>
             <view class="entry-arrow"></view>
         </view>
         <view class="entry-item">
-            <text class="entry-label"></text>
-            <text class="entry-value"></text>
+            <text class="entry-label">我的测糖方案</text>
+            <text class="entry-value">我的测糖方案</text>
             <view class="entry-arrow"></view>
         </view>
         <view class="entry-item">
-            <text class="entry-label"></text>
-            <text class="entry-value"></text>
+            <text class="entry-label">我的测糖方案</text>
+            <text class="entry-value">我的测糖方案</text>
             <view class="entry-arrow"></view>
         </view>
         <view class="entry-item">
-            <text class="entry-label"></text>
-            <text class="entry-value"></text>
+            <text class="entry-label">我的测糖方案</text>
+            <text class="entry-value">我的测糖方案</text>
             <view class="entry-arrow"></view>
         </view>
     </view>
