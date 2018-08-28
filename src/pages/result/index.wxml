@@ -1,0 +1,20 @@
+<view>
+    <!--头部-->
+    <view class="header">
+        <image class="header-bg"></image>
+        <view class="user-head">
+            <image class="user-image"></image>
+        </view>
+        <text class="prompt">您的本次</text>
+        <view class="num-info">
+            <text class="num-value">5.8</text>
+            <text class="num-unit">mmol/L</text>
+        </view>
+    </view>
+    <!--/头部-->
+    <!--日历-->
+    <div class="calendar">
+
+    </div>
+    <!--/日历-->
+</view>
