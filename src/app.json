@@ -1,11 +1,12 @@
 {
     "pages": [
-        "pages/mine/index",
-        "pages/result/index",
+        "pages/mine/info/index",
         "pages/home/index",
+        "pages/mine/index",
         "pages/questionnaire/charge/index",
         "pages/questionnaire/free/index",
-        "pages/record/index"
+        "pages/record/index",
+        "pages/result/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

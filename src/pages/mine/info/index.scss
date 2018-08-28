@@ -1,0 +1,100 @@
+@import '../../../assets/scss/define';
+/*头部*/
+.banner{
+    height: 268rpx;
+}
+.banner-image{
+    @extend %db;
+    @extend %w100;
+    @extend %h100;
+    background-color: #2cbdf0;
+}
+.from-wrap{
+    margin-bottom: 60rpx;
+}
+.title-wrap{
+    @extend %df;
+    @extend %aic;
+    height: 124rpx;
+    border-bottom: 1px solid #efeff4;
+    padding: 0 60rpx;
+}
+.title-text{
+    font-size: 36rpx;
+    color: #28aeeb;
+}
+.from-item{
+    @extend %df;
+    @extend %bsb;
+    @extend %aic;
+    //padding: 0 60rpx;
+    height: 98rpx;
+    border-bottom: 1px solid #efeff4;
+    &.from-no-value{
+        input{
+            padding-right: 20rpx;
+        }
+    }
+}
+.from-label{
+    @extend %db;
+    font-size: 36rpx;
+    color: #575757;
+    padding-left: 60rpx;
+}
+.from-value{
+    @extend %df1;
+    height: 50rpx;
+    input{
+        @extend %db;
+        @extend %w100;
+        @extend %h100;
+        @extend %tar;
+        @extend %bsb;
+        padding-right: 60rpx;
+        font-size: 36rpx;
+        color: #969696;
+    }
+}
+.from-unit{
+    padding-right: 60rpx;
+    font-size: 36rpx;
+    color: #969696;
+}
+.from-radio{
+    @extend %df;
+    @extend %aic;
+    padding-right: 60rpx;
+    justify-content: flex-end;
+}
+.from-radio-item{
+    @extend %df1;
+    @extend %df;
+    @extend %aic;
+    padding-left: 60rpx;
+    justify-content: flex-end;
+}
+.from-radio-image{
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    background-color: #2cbdf0;
+}
+.from-radio-text{
+    font-size: 36rpx;
+    color: #969696;
+    margin-left: 20rpx;
+}
+.form-button{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    margin: 42rpx 60rpx 80rpx;
+    height: 80rpx;
+    background: linear-gradient(to right, #39e2ee , #28aeeb);
+    border-radius: 40rpx;
+}
+.form-button-text{
+    color: #fff;
+    font-size: 36rpx;
+}
