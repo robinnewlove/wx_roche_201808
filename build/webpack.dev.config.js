@@ -57,6 +57,19 @@ const config = {
                     use: 'css-loader'
                 }),
             },
+            {
+                test: /.scss$/,
+                exclude: /node_modules/,
+                use: ExtractTextPlugin.extract({
+                    use: [{
+                        loader: "css-loader"
+                    }, {
+                        loader: "sass-loader"
+                    }],
+                    // 在开发环境使用 style-loader
+                    fallback: "style-loader"
+                })
+            },
             // {
             //     test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
             //     loader: 'url-loader',

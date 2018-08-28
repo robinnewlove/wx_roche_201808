@@ -59,44 +59,7 @@ App({
     onPageNotFound () {
         // 开发者可以在 onPageNotFound 回调中进行重定向处理，但必须在回调中同步处理，异步处理（例如 setTimeout 异步执行）无效。
     },
-    editTabBar (){
-        var tabbar = this.globalData.tabbar,
-            currentPages = getCurrentPages(),
-            _this = currentPages[currentPages.length - 1],
-            pagePath = _this.__route__;
-        (pagePath.indexOf('/') != 0) && (pagePath = '/' + pagePath);
-        for(var i in tabbar.list){
-            tabbar.list[i].selected = false;
-            (tabbar.list[i].pagePath == pagePath) && (tabbar.list[i].selected = true);
-        }
-        _this.setData({
-            tabbar: tabbar
-        });
-    },
     globalData: {
         userInfo:null,
-        tabbar:{
-            color: "#000000",
-            selectedColor: "#0f87ff",
-            backgroundColor: "#ffffff",
-            borderStyle: "black",
-            list: [
-                {
-                    pagePath: "/pages/home/index",
-                    text: "首页",
-                    iconPath: "/assets/images/tab-nav-zd.png",
-                    selectedIconPath: "/assets/images/tab-nav-zd-selected.png",
-                    selected: true
-                },
-                {
-                    pagePath: "/pages/mine/index",
-                    text: "我的",
-                    iconPath: "/assets/images/tab-nav-ye.png",
-                    selectedIconPath: "/assets/images/tab-nav-ye-selected.png",
-                    selected: false
-                },
-            ],
-            position: "bottom"
-        }
     }
 });

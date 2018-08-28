@@ -1,6 +1,6 @@
 //index.js
 import './index.json'
-import './index.wxss'
+import './index.scss'
 import './index.wxml'
 
 //获取应用实例
@@ -20,7 +20,6 @@ Page({
         })
     },
     onLoad: function () {
-        getApp().editTabBar();
     },
     getUserInfo: function(e) {
 

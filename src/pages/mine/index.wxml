@@ -91,27 +91,27 @@
         <view class="time-item">
             <text class="time-item-text">空腹</text>
             <view class="time-item-bar"></view>
-            <view class="time-item-active"></view>
+            <view class="time-item-type"></view>
         </view>
         <view class="time-item">
             <text class="time-item-text">空腹</text>
             <view class="time-item-bar"></view>
-            <view class="time-item-active"></view>
+            <view class="time-item-type"></view>
+        </view>
+        <view class="time-item time-item-active">
+            <text class="time-item-text">空腹</text>
+            <view class="time-item-bar"></view>
+            <view class="time-item-type"></view>
         </view>
         <view class="time-item">
             <text class="time-item-text">空腹</text>
             <view class="time-item-bar"></view>
-            <view class="time-item-active"></view>
+            <view class="time-item-type"></view>
         </view>
         <view class="time-item">
             <text class="time-item-text">空腹</text>
             <view class="time-item-bar"></view>
-            <view class="time-item-active"></view>
-        </view>
-        <view class="time-item">
-            <text class="time-item-text">空腹</text>
-            <view class="time-item-bar"></view>
-            <view class="time-item-active"></view>
+            <view class="time-item-type"></view>
         </view>
     </view>
     <!--/时间-->
@@ -119,19 +119,27 @@
     <view class="form">
         <view class="input-item">
             <label class="input-label">测量日期</label>
-            <input type="text" class="input-value" placeholder="请输入"/>
+            <view class="input-value">
+                <input type="text" placeholder="请输入"/>
+            </view>
         </view>
         <view class="input-item">
             <label class="input-label">测量时间</label>
-            <input type="text" class="input-value" placeholder="请输入"/>
+            <view class="input-value">
+                <input type="text" placeholder="请输入"/>
+            </view>
         </view>
         <view class="input-item">
             <label class="input-label">最近的血红蛋白值</label>
-            <input type="text" class="input-value" placeholder="请输入"/>
+            <view class="input-value">
+                <input type="text" placeholder="请输入"/>
+            </view>
         </view>
         <view class="input-item">
             <label class="input-label">添加备注</label>
-            <input type="text" class="input-value" placeholder="请输入"/>
+            <view class="input-value">
+                <input type="text" placeholder="请输入"/>
+            </view>
         </view>
         <view class="form-button">
             <text class="form-button-text">保存</text>
