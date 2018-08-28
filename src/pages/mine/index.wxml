@@ -23,5 +23,26 @@
             <text class="base-value"></text>
         </view>
     </view>
-    
+    <view class="entry">
+        <view class="entry-item">
+            <text class="entry-label"></text>
+            <text class="entry-value"></text>
+            <view class="entry-arrow"></view>
+        </view>
+        <view class="entry-item">
+            <text class="entry-label"></text>
+            <text class="entry-value"></text>
+            <view class="entry-arrow"></view>
+        </view>
+        <view class="entry-item">
+            <text class="entry-label"></text>
+            <text class="entry-value"></text>
+            <view class="entry-arrow"></view>
+        </view>
+        <view class="entry-item">
+            <text class="entry-label"></text>
+            <text class="entry-value"></text>
+            <view class="entry-arrow"></view>
+        </view>
+    </view>
 </view>
