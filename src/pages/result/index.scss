@@ -1,167 +1,153 @@
 @import '../../assets/scss/define';
 /*头部*/
 .header{
-    @extend %df;
-    @extend %aic;
-    height: 328rpx;
-    padding: 0 61rpx;
-    background: linear-gradient(#63f4f9, #29adeb);
+    @extend %pr;
+    @extend %oh;
+    height: 568rpx;
+    padding: 0 60rpx;
 }
-.button{
-    width: 81rpx;
-    height: 81rpx;
+.header-bg{
+    @extend %pa;
+    @extend %t0;
+    @extend %l0;
+    @extend %r0;
+    @extend %b0;
+    background-color: red;
 }
-.num-wrap{
-    @extend %df;
-    @extend %df1;
-    @extend %fdc;
-    @extend %aic;
+.user-head{
+    @extend %pr;
+    @extend %oh;
+    border-radius: 50%;
+    width: 100rpx;
+    height: 100rpx;
+    background-color: #28aeeb;
+    margin-top: 42rpx;
 }
-.num-label{
+.user-image{
+    @extend %db;
+    @extend %w100;
+    @extend %h100;
+    border-radius: 50%;
+    background-color: #28aeeb;
+}
+.prompt{
+    @extend %pr;
     font-size: 30rpx;
-    color: #e2f6fc;
+    color: #fff;
+    margin-top: 23rpx;
+}
+.num-info{
+    @extend %pr;
+    height: 170rpx;
 }
 .num-value{
     font-size: 166rpx;
     color: #fff;
-    line-height: 140rpx;
-    margin: 20rpx;
+    line-height: 170rpx;
 }
 .num-unit{
-    font-size: 26rpx;
+    font-size: 22rpx;
     color: #fff;
 }
-
-/*标尺*/
-.ruler{
-    @extend %df;
-    @extend %bsb;
-    height: 110rpx;
+.conclusion-text{
+    @extend %pr;
+    font-size: 50rpx;
+    color: #fff;
+}
+.progress{
+    @extend %pr;
+    margin: 30rpx 0 20rpx;
+    height: 7rpx;
     background-color: #fff;
-    padding-top: 11rpx;
-    padding-left: 20rpx;
+    border-radius: 7rpx;
 }
-.rule-item{
-    @extend %df;
-    width: 100rpx;
-}
-.rule-item-value{
-    @extend %pr;
-    height: 21rpx;
-    width: 1rpx;
-    background-color: #28aeed;
-}
-.rule-item-value-text{
-    @extend %pa;
-    @extend %l50;
-    font-size: 26rpx;
-    color: #28aeed;
-    top: 30rpx;
-    margin-left: 1rpx;
-    transform: translate3d(-50%, 0, 0);
-}
-.rule-item-sign{
-    height: 13rpx;
-    width: 1rpx;
-    background-color: #28aeed;
-    margin-right: 24rpx;
-}
-
-/*时间*/
-.time{
-    @extend %bsb;
-    @extend %df;
-    height: 157rpx;
-    background-color: #29aeeb;
-    padding: 0 30rpx;
-}
-.time-item{
-    @extend %bsb;
-    @extend %pr;
+.progress-inner{
     @extend %h100;
-    margin-right: 65rpx;
-    padding-top: 42rpx;
+    width: 50%;
+    background-color: #54edf6;
 }
-.time-item-active{
-    padding-top: 46rpx;
-    .time-item-bar,
-    .time-item-type{
-        @extend %db;
-    }
-    .time-item-text{
-        @extend %fwb;
-        font-size: 36rpx;
-    }
-}
-.time-item-text{
-    font-size: 30rpx;
-    color: #fff;
-    line-height: 45rpx;
-    height: 45rpx;
-}
-.time-item-bar{
-    @extend %dn;
-    @extend %w100;
-    height: 1px;
-    background-color: #fff;
-    margin-top: 10rpx;
-}
-.time-item-type{
-    @extend %dn;
-    @extend %pa;
-    @extend %l50;
-    @extend %b0;
-    margin-left: -23rpx;
-    width: 0;
-    height: 0;
-    border-top: 23rpx solid rgba(0,0,0,0);
-    border-right: 23rpx solid rgba(0,0,0,0);
-    border-bottom: 23rpx solid #fff;
-    border-left: 23rpx solid rgba(0,0,0,0);
-}
-
-// 表单
-.form{
-
-}
-.input-item{
-    @extend %df;
-    @extend %aic;
-    @extend %bsb;
-    height: 98rpx;
-    border-bottom: 1px solid #efeff4;
-}
-.input-label{
-    @extend %db;
-    padding-left: 60rpx;
-    margin-right: 20rpx;
-    color: #575757;
+.text{
+    @extend %pr;
+    @extend %fwb;
     font-size: 36rpx;
+    color: #fff;
 }
-.input-value{
-    @extend %df1;
-    height: 50rpx;
-    input{
-        @extend %tar;
-        @extend %db;
-        @extend %w100;
-        @extend %h100;
-        @extend %bsb;
-        padding-right: 60rpx;
-        font-size: 36rpx;
-        color: #969696;
-    }
+
+// 日历
+.calendar{
+    padding: 53rpx 60rpx 0;
 }
-.form-button{
+.calendar-title{
     @extend %df;
     @extend %aic;
     @extend %jcc;
-    margin: 42rpx 60rpx 80rpx;
-    height: 80rpx;
-    background: linear-gradient(to right, #39e2ee , #28aeeb);
-    border-radius: 40rpx;
+    height: 88rpx;
+    background-image: linear-gradient(to right, #3bddf2, #2cbdf0);
 }
-.form-button-text{
-    color: #fff;
+.title-text{
+    @extend %fwb;
     font-size: 36rpx;
+    color: #fff;
+}
+.calendar-inner{
+    //box-shadow: 0 20rpx 0 1rpx rgba(59,221,242,.1);
+    @extend %df;
+    flex-wrap: wrap;
+}
+.calendar-item{
+    @extend %pr;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    height: 60rpx;
+    width: 90rpx;
+    &.color-f7f7f9{
+        background-color: #f7f7f9;
+    }
+    &.color-fff{
+        background-color: #fff;
+    }
+}
+.calendar-text{
+    @extend %db;
+    @extend %pr;
+    color: #333;
+    font-size: 22rpx;
+}
+.calendar-text-disabled{
+    color: #999;
+}
+.calendar-active{
+    .calendar-text{
+        color: #fff;
+    }
+    .calendar-type{
+        @extend %db;
+    }
+}
+.calendar-type{
+    @extend %dn;
+    @extend %pa;
+    @extend %t50;
+    @extend %l50;
+    margin-top: -20rpx;
+    margin-left: -20rpx;
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    background-color: #28aeeb;
+}
+
+.footer{
+    @extend %df;
+    justify-content: space-between;
+    padding: 53rpx 60rpx 80rpx;
+}
+.footer-button{
+    width: 289rpx;
+    border-radius: 44rpx;
+}
+.footer-button-text{
+    font-size: 36rpx;
+    color: #fff;
 }

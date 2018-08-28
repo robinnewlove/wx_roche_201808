@@ -10,11 +10,168 @@
             <text class="num-value">5.8</text>
             <text class="num-unit">mmol/L</text>
         </view>
+        <text class="conclusion-text">数值正常</text>
+        <view class="progress">
+            <view class="progress-inner"></view>
+        </view>
+        <text class="text">您本月坚持测糖4次，完成进度70%</text>
     </view>
     <!--/头部-->
     <!--日历-->
-    <div class="calendar">
-
-    </div>
+    <view class="calendar">
+        <view class="calendar-title">
+            <text class="title-text">8月完成记录</text>
+        </view>
+        <view class="calendar-inner">
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9 calendar-active">
+                <view class="calendar-type"></view>
+                <text class="calendar-text">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9 calendar-active">
+                <view class="calendar-type"></view>
+                <text class="calendar-text">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9 calendar-active">
+                <view class="calendar-type"></view>
+                <text class="calendar-text">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9 calendar-active">
+                <view class="calendar-type"></view>
+                <text class="calendar-text">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9 calendar-active">
+                <view class="calendar-type"></view>
+                <text class="calendar-text">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9 calendar-active">
+                <view class="calendar-type"></view>
+                <text class="calendar-text">0</text>
+            </view>
+            <view class="calendar-item color-f7f7f9">
+                <view class="calendar-type"></view>
+                <text class="calendar-text calendar-text-disabled">0</text>
+            </view>
+        </view>
+    </view>
     <!--/日历-->
+    <view class="footer">
+        <view class="footer-button calendar-title">
+            <text class="footer-button-text">返回首页</text>
+        </view>
+        <view class="footer-button calendar-title">
+            <text class="footer-button-text">我的测糖方案</text>
+        </view>
+    </view>
 </view>

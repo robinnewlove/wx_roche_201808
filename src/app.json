@@ -1,7 +1,8 @@
 {
     "pages": [
-        "pages/mine/index",
+        "pages/result/index",
         "pages/home/index",
+        "pages/mine/index",
         "pages/questionnaire/charge/index",
         "pages/questionnaire/free/index"
     ],
