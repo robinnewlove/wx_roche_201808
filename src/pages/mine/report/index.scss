@@ -1,0 +1,198 @@
+@import '../../../assets/scss/define';
+/*头部*/
+.header{
+    @extend %df;
+    @extend %fdc;
+    @extend %jcc;
+    height: 268rpx;
+    padding: 0 60rpx;
+    background: linear-gradient( #24a3db , #51c5de);
+    text{
+        color: #fff;
+    }
+}
+.header-prompt{
+    font-size: 46rpx;
+}
+.time{
+    @extend %df;
+    @extend %aic;
+    height: 46rpx;
+    margin-top: 10rpx;
+}
+.time-text{
+    @extend %db;
+    font-size: 30rpx;
+    margin-right: 26rpx;
+}
+.time-btn{
+    @extend %df;
+    @extend %fdc;
+    @extend %jcc;
+    @extend %aic;
+    @extend %bsb;
+    width: 120rpx;
+    height: 46rpx;
+    border: 1rpx solid #fff;
+    border-radius: 23rpx;
+}
+.time-btn-text{
+    @extend %db;
+    font-size: 22rpx;
+}
+
+.tab{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    height: 105rpx;
+}
+.tab-btn{
+    width: 50rpx;
+    height: 50rpx;
+    background-color: red;
+}
+.tab-prompt{
+    @extend %df;
+    @extend %aic;
+    margin: 0 20rpx;
+}
+.tab-prompt-text{
+    font-size: 36rpx;
+    color: #28aeeb;
+    &:first-child{
+        margin-right: 20rpx;
+    }
+}
+
+
+.table{
+    border-top: 1rpx solid #ebebeb;
+}
+.tr{
+    @extend %df;
+    @extend %aic;
+    @extend %bsb;
+    height: 60rpx;
+    border-bottom: 1rpx solid #ebebeb;
+}
+.td{
+    @extend %h100;
+    @extend %df1;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    border-right: 1rpx solid #ebebeb;
+    &:last-child{
+        border-right: none;
+    }
+    &.td-0-0{
+        background-color: #ebebeb;
+        text{
+            @extend %fwb;
+            color: #8c8c8c;
+        }
+    }
+    &.td-0-1{
+        background-color: #28aeeb;
+        text{
+            color: #fff;
+        }
+    }
+    &.td-1-0{
+        font-size: 18rpx;
+        text{
+            color: #28aeeb;
+        }
+    }
+    &.up{
+        text{
+            color: #ff7f52;
+        }
+    }
+    &.nor{
+        text{
+            color: #28aeeb;
+        }
+    }
+    &.low{
+        text{
+            color: #93d143;
+        }
+    }
+}
+.text{
+    font-size: 21rpx;
+}
+
+.explain{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    margin-top: 20rpx;
+}
+.explain-item{
+    @extend %df;
+    @extend %aic;
+    margin: 0 30rpx;
+    &.up{
+        text{
+            color: #ff7f52;
+        }
+    }
+    &.nor{
+        text{
+            color: #28aeeb;
+        }
+    }
+    &.low{
+        text{
+            color: #93d143;
+        }
+    }
+}
+.explain-icon{
+    width: 30rpx;
+    height: 30rpx;
+    background-color: #3bddf2;
+    margin-right: 25rpx;
+}
+.explain-text{
+    font-size: 22rpx;
+}
+
+.footer{
+    @extend %df;
+    @extend %aic;
+    line-height: 1.5;
+    margin-top: 40rpx;
+    text{
+        color: #28aeeb;
+    }
+}
+.footer-item{
+    @extend %df1;
+    @extend %df;
+    @extend %fdc;
+    @extend %aic;
+    @extend %jcc;
+}
+.left-icon{
+    width: 75rpx;
+    height: 75rpx;
+    background-color: red;
+}
+.left-prompt{
+    @extend %fwb;
+    font-size: 30rpx;
+    margin: 5rpx 0;
+}
+.footer-text{
+    font-size: 22rpx;
+}
+.right-icon{
+    width: 100rpx;
+    height: 100rpx;
+    margin: 10rpx 0;
+    background-color: red;
+}

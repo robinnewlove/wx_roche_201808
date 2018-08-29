@@ -1,0 +1,68 @@
+<view>
+    <view class="header">
+        <text class="header-prompt">您的专属测糖方案</text>
+        <view class="time">
+            <text class="time-text">时间：2018/08/05 - 2018/08/11</text>
+            <view class="time-btn">
+                <text class="time-btn-text">修改时间</text>
+            </view>
+        </view>
+    </view>
+    <view class="tab">
+        <image class="tab-btn"></image>
+        <view class="tab-prompt">
+            <text class="tab-prompt-text">本周</text>
+            <text class="tab-prompt-text">08/05 - 08/11</text>
+        </view>
+        <image class="tab-btn"></image>
+    </view>
+    <view class="table">
+        <view class="tr">
+            <view class="td td-0-0"><text class="text">本周</text></view>
+            <view class="td td-0-1"><text class="text">空腹</text></view>
+            <view class="td td-0-1"><text class="text">空腹</text></view>
+            <view class="td td-0-1"><text class="text">空腹</text></view>
+            <view class="td td-0-1"><text class="text">空腹</text></view>
+            <view class="td td-0-1"><text class="text">空腹</text></view>
+            <view class="td td-0-1"><text class="text">空腹</text></view>
+            <view class="td td-0-1"><text class="text">空腹</text></view>
+        </view>
+        <view class="tr">
+            <view class="td td-1-0"><text class="text">周一</text></view>
+            <view class="td up"><text class="text">1</text></view>
+            <view class="td nor"><text class="text">1</text></view>
+            <view class="td low"><text class="text">1</text></view>
+            <view class="td"><view class="status"></view></view>
+            <view class="td"><view class="status"></view></view>
+            <view class="td"><view class="status"></view></view>
+            <view class="td"><view class="status"></view></view>
+        </view>
+    </view>
+    <view class="explain">
+        <view class="explain-item low">
+            <image class="explain-icon"></image>
+            <text class="explain-text">偏低</text>
+        </view>
+        <view class="explain-item nor">
+            <image class="explain-icon"></image>
+            <text class="explain-text">正常</text>
+        </view>
+        <view class="explain-item up">
+            <image class="explain-icon"></image>
+            <text class="explain-text">偏高</text>
+        </view>
+    </view>
+    <view class="footer">
+        <view class="footer-item">
+            <image class="left-icon"></image>
+            <text class="left-prompt">医生提示</text>
+            <text class="footer-text">您的测糖目标未达成</text>
+            <text class="footer-text">需要继续加油！</text>
+        </view>
+        <view class="footer-item">
+            <image class="right-icon"></image>
+            <text class="footer-text">关注罗氏血糖仪官方微信号</text>
+            <text class="footer-text">获取更多控糖秘诀！</text>
+        </view>
+    </view>
+</view>

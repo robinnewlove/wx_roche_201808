@@ -4,6 +4,7 @@ module.exports = {
     "mine_info_index": "/pages/mine/info/index",
     "mine_introduce_index": "/pages/mine/introduce/index",
     "mine_programme_index": "/pages/mine/programme/index",
+    "mine_report_index": "/pages/mine/report/index",
     "questionnaire_charge_index": "/pages/questionnaire/charge/index",
     "questionnaire_free_index": "/pages/questionnaire/free/index",
     "record_index": "/pages/record/index",
