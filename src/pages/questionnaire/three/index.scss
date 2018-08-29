@@ -1,14 +1,25 @@
 @import '../../../assets/scss/define';
 /*头部*/
 .banner{
+    @extend %df;
+    @extend %jcc;
+    @extend %fdc;
+    padding: 0 60rpx;
     height: 268rpx;
+    border-bottom: 1px solid #efeff4;
+    text{
+        color: #28aeeb;
+    }
 }
-.banner-image{
-    @extend %db;
-    @extend %w100;
-    @extend %h100;
-    background-color: #2cbdf0;
+.title{
+    font-size: 66rpx;
+    margin-bottom: 20rpx;
 }
+.prompt-text{
+    font-size: 60rpx;
+}
+
+
 .from-wrap{
     margin-bottom: 60rpx;
 }
@@ -23,11 +34,21 @@
     font-size: 36rpx;
     color: #28aeeb;
 }
+.from-item-select{
+    border-bottom: 1px solid #efeff4;
+    .from-item{
+        border-bottom: none;
+        height: 70rpx;
+    }
+    .from-select{
+        padding-left: 70rpx;
+    }
+}
 .from-item{
     @extend %df;
     @extend %bsb;
     @extend %aic;
-    //padding: 0 60rpx;
+    padding: 0 60rpx;
     height: 98rpx;
     border-bottom: 1px solid #efeff4;
     &.from-no-value{
@@ -36,13 +57,6 @@
         }
     }
 }
-.from-label{
-    @extend %db;
-    font-size: 36rpx;
-    color: #575757;
-    padding-left: 60rpx;
-    margin-right: 20rpx;
-}
 .from-value{
     @extend %df1;
     height: 50rpx;
@@ -50,30 +64,11 @@
         @extend %db;
         @extend %w100;
         @extend %h100;
-        @extend %tar;
         @extend %bsb;
         padding-right: 60rpx;
         font-size: 36rpx;
         color: #969696;
     }
-}
-.from-unit{
-    padding-right: 60rpx;
-    font-size: 36rpx;
-    color: #969696;
-}
-.from-radio{
-    @extend %df;
-    @extend %aic;
-    padding-right: 60rpx;
-    justify-content: flex-end;
-}
-.from-radio-item{
-    @extend %df1;
-    @extend %df;
-    @extend %aic;
-    padding-left: 60rpx;
-    justify-content: flex-end;
 }
 .from-radio-image{
     width: 30rpx;
@@ -82,9 +77,21 @@
     background-color: #2cbdf0;
 }
 .from-radio-text{
+    @extend %df1;
     font-size: 36rpx;
     color: #969696;
-    margin-left: 20rpx;
+    margin-left: 40rpx;
+}
+.arrow{
+    width: 20rpx;
+    height: 20rpx;
+    margin-left: 10rpx;
+    transform: rotate(45deg);
+    border-color: #c0c0c0;
+    border-top-width: 1rpx;
+    border-top-style: solid;
+    border-right-width: 1rpx;
+    border-right-style: solid;
 }
 .form-button{
     @extend %df;
@@ -99,3 +106,4 @@
     color: #fff;
     font-size: 36rpx;
 }
+
