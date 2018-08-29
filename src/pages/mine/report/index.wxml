@@ -9,12 +9,12 @@
         </view>
     </view>
     <view class="tab">
-        <image class="tab-btn"></image>
+        <view class="tab-btn"><view class="btn"></view></view>
         <view class="tab-prompt">
             <text class="tab-prompt-text">本周</text>
             <text class="tab-prompt-text">08/05 - 08/11</text>
         </view>
-        <image class="tab-btn"></image>
+        <view class="tab-btn right"><view class="btn"></view></view>
     </view>
     <view class="table">
         <view class="tr">
@@ -40,21 +40,21 @@
     </view>
     <view class="explain">
         <view class="explain-item low">
-            <image class="explain-icon"></image>
+            <image class="explain-icon" mode="aspectFit" src="../../../assets/images/xtbg-icon-1.png"></image>
             <text class="explain-text">偏低</text>
         </view>
         <view class="explain-item nor">
-            <image class="explain-icon"></image>
+            <image class="explain-icon" mode="aspectFit" src="../../../assets/images/xtbg-icon-2.png"></image>
             <text class="explain-text">正常</text>
         </view>
         <view class="explain-item up">
-            <image class="explain-icon"></image>
+            <image class="explain-icon" mode="aspectFit" src="../../../assets/images/xtbg-icon-3.png"></image>
             <text class="explain-text">偏高</text>
         </view>
     </view>
     <view class="footer">
         <view class="footer-item">
-            <image class="left-icon"></image>
+            <image class="left-icon" mode="aspectFit" src="../../../assets/images/xtbg-icon-4.png"></image>
             <text class="left-prompt">医生提示</text>
             <text class="footer-text">您的测糖目标未达成</text>
             <text class="footer-text">需要继续加油！</text>

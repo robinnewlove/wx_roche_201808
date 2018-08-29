@@ -48,9 +48,24 @@
     height: 105rpx;
 }
 .tab-btn{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
     width: 50rpx;
     height: 50rpx;
-    background-color: red;
+    .btn{
+        height: 0;
+        width: 0;
+        border-top: 15rpx solid transparent;
+        border-right: 15rpx solid #28aeeb;
+        border-bottom: 15rpx solid transparent;
+    }
+    &.right{
+        .btn{
+            border-right: none;
+            border-left: 15rpx solid #28aeeb;
+        }
+    }
 }
 .tab-prompt{
     @extend %df;
@@ -154,7 +169,6 @@
 .explain-icon{
     width: 30rpx;
     height: 30rpx;
-    background-color: #3bddf2;
     margin-right: 25rpx;
 }
 .explain-text{
@@ -180,7 +194,6 @@
 .left-icon{
     width: 75rpx;
     height: 75rpx;
-    background-color: red;
 }
 .left-prompt{
     @extend %fwb;
