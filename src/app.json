@@ -1,9 +1,10 @@
 {
     "pages": [
-        "pages/mine/programme/index",
+        "pages/mine/introduce/index",
         "pages/home/index",
         "pages/mine/index",
         "pages/mine/info/index",
+        "pages/mine/programme/index",
         "pages/questionnaire/charge/index",
         "pages/questionnaire/free/index",
         "pages/record/index",
