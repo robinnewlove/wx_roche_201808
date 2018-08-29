@@ -35,6 +35,46 @@
             </view>
             <view class="arrow"></view>
         </view>
+        <view class="title-wrap">
+            <text class="title-text">3.您当前的治疗方案</text>
+        </view>
+        <view class="from-select">
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">生活方式调整</text>
+            </view>
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">口服降糖药</text>
+            </view>
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">胰岛素</text>
+                <view class="arrow"></view>
+            </view>
+            <view class="from-item-select">
+                <view class="from-item">
+                    <image class="from-radio-image"></image>
+                    <text class="from-radio-text">口服降糖药+胰岛素</text>
+                    <view class="arrow"></view>
+                </view>
+                <view class="from-select">
+                    <view class="from-item">
+                        <image class="from-radio-image"></image>
+                        <text class="from-radio-text">生活方式调整</text>
+                    </view>
+                    <view class="from-item">
+                        <image class="from-radio-image"></image>
+                        <text class="from-radio-text">口服降糖药</text>
+                    </view>
+                    <view class="from-item">
+                        <image class="from-radio-image"></image>
+                        <text class="from-radio-text">胰岛素</text>
+                        <view class="arrow"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
         <view class="form-button">
             <text class="form-button-text">下一步</text>
         </view>
