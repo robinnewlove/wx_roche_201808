@@ -3,21 +3,21 @@
         <text class="title">会员服务介绍</text>
         <view class="session">
             <view class="session-title">
-                <image class="image"></image>
+                <image class="image" mode="aspectFit" src="../../../assets/images/hyjs-icon-1.png"></image>
                 <text class="text">成长值</text>
             </view>
             <text class="session-prompt">为苏宁会员通过购物、评价、登录等获得的经验累积值</text>
         </view>
         <view class="session">
             <view class="session-title">
-                <image class="image"></image>
+                <image class="image" mode="aspectFit" src="../../../assets/images/hyjs-icon-2.png"></image>
                 <text class="text">会员等级</text>
             </view>
             <text class="session-prompt">为有效提升会员升级体验，我们对会员等级权益进行了升级改版，改版后的苏宁会员等级分为新人、V1、V2、V3和V4会员</text>
         </view>
         <view class="session">
             <view class="session-title">
-                <image class="image"></image>
+                <image class="image" mode="aspectFit" src="../../../assets/images/hyjs-icon-3.png"></image>
                 <text class="text">订单</text>
             </view>
             <text class="session-prompt">自然日内产生至少1笔单件商品实际付款金额在10元以上的订单（实际支付金额不包括券云钻、运费在内）则该日计为1个购物天数</text>
