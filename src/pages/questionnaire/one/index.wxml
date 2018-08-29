@@ -1,0 +1,40 @@
+<view>
+    <view class="banner">
+        <image class="banner-image"></image>
+        <text class="title">第一步</text>
+        <text class="prompt-text">我们需要您的一些基本信息</text>
+        <text class="prompt-text">从而更好的为您服务</text>
+        <text class="sub-title">基本信息</text>
+    </view>
+    <view class="from-wrap">
+        <view class="from-item">
+            <label class="from-label">姓名</label>
+            <view class="from-value">
+                <input type="text" placeholder="请输入"/>
+            </view>
+        </view>
+        <view class="from-item">
+            <label class="from-label">性别</label>
+            <view class="from-value"></view>
+            <view class="from-radio">
+                <view class="from-radio-item">
+                    <image class="from-radio-image"></image>
+                    <text class="from-radio-text">男</text>
+                </view>
+                <view class="from-radio-item">
+                    <image class="from-radio-image"></image>
+                    <text class="from-radio-text">女</text>
+                </view>
+            </view>
+        </view>
+        <view class="from-item">
+            <label class="from-label">出生年月</label>
+            <view class="from-value">
+                <input type="text" placeholder="请输入"/>
+            </view>
+        </view>
+        <view class="form-button">
+            <text class="form-button-text">下一步</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,115 @@
+@import '../../../assets/scss/define';
+/*头部*/
+.banner{
+    @extend %pr;
+    @extend %oh;
+    height: 574rpx;
+    padding: 0 60rpx;
+    line-height: 1.5;
+    text{
+        @extend %pr;
+        @extend %db;
+        color: #28aeeb;
+    }
+}
+.banner-image{
+    @extend %pa;
+    @extend %w100;
+    @extend %h100;
+    @extend %t0;
+    @extend %l0;
+    background-color: #2cbdf0;
+}
+.title{
+    margin: 220rpx 0 30rpx;
+    font-size: 66rpx;
+}
+.prompt-text{
+    font-size: 30rpx;
+}
+.sub-title{
+    font-size: 36rpx;
+    margin-top: 60rpx;
+}
+
+
+
+.from-wrap{
+    margin-bottom: 60rpx;
+}
+.from-item{
+    @extend %df;
+    @extend %bsb;
+    @extend %aic;
+    //padding: 0 60rpx;
+    height: 98rpx;
+    border-bottom: 1px solid #efeff4;
+    &.from-no-value{
+        input{
+            padding-right: 20rpx;
+        }
+    }
+}
+.from-label{
+    @extend %db;
+    font-size: 36rpx;
+    color: #575757;
+    padding-left: 60rpx;
+    margin-right: 20rpx;
+}
+.from-value{
+    @extend %df1;
+    height: 50rpx;
+    input{
+        @extend %db;
+        @extend %w100;
+        @extend %h100;
+        @extend %tar;
+        @extend %bsb;
+        padding-right: 60rpx;
+        font-size: 36rpx;
+        color: #969696;
+    }
+}
+.from-unit{
+    padding-right: 60rpx;
+    font-size: 36rpx;
+    color: #969696;
+}
+.from-radio{
+    @extend %df;
+    @extend %aic;
+    padding-right: 60rpx;
+    justify-content: flex-end;
+}
+.from-radio-item{
+    @extend %df1;
+    @extend %df;
+    @extend %aic;
+    padding-left: 60rpx;
+    justify-content: flex-end;
+}
+.from-radio-image{
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+    background-color: #2cbdf0;
+}
+.from-radio-text{
+    font-size: 36rpx;
+    color: #969696;
+    margin-left: 20rpx;
+}
+.form-button{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    margin: 42rpx 60rpx 80rpx;
+    height: 80rpx;
+    background: linear-gradient(to right, #39e2ee , #28aeeb);
+    border-radius: 40rpx;
+}
+.form-button-text{
+    color: #fff;
+    font-size: 36rpx;
+}

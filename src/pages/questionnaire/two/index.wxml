@@ -1,0 +1,42 @@
+<view>
+    <view class="banner">
+        <text class="title">第二步</text>
+        <text class="prompt-text">回答3个相关问题</text>
+        <text class="prompt-text">即可获得您的专属测糖计划</text>
+    </view>
+    <view class="from-wrap">
+        <view class="title-wrap">
+            <text class="title-text">1.您的糖尿病类型</text>
+        </view>
+        <view class="from-select">
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">1型糖尿病</text>
+            </view>
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">2型糖尿病</text>
+            </view>
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">妊娠糖尿病</text>
+            </view>
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">其他类型糖尿病</text>
+            </view>
+        </view>
+        <view class="title-wrap">
+            <text class="title-text">2.您的糖尿病确诊时间为</text>
+        </view>
+        <view class="from-item">
+            <view class="from-value">
+                <input type="text" placeholder="请选择您的确诊时间"/>
+            </view>
+            <view class="arrow"></view>
+        </view>
+        <view class="form-button">
+            <text class="form-button-text">下一步</text>
+        </view>
+    </view>
+</view>

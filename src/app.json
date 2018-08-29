@@ -1,13 +1,14 @@
 {
     "pages": [
-        "pages/mine/report/index",
+        "pages/questionnaire/two/index",
+        "pages/questionnaire/one/index",
         "pages/home/index",
         "pages/mine/index",
         "pages/mine/info/index",
         "pages/mine/introduce/index",
         "pages/mine/programme/index",
-        "pages/questionnaire/charge/index",
-        "pages/questionnaire/free/index",
+        "pages/mine/report/index",
+        "pages/questionnaire/three/index",
         "pages/record/index",
         "pages/result/index"
     ],

@@ -1,0 +1,79 @@
+<view>
+    <view class="banner">
+        <image class="banner-image"></image>
+    </view>
+    <view class="from-wrap">
+        <view class="title-wrap">
+            <text class="title-text">基本信息</text>
+        </view>
+        <view class="from-item from-no-value">
+            <label class="from-label">身高</label>
+            <view class="from-value">
+                <input type="text" placeholder="请输入"/>
+            </view>
+            <text class="from-unit">cm</text>
+        </view>
+        <view class="from-item from-no-value">
+            <label class="from-label">体重</label>
+            <view class="from-value">
+                <input type="text" placeholder="请输入"/>
+            </view>
+            <text class="from-unit">kg</text>
+        </view>
+        <view class="from-item">
+            <label class="from-label">手机</label>
+            <view class="from-value">
+                <input type="text" placeholder="请输入"/>
+            </view>
+        </view>
+        <view class="from-item">
+            <label class="from-label">糖化血红蛋白值</label>
+            <view class="from-value">
+                <input type="text" placeholder="请输入"/>
+            </view>
+        </view>
+        <view class="from-item">
+            <label class="from-label">是否患有有低血糖</label>
+            <view class="from-value"></view>
+            <view class="from-radio">
+                <view class="from-radio-item">
+                    <image class="from-radio-image"></image>
+                    <text class="from-radio-text">是</text>
+                </view>
+                <view class="from-radio-item">
+                    <image class="from-radio-image"></image>
+                    <text class="from-radio-text">否</text>
+                </view>
+            </view>
+        </view>
+        <view class="from-item">
+            <label class="from-label">姓名</label>
+            <view class="from-value">
+                <input type="text" placeholder="请输入"/>
+            </view>
+        </view>
+        <view class="from-item">
+            <label class="from-label">性别</label>
+            <view class="from-value"></view>
+            <view class="from-radio">
+                <view class="from-radio-item">
+                    <image class="from-radio-image"></image>
+                    <text class="from-radio-text">男</text>
+                </view>
+                <view class="from-radio-item">
+                    <image class="from-radio-image"></image>
+                    <text class="from-radio-text">女</text>
+                </view>
+            </view>
+        </view>
+        <view class="from-item">
+            <label class="from-label">出生年月</label>
+            <view class="from-value">
+                <input type="text" placeholder="请输入"/>
+            </view>
+        </view>
+        <view class="form-button">
+            <text class="form-button-text">下一步</text>
+        </view>
+    </view>
+</view>

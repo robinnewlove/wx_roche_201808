@@ -1,5 +1,0 @@
-<!--index.wxml-->
-<wow-view>
-    <text class="user-motto">首页1</text>
-    <text>{{userInfo}}</text>
-</wow-view>
