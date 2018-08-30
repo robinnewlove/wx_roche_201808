@@ -3,6 +3,7 @@ import './index.json'
 import './index.scss'
 import './index.wxml'
 
+import Http                 from 'plugins/http.plugin'
 
 //获取应用实例
 const app = getApp();
@@ -11,14 +12,32 @@ const app = getApp();
 Page({
     // 页面的初始数据
     data: {
-        motto: 'Hello World',
-        userInfo: {},
-        hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+
     },
     // 生命周期回调—监听页面加载
     onLoad () {
+        this.testFun();
     },
+
+    // test
+    testFun () {
+        let options = {
+            url: 'WechatApi/UserLogin',
+            data: {
+                code: '123456',
+            }
+        };
+        Http(options).then((result) => {
+            console.log('执行成功');
+            console.log(result);
+        }).catch((error) => {
+            console.log('执行失败');
+            console.log(error);
+        }).finally(() => {
+            console.log('执行完成')
+        })
+    },
+
     // 生命周期回调—监听页面显示
     onShow () {
 

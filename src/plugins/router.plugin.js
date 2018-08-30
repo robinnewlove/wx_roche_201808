@@ -1,8 +1,7 @@
 
+import RouterConfig from 'config/router.config'
 
-const RouterConfig = require('./../config/router.config');
-
-module.exports = {
+export default {
 
     push: (url, type = false) => new Promise((resolve, reject) => {
         let key = type ? 'redirectTo' : 'navigateTo';

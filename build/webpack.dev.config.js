@@ -39,6 +39,10 @@ const config = {
     resolve: {
         alias: {
             'utils': path.resolve(__dirname, '../src/utils/'),
+            'config': path.resolve(__dirname, '../src/config/'),
+            'plugins': path.resolve(__dirname, '../src/plugins/'),
+            'services': path.resolve(__dirname, '../src/services/'),
+            'mixins': path.resolve(__dirname, '../src/mixins/'),
         }
     },
     module: {

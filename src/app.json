@@ -1,6 +1,5 @@
 {
     "pages": [
-        "pages/questionnaire/programme/index",
         "pages/home/index",
         "pages/mine/index",
         "pages/mine/info/index",
@@ -8,6 +7,7 @@
         "pages/mine/programme/index",
         "pages/mine/report/index",
         "pages/questionnaire/one/index",
+        "pages/questionnaire/programme/index",
         "pages/questionnaire/three/index",
         "pages/questionnaire/two/index",
         "pages/record/index",
