@@ -3,7 +3,7 @@ import './index.json'
 import './index.scss'
 import './index.wxml'
 
-import Http                 from 'plugins/http.plugin'
+import Http                     from 'plugins/http.plugin'
 
 //获取应用实例
 const app = getApp();
@@ -16,7 +16,7 @@ Page({
     },
     // 生命周期回调—监听页面加载
     onLoad () {
-        this.testFun();
+        // this.testFun();
     },
 
     // test
