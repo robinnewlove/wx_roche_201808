@@ -2,7 +2,7 @@ import './app.json'
 import './app.wxss'
 import 'utils/es6-promise.util'
 
-import AuthPlugin               from 'plugins/auth.plugin'
+import Auth                     from 'plugins/auth.plugin'
 import Http                     from 'plugins/http.plugin'
 
 // app.js
@@ -10,8 +10,7 @@ App({
     // 生命周期函数--监听小程序初始化,
     // 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
     onLaunch () {
-        AuthPlugin.login().then((result) => {
-            console.log(result)
+        Auth.login().then((result) => {
             let options = {
                 url: 'WechatApi/UserLogin',
                 data: {
