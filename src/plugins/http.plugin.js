@@ -3,7 +3,7 @@ import EnvConfig                from 'config/env.config'
 import Toast                    from 'plugins/toast.plugin'
 
 const DEFAULT = {
-    method: 'GET',
+    method: 'POST',
     data: {},
 };
 
@@ -21,8 +21,8 @@ class Http {
             this._log('请求方式', this.method);
             this._log('请求参数', this.data);
             wx.request({
-                // url: this.url,
-                url: 'xx',
+                url: this.url,
+                // url: 'xx',
                 data: this.data,
                 method: this.method,
                 success: (response) => {
