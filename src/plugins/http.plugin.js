@@ -1,8 +1,9 @@
 
 import EnvConfig                from 'config/env.config'
+import Toast                    from 'plugins/toast.plugin'
 
 const DEFAULT = {
-    method: 'POST',
+    method: 'GET',
     data: {},
 };
 
@@ -12,14 +13,16 @@ class Http {
         this.method = options.method.toLocaleUpperCase();
         this.data = options.data;
         this.url = EnvConfig.API_URL + options.url;
-        return this[`_${this.method}`]();
+        return this._fetch();
     }
 
-    _POST () {
+    _fetch () {
         return new Promise((resolve, reject) => {
+            this._log('请求方式', this.method);
             this._log('请求参数', this.data);
             wx.request({
-                url: this.url,
+                // url: this.url,
+                url: 'xx',
                 data: this.data,
                 method: this.method,
                 success: (response) => {
@@ -28,7 +31,8 @@ class Http {
                 },
                 fail: (error) => {
                     this._log('请求失败', error);
-                    reject(error)
+                    reject(error);
+                    Toast.error(error);
                 }
             });
         })
@@ -41,7 +45,9 @@ class Http {
 
 
 export default (options = {}) => {
+    let { loading } = options;
+    loading && wx.showLoading();
     return new Http(options).finally(() => {
-
+        loading && wx.hideLoading();
     })
 }

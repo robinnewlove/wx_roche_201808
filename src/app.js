@@ -16,7 +16,8 @@ App({
                 url: 'WechatApi/UserLogin',
                 data: {
                     code: result,
-                }
+                },
+                loading: true,
             };
             Http(options).then((result) => {
 
