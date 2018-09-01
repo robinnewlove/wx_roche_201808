@@ -15,7 +15,7 @@ const app = getApp();
 Page({
     // 页面的初始数据
     data: {
-
+        userInfo: {}
     },
     // 生命周期回调—监听页面加载
     onLoad () {
@@ -23,18 +23,19 @@ Page({
     },
     // 获取用户信息
     getUserInfo () {
-        // console.log(2)
         Auth.getUserInfo().then((info) => {
             // 用户已经授权
-            console.log('用户信息', info);
-
+            let {userInfo} = info;
+            console.log('用户信息', userInfo);
+            this.setData({
+                userInfo: userInfo,
+            })
         }).catch((err) => {
             // 未授权
             Toast.error(err);
             Router.push('authorization_index')
         })
     },
-
     // 生命周期回调—监听页面显示
     onShow () {
         this.getUserInfo();

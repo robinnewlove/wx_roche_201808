@@ -3,8 +3,11 @@ import './index.json'
 import './index.scss'
 import './index.wxml'
 
+import Http                     from 'plugins/http.plugin'
+import Toast                    from 'plugins/toast.plugin'
+
 //获取应用实例
-const app = getApp()
+const app = getApp();
 
 Page({
     data: {
@@ -13,15 +16,21 @@ Page({
         hasUserInfo: false,
         canIUse: wx.canIUse('button.open-type.getUserInfo')
     },
-    //事件处理函数
-    bindViewTap: function() {
-        wx.navigateTo({
-            url: '../logs/logs'
-        })
+    // 生命周期回调—监听页面加载
+    onLoad () {
+        this.getArchives();
     },
-    onLoad: function () {
-    },
-    getUserInfo: function(e) {
+    // 获取文档
+    getArchives () {
+        let options = {
+            url: 'RocheApi/GetArchives',
+            loading: true,
+        };
+        return Http(options).then((res) => {
 
+        }).catch((err) => {
+            Toast.error(err);
+        });
     }
-})
+
+});

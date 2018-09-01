@@ -1,5 +1,33 @@
 
+const $USER_TOKEN = '$USER_TOKEN';
+
 export default {
+
+    // 获取存储的用户相关信息
+    getToken: () => new Promise((resolve, reject) => {
+        let userToken = wx.getStorageSync($USER_TOKEN);
+        if (userToken) resolve(userToken);
+        else reject('userToken is undefined');
+    }),
+
+    // 更新存储的用户相关信息
+    updateToken (user = {}) {
+        let _that = this;
+        return new Promise((resolve, reject) => {
+            let userToken = {};
+            _that.getToken().then((res) => {
+                userToken = {
+                    ...res,
+                    ...user,
+                };
+            }).catch(() => {
+                userToken = user;
+            }).finally(() => {
+                wx.setStorageSync($USER_TOKEN, userToken);
+                resolve();
+            });
+        })
+    },
 
     // 登录
     login: (options) => new Promise((resolve, reject) => {

@@ -5,14 +5,14 @@ import 'utils/es6-promise.util'
 import Auth                     from 'plugins/auth.plugin'
 import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
+import Router                   from 'plugins/router.plugin'
 
 // app.js
 App({
     // 生命周期函数--监听小程序初始化,
     // 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
     onLaunch () {
-        // this.userLogin();
-        // this.getUserInfo();
+        this.userLogin();
     },
 
     // 用户登录
@@ -27,27 +27,11 @@ App({
             };
             return Http(options);
         }).then((result) => {
-
+            return Auth.updateToken(result);
         }).catch((err) => {
             Toast.error(err);
-        })
-    },
-
-    // 获取用户信息
-    getUserInfo () {
-        console.log(1)
-        Auth.getUserInfo().then((info) => {
-            console.log('用户信息', info);
-            // 可以将 res 发送给后台解码出 unionId
-            //                     this.globalData.userInfo = res.userInfo
-            //
-            //                     // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-            //                     // 所以此处加入 callback 以防止这种情况
-            //                     if (this.userInfoReadyCallback) {
-            //                         this.userInfoReadyCallback(res)
-            //                     }
-        }).catch((err) => {
-            Toast.error(err);
+        }).finally(() => {
+            Router.push('questionnaire_one_index');
         })
     },
 

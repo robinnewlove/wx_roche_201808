@@ -1,6 +1,7 @@
 
 import EnvConfig                from 'config/env.config'
 import Toast                    from 'plugins/toast.plugin'
+import Auth                     from 'plugins/auth.plugin'
 
 const DEFAULT = {
     method: 'POST',
@@ -18,22 +19,49 @@ class Http {
 
     _fetch () {
         return new Promise((resolve, reject) => {
-            this._log('请求方式', this.method);
-            this._log('请求参数', this.data);
-            wx.request({
-                url: this.url,
-                // url: 'xx',
-                data: this.data,
-                method: this.method,
-                success: (response) => {
-                    this._log('请求返回', response);
-                    resolve(response);
-                },
-                fail: (error) => {
-                    this._log('请求失败', error);
-                    reject(error);
-                    Toast.error(error);
-                }
+            Auth.getToken().then((res) => {
+                this._log('userToken', res);
+                let {
+                    AccessToken,
+                    OpenId,
+                } = res;
+                !this.data.access_token && (this.data.access_token = AccessToken);
+                !this.data.OpenId && (this.data.OpenId = OpenId);
+            }).finally(() => {
+                this._log('请求方式', this.method);
+                this._log('请求参数', this.data);
+                wx.request({
+                    url: this.url,
+                    data: this.data,
+                    method: this.method,
+                    success: (response) => {
+                        this._log('请求返回', response);
+                        let {
+                            data,
+                            errMsg,
+                            statusCode
+                        } = response;
+                        if (statusCode !== 200 || !data) {
+                            return reject(errMsg);
+                        }
+                        let {
+                            Status,
+                            Message,
+                            Data,
+                            Id,
+                            Extend,
+                        } = data;
+                        if (Status !== 0) {
+                            return reject(Message);
+                        }
+                        resolve(Data);
+                    },
+                    fail: (error) => {
+                        this._log('请求失败', error);
+                        reject(error);
+                        Toast.error(error);
+                    }
+                });
             });
         })
     }

@@ -3,12 +3,12 @@
 
     <!--用户-->
     <view class="user">
-        <image class="user-image"></image>
+        <image class="user-image" src="{{userInfo.avatarUrl}}"></image>
         <view class="user-info">
-            <text class="user-name user-text">张先生</text>
+            <text class="user-name user-text">{{userInfo.nickName}}</text>
             <view class="user-prompt">
                 <text class="user-text">罗氏血糖管家已守护您</text>
-                <text class="user-text user-strong-text">23</text>
+                <text class="user-text user-strong-text">0</text>
                 <text class="user-text">天</text>
             </view>
         </view>
