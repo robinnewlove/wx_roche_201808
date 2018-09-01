@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/home/index",
+        "pages/authorization/index",
         "pages/mine/index",
         "pages/mine/info/index",
         "pages/mine/introduce/index",

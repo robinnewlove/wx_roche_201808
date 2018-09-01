@@ -3,7 +3,10 @@ import './index.json'
 import './index.scss'
 import './index.wxml'
 
+import Auth                     from 'plugins/auth.plugin'
 import Http                     from 'plugins/http.plugin'
+import Toast                    from 'plugins/toast.plugin'
+import Router                   from 'plugins/router.plugin'
 
 //获取应用实例
 const app = getApp();
@@ -16,31 +19,25 @@ Page({
     },
     // 生命周期回调—监听页面加载
     onLoad () {
-        // this.testFun();
-    },
 
-    // test
-    testFun () {
-        let options = {
-            url: 'WechatApi/UserLogin',
-            data: {
-                code: '123456',
-            }
-        };
-        Http(options).then((result) => {
-            console.log('执行成功');
-            console.log(result);
-        }).catch((error) => {
-            console.log('执行失败');
-            console.log(error);
-        }).finally(() => {
-            console.log('执行完成')
+    },
+    // 获取用户信息
+    getUserInfo () {
+        // console.log(2)
+        Auth.getUserInfo().then((info) => {
+            // 用户已经授权
+            console.log('用户信息', info);
+
+        }).catch((err) => {
+            // 未授权
+            Toast.error(err);
+            Router.push('authorization_index')
         })
     },
 
     // 生命周期回调—监听页面显示
     onShow () {
-
+        this.getUserInfo();
     },
     // 生命周期回调—监听页面初次渲染完成
     onReady () {
@@ -74,8 +71,4 @@ Page({
     onTabItemTap () {
 
     },
-    // 其他
-    getUserInfo(e) {
-
-    }
 });

@@ -1,4 +1,5 @@
 module.exports = {
+    "authorization_index": "/pages/authorization/index",
     "home_index": "/pages/home/index",
     "mine_index": "/pages/mine/index",
     "mine_info_index": "/pages/mine/info/index",

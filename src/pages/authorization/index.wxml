@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view>
+    <view class="header">
+        <image class="logo"></image>
+    </view>
+    <button
+        class="button"
+        open-type="getUserInfo"
+        bindgetuserinfo="bindGetUserInfo"
+    >用户快速登录</button>
+</view>
+
+

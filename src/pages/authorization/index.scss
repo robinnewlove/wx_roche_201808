@@ -1,0 +1,22 @@
+@import '../../assets/scss/define';
+.header{
+    @extend %df;
+    @extend %jcc;
+    padding-top: 100rpx;
+}
+.logo{
+    width: 350rpx;
+    height: 220rpx;
+    background-color: red;
+}
+.button{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    margin: 60rpx;
+    height: 80rpx;
+    color: #fff;
+    font-size: 36rpx;
+    background: linear-gradient(to right, #39e2ee , #28aeeb);
+    border-radius: 40rpx;
+}
