@@ -18,6 +18,7 @@ export default (options) => {
     !result.data && (result.data = {});
     result = {
         ...options,
+        ...result,
         data: {
             ...data,
             ...result.data,

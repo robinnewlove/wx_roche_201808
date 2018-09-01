@@ -19,14 +19,14 @@ Page({
     },
     // 生命周期回调—监听页面加载
     onLoad () {
-
+        Router.push('questionnaire_one_index');
     },
     // 获取用户信息
     getUserInfo () {
         Auth.getUserInfo().then((info) => {
             // 用户已经授权
             let {userInfo} = info;
-            console.log('用户信息', userInfo);
+            // console.log('用户信息', userInfo);
             this.setData({
                 userInfo: userInfo,
             })

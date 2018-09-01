@@ -25,10 +25,9 @@ class Http {
                     AccessToken,
                     OpenId,
                 } = res;
-                !this.data.access_token && (this.data.access_token = AccessToken);
                 !this.data.OpenId && (this.data.OpenId = OpenId);
+                this.url = `${this.url}?access_token=${AccessToken}`
             }).finally(() => {
-                this._log('请求方式', this.method);
                 this._log('请求参数', this.data);
                 wx.request({
                     url: this.url,
