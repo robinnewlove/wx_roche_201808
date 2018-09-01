@@ -19,27 +19,46 @@
             </view>
         </view>
         <text>{{name}}</text>
+        <text>{{sex}}</text>
         <view class="from-item">
             <label class="from-label">性别</label>
             <view class="from-value"></view>
             <view class="from-radio">
-                <view class="from-radio-item">
+                <view class="from-radio-item"
+                      bindtap="bindTap"
+                      data-key="sex"
+                      data-value="1">
                     <image class="from-radio-image"></image>
                     <text class="from-radio-text">男</text>
                 </view>
-                <view class="from-radio-item">
+                <view class="from-radio-item"
+                      bindtap="bindTap"
+                      data-key="sex"
+                      data-value="0">
                     <image class="from-radio-image"></image>
                     <text class="from-radio-text">女</text>
                 </view>
             </view>
         </view>
-        <view class="from-item">
-            <label class="from-label">出生年月</label>
-            <view class="from-value">
-                <input type="text" placeholder="请输入"/>
+        <picker
+            bindchange="bindChange"
+            data-key="birthday"
+            mode="date"
+            end="{{end}}"
+            start="{{start}}">
+            <view class="from-item">
+                <label class="from-label">出生年月</label>
+                <view class="from-value">
+                    <input
+                        type="text"
+                        value="{{birthday}}"
+                        disabled
+                        placeholder="请输入"/>
+                </view>
             </view>
-        </view>
-        <view class="form-button">
+        </picker>
+        <view class="form-button"
+              bindtap="handleSubmit">
             <text class="form-button-text">下一步</text>
         </view>
     </view>
