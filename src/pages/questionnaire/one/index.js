@@ -5,16 +5,14 @@ import './index.wxml'
 
 import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
+import Handle                   from 'mixins/mixin.handle'
 
 //获取应用实例
 const app = getApp();
 
-Page({
+Page(Handle({
     data: {
-        motto: 'Hello World',
-        userInfo: {},
-        hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+
     },
     // 生命周期回调—监听页面加载
     onLoad () {
@@ -33,4 +31,4 @@ Page({
         });
     }
 
-});
+}));
