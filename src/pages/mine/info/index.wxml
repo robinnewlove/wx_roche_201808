@@ -12,10 +12,10 @@
                 <input
                     bindinput="bindInput"
                     data-obj="objInput"
-                    data-key="Name"
+                    data-key="Height"
                     type="text"
                     minlength="20"
-                    value="{{objInput.Name.value}}"
+                    value="{{objInput.Height.value}}"
                     placeholder="请输入身高"/>
             </view>
             <text class="from-unit">cm</text>
@@ -27,9 +27,9 @@
                     type="text"
                     bindinput="bindInput"
                     data-obj="objInput"
-                    data-key="Name"
+                    data-key="Weight"
                     minlength="20"
-                    value="{{objInput.Name.value}}"
+                    value="{{objInput.Weight.value}}"
                     placeholder="请输入您的体重"/>
             </view>
             <text class="from-unit">kg</text>
@@ -41,9 +41,9 @@
                     type="text"
                     bindinput="bindInput"
                     data-obj="objInput"
-                    data-key="Name"
+                    data-key="Mobile"
                     minlength="20"
-                    value="{{objInput.Name.value}}"
+                    value="{{objInput.Mobile.value}}"
                     placeholder="请输入您的手机号"/>
             </view>
         </view>
@@ -54,9 +54,9 @@
                     type="text"
                     bindinput="bindInput"
                     data-obj="objInput"
-                    data-key="Name"
+                    data-key="RedProtein"
                     minlength="20"
-                    value="{{objInput.Name.value}}"
+                    value="{{objInput.RedProtein.value}}"
                     placeholder="请输入糖化血红蛋白值"/>
             </view>
         </view>
@@ -67,7 +67,7 @@
                 <view class="from-radio-item"
                       bindtap="bindTap"
                       data-obj="objInput"
-                      data-key="Sex"
+                      data-key="LowSugar"
                       data-value="1">
                     <image class="from-radio-image"></image>
                     <text class="from-radio-text">是</text>
@@ -75,7 +75,7 @@
                 <view class="from-radio-item"
                       bindtap="bindTap"
                       data-obj="objInput"
-                      data-key="Sex"
+                      data-key="LowSugar"
                       data-value="0">
                     <image class="from-radio-image"></image>
                     <text class="from-radio-text">否</text>
