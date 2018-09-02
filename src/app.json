@@ -1,16 +1,17 @@
 {
     "pages": [
-        "pages/questionnaire/two/index",
-        "pages/questionnaire/one/index",
         "pages/home/index",
+        "pages/questionnaire/programme/index",
+        "pages/questionnaire/one/index",
+        "pages/authorization/index",
         "pages/mine/index",
         "pages/mine/info/index",
         "pages/mine/introduce/index",
         "pages/mine/programme/index",
         "pages/mine/report/index",
-        "pages/authorization/index",
-        "pages/questionnaire/programme/index",
+        "pages/questionnaire/copy/index",
         "pages/questionnaire/three/index",
+        "pages/questionnaire/two/index",
         "pages/record/index",
         "pages/result/index"
     ],

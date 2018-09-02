@@ -8,7 +8,7 @@ export default {
         handle(url, params, key, resolve, reject)
     }),
 
-    root: (url, type = false) => new Promise((resolve, reject) => {
+    root: (url, params = {}, type = false) => new Promise((resolve, reject) => {
         let key = type ? 'reLaunch' : 'switchTab';
         handle(url, params, key, resolve, reject)
     }),

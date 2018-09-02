@@ -50,7 +50,11 @@ const config = {
             {
                 test: /\.js(\?[^?]+)?$/,
                 loaders: ['babel-loader'],
-                exclude: /node_modules/
+                // exclude: /node_modules/
+                include: [
+                    path.resolve(__dirname, '../node_modules/wow-cool'),
+                    path.resolve(__dirname, '../src'),
+                ],
             },
             //处理css文件
             {

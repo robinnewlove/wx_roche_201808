@@ -9,6 +9,7 @@ import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import InputMixin               from 'mixins/input.mixin'
 import Data                     from 'utils/data.util'
+import { formatData }           from 'wow-cool/lib/date.lib'
 
 Page(Handle({
     mixins: [InputMixin],
@@ -37,7 +38,7 @@ Page(Handle({
             }
         },
         start: '1901-01-01',
-        end: '2018-09-01',
+        end: formatData('yyyy-MM-dd'),
     },
     // 提交下一步
     handleSubmit () {

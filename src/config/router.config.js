@@ -6,6 +6,7 @@ module.exports = {
     "mine_introduce_index": "/pages/mine/introduce/index",
     "mine_programme_index": "/pages/mine/programme/index",
     "mine_report_index": "/pages/mine/report/index",
+    "questionnaire_copy_index": "/pages/questionnaire/copy/index",
     "questionnaire_one_index": "/pages/questionnaire/one/index",
     "questionnaire_programme_index": "/pages/questionnaire/programme/index",
     "questionnaire_three_index": "/pages/questionnaire/three/index",

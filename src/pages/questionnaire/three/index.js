@@ -52,7 +52,7 @@ Page(Handle({
             useOpenId: false,
         };
         return Http(options).then((res) => {
-            console.log(res);
+            Router.push('questionnaire_programme_index', {}, true);
         }).catch((err) => {
             Toast.error(err);
         });

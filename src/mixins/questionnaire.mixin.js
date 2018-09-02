@@ -16,6 +16,7 @@ export default {
                             ChooseResult: [
                                 {
                                     ChooseNum: check,
+                                    AnswerId: check,
                                 }
                             ]
                         };
@@ -27,6 +28,7 @@ export default {
                             if (it.check) {
                                 ChooseResult.push({
                                     ChooseNum: it.ChooseNum,
+                                    AnswerId: it.ChooseNum,
                                 })
                             }
                         });
@@ -43,6 +45,7 @@ export default {
                             ChooseResult: [
                                 {
                                     ChooseNum: -1,
+                                    AnswerId: -1,
                                     AnswerName: check,
                                 }
                             ]
@@ -61,6 +64,7 @@ export default {
                                 ChooseResult: [
                                     {
                                         ChooseNum: check,
+                                        AnswerId: check,
                                     }
                                 ]
                             };
@@ -71,6 +75,7 @@ export default {
                                 ChooseResult: [
                                     {
                                         ChooseNum: check,
+                                        AnswerId: check,
                                         AnswerTags: [
                                             {
                                                 Id: tagid,
