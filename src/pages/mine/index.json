@@ -1,6 +1,3 @@
 {
-    "navigationBarTitleText": "个人中心",
-    "usingComponents": {
-        "wow-view": "/components/wow-wx/wow-wx-ui/wow-view/index"
-    }
+    "navigationBarTitleText": "个人中心"
 }
