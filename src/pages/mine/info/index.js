@@ -27,7 +27,7 @@ Page(Handle({
             Sex: {
                 value: 1,
             },
-            Birthday: {
+            Brithday: {
                 value: '',
                 use_check: [
                     {
@@ -105,6 +105,7 @@ Page(Handle({
     fetchUserInfo () {
         this.getOrSetUserInfo().then((res) => {
             console.log(res);
+            Data.assignment(this, res, this.data.objInput, 'objInput')
         }).catch((err) => {
             Toast.error(err);
         });

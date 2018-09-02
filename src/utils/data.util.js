@@ -3,10 +3,13 @@ import Toast                    from 'plugins/toast.plugin'
 
 export default {
 
-    assignment (source_params, result_params) {
+    assignment (that, source_params, result_params, obj_key) {
         this.forEach(result_params, (item, key) => {
             if (source_params[key] || source_params[key] === false){
-                item.value = source_params[key]
+                let k = `${obj_key}.${key}.value`;
+                that.setData({
+                    [k]: source_params[key]
+                });
             }
         })
     },

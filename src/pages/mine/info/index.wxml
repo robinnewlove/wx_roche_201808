@@ -120,7 +120,7 @@
         <picker
             bindchange="bindChange"
             data-obj="objInput"
-            data-key="Birthday"
+            data-key="Brithday"
             mode="date"
             end="{{end}}"
             start="{{start}}">
@@ -129,7 +129,7 @@
                 <view class="from-value">
                     <input
                         type="text"
-                        value="{{objInput.Birthday.value}}"
+                        value="{{objInput.Brithday.value}}"
                         disabled
                         placeholder="请输入您的出生年月"/>
                 </view>

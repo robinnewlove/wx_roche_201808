@@ -27,7 +27,7 @@ Page(Handle({
             Sex: {
                 value: 1,
             },
-            Birthday: {
+            Brithday: {
                 value: '',
                 use_check: [
                     {
@@ -51,7 +51,7 @@ Page(Handle({
         let options = {
             url: 'RocheApi/SetUserInfo',
             loading: true,
-            data
+            data,
         };
         return Http(options).then(() => {
             Router.push('questionnaire_two_index')
