@@ -16,7 +16,6 @@ Page(Handle({
         arrData: [],
         start: '1901-01-01',
         end: '2018-09-01',
-        arrResult: [],
         type: true,
         arrParams: [],
     },
@@ -45,9 +44,8 @@ Page(Handle({
     handleSubmit () {
         let result = this.checkData(this.data.arrData);
         if (!result.length) return;
-        return console.log(result);
         Router.push('questionnaire_three_index', {
-            arrResult: this.data.arrResult,
+            arrResult: result,
             arrData: this.data.arrParams,
         });
     },

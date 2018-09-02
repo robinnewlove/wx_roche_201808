@@ -13,35 +13,39 @@ export default {
                     case 1:
                         obj = {
                             QuestionId: Code,
-                            ChooseResult: {
-                                ChooseNum: check,
-                            }
+                            ChooseResult: [
+                                {
+                                    ChooseNum: check,
+                                }
+                            ]
                         };
                         break;
                     // 复选
                     case 2:
-                        let arr = [];
-                        console.log(data)
+                        let ChooseResult = [];
                         Answers.forEach((it) => {
-                            if (it.check) arr.push(it);
+                            if (it.check) {
+                                ChooseResult.push({
+                                    ChooseNum: it.ChooseNum,
+                                })
+                            }
                         });
-                        if (!arr.length) throw `请选择${Name}`;
+                        if (!ChooseResult.length) throw `请选择${Name}`;
                         obj = {
                             QuestionId: Code,
-                            ChooseResult: {
-                                ChooseNum: check,
-                                arr,
-                            }
+                            ChooseResult,
                         };
                         break;
                     // 问答
                     case 3:
                         obj = {
                             QuestionId: Code,
-                            ChooseResult: {
-                                ChooseNum: -1,
-                                AnswerName: check,
-                            }
+                            ChooseResult: [
+                                {
+                                    ChooseNum: -1,
+                                    AnswerName: check,
+                                }
+                            ]
                         };
                         break;
                     // 子集
@@ -54,23 +58,27 @@ export default {
                         if (!AnswerTags || !AnswerTags.length) {
                             obj = {
                                 QuestionId: Code,
-                                ChooseResult: {
-                                    ChooseNum: check,
-                                }
+                                ChooseResult: [
+                                    {
+                                        ChooseNum: check,
+                                    }
+                                ]
                             };
                         } else {
                             if(!tagid || !tag) throw `请选择${Name}`;
                             obj = {
                                 QuestionId: Code,
-                                ChooseResult: {
-                                    ChooseNum: check,
-                                    AnswerTags: [
-                                        {
-                                            Id: tagid,
-                                            Tag: tag
-                                        }
-                                    ]
-                                }
+                                ChooseResult: [
+                                    {
+                                        ChooseNum: check,
+                                        AnswerTags: [
+                                            {
+                                                Id: tagid,
+                                                Tag: tag
+                                            }
+                                        ]
+                                    }
+                                ]
                             };
                         }
                         break;

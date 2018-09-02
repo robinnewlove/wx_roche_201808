@@ -23,7 +23,7 @@
                   wx:key="{{ite}}"
                   wx:for-index="ind"
                   wx:if="{{item.Type === 2}}"
-                  data-id="{{ite.Id}}">
+                  data-id="{{ite.ChooseNum}}">
                 <view class="from-item">
                     <image class="from-radio-image"
                            wx:if="{{ite.check}}"></image>

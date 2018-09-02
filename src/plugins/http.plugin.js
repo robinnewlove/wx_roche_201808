@@ -5,6 +5,7 @@ import Auth                     from 'plugins/auth.plugin'
 
 const DEFAULT = {
     method: 'POST',
+    useOpenId: true,
     data: {},
 };
 
@@ -13,6 +14,7 @@ class Http {
         let options = Object.assign({}, DEFAULT, opt);
         this.method = options.method.toLocaleUpperCase();
         this.data = options.data;
+        this.useOpenId = options.useOpenId;
         this.url = EnvConfig.API_URL + options.url;
         return this._fetch();
     }
@@ -25,7 +27,7 @@ class Http {
                     AccessToken,
                     OpenId,
                 } = res;
-                !this.data.OpenId && (this.data.OpenId = OpenId);
+                this.useOpenId && (this.data.OpenId = OpenId);
                 this.url = `${this.url}?access_token=${AccessToken}`
             }).finally(() => {
                 this._log('请求参数', this.data);

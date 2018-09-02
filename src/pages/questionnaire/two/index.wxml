@@ -22,10 +22,10 @@
                   wx:key="{{ite}}"
                   wx:for-index="ind"
                   wx:if="{{item.Type === 1}}"
-                  data-id="{{ite.Id}}">
+                  data-id="{{ite.ChooseNum}}">
                 <view class="from-item">
                     <image class="from-radio-image"
-                           wx:if="{{item.check === ite.Id}}"></image>
+                           wx:if="{{item.check === ite.ChooseNum}}"></image>
                     <text class="from-radio-text">{{ite.Name}}</text>
                 </view>
             </view>
@@ -39,7 +39,7 @@
                   wx:key="{{ite}}"
                   wx:for-index="ind"
                   wx:if="{{item.Type === 2}}"
-                  data-id="{{ite.Id}}">
+                  data-id="{{ite.ChooseNum}}">
                 <view class="from-item">
                     <image class="from-radio-image"
                            wx:if="{{ite.check}}"></image>
@@ -49,7 +49,7 @@
             <picker
                 wx:if="{{item.Type === 3}}"
                 bindchange="handleCheck"
-                data-id="{{item.Id}}"
+                data-id="{{item.ChooseNum}}"
                 data-index="{{index}}"
                 data-type="{{item.Type}}"
                 mode="date"
@@ -73,21 +73,21 @@
                   wx:if="{{item.Type === 4}}"
                   wx:for-index="ind">
                 <view class="from-item"
-                      data-id="{{ite.Id}}"
+                      data-id="{{ite.ChooseNum}}"
                       data-type="{{item.Type}}"
                       data-index="{{index}}"
                       bindtap="handleCheck"
                       data-ans="{{ite.AnswerTags}}">
                     <image class="from-radio-image"
-                           wx:if="{{item.check === ite.Id}}"></image>
+                           wx:if="{{item.check === ite.ChooseNum}}"></image>
                     <text class="from-radio-text">{{ite.Name}}</text>
                     <view class="arrow" wx:if="{{ite.AnswerTags.length}}"></view>
                 </view>
                 <view class="from-select"
-                    wx:if="{{item.check === ite.Id}}">
+                    wx:if="{{item.check === ite.ChooseNum}}">
                     <view class="from-item"
                           bindtap="handleCheck"
-                          data-id="{{item.Id}}"
+                          data-id="{{item.ChooseNum}}"
                           data-index="{{index}}"
                           data-type="{{item.Type}}"
                           wx:for="{{ite.AnswerTags}}"
