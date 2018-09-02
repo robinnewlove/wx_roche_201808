@@ -8,11 +8,17 @@ import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import InputMixin               from 'mixins/input.mixin'
+import QueMixin                 from 'mixins/questionnaire.mixin'
 
 Page(Handle({
-    mixins: [InputMixin],
+    mixins: [InputMixin, QueMixin],
     data: {
-        arrData: []
+        arrData: [],
+        start: '1901-01-01',
+        end: '2018-09-01',
+        arrResult: [],
+        type: true,
+        arrParams: [],
     },
     // 生命周期回调—监听页面加载
     onLoad () {
@@ -25,14 +31,25 @@ Page(Handle({
             loading: true,
         };
         return Http(options).then((res) => {
+            let arrData = [...res];
+            arrData.pop();
             this.setData({
-                arrData: res || []
+                arrParams: res.slice(3),
+                arrData: arrData || []
             })
         }).catch((err) => {
             Toast.error(err);
         });
     },
+    // 提交下一步
     handleSubmit () {
-        Router.push('questionnaire_three_index');
+        let result = this.checkData(this.data.arrData);
+        if (!result.length) return;
+        return console.log(result);
+        Router.push('questionnaire_three_index', {
+            arrResult: this.data.arrResult,
+            arrData: this.data.arrParams,
+        });
     },
+
 }));

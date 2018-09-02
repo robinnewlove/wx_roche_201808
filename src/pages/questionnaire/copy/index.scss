@@ -6,9 +6,9 @@
     @extend %fdc;
     padding: 0 60rpx;
     height: 268rpx;
-    background: linear-gradient( #24a3da , #52c6dd);
+    border-bottom: 1px solid #efeff4;
     text{
-        color: #fff;
+        color: #28aeeb;
     }
 }
 .title{
@@ -16,7 +16,7 @@
     margin-bottom: 20rpx;
 }
 .prompt-text{
-    font-size: 30rpx;
+    font-size: 60rpx;
 }
 
 
@@ -38,12 +38,10 @@
     border-bottom: 1px solid #efeff4;
     .from-item{
         border-bottom: none;
+        height: 70rpx;
     }
     .from-select{
         padding-left: 70rpx;
-        .from-item{
-            height: 70rpx;
-        }
     }
 }
 .from-item{
@@ -82,7 +80,7 @@
     @extend %df1;
     font-size: 36rpx;
     color: #969696;
-    margin-left: 20rpx;
+    margin-left: 40rpx;
 }
 .arrow{
     width: 20rpx;

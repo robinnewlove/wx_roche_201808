@@ -1,0 +1,40 @@
+<view>
+    <view class="banner">
+        <text class="prompt-text">是否有以下</text>
+        <view class="prompt">
+            <text class="prompt-text">确诊的慢性并发症</text>
+            <text class="explain-text">(复选)</text>
+        </view>
+    </view>
+    <view class="from-wrap">
+        <view class="from-select">
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">糖尿病肾病</text>
+            </view>
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">糖尿病视网膜病</text>
+            </view>
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">糖尿病足病</text>
+            </view>
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">糖尿病神经病变</text>
+            </view>
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">糖尿病心脑血管病</text>
+            </view>
+            <view class="from-item">
+                <image class="from-radio-image"></image>
+                <text class="from-radio-text">其它</text>
+            </view>
+        </view>
+        <view class="form-button">
+            <text class="form-button-text">完成</text>
+        </view>
+    </view>
+</view>

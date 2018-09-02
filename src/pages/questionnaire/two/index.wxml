@@ -14,27 +14,54 @@
                 >{{index + 1}}.{{item.Name}}</text>
             </view>
             <view class="from-select"
+                  bindtap="handleCheck"
+                  data-type="{{item.Type}}"
+                  data-index="{{index}}"
                   wx:for="{{item.Answers}}"
                   wx:for-item="ite"
-                  wx:key="ite"
+                  wx:key="{{ite}}"
                   wx:for-index="ind"
-                  wx:if="{{item.Type === 1}}">
+                  wx:if="{{item.Type === 1}}"
+                  data-id="{{ite.Id}}">
                 <view class="from-item">
-                    <image class="from-radio-image"></image>
+                    <image class="from-radio-image"
+                           wx:if="{{item.check === ite.Id}}"></image>
+                    <text class="from-radio-text">{{ite.Name}}</text>
+                </view>
+            </view>
+            <view class="from-select"
+                  bindtap="handleCheck"
+                  data-type="{{item.Type}}"
+                  data-index="{{index}}"
+                  data-ind="{{ind}}"
+                  wx:for="{{item.Answers}}"
+                  wx:for-item="ite"
+                  wx:key="{{ite}}"
+                  wx:for-index="ind"
+                  wx:if="{{item.Type === 2}}"
+                  data-id="{{ite.Id}}">
+                <view class="from-item">
+                    <image class="from-radio-image"
+                           wx:if="{{ite.check}}"></image>
                     <text class="from-radio-text">{{ite.Name}}</text>
                 </view>
             </view>
             <picker
                 wx:if="{{item.Type === 3}}"
-                bindchange="bindChange"
-                data-obj="objInput"
-                data-key="Birthday"
+                bindchange="handleCheck"
+                data-id="{{item.Id}}"
+                data-index="{{index}}"
+                data-type="{{item.Type}}"
                 mode="date"
                 end="{{end}}"
                 start="{{start}}">
                 <view class="from-item">
                     <view class="from-value">
-                        <input type="text" disabled placeholder="请选择您的确诊时间"/>
+                        <input
+                            type="text"
+                            disabled
+                            value="{{item.check}}"
+                            placeholder="请选择您的确诊时间"/>
                     </view>
                     <view class="arrow"></view>
                 </view>
@@ -45,18 +72,33 @@
                   wx:key="ite"
                   wx:if="{{item.Type === 4}}"
                   wx:for-index="ind">
-                <view class="from-item">
-                    <image class="from-radio-image"></image>
+                <view class="from-item"
+                      data-id="{{ite.Id}}"
+                      data-type="{{item.Type}}"
+                      data-index="{{index}}"
+                      bindtap="handleCheck"
+                      data-ans="{{ite.AnswerTags}}">
+                    <image class="from-radio-image"
+                           wx:if="{{item.check === ite.Id}}"></image>
                     <text class="from-radio-text">{{ite.Name}}</text>
                     <view class="arrow" wx:if="{{ite.AnswerTags.length}}"></view>
                 </view>
-                <view class="from-select">
+                <view class="from-select"
+                    wx:if="{{item.check === ite.Id}}">
                     <view class="from-item"
+                          bindtap="handleCheck"
+                          data-id="{{item.Id}}"
+                          data-index="{{index}}"
+                          data-type="{{item.Type}}"
                           wx:for="{{ite.AnswerTags}}"
                           wx:for-item="tag"
                           wx:key="tag"
-                          wx:for-index="i">
-                        <image class="from-radio-image"></image>
+                          wx:for-index="i"
+                          data-tagindex="{{ind}}"
+                          data-tagid="{{tag.Id}}"
+                          data-tag="{{tag.Tag}}">
+                        <image class="from-radio-image"
+                               wx:if="{{ite.check === tag.Id}}"></image>
                         <text class="from-radio-text">{{tag.Tag}}</text>
                     </view>
                 </view>
