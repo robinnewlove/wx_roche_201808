@@ -3,25 +3,23 @@ import './index.json'
 import './index.scss'
 import './index.wxml'
 
-//获取应用实例
-const app = getApp()
+import Http                     from 'plugins/http.plugin'
+import Toast                    from 'plugins/toast.plugin'
+import Router                   from 'plugins/router.plugin'
+import Handle                   from 'mixins/mixin.handle'
+import InputMixin               from 'mixins/input.mixin'
+import Data                     from 'utils/data.util'
+import { formatData }           from 'wow-cool/lib/date.lib'
 
-Page({
+Page(Handle({
+    mixins: [InputMixin],
     data: {
-        motto: 'Hello World',
-        userInfo: {},
-        hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+
     },
-    //事件处理函数
-    bindViewTap: function() {
-        wx.navigateTo({
-            url: '../logs/logs'
-        })
+    onLoad () {
+
     },
-    onLoad: function () {
-    },
-    getUserInfo: function(e) {
+    getUserInfo (e) {
 
     }
-})
+}));
