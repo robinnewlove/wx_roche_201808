@@ -7,19 +7,36 @@ import Auth                     from 'plugins/auth.plugin'
 import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
+import Handle                   from 'mixins/mixin.handle'
 
 //获取应用实例
 const app = getApp();
 
 // Page(Object) 函数用来注册一个页面。接受一个 Object 类型参数，其指定页面的初始数据、生命周期函数、事件处理函数等。
-Page({
+Page(Handle({
     // 页面的初始数据
     data: {
-        userInfo: {}
+        userInfo: {},
+        objUser: {},
     },
     // 生命周期回调—监听页面加载
     onLoad () {
-        Router.push('questionnaire_one_index');
+        this.getIndexSugar();
+    },
+    // 首页个人血糖基本信息
+    getIndexSugar () {
+        let options = {
+            url: 'RocheApi/GetIndexSugar',
+            loading: true,
+        };
+        return Http(options).then((res) => {
+            console.log(res)
+            this.setData({
+                objUser: res || {},
+            })
+        }).catch((err) => {
+            Toast.error(err);
+        });
     },
     // 获取用户信息
     getUserInfo () {
@@ -72,4 +89,4 @@ Page({
     onTabItemTap () {
 
     },
-});
+}));
