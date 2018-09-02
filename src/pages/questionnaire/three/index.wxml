@@ -1,8 +1,10 @@
 <view>
     <view class="banner">
-        <text class="title">第二步</text>
-        <text class="prompt-text">回答3个相关问题</text>
-        <text class="prompt-text">即可获得您的专属测糖计划</text>
+        <text class="prompt-text">是否有以下</text>
+        <view class="prompt">
+            <text class="prompt-text">确诊的慢性并发症</text>
+            <text class="explain-text">(复选)</text>
+        </view>
     </view>
     <view class="from-wrap">
         <view wx:for="{{arrData}}"
@@ -33,7 +35,7 @@
         </view>
         <view class="form-button"
               bindtap="handleSubmit">
-            <text class="form-button-text">下一步</text>
+            <text class="form-button-text">完成</text>
         </view>
     </view>
 </view>
