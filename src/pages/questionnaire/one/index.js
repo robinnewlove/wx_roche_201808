@@ -5,53 +5,55 @@ import './index.wxml'
 
 import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
+import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import InputMixin               from 'mixins/input.mixin'
-
-//获取应用实例
-const app = getApp();
+import Data                     from 'utils/data.util'
 
 Page(Handle({
     mixins: [InputMixin],
     data: {
-        name: '',
-        sex: '1',
-        birthday: '',
+        objInput: {
+            Name: {
+                value: '',
+                use_check: [
+                    {
+                        nonempty: true,
+                        prompt: '请输入您的姓名'
+                    }
+                ]
+            },
+            Sex: {
+                value: 1,
+            },
+            Birthday: {
+                value: '',
+                use_check: [
+                    {
+                        nonempty: true,
+                        prompt: '请输入您的出生年月'
+                    }
+                ]
+            }
+        },
         start: '1901-01-01',
         end: '2018-09-01',
     },
-    // 生命周期回调—监听页面加载
-    onLoad () {
-        this.getArchives();
-    },
-    // 获取文档
-    getArchives () {
-        let options = {
-            url: 'RocheApi/GetArchives',
-            loading: true,
-        };
-        return Http(options).then((res) => {
-            console.log(res)
-        }).catch((err) => {
-            Toast.error(err);
-        });
-    },
+    // 提交下一步
     handleSubmit () {
+        if (Data.check(this.data.objInput)) return;
         this.setUserInfo();
     },
     // 设置用户信息
     setUserInfo () {
+        let data = Data.filter(this.data.objInput);
         let options = {
             url: 'RocheApi/SetUserInfo',
             loading: true,
-            data: {
-                Name: this.data.name,
-                Sex: this.data.birthday,
-                Birthday: this.data.birthday,
-            }
+            data
         };
-        return Http(options).then((res) => {
-            console.log(res)
+        return Http(options).then(() => {
+            Router.push('questionnaire_two_index')
         }).catch((err) => {
             Toast.error(err);
         });

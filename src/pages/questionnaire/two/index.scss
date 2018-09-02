@@ -38,10 +38,12 @@
     border-bottom: 1px solid #efeff4;
     .from-item{
         border-bottom: none;
-        height: 70rpx;
     }
     .from-select{
         padding-left: 70rpx;
+        .from-item{
+            height: 70rpx;
+        }
     }
 }
 .from-item{

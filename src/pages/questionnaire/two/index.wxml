@@ -5,77 +5,65 @@
         <text class="prompt-text">即可获得您的专属测糖计划</text>
     </view>
     <view class="from-wrap">
-        <view class="title-wrap">
-            <text class="title-text">1.您的糖尿病类型</text>
-        </view>
-        <view class="from-select">
-            <view class="from-item">
-                <image class="from-radio-image"></image>
-                <text class="from-radio-text">1型糖尿病</text>
+        <view wx:for="{{arrData}}"
+              wx:for-item="item"
+              wx:key="item"
+              wx:for-index="index">
+            <view class="title-wrap">
+                <text class="title-text"
+                >{{index + 1}}.{{item.Name}}</text>
             </view>
-            <view class="from-item">
-                <image class="from-radio-image"></image>
-                <text class="from-radio-text">2型糖尿病</text>
-            </view>
-            <view class="from-item">
-                <image class="from-radio-image"></image>
-                <text class="from-radio-text">妊娠糖尿病</text>
-            </view>
-            <view class="from-item">
-                <image class="from-radio-image"></image>
-                <text class="from-radio-text">其他类型糖尿病</text>
-            </view>
-        </view>
-        <view class="title-wrap">
-            <text class="title-text">2.您的糖尿病确诊时间为</text>
-        </view>
-        <view class="from-item">
-            <view class="from-value">
-                <input type="text" placeholder="请选择您的确诊时间"/>
-            </view>
-            <view class="arrow"></view>
-        </view>
-        <view class="title-wrap">
-            <text class="title-text">3.您当前的治疗方案</text>
-        </view>
-        <view class="from-select">
-            <view class="from-item">
-                <image class="from-radio-image"></image>
-                <text class="from-radio-text">生活方式调整</text>
-            </view>
-            <view class="from-item">
-                <image class="from-radio-image"></image>
-                <text class="from-radio-text">口服降糖药</text>
-            </view>
-            <view class="from-item">
-                <image class="from-radio-image"></image>
-                <text class="from-radio-text">胰岛素</text>
-                <view class="arrow"></view>
-            </view>
-            <view class="from-item-select">
+            <view class="from-select"
+                  wx:for="{{item.Answers}}"
+                  wx:for-item="ite"
+                  wx:key="ite"
+                  wx:for-index="ind"
+                  wx:if="{{item.Type === 1}}">
                 <view class="from-item">
                     <image class="from-radio-image"></image>
-                    <text class="from-radio-text">口服降糖药+胰岛素</text>
+                    <text class="from-radio-text">{{ite.Name}}</text>
+                </view>
+            </view>
+            <picker
+                wx:if="{{item.Type === 3}}"
+                bindchange="bindChange"
+                data-obj="objInput"
+                data-key="Birthday"
+                mode="date"
+                end="{{end}}"
+                start="{{start}}">
+                <view class="from-item">
+                    <view class="from-value">
+                        <input type="text" disabled placeholder="请选择您的确诊时间"/>
+                    </view>
                     <view class="arrow"></view>
                 </view>
+            </picker>
+            <view class="from-item-select"
+                  wx:for="{{item.Answers}}"
+                  wx:for-item="ite"
+                  wx:key="ite"
+                  wx:if="{{item.Type === 4}}"
+                  wx:for-index="ind">
+                <view class="from-item">
+                    <image class="from-radio-image"></image>
+                    <text class="from-radio-text">{{ite.Name}}</text>
+                    <view class="arrow" wx:if="{{ite.AnswerTags.length}}"></view>
+                </view>
                 <view class="from-select">
-                    <view class="from-item">
+                    <view class="from-item"
+                          wx:for="{{ite.AnswerTags}}"
+                          wx:for-item="tag"
+                          wx:key="tag"
+                          wx:for-index="i">
                         <image class="from-radio-image"></image>
-                        <text class="from-radio-text">生活方式调整</text>
-                    </view>
-                    <view class="from-item">
-                        <image class="from-radio-image"></image>
-                        <text class="from-radio-text">口服降糖药</text>
-                    </view>
-                    <view class="from-item">
-                        <image class="from-radio-image"></image>
-                        <text class="from-radio-text">胰岛素</text>
-                        <view class="arrow"></view>
+                        <text class="from-radio-text">{{tag.Tag}}</text>
                     </view>
                 </view>
             </view>
         </view>
-        <view class="form-button">
+        <view class="form-button"
+              bindtap="handleSubmit">
             <text class="form-button-text">下一步</text>
         </view>
     </view>

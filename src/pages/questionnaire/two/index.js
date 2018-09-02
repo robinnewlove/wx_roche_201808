@@ -3,25 +3,36 @@ import './index.json'
 import './index.scss'
 import './index.wxml'
 
-//获取应用实例
-const app = getApp()
+import Http                     from 'plugins/http.plugin'
+import Toast                    from 'plugins/toast.plugin'
+import Router                   from 'plugins/router.plugin'
+import Handle                   from 'mixins/mixin.handle'
+import InputMixin               from 'mixins/input.mixin'
 
-Page({
+Page(Handle({
+    mixins: [InputMixin],
     data: {
-        motto: 'Hello World',
-        userInfo: {},
-        hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+        arrData: []
     },
-    //事件处理函数
-    bindViewTap: function() {
-        wx.navigateTo({
-            url: '../logs/logs'
-        })
+    // 生命周期回调—监听页面加载
+    onLoad () {
+        this.getArchives();
     },
-    onLoad: function () {
+    // 获取文档
+    getArchives () {
+        let options = {
+            url: 'RocheApi/GetArchives',
+            loading: true,
+        };
+        return Http(options).then((res) => {
+            this.setData({
+                arrData: res || []
+            })
+        }).catch((err) => {
+            Toast.error(err);
+        });
     },
-    getUserInfo: function(e) {
-
-    }
-})
+    handleSubmit () {
+        Router.push('questionnaire_three_index');
+    },
+}));

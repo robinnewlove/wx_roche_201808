@@ -12,28 +12,30 @@
             <view class="from-value">
                 <input
                     bindinput="bindInput"
-                    data-key="name"
+                    data-obj="objInput"
+                    data-key="Name"
                     type="text"
-                    value="{{name}}"
-                    placeholder="请输入"/>
+                    minlength="20"
+                    value="{{objInput.Name.value}}"
+                    placeholder="请输入您的姓名"/>
             </view>
         </view>
-        <text>{{name}}</text>
-        <text>{{sex}}</text>
         <view class="from-item">
             <label class="from-label">性别</label>
             <view class="from-value"></view>
             <view class="from-radio">
                 <view class="from-radio-item"
                       bindtap="bindTap"
-                      data-key="sex"
+                      data-obj="objInput"
+                      data-key="Sex"
                       data-value="1">
                     <image class="from-radio-image"></image>
                     <text class="from-radio-text">男</text>
                 </view>
                 <view class="from-radio-item"
                       bindtap="bindTap"
-                      data-key="sex"
+                      data-obj="objInput"
+                      data-key="Sex"
                       data-value="0">
                     <image class="from-radio-image"></image>
                     <text class="from-radio-text">女</text>
@@ -42,7 +44,8 @@
         </view>
         <picker
             bindchange="bindChange"
-            data-key="birthday"
+            data-obj="objInput"
+            data-key="Birthday"
             mode="date"
             end="{{end}}"
             start="{{start}}">
@@ -51,9 +54,9 @@
                 <view class="from-value">
                     <input
                         type="text"
-                        value="{{birthday}}"
+                        value="{{objInput.Birthday.value}}"
                         disabled
-                        placeholder="请输入"/>
+                        placeholder="请输入您的出生年月"/>
                 </view>
             </view>
         </picker>

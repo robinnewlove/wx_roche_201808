@@ -5,10 +5,24 @@ const handle = function (e) {
         currentTarget
     } = e;
     let key = currentTarget.dataset.key;
+    let obj = currentTarget.dataset.obj;
     let value = detail.value || currentTarget.dataset.value || '';
-    this.setData({
-        [key]: value
-    });
+    if (obj) {
+        this.setData({
+            [obj]: {
+                ...this.data[obj],
+                [key]: {
+                    ...this.data[obj][key],
+                    value,
+                },
+            }
+        });
+    } else {
+        this.setData({
+            [key]: value
+        });
+    }
+
 };
 
 export default {
