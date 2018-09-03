@@ -1,7 +1,8 @@
 {
     "pages": [
-        "pages/record/index",
+        "pages/result/index",
         "pages/mine/index",
+        "pages/record/index",
         "pages/authorization/index",
         "pages/home/index",
         "pages/mine/info/index",
@@ -12,8 +13,7 @@
         "pages/questionnaire/one/index",
         "pages/questionnaire/programme/index",
         "pages/questionnaire/three/index",
-        "pages/questionnaire/two/index",
-        "pages/result/index"
+        "pages/questionnaire/two/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

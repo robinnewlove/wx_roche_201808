@@ -41,8 +41,8 @@ Page(Handle({
     // 个人中心血糖基本信息
     getUserSugar () {
         let options = {
-            // url: 'RocheApi/GetUserSugar',
-            url: 'RocheApi/GetIndexSugar',
+            url: 'RocheApi/GetUserSugar',
+            // url: 'RocheApi/GetIndexSugar',
             loading: true,
         };
         return Http(options).then((res) => {
