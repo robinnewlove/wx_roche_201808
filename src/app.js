@@ -25,6 +25,7 @@ App({
                 },
                 loading: true,
             };
+            console.log(result)
             return Http(options);
         }).then((result) => {
             return Auth.updateToken(result);

@@ -1,10 +1,10 @@
 {
     "pages": [
+        "pages/home/index",
         "pages/result/index",
         "pages/mine/index",
         "pages/record/index",
         "pages/authorization/index",
-        "pages/home/index",
         "pages/mine/info/index",
         "pages/mine/introduce/index",
         "pages/mine/programme/index",

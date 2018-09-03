@@ -18,7 +18,48 @@ Page(Handle({
     },
     // 生命周期回调—监听页面加载
     onLoad () {
-        this.getIndexSugar();
+        // this.userLogin();
+    },
+    // 生命周期回调—监听页面显示
+    onShow () {
+        Auth.getToken().then((info) => {
+            this.firFun(info);
+        }).catch(() => {
+            this.userLogin();
+        });
+    },
+    // 用户登录
+    userLogin () {
+        Auth.login().then((result) => {
+            let options = {
+                url: 'WechatApi/UserLogin',
+                data: {
+                    code: result,
+                },
+                loading: true,
+            };
+            return Http(options);
+        }).then((result) => {
+            return Auth.updateToken(result);
+        }).then((info) => {
+            this.firFun(info);
+        }).catch((err) => {
+            Toast.error(err);
+        })
+    },
+    // 用户登录执行的函数
+    firFun (info) {
+        let { IsArchives } = info;
+        // if (AccessToken || OpenId) throw 'not login';
+        // 获取用户数据
+        this.getUserInfo().then(() => {
+            if (!IsArchives) return Router.push('questionnaire_one_index');
+            this.getIndexSugar();
+        }).catch((err) => {
+            let { code } = err;
+            if (code === -1) return Router.push('authorization_index');
+            Toast.error(err);
+        });
     },
     // 首页个人血糖基本信息
     getIndexSugar () {
@@ -36,15 +77,13 @@ Page(Handle({
     },
     // 获取用户信息
     getUserInfo () {
-        Auth.getUserInfo().then((info) => {
+        return Auth.getUserInfo().then((info) => {
             // 用户已经授权
             let {userInfo} = info;
             // console.log('用户信息', userInfo);
             this.setData({
                 userInfo: userInfo,
             })
-        }).catch(() => {
-            Router.push('authorization_index')
         })
     },
     // 跳转
@@ -53,10 +92,6 @@ Page(Handle({
         let url = currentTarget.dataset.url;
         let params = currentTarget.dataset.params;
         if (url) Router.push(url, params);
-    },
-    // 生命周期回调—监听页面显示
-    onShow () {
-        this.getUserInfo();
     },
     // 生命周期回调—监听页面初次渲染完成
     onReady () {

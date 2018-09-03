@@ -24,7 +24,7 @@ export default {
                 userToken = user;
             }).finally(() => {
                 wx.setStorageSync($USER_TOKEN, userToken);
-                resolve();
+                resolve(userToken);
             });
         })
     },
@@ -53,12 +53,12 @@ export default {
                         resolve(res);
                     },
                     fail: err => {
-                        reject(err)
+                        reject({code: -1, errMsg: 'user no auth'})
                     }
                 })
             },
             fail: err => {
-                reject(err)
+                reject({code: -1, errMsg: 'user no auth'})
             }
         });
     }),

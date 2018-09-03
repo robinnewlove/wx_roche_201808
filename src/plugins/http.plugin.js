@@ -36,7 +36,6 @@ class Http {
                     data: this.data,
                     method: this.method,
                     success: (response) => {
-                        this._log('请求返回', response);
                         let {
                             data,
                             errMsg,
@@ -55,6 +54,7 @@ class Http {
                         if (Status !== 0) {
                             return reject(Message);
                         }
+                        this._log('请求返回', Data);
                         resolve(Data);
                     },
                     fail: (error) => {
