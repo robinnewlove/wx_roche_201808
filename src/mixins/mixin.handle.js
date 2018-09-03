@@ -25,6 +25,5 @@ export default (options) => {
             ...result.data,
         },
     };
-    console.log(result);
     return result;
 }

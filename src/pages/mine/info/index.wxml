@@ -14,9 +14,9 @@
                     data-obj="objInput"
                     data-key="Height"
                     type="text"
-                    minlength="20"
+                    minlength="5"
                     value="{{objInput.Height.value}}"
-                    placeholder="请输入身高"/>
+                    placeholder="请输入您的身高"/>
             </view>
             <text class="from-unit">cm</text>
         </view>
@@ -24,11 +24,11 @@
             <label class="from-label">体重</label>
             <view class="from-value">
                 <input
-                    type="text"
+                    type="digit"
                     bindinput="bindInput"
                     data-obj="objInput"
                     data-key="Weight"
-                    minlength="20"
+                    minlength="5"
                     value="{{objInput.Weight.value}}"
                     placeholder="请输入您的体重"/>
             </view>
@@ -38,11 +38,11 @@
             <label class="from-label">手机</label>
             <view class="from-value">
                 <input
-                    type="text"
+                    type="number"
                     bindinput="bindInput"
                     data-obj="objInput"
                     data-key="Mobile"
-                    minlength="20"
+                    minlength="11"
                     value="{{objInput.Mobile.value}}"
                     placeholder="请输入您的手机号"/>
             </view>
@@ -55,7 +55,7 @@
                     bindinput="bindInput"
                     data-obj="objInput"
                     data-key="RedProtein"
-                    minlength="20"
+                    minlength="6"
                     value="{{objInput.RedProtein.value}}"
                     placeholder="请输入糖化血红蛋白值"/>
             </view>
@@ -135,7 +135,8 @@
                 </view>
             </view>
         </picker>
-        <view class="form-button">
+        <view class="form-button"
+              bindtap="handleSubmit">
             <text class="form-button-text">下一步</text>
         </view>
     </view>

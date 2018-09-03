@@ -43,7 +43,7 @@ Page(Handle({
                 use_check: [
                     {
                         nonempty: true,
-                        prompt: '请输入您的出生年月'
+                        prompt: '请输入您的身高'
                     }
                 ]
             },
@@ -52,7 +52,7 @@ Page(Handle({
                 use_check: [
                     {
                         nonempty: true,
-                        prompt: '请输入您的出生年月'
+                        prompt: '请输入您的体重'
                     }
                 ]
             },
@@ -61,25 +61,19 @@ Page(Handle({
                 use_check: [
                     {
                         nonempty: true,
-                        prompt: '请输入您的出生年月'
+                        prompt: '请输入您的手机号'
                     }
                 ]
             },
             LowSugar: {
-                value: '',
-                use_check: [
-                    {
-                        nonempty: true,
-                        prompt: '请输入您的出生年月'
-                    }
-                ]
+                value: 1,
             },
             RedProtein: {
                 value: '',
                 use_check: [
                     {
                         nonempty: true,
-                        prompt: '请输入您的出生年月'
+                        prompt: '请输入糖化血红蛋白值'
                     }
                 ]
             },
@@ -100,9 +94,12 @@ Page(Handle({
     setUserInfo () {
         let data = Data.filter(this.data.objInput);
         let IsMember = this.data.$params.IsMember;
-        IsMember && (data.IsMember = IsMember);
+        data.IsMember = IsMember ? 1 : 0;
         this.getOrSetUserInfo(data).then((res) => {
-            console.log(res);
+            Toast.error('设置成功');
+            setTimeout(() => {
+                Router.pop();
+            }, 2000);
         }).catch((err) => {
             Toast.error(err);
         });
@@ -110,7 +107,11 @@ Page(Handle({
     // 获取用户信息
     fetchUserInfo () {
         this.getOrSetUserInfo().then((res) => {
-            console.log(res);
+            res = res || {};
+            if (res.Brithday) {
+                res.Brithday = res.Brithday.replace(/[^0-9]/ig, '');
+                res.Brithday = formatData('yyyy-MM-dd', new Date(+res.Brithday));
+            }
             Data.assignment(this, res, this.data.objInput, 'objInput')
         }).catch((err) => {
             Toast.error(err);
