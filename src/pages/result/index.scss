@@ -91,16 +91,21 @@
 }
 .calendar-inner{
     //box-shadow: 0 20rpx 0 1rpx rgba(59,221,242,.1);
+}
+.calendar-con{
     @extend %df;
-    flex-wrap: wrap;
+    height: 60rpx;
+    &:nth-child(odd){
+        background-color: #f7f7f9;
+    }
 }
 .calendar-item{
     @extend %pr;
     @extend %df;
+    @extend %df1;
     @extend %aic;
     @extend %jcc;
     height: 60rpx;
-    width: 90rpx;
     &.color-f7f7f9{
         background-color: #f7f7f9;
     }

@@ -8,41 +8,55 @@ import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import RouterMixin              from 'mixins/router.mixin'
+import Calendar, {getMonthDay}  from 'utils/calendar.util'
+import { formatData }           from 'wow-cool/lib/date.lib'
 
 Page(Handle({
     mixins: [RouterMixin],
     data: {
-        objInput: {
-            TestDate: {
-                label: '测量日期',
-                placeholder: '请输入测量日期',
-                value: '',
-            },
-            TestTime: {
-                label: '测量时间',
-                placeholder: '请输入测量时间',
-                value: '',
-            },
-            Bloodsugar: {
-                label: '最近的血红蛋白值',
-                placeholder: '请输入血红蛋白值',
-                value: '',
-            }
-        }
+        resultData: [],
+        preDay: 0,
+        nextDay: 0,
+        months: 0,
     },
     onLoad () {
-
+        this.getCalendar();
+        this.getRecommendSugar();
     },
-
+    // 获取页面数据
+    getCalendar() {
+        let {
+            preDay,
+            resultData,
+            nextDay,
+            months,
+        } = Calendar();
+        this.setData({
+            preDay,
+            resultData,
+            nextDay,
+            months,
+        })
+    },
     // 保存提交
     handleSubmit() {
 
     },
-    // 提交设置
-    setTestSugar() {
+    getRecommendSugar() {
+        let {
+            sTime,
+            eTime,
+        } = getMonthDay(new Date().getMonth());
+        let Stime = formatData('yyyy-MM-dd', new Date(sTime));
+        let Etime = formatData('yyyy-MM-dd', new Date(eTime));
         let options = {
-            url: 'RocheApi/SetTestSugar',
+            url: 'RocheApi/GetRecommendSugar',
             loading: true,
+            data: {
+                Stime,
+                Etime,
+                Type:1,
+            }
         };
         return Http(options).then((res) => {
             this.setData({
@@ -51,5 +65,10 @@ Page(Handle({
         }).catch((err) => {
             Toast.error(err);
         });
+    },
+    handleJump (e) {
+        let { currentTarget } = e;
+        let url = currentTarget.dataset.url;
+        url ? Router.push(url) : Router.root();
     }
 }));
