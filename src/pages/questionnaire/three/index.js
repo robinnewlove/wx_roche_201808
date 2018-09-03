@@ -18,7 +18,6 @@ Page(Handle({
     },
     onLoad (options) {
         let params = Router.getParams(options);
-        console.log(params)
         let {arrData, arrResult} = params;
         this.setData({
             arrData,
@@ -38,7 +37,11 @@ Page(Handle({
             data.forEach((item) => {
                 item.OpenId = OpenId
             });
-            this.setArchives(data);
+            return this.setArchives(data);
+        }).then(() => {
+            return Auth.updateToken({IsArchives: true});
+        }).then(() => {
+            Router.push('questionnaire_programme_index');
         }).catch((err) => {
             Toast.error(err);
         });
@@ -51,10 +54,6 @@ Page(Handle({
             data,
             useOpenId: false,
         };
-        return Http(options).then((res) => {
-            Router.push('questionnaire_programme_index', {}, true);
-        }).catch((err) => {
-            Toast.error(err);
-        });
+        return Http(options);
     }
 }));

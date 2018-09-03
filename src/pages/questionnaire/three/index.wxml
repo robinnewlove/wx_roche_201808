@@ -28,7 +28,7 @@
                   data-id="{{ite.ChooseNum}}">
                 <view class="from-item">
                     <image class="from-radio-image"
-                           wx:if="{{ite.check}}"></image>
+                           src="{{ite.check ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
                     <text class="from-radio-text">{{ite.Name}}</text>
                 </view>
             </view>
