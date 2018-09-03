@@ -112,6 +112,7 @@ Page(Handle({
                 res.Brithday = res.Brithday.replace(/[^0-9]/ig, '');
                 res.Brithday = formatData('yyyy-MM-dd', new Date(+res.Brithday));
             }
+            res.LowSugar = res.LowSugar ? 1 : 0;
             Data.assignment(this, res, this.data.objInput, 'objInput')
         }).catch((err) => {
             Toast.error(err);

@@ -1,6 +1,10 @@
 <view>
     <view class="banner">
-        <image class="banner-image"></image>
+        <image class="banner-image"
+               src="../../../assets/images/grzx-header-banner.jpg"
+               mode="aspectFit"></image>
+        <text class="prompt-text">为了提供精准报告</text>
+        <text class="prompt-text">请完善以下个人信息</text>
     </view>
     <view class="from-wrap">
         <view class="title-wrap">
@@ -69,7 +73,9 @@
                       data-obj="objInput"
                       data-key="LowSugar"
                       data-value="1">
-                    <image class="from-radio-image"></image>
+                    <image class="from-radio-image"
+                           mode="aspectFit"
+                           src="{{objInput.LowSugar.value == 1 ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
                     <text class="from-radio-text">是</text>
                 </view>
                 <view class="from-radio-item"
@@ -77,7 +83,9 @@
                       data-obj="objInput"
                       data-key="LowSugar"
                       data-value="0">
-                    <image class="from-radio-image"></image>
+                    <image class="from-radio-image"
+                           mode="aspectFit"
+                           src="{{objInput.LowSugar.value == 0 ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
                     <text class="from-radio-text">否</text>
                 </view>
             </view>
@@ -104,7 +112,9 @@
                       data-obj="objInput"
                       data-key="Sex"
                       data-value="1">
-                    <image class="from-radio-image"></image>
+                    <image class="from-radio-image"
+                           mode="aspectFit"
+                           src="{{objInput.Sex.value == 1 ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
                     <text class="from-radio-text">男</text>
                 </view>
                 <view class="from-radio-item"
@@ -112,7 +122,9 @@
                       data-obj="objInput"
                       data-key="Sex"
                       data-value="0">
-                    <image class="from-radio-image"></image>
+                    <image class="from-radio-image"
+                           mode="aspectFit"
+                           src="{{objInput.Sex.value == 0 ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
                     <text class="from-radio-text">女</text>
                 </view>
             </view>

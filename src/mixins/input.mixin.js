@@ -8,14 +8,9 @@ const handle = function (e) {
     let obj = currentTarget.dataset.obj;
     let value = detail.value || currentTarget.dataset.value || '';
     if (obj) {
+        let sItem = `${obj}.${key}.value`;
         this.setData({
-            [obj]: {
-                ...this.data[obj],
-                [key]: {
-                    ...this.data[obj][key],
-                    value,
-                },
-            }
+            [sItem]: value
         });
     } else {
         this.setData({
