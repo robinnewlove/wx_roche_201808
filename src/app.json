@@ -1,8 +1,8 @@
 {
     "pages": [
+        "pages/mine/index",
         "pages/authorization/index",
         "pages/home/index",
-        "pages/mine/index",
         "pages/mine/info/index",
         "pages/mine/introduce/index",
         "pages/mine/programme/index",

@@ -12,6 +12,7 @@ export default (options) => {
     mixins.forEach((item) => {
         item.data && (data = {...data, ...item.data});
         options = {
+            ...options,
             ...item,
         }
     });
@@ -24,5 +25,6 @@ export default (options) => {
             ...result.data,
         },
     };
+    console.log(result);
     return result;
 }
