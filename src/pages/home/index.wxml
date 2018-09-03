@@ -53,7 +53,9 @@
                        mode="aspectFit" src="../../assets/images/home-icon-zxwz.png"></image>
                 <text class="plan-button-text">在线问诊</text>
             </view>
-            <view class="plan-button">
+            <view class="plan-button"
+                  data-url="record_index"
+                  bindtap="handleJump">
                 <image class="plan-button-icon"
                        mode="aspectFit" src="../../assets/images/home-icon-xtbg.png"></image>
                 <text class="plan-button-text">血糖报告</text>

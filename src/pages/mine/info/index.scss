@@ -9,6 +9,7 @@
     height: 268rpx;
     text{
         @extend %pr;
+        font-size: 36rpx;
         color: #2cbdf0;
     }
 }
@@ -18,9 +19,6 @@
     @extend %h100;
     @extend %l0;
     @extend %t0;
-}
-.prompt-text{
-    font-size: 30rpx;
 }
 
 .from-wrap{

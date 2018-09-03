@@ -47,11 +47,15 @@ Page(Handle({
             this.setData({
                 userInfo: userInfo,
             })
-        }).catch((err) => {
-            // 未授权
-            Toast.error(err);
+        }).catch(() => {
             Router.push('authorization_index')
         })
+    },
+    // 跳转
+    handleJump (e) {
+        let { currentTarget } = e;
+        let url = currentTarget.dataset.url;
+        if (url) Router.push(url);
     },
     // 生命周期回调—监听页面显示
     onShow () {
