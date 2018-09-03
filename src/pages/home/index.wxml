@@ -54,6 +54,7 @@
                 <text class="plan-button-text">在线问诊</text>
             </view>
             <view class="plan-button"
+                  data-params="objUser"
                   data-url="record_index"
                   bindtap="handleJump">
                 <image class="plan-button-icon"

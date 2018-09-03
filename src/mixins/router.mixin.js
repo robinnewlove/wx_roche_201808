@@ -11,5 +11,5 @@ export default {
         this.setData({
             $params: params,
         })
-    }
+    },
 }

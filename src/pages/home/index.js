@@ -9,9 +9,6 @@ import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 
-//获取应用实例
-const app = getApp();
-
 // Page(Object) 函数用来注册一个页面。接受一个 Object 类型参数，其指定页面的初始数据、生命周期函数、事件处理函数等。
 Page(Handle({
     // 页面的初始数据
@@ -30,7 +27,6 @@ Page(Handle({
             loading: true,
         };
         return Http(options).then((res) => {
-            console.log(res)
             this.setData({
                 objUser: res || {},
             })
@@ -55,7 +51,8 @@ Page(Handle({
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        if (url) Router.push(url);
+        let params = currentTarget.dataset.params;
+        if (url) Router.push(url, params);
     },
     // 生命周期回调—监听页面显示
     onShow () {

@@ -3,25 +3,18 @@ import './index.json'
 import './index.scss'
 import './index.wxml'
 
-//获取应用实例
-const app = getApp()
+import Http                     from 'plugins/http.plugin'
+import Toast                    from 'plugins/toast.plugin'
+import Router                   from 'plugins/router.plugin'
+import Handle                   from 'mixins/mixin.handle'
+import RouterMixin              from 'mixins/router.mixin'
 
-Page({
+Page(Handle({
+    mixins: [RouterMixin],
     data: {
-        motto: 'Hello World',
-        userInfo: {},
-        hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+
     },
-    //事件处理函数
-    bindViewTap: function() {
-        wx.navigateTo({
-            url: '../logs/logs'
-        })
-    },
-    onLoad: function () {
-    },
-    getUserInfo: function(e) {
+    onLoad () {
 
     }
-})
+}));
