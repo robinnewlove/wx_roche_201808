@@ -11,7 +11,7 @@ import InputMixin               from 'mixins/input.mixin'
 import RouterMixin              from 'mixins/router.mixin'
 import Data                     from 'utils/data.util'
 
-const arrTimeStep = ['早餐前', '早餐后', '午餐前', '午餐后', '晚餐前', '晚餐后', '空腹', '睡前'];
+const arrTimeStep = ['空腹', '早餐后', '午餐前', '午餐后', '晚餐前', '晚餐后', '睡前'];
 const arrRuler = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 Page(Handle({
@@ -67,7 +67,7 @@ Page(Handle({
         },
         arrRuler,
         arrTimeStep,
-        timeStep: '早餐前'
+        timeStep: '空腹'
     },
     onLoad () {
 

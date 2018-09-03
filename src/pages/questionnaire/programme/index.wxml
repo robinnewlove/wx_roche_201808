@@ -1,25 +1,28 @@
 <view>
     <view class="header">
-        <text class="header-text">坚持30天养成测糖好习惯</text>
+        <text class="header-text">坚持{{DayCount}}天养成测糖好习惯</text>
         <text class="header-text">控糖结果看的见</text>
     </view>
     <view class="prompt">
         <text class="prompt-text">以下是推荐给您的专属测糖方案</text>
-        <text class="prompt-time">每周3天，每天3次</text>
+        <text class="prompt-time">{{Desc}}</text>
         <text class="prompt-text">（空腹、早餐后、晚餐后）</text>
     </view>
     <view class="table">
         <view class="tr">
             <view class="td td-0-0"><text class="text">本周</text></view>
-            <view class="td td-0-1"><text class="text">空腹</text></view>
-            <view class="td td-0-1"><text class="text">空腹</text></view>
-            <view class="td td-0-1"><text class="text">空腹</text></view>
-            <view class="td td-0-1"><text class="text">空腹</text></view>
-            <view class="td td-0-1"><text class="text">空腹</text></view>
-            <view class="td td-0-1"><text class="text">空腹</text></view>
-            <view class="td td-0-1"><text class="text">空腹</text></view>
+            <view class="td td-0-1"
+                  wx:for="{{arrTimeStep}}"
+                  wx:for-item="item"
+                  wx:for-index="index"
+                  wx:key="item"
+            ><text class="text">{{item}}</text></view>
         </view>
-        <view class="tr">
+        <view class="tr"
+              wx:for="{{dayTime}}"
+              wx:for-item="item"
+              wx:for-index="index"
+              wx:key="item">
             <view class="td td-1-0"><text class="text">周一</text></view>
             <view class="td td-suc"><view class="status"><view class="status-spot"></view></view></view>
             <view class="td"><view class="status"></view></view>
@@ -29,16 +32,10 @@
             <view class="td"><view class="status"></view></view>
             <view class="td"><view class="status"></view></view>
         </view>
-        <view class="tr">
-            <view class="td td-1-0"><text class="text">周二</text></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
-        </view>
+
+
+        <!--<view class="td td-1-0"><text class="text">周一</text></view>-->
+        <!--<view class="td td-suc"><view class="status"><view class="status-spot"></view></view></view>-->
         <text class="table-prompt">*您也可以根据您的时间，调整测糖日，如改为每周二四六测糖</text>
     </view>
     <view class="button">
