@@ -58,6 +58,7 @@ Page(Handle({
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        if (url) Router.push(url);
+        let IsMember = this.data.objUser.IsMember;
+        if (url) Router.push(url, { IsMember });
     }
 }));

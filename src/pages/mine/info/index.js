@@ -8,11 +8,13 @@ import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import InputMixin               from 'mixins/input.mixin'
+import UserMixin                from 'mixins/user.mixin'
+import RouterMixin              from 'mixins/router.mixin'
 import Data                     from 'utils/data.util'
 import { formatData }           from 'wow-cool/lib/date.lib'
 
 Page(Handle({
-    mixins: [InputMixin],
+    mixins: [InputMixin, UserMixin, RouterMixin],
     data: {
         objInput: {
             Name: {
@@ -85,7 +87,8 @@ Page(Handle({
         start: '1901-01-01',
         end: formatData('yyyy-MM-dd'),
     },
-    onLoad () {
+    onLoad (options) {
+        this.getParamsByUrl(options);
         this.fetchUserInfo();
     },
     // 提交下一步
@@ -96,12 +99,15 @@ Page(Handle({
     // 设置用户信息
     setUserInfo () {
         let data = Data.filter(this.data.objInput);
+        let IsMember = this.data.$params.IsMember;
+        IsMember && (data.IsMember = IsMember);
         this.getOrSetUserInfo(data).then((res) => {
             console.log(res);
         }).catch((err) => {
             Toast.error(err);
         });
     },
+    // 获取用户信息
     fetchUserInfo () {
         this.getOrSetUserInfo().then((res) => {
             console.log(res);
@@ -110,12 +116,4 @@ Page(Handle({
             Toast.error(err);
         });
     },
-    getOrSetUserInfo (data = {}) {
-        let options = {
-            url: 'RocheApi/SetUserInfo',
-            loading: true,
-            data
-        };
-        return Http(options);
-    }
 }));
