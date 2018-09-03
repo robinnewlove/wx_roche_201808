@@ -16,10 +16,6 @@ Page(Handle({
         userInfo: {},
         objUser: {},
     },
-    // 生命周期回调—监听页面加载
-    onLoad () {
-        // this.userLogin();
-    },
     // 生命周期回调—监听页面显示
     onShow () {
         Auth.getToken().then((info) => {

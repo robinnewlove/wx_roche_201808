@@ -1,6 +1,7 @@
 <view>
     <view class="banner">
-        <image class="banner-image"></image>
+        <image class="banner-image"
+               src="../../../assets/images/mfjd-one-header-banner.jpg"></image>
         <text class="title">第一步</text>
         <text class="prompt-text">我们需要您的一些基本信息</text>
         <text class="prompt-text">从而更好的为您服务</text>
@@ -29,7 +30,9 @@
                       data-obj="objInput"
                       data-key="Sex"
                       data-value="1">
-                    <image class="from-radio-image"></image>
+                    <image class="from-radio-image"
+                           mode="aspectFit"
+                           src="{{objInput.Sex.value == 1 ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
                     <text class="from-radio-text">男</text>
                 </view>
                 <view class="from-radio-item"
@@ -37,7 +40,9 @@
                       data-obj="objInput"
                       data-key="Sex"
                       data-value="0">
-                    <image class="from-radio-image"></image>
+                    <image class="from-radio-image"
+                           mode="aspectFit"
+                           src="{{objInput.Sex.value == 0 ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
                     <text class="from-radio-text">女</text>
                 </view>
             </view>
