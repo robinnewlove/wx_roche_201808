@@ -55,13 +55,11 @@ Page(Handle({
             data: {
                 Stime,
                 Etime,
-                Type:1,
+                Type: 2,
             }
         };
         return Http(options).then((res) => {
-            this.setData({
-                objUser: res || {},
-            })
+            console.log(res);
         }).catch((err) => {
             Toast.error(err);
         });
