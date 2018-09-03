@@ -23,10 +23,9 @@
             <text class="session-prompt">自然日内产生至少1笔单件商品实际付款金额在10元以上的订单（实际支付金额不包括券云钻、运费在内）则该日计为1个购物天数</text>
         </view>
     </view>
-    <view class="button">
-        <text class="button-text">我还没有购买过会员</text>
-    </view>
-    <view class="button">
-        <text class="button-text">我还没有购买过会员</text>
+    <view class="button"
+          bindtap="handleClick">
+        <text class="button-text"
+        >{{$params.IsMember ? '我已购买过会员，立即开通' : '我还没有购买过会员'}}</text>
     </view>
 </view>

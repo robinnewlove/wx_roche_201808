@@ -5,6 +5,7 @@
     @extend %oh;
     height: 774rpx;
     padding: 60rpx 60rpx 0;
+    margin-bottom: 80rpx;
     background: linear-gradient( #24a3da , #52c6dd);
     text{
         color: #fff;
@@ -36,7 +37,7 @@
     @extend %df;
     @extend %aic;
     @extend %jcc;
-    margin: 42rpx 60rpx 80rpx;
+    margin: 0 60rpx 40rpx;
     height: 80rpx;
     background: linear-gradient(to right, #39e2ee , #28aeeb);
     border-radius: 40rpx;

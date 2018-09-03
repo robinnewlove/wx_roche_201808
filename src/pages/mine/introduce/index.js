@@ -3,25 +3,33 @@ import './index.json'
 import './index.scss'
 import './index.wxml'
 
-//获取应用实例
-const app = getApp()
+import Http                     from 'plugins/http.plugin'
+import Toast                    from 'plugins/toast.plugin'
+import Handle                   from 'mixins/mixin.handle'
+import RouterMixin              from 'mixins/router.mixin'
 
-Page({
-    data: {
-        motto: 'Hello World',
-        userInfo: {},
-        hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo')
+Page(Handle({
+    mixins: [RouterMixin],
+    onLoad (options) {
+        this.getParamsByUrl(options);
     },
-    //事件处理函数
-    bindViewTap: function() {
-        wx.navigateTo({
-            url: '../logs/logs'
+    // 购买会员
+    handleClick () {
+        this.setMemberInfo();
+    },
+    // 购买会员
+    setMemberInfo () {
+        let options = {
+            url: 'RocheApi/SetMemberInfo',
+            data: {
+                code: 'abdd',
+            },
+            loading: true,
+        };
+        return Http(options).then((res) => {
+            console.log(res);
+        }).catch((err) => {
+            Toast.error(err);
         })
-    },
-    onLoad: function () {
-    },
-    getUserInfo: function(e) {
-
     }
-})
+}));
