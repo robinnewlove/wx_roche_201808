@@ -48,7 +48,7 @@ Page(Handle({
         Router.push('questionnaire_three_index', {
             arrResult: result,
             arrData: this.data.arrParams,
-        }, true);
+        });
     },
 
 }));

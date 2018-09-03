@@ -25,7 +25,7 @@
                   data-id="{{ite.ChooseNum}}">
                 <view class="from-item">
                     <image class="from-radio-image"
-                           wx:if="{{item.check === ite.ChooseNum}}"></image>
+                           src="{{item.check === ite.ChooseNum ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
                     <text class="from-radio-text">{{ite.Name}}</text>
                 </view>
             </view>
@@ -42,7 +42,7 @@
                   data-id="{{ite.ChooseNum}}">
                 <view class="from-item">
                     <image class="from-radio-image"
-                           wx:if="{{ite.check}}"></image>
+                           src="{{item.check ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
                     <text class="from-radio-text">{{ite.Name}}</text>
                 </view>
             </view>
@@ -79,7 +79,7 @@
                       bindtap="handleCheck"
                       data-ans="{{ite.AnswerTags}}">
                     <image class="from-radio-image"
-                           wx:if="{{item.check === ite.ChooseNum}}"></image>
+                           src="{{item.check === ite.ChooseNum ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
                     <text class="from-radio-text">{{ite.Name}}</text>
                     <view class="arrow" wx:if="{{ite.AnswerTags.length}}"></view>
                 </view>
@@ -98,7 +98,7 @@
                           data-tagid="{{tag.Id}}"
                           data-tag="{{tag.Tag}}">
                         <image class="from-radio-image"
-                               wx:if="{{ite.check === tag.Id}}"></image>
+                               src="{{ite.check === tag.Id ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
                         <text class="from-radio-text">{{tag.Tag}}</text>
                     </view>
                 </view>
