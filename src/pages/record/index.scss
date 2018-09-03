@@ -34,16 +34,24 @@
 
 /*标尺*/
 .ruler{
-    @extend %df;
+    @extend %w100;
     @extend %bsb;
     height: 110rpx;
     background-color: #fff;
-    padding-top: 11rpx;
-    padding-left: 20rpx;
+    white-space: nowrap;
+    .rule-item:last-child,
+    .rule-item:first-child{
+        margin-left: 20rpx;
+    }
 }
 .rule-item{
+    @extend %dib;
     @extend %df;
     width: 100rpx;
+    .rule-item-sign,
+    .rule-item-value{
+        @extend %fl;
+    }
 }
 .rule-item-value{
     @extend %pr;
@@ -63,23 +71,27 @@
 .rule-item-sign{
     height: 13rpx;
     width: 1rpx;
-    background-color: #28aeed;
+    background-color: red;
     margin-right: 24rpx;
 }
 
 /*时间*/
 .time{
+    @extend %w100;
     @extend %bsb;
-    @extend %df;
     height: 157rpx;
-    //flex-wrap: wrap;
     background-color: #29aeeb;
-    padding: 0 30rpx;
+    white-space: nowrap;
+    .time-item:last-child,
+    .time-item:first-child{
+        margin-left: 30rpx;
+    }
 }
 .time-item{
     @extend %bsb;
     @extend %pr;
     @extend %h100;
+    @extend %dib;
     margin-right: 65rpx;
     padding-top: 42rpx;
 }
