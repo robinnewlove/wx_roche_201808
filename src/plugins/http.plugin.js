@@ -90,15 +90,11 @@ class Http {
 
 
 export default (options = {}) => {
-    let { loading } = options;
-    if (loading){
-        wx.showLoading();
-        wx.showNavigationBarLoading();
-    }
+    let { loading, navLoading } = options;
+    if (typeof loading === 'undefined' || loading) wx.showLoading();
+    if (typeof navLoading === 'undefined' || navLoading) wx.showNavigationBarLoading();
     return new Http(options).finally(() => {
-        if (loading){
-            wx.hideLoading();
-            wx.showNavigationBarLoading();
-        }
+        if (typeof loading === 'undefined' || loading) wx.hideLoading();
+        if (typeof navLoading === 'undefined' || navLoading) wx.hideNavigationBarLoading();
     })
 }

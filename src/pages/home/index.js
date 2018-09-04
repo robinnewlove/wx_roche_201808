@@ -22,6 +22,7 @@ Page(Handle({
         userInfo: {},
         objUser: {},
         show: false,
+        loading: true,
     },
     // 生命周期回调—监听页面显示
     onShow () {
@@ -48,11 +49,12 @@ Page(Handle({
     getIndexSugar () {
         let options = {
             url: 'RocheApi/GetIndexSugar',
-            loading: true,
+            loading: false,
         };
         return Http(options).then((res) => {
             this.setData({
                 objUser: res || {},
+                loading: false,
             })
         }).catch((err) => {
             Toast.error(err);
@@ -74,5 +76,9 @@ Page(Handle({
         let url = currentTarget.dataset.url;
         let params = currentTarget.dataset.params;
         if (url) Router.push(url, params);
+    },
+    // 当前是 tab 页时，点击 tab 时触发
+    onTabItemTap (e) {
+        console.log(e);
     },
 }));
