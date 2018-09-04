@@ -1,9 +1,6 @@
 {
     "pages": [
-        "pages/record/index",
         "pages/home/index",
-        "pages/result/index",
-        "pages/questionnaire/programme/index",
         "pages/authorization/index",
         "pages/mine/index",
         "pages/mine/info/index",
@@ -12,8 +9,11 @@
         "pages/mine/report/index",
         "pages/questionnaire/copy/index",
         "pages/questionnaire/one/index",
+        "pages/questionnaire/programme/index",
         "pages/questionnaire/three/index",
-        "pages/questionnaire/two/index"
+        "pages/questionnaire/two/index",
+        "pages/record/index",
+        "pages/result/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

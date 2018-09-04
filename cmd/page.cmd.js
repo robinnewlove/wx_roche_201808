@@ -2,6 +2,9 @@ import WowCool                          from 'wow-cool'
 import FsExtra                          from 'fs-extra'
 import Path                             from 'path'
 import log                              from './../tools/log.tool'
+import config                           from './../config/app.config'
+
+const { entry } = config;
 
 class Generate {
 
@@ -46,6 +49,12 @@ class Generate {
 
     start () {
         let AppJson = require('./../src/app.json');
+        let page = this.router[entry];
+        if (page) {
+            page = page.replace('/', '');
+            this.pages.splice(this.pages.indexOf(page), 1);
+            this.pages.unshift(page);
+        }
         AppJson.pages = this.pages;
         log(`即将生成app.json`);
         try {
