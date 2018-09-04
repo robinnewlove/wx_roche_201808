@@ -8,9 +8,11 @@ import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 
+const app = getApp();
+
 Page(Handle({
     data: {
-        userInfo: {},
+        userInfo: '',
         objUser: {},
         objView: [
             {
@@ -36,6 +38,9 @@ Page(Handle({
         ]
     },
     onShow () {
+        this.setData({
+            userInfo: app.globalData.userInfo,
+        });
         this.getUserSugar();
     },
     // 个人中心血糖基本信息

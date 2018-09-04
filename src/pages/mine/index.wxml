@@ -1,7 +1,7 @@
 <view>
     <view class="header">
         <image class="user-image"
-               src="{{objUser.HeadUrl}}"></image>
+               src="{{userInfo.avatarUrl}}"></image>
         <view class="user-info">
             <text>{{objUser.IsMember ? 'VIP用户' : '普通用户'}}</text>
             <text class="user-name">{{objUser.Name}}</text>

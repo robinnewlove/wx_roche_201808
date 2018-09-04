@@ -14,6 +14,8 @@ import {
     GLS_TEXT,
 }                               from 'config/base.config'
 
+const app = getApp();
+
 Page(Handle({
     // 页面的初始数据
     data: {
@@ -67,7 +69,8 @@ Page(Handle({
             let {userInfo} = info;
             this.setData({
                 userInfo: userInfo,
-            })
+            });
+            app.globalData.userInfo = userInfo;
         })
     },
     // 跳转
@@ -76,9 +79,5 @@ Page(Handle({
         let url = currentTarget.dataset.url;
         let params = currentTarget.dataset.params;
         if (url) Router.push(url, params);
-    },
-    // 当前是 tab 页时，点击 tab 时触发
-    onTabItemTap (e) {
-        console.log(e);
     },
 }));

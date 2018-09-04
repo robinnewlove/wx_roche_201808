@@ -10,17 +10,29 @@ import Handle                   from 'mixins/mixin.handle'
 import RouterMixin              from 'mixins/router.mixin'
 import Calendar, {getMonthDay}  from 'utils/calendar.util'
 import { formatData }           from 'wow-cool/lib/date.lib'
+import {
+    ARR_TIME_STEP,
+    DAY_TEXT,
+    GLS_TEXT,
+}                               from 'config/base.config'
+
+const app = getApp();
 
 Page(Handle({
     mixins: [RouterMixin],
     data: {
+        userInfo: '',
         resultData: [],
         preDay: 0,
         nextDay: 0,
         months: 0,
     },
     onLoad (options) {
+        this.setData({
+            userInfo: app.globalData.userInfo,
+        });
         this.getParamsByUrl(options);
+        console.log(this.$params)
         this.getCalendar();
         this.getRecommendSugar();
     },

@@ -121,7 +121,6 @@ Page(Handle({
     handleScroll (e) {
         let { detail } = e;
         deltaX += detail.deltaX;
-        console.log(deltaX);
         this.countNum(Math.abs(deltaX));
     },
     // 加减
@@ -170,8 +169,8 @@ Page(Handle({
             loading: true,
             data,
         };
-        return Http(options).then(() => {
-            return Router.push('result_index', data);
+        return Http(options).then((res) => {
+            return Router.push('result_index', res);
         }).catch((err) => {
             Toast.error(err);
         });

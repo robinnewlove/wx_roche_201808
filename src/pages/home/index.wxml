@@ -4,7 +4,7 @@
         <!--用户-->
         <view class="user">
             <image class="user-image"
-                   src="{{objUser.HeadUrl || userInfo.avatarUrl}}"></image>
+                   src="{{userInfo.avatarUrl}}"></image>
             <view class="user-info">
                 <text class="user-name user-text"
                 >{{objUser.Name || userInfo.nickName}}</text>
