@@ -41,8 +41,15 @@
     }
     .from-select{
         padding-left: 70rpx;
+        .from-radio-image{
+            padding-top: 10rpx;
+        }
         .from-item{
-            height: 70rpx;
+            height: auto;
+            align-items: flex-start;
+        }
+        .from-item:last-child{
+            margin-bottom: 10rpx;
         }
     }
 }
