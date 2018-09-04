@@ -14,6 +14,7 @@ import {
     ARR_TIME_STEP,
 }                               from 'config/base.config'
 
+let deltaX = 0;
 Page(Handle({
     mixins: [RouterMixin, InputMixin],
     data: {
@@ -81,12 +82,47 @@ Page(Handle({
                     }
                 ]
             },
-        }
+        },
+        ruleWidth: 0,
+        scrollLeft: 0,
     },
+    onReady () {
+        var query = wx.createSelectorQuery();
+        query.select('.rule-item').boundingClientRect((rect) => {
+            let {width} = rect;
+            this.setData({
+                ruleWidth: width
+            })
+        }).exec();
+    },
+
+    countNum (scrollLeft) {
+        let value = 0;
+        if (+scrollLeft !== 0) {
+            let width = this.data.ruleWidth;
+            let num = (2 / (width * 10));
+            value = ((num * 100 * scrollLeft) / 100).toFixed(1);
+        }
+        this.setData({
+            'objHidden.Bloodsugar.value': value
+        });
+    },
+
+    countScrollLeft () {
+        let value = this.data.objHidden.Bloodsugar.value;
+        let width = this.data.ruleWidth;
+        let num = (2 / (width * 10));
+        let scrollLeft = Math.floor(value / num);
+        this.setData({
+            scrollLeft,
+        })
+    },
+
     handleScroll (e) {
         let { detail } = e;
-        let {scrollLeft} = detail;
-        // console.log(scrollLeft)
+        deltaX += detail.deltaX;
+        console.log(deltaX);
+        this.countNum(Math.abs(deltaX));
     },
     // 加减
     handleAddOrSub (e) {
@@ -103,6 +139,7 @@ Page(Handle({
         this.setData({
             ['objHidden.Bloodsugar.value']: value,
         });
+        this.countScrollLeft();
     },
     // 选择时间段
     handleTimeStep (e) {

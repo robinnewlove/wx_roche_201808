@@ -40,12 +40,6 @@
     height: 110rpx;
     background-color: #fff;
     white-space: nowrap;
-    .rule-item:last-child{
-        margin-right: 20rpx;
-    }
-    .rule-item:first-child{
-        margin-left: 20rpx;
-    }
 }
 .rule-type{
     @extend %pa;
@@ -56,7 +50,6 @@
     margin-top: -52rpx;
     margin-left: -5rpx;
 }
-
 .rule-item{
     @extend %pr;
     @extend %dib;
@@ -68,6 +61,11 @@
             height: 21rpx;
         }
     }
+}
+.rule-null-item{
+    @extend %dib;
+    width: 50%;
+    height: 21rpx;
 }
 .rule-item-sign{
     @extend %pa;
