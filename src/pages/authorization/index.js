@@ -9,6 +9,7 @@ import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
 
 Page({
+    // 授权并登录
     bindGetUserInfo (e){
         let { userInfo } = e.detail;
         if (!userInfo) return;
@@ -23,6 +24,7 @@ Page({
                     code: result,
                 },
                 loading: true,
+                auth: false,
             };
             return Http(options);
         }).then((result) => {

@@ -8,6 +8,7 @@ const DEFAULT = {
     method: 'POST',
     useOpenId: true,
     data: {},
+    auth: true,
 };
 
 class Http {
@@ -16,6 +17,7 @@ class Http {
         this.method = options.method.toLocaleUpperCase();
         this.data = options.data;
         this.useOpenId = options.useOpenId;
+        this.auth = options.auth;
         this.url = EnvConfig.API_URL + options.url;
         return this._fetch();
     }
@@ -32,6 +34,10 @@ class Http {
                 this.url = `${this.url}?access_token=${AccessToken}`
             }).finally(() => {
                 this._log('请求参数', this.data);
+                if (this.auth && !this.data.OpenId) {
+                    Toast.error('您还未登录，请登录');
+                    return Router.push('authorization_index');
+                }
                 wx.request({
                     url: this.url,
                     data: this.data,

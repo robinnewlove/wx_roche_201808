@@ -63,7 +63,6 @@ Page(Handle({
         return Auth.getUserInfo().then((info) => {
             // 用户已经授权
             let {userInfo} = info;
-            // console.log('用户信息', userInfo);
             this.setData({
                 userInfo: userInfo,
             })
