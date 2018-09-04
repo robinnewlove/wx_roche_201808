@@ -15,13 +15,15 @@ Page(Handle({
     data: {
         arrData: [],
         arrResult: [],
+        form: '',
     },
     onLoad (options) {
         let params = Router.getParams(options);
-        let {arrData, arrResult} = params;
+        let {arrData, arrResult, form} = params;
         this.setData({
             arrData,
             arrResult,
+            form,
         })
     },
     // 提交下一步
@@ -41,7 +43,8 @@ Page(Handle({
         }).then(() => {
             return Auth.updateToken({IsArchives: true});
         }).then(() => {
-            Router.push('questionnaire_programme_index');
+            if (this.data.form) Router.pop();
+            else Router.push('questionnaire_programme_index', {}, true)
         }).catch((err) => {
             Toast.error(err);
         });
@@ -53,6 +56,7 @@ Page(Handle({
             loading: true,
             data,
             useOpenId: false,
+            auth: false,
         };
         return Http(options);
     }

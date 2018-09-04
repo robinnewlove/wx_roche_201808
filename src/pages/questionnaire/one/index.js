@@ -52,7 +52,7 @@ Page(Handle({
     setUserInfo () {
         let data = Data.filter(this.data.objInput);
         this.getOrSetUserInfo(data).then(() => {
-            Router.push('questionnaire_two_index');
+            Router.push('questionnaire_two_index', {}, true,);
         }).catch((err) => {
             Toast.error(err);
         });
