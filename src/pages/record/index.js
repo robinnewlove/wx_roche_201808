@@ -130,14 +130,14 @@ Page(Handle({
         let type = currentTarget.dataset.type || '1';
         let value = this.data.objHidden.Bloodsugar.value || 0;
         value = +value;
-        if (type === '0' && value > 0.1) {
+        if (type === '0' && value >= 0.1) {
             value = (value * 10 - 1) / 10;
         }
         if ( type === '1' && value < 10) {
             value = (value * 10 + 1) / 10;
         }
         this.setData({
-            ['objHidden.Bloodsugar.value']: value,
+            ['objHidden.Bloodsugar.value']: value.toFixed(1),
         });
         this.countScrollLeft();
     },
