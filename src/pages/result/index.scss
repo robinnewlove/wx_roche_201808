@@ -54,18 +54,6 @@
     font-size: 50rpx;
     color: #fff;
 }
-.progress{
-    @extend %pr;
-    margin: 30rpx 0 20rpx;
-    height: 7rpx;
-    background-color: #fff;
-    border-radius: 7rpx;
-}
-.progress-inner{
-    @extend %h100;
-    width: 50%;
-    background-color: #54edf6;
-}
 .text{
     @extend %pr;
     @extend %fwb;

@@ -19,7 +19,8 @@ Page(Handle({
         nextDay: 0,
         months: 0,
     },
-    onLoad () {
+    onLoad (options) {
+        this.getParamsByUrl(options);
         this.getCalendar();
         this.getRecommendSugar();
     },

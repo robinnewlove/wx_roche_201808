@@ -14,8 +14,6 @@ import {
     ARR_TIME_STEP,
 }                               from 'config/base.config'
 
-const arrRuler = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
 Page(Handle({
     mixins: [RouterMixin, InputMixin],
     data: {
@@ -67,7 +65,7 @@ Page(Handle({
                 ]
             },
         },
-        arrRuler,
+        arrRuler: 101,
         arrTimeStep: ARR_TIME_STEP,
         timeStep: '空腹'
     },

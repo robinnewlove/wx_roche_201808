@@ -23,18 +23,29 @@
         scroll-x
         class="ruler"
         bindscroll="handleScroll">
-        <view class="rule-item"
+
+        <view class="rule-item {{item % 5 === 0 && 'rule-item-value'}}"
               wx:for="{{arrRuler}}"
               wx:for-item="item"
               wx:for-index="key"
               wx:key="key">
-            <view class="rule-item-value">
-                <text class="rule-item-value-text">{{item}}</text>
-            </view>
             <view class="rule-item-sign"></view>
-            <view class="rule-item-sign"></view>
-            <view class="rule-item-sign"></view>
+            <text wx:if="{{item % 5 === 0}}" class="rule-item-value-text">{{item / 5}}</text>
         </view>
+
+
+        <!--<view class="rule-item"-->
+              <!--wx:for="{{arrRuler}}"-->
+              <!--wx:for-item="item"-->
+              <!--wx:for-index="key"-->
+              <!--wx:key="key">-->
+            <!--<view class="rule-item-value">-->
+                <!--<text class="rule-item-value-text">{{item}}</text>-->
+            <!--</view>-->
+            <!--<view class="rule-item-sign"></view>-->
+            <!--<view class="rule-item-sign"></view>-->
+            <!--<view class="rule-item-sign"></view>-->
+        <!--</view>-->
     </scroll-view>
     <!--/标尺-->
     <!--时间-->

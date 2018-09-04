@@ -11,10 +11,7 @@
             <text class="num-unit">mmol/L</text>
         </view>
         <text class="conclusion-text">数值正常</text>
-        <progress percent="80" active></progress>
-        <!--<view class="progress">-->
-            <!--<view class="progress-inner"></view>-->
-        <!--</view>-->
+        <progress class="progress" stroke-width="3" percent="80" color="#54edf6" active/>
         <text class="text">您本月坚持测糖4次，完成进度70%</text>
     </view>
     <!--/头部-->

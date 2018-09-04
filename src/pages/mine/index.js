@@ -48,7 +48,7 @@ Page(Handle({
             let { IsPerfect } = res;
             this.setData({
                 objUser: res || {},
-                'objView[2].value': IsPerfect ? '' : '待完善',
+                'objView[2].value': IsPerfect ? '已完善' : '待完善',
             })
         }).catch((err) => {
             Toast.error(err);

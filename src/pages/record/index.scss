@@ -39,40 +39,43 @@
     height: 110rpx;
     background-color: #fff;
     white-space: nowrap;
-    .rule-item:last-child,
+    .rule-item:last-child{
+        margin-right: 20rpx;
+    }
     .rule-item:first-child{
         margin-left: 20rpx;
     }
 }
+
 .rule-item{
+    @extend %pr;
     @extend %dib;
-    @extend %df;
-    width: 100rpx;
-    .rule-item-sign,
-    .rule-item-value{
-        @extend %fl;
+    @extend %bsb;
+    width: 25rpx;
+    height: 21rpx;
+    &.rule-item-value{
+        .rule-item-sign{
+            height: 21rpx;
+        }
     }
 }
-.rule-item-value{
-    @extend %pr;
-    height: 21rpx;
-    width: 1rpx;
+.rule-item-sign{
+    @extend %pa;
+    @extend %t0;
+    @extend %l0;
+    height: 13rpx;
+    width: 1px;
     background-color: #28aeed;
 }
+
 .rule-item-value-text{
     @extend %pa;
-    @extend %l50;
+    @extend %l0;
     font-size: 26rpx;
     color: #28aeed;
     top: 30rpx;
     margin-left: 1rpx;
     transform: translate3d(-50%, 0, 0);
-}
-.rule-item-sign{
-    height: 13rpx;
-    width: 1rpx;
-    background-color: red;
-    margin-right: 24rpx;
 }
 
 /*时间*/

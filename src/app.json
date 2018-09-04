@@ -1,5 +1,7 @@
 {
     "pages": [
+        "pages/record/index",
+        "pages/result/index",
         "pages/home/index",
         "pages/questionnaire/programme/index",
         "pages/authorization/index",
@@ -11,9 +13,7 @@
         "pages/questionnaire/copy/index",
         "pages/questionnaire/one/index",
         "pages/questionnaire/three/index",
-        "pages/questionnaire/two/index",
-        "pages/record/index",
-        "pages/result/index"
+        "pages/questionnaire/two/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
