@@ -33,7 +33,9 @@
         </view>
         <text class="table-prompt">*您也可以根据您的时间，调整测糖日，如改为每周二四六测糖</text>
     </view>
-    <view class="button">
+    <view class="button"
+          data-url="questionnaire_two_index"
+          bindtap="handleJump">
         <text class="button-text">更新测糖方案</text>
     </view>
 </view>

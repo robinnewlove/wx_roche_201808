@@ -86,4 +86,9 @@ Page(Handle({
             dayTime: result
         });
     },
+    handleJump(e) {
+        let { currentTarget } = e;
+        let url = currentTarget.dataset.url;
+        if (url) Router.push(url, {form: 'mine_programme'});
+    }
 }));
