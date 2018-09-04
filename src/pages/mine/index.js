@@ -26,7 +26,7 @@ Page(Handle({
             {
                 label: '个人信息',
                 url: 'mine_info_index',
-                value: '待完善',
+                value: '',
             },
             {
                 label: '绑定 performa connect',
@@ -42,13 +42,13 @@ Page(Handle({
     getUserSugar () {
         let options = {
             url: 'RocheApi/GetUserSugar',
-            // url: 'RocheApi/GetIndexSugar',
             loading: true,
         };
         return Http(options).then((res) => {
-            console.log(res);
+            let { IsPerfect } = res;
             this.setData({
                 objUser: res || {},
+                'objView[2].value': IsPerfect ? '' : '待完善',
             })
         }).catch((err) => {
             Toast.error(err);

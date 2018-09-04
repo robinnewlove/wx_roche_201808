@@ -35,7 +35,7 @@ Page({
             data: {
                 Stime,
                 Etime,
-                Type: 1,
+                Type: 2,
             }
         };
         return Http(options).then((res) => {

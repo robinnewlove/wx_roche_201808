@@ -10,8 +10,10 @@ import Handle                   from 'mixins/mixin.handle'
 import InputMixin               from 'mixins/input.mixin'
 import RouterMixin              from 'mixins/router.mixin'
 import Data                     from 'utils/data.util'
+import {
+    ARR_TIME_STEP,
+}                               from 'config/base.config'
 
-const arrTimeStep = ['空腹', '早餐后', '午餐前', '午餐后', '晚餐前', '晚餐后', '睡前'];
 const arrRuler = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 Page(Handle({
@@ -45,7 +47,7 @@ Page(Handle({
             Bloodsugar: {
                 label: '糖化血红蛋白值',
                 placeholder: '请输入',
-                value: '',
+                value: 0,
                 use_check: [
                     {
                         nonempty: true,
@@ -66,16 +68,13 @@ Page(Handle({
             },
         },
         arrRuler,
-        arrTimeStep,
+        arrTimeStep: ARR_TIME_STEP,
         timeStep: '空腹'
-    },
-    onLoad () {
-
     },
     handleScroll (e) {
         let { detail } = e;
         let {scrollLeft} = detail;
-        console.log(scrollLeft)
+        // console.log(scrollLeft)
     },
     // 加减
     handleAddOrSub (e) {
@@ -83,9 +82,10 @@ Page(Handle({
         let type = currentTarget.dataset.type || '1';
         let value = this.data.objInput.Bloodsugar.value || 0;
         value = +value;
-        if (value > 0.1 && type === '0') {
+        if (type === '0' && value > 0.1) {
             value = (value * 10 - 1) / 10;
-        } else if (value < 10){
+        }
+        if ( type === '1' && value < 10) {
             value = (value * 10 + 1) / 10;
         }
         this.setData({
@@ -114,8 +114,8 @@ Page(Handle({
             data,
         };
         data.TimeStep = this.data.arrTimeStep.indexOf(this.data.timeStep) + 1;
-        return Http(options).then((res) => {
-           Router.push('result_index', data);
+        return Http(options).then(() => {
+            return Router.push('result_index', data);
         }).catch((err) => {
             Toast.error(err);
         });
