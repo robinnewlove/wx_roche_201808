@@ -50,11 +50,11 @@ Page(Handle({
         });
     },
     initData (arr) {
-        let dayText = [];
-        for (let i = 0; i < 7; i++) {
-            let cur = new Date();
-            dayText.push(new Date(cur.setDate(cur.getDate() + i)).getDay())
-        }
+        // let dayText = [];
+        // for (let i = 0; i < 7; i++) {
+        //     let cur = new Date();
+        //     dayText.push(new Date(cur.setDate(cur.getDate() + i)).getDay())
+        // }
         if (arr) {
             arr.forEach((item) => {
                 let { Day, TimeStep } = item;
@@ -75,7 +75,8 @@ Page(Handle({
             result[x] = [];
             for(let y = 0; y < 8; y++){
                 if (y === 0) {
-                    result[x][y] = dayText[x];
+                    // result[x][y] = dayText[x];
+                    result[x][y] = (x+1) % 7;
                 } else {
                     result[x][y] = 0;
                 }
