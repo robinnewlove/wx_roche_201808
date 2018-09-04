@@ -35,8 +35,8 @@ Page(Handle({
             userInfo: app.globalData.userInfo,
         });
         this.getParamsByUrl(options);
-        this.initData(this.data.$params);
         this.getCalendar();
+        this.initData(this.data.$params);
         this.getRecommendSugar();
     },
     initData(data){
@@ -50,11 +50,22 @@ Page(Handle({
         Records.forEach((item) => {
             let time = +item.replace(/[^0-9]/ig, '');
             let day = new Date(time).getDate();
-            records.push(day);
+            records.indexOf(day) === -1 && records.push(day);
         });
+        console.log(records)
+        let resultData = this.data.resultData;
+        resultData.forEach((item) => {
+            item.forEach((ite) => {
+                records.forEach((it) => {
+                    ite.num === it && (ite.value = 1)
+                })
+            })
+        });
+        console.log(resultData)
         this.setData({
             progress,
             records,
+            resultData,
         });
     },
     // 获取页面数据

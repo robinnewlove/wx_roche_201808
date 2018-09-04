@@ -28,13 +28,13 @@
                   wx:for-item="item"
                   wx:for-index="index"
                   wx:key="item">
-                <view class="calendar-item"
+                <view class="calendar-item {{day.type && day.value === 1 && 'calendar-active'}}"
                       wx:for="{{item}}"
                       wx:for-item="day"
                       wx:for-index="i"
                       wx:key="day">
                     <view class="calendar-type"></view>
-                    <text class="calendar-text {{ ((index === 0 && i < preDay ) || (index === (resultData.length -1) && i >= (7 - nextDay))) && 'calendar-text-disabled'}}">{{day}}</text>
+                    <text class="calendar-text {{ day.value === -1 && 'calendar-text-disabled'}}">{{day.num}}</text>
                 </view>
             </view>
         </view>

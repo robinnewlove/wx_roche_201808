@@ -28,14 +28,26 @@ export default (options = {}) => {
     firstDay = firstDay.getDay();
     let arr = [];
     for (let i = 1; i <= lastDay; i++) {
-        arr.push(i);
+        arr.push({
+            num: i,
+            value: 0,
+            type: true,
+        });
     }
     for (let i = 0; i < firstDay; i++) {
-        arr.unshift(preLastDay - i);
+        arr.unshift({
+            num: preLastDay - i,
+            value: -1,
+            type: false,
+        });
     }
     let len = 42 - arr.length;
     for (let i = 0; i < len; i++) {
-        arr.push(i + 1);
+        arr.push({
+            num: i + 1,
+            value: -1,
+            type: false,
+        });
     }
     let resultData = splitArray(arr, 7);
     return {
