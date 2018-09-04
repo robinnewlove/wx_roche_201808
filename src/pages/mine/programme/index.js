@@ -18,7 +18,8 @@ Page(Handle({
         arrTimeStep: ARR_TIME_STEP,
         result: '',
         DayCount: '',
-        Desc: '',
+        desc1: '',
+        desc2: '',
         dayTime: [],
         dayText: DAY_TEXT,
     },
@@ -40,9 +41,17 @@ Page(Handle({
         };
         return Http(options).then((res) => {
             let { DayCount, Desc, Steps } = res;
+            let desc1 = '';
+            let desc2 = '';
+            if (Desc) {
+                let arr = Desc.split('（');
+                desc1 = arr[0];
+                desc2 = '（' + arr[1];
+            }
             this.setData({
                 DayCount,
-                Desc,
+                desc1,
+                desc2,
             });
             this.initData(Steps)
         }).catch((err) => {
