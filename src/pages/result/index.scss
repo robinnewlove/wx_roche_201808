@@ -54,6 +54,14 @@
     font-size: 50rpx;
     color: #fff;
 }
+.progress{
+    @extend %pr;
+    margin: 30rpx 0 20rpx;
+    height: 7rpx;
+    background-color: #fff;
+    border-radius: 7rpx;
+}
+
 .text{
     @extend %pr;
     @extend %fwb;
@@ -119,7 +127,7 @@
     }
 }
 .calendar-type{
-    @extend %dn;
+    @extend %db;
     @extend %pa;
     @extend %t50;
     @extend %l50;

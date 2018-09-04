@@ -21,20 +21,41 @@ const app = getApp();
 Page(Handle({
     mixins: [RouterMixin],
     data: {
+        glsText: GLS_TEXT,
         userInfo: '',
         resultData: [],
         preDay: 0,
         nextDay: 0,
         months: 0,
+        progress: 0,
+        records: []
     },
     onLoad (options) {
         this.setData({
             userInfo: app.globalData.userInfo,
         });
         this.getParamsByUrl(options);
-        console.log(this.$params)
+        this.initData(this.data.$params);
         this.getCalendar();
         this.getRecommendSugar();
+    },
+    initData(data){
+        let {
+            TestSugarCount,
+            PlanCount,
+            Records,
+        } = data;
+        let progress = Math.floor(TestSugarCount / PlanCount * 100);
+        let records = [];
+        Records.forEach((item) => {
+            let time = +item.replace(/[^0-9]/ig, '');
+            let day = new Date(time).getDate();
+            records.push(day);
+        });
+        this.setData({
+            progress,
+            records,
+        });
     },
     // 获取页面数据
     getCalendar() {
