@@ -7,7 +7,7 @@
         class="button"
         open-type="getUserInfo"
         bindgetuserinfo="bindGetUserInfo"
-    >用户快速登录</button>
+    >用户授权快速登录</button>
 </view>
 
 

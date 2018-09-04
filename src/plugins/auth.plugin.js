@@ -29,6 +29,16 @@ export default {
         })
     },
 
+    // 退出登录
+    logout: (options) => new Promise((resolve, reject) => {
+        try {
+            wx.removeStorageSync($USER_TOKEN);
+            resolve();
+        } catch (e) {
+            reject('删除失败')
+        }
+    }),
+
     // 登录
     login: (options) => new Promise((resolve, reject) => {
         wx.login({

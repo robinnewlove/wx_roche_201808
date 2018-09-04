@@ -2,6 +2,7 @@
 import EnvConfig                from 'config/env.config'
 import Toast                    from 'plugins/toast.plugin'
 import Auth                     from 'plugins/auth.plugin'
+import Router                   from 'plugins/router.plugin'
 
 const DEFAULT = {
     method: 'POST',
@@ -44,6 +45,15 @@ class Http {
                         if (statusCode !== 200 || !data) {
                             return reject(errMsg);
                         }
+                        if (statusCode === 201) {
+                            Toast.error('token 已失效，请重新登录');
+                            Auth.logout().finally(() => {
+                                setTimeout(() => {
+                                    return Router.root('home_index');
+                                }, 1000)
+                            });
+                            return;
+                        }
                         let {
                             Status,
                             Message,
@@ -75,8 +85,14 @@ class Http {
 
 export default (options = {}) => {
     let { loading } = options;
-    loading && wx.showLoading();
+    if (loading){
+        wx.showLoading();
+        wx.showNavigationBarLoading();
+    }
     return new Http(options).finally(() => {
-        loading && wx.hideLoading();
+        if (loading){
+            wx.hideLoading();
+            wx.showNavigationBarLoading();
+        }
     })
 }
