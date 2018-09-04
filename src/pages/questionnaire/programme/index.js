@@ -22,7 +22,7 @@ Page(Handle({
         dayTime: [],
         dayText: DAY_TEXT,
     },
-    onShow () {
+    onLoad () {
         this.initData();
         this.getRecommendSugar();
     },
