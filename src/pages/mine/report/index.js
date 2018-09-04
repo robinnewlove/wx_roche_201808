@@ -129,6 +129,7 @@ Page({
                 DayCount,
                 Desc,
             });
+            if (!Steps) return;
             this.initData(Steps)
         }).catch((err) => {
             Toast.error(err);
@@ -137,13 +138,13 @@ Page({
     initData (arr) {
         if (arr) {
             arr.forEach((item) => {
-                let { Day, TimeStep } = item;
+                let { Day, TimeStep, Bloodsugar} = item;
                 this.data.dayTime.forEach((it, ind) => {
                     if (Day === 7) Day = 0;
                     if (it[0] === Day) {
                         let sItem = `dayTime[${ind}][${TimeStep}]`;
                         this.setData({
-                            [sItem]: 1,
+                            [sItem]: item,
                         });
                     }
                 });

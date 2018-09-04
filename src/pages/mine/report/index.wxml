@@ -44,7 +44,7 @@
                   wx:for-item="ite"
                   wx:for-index="ind"
                   wx:key="ite">
-                <text class="text" wx:if="{{ite !== -1}}">{{ind === 0 ? dayText[ite] : ite}}</text>
+                <text class="text" wx:if="{{ite !== -1}}">{{ind === 0 ? dayText[ite] : ite.Bloodsugar}}</text>
                 <view class="status" wx:if="{{ite === -1}}"></view>
             </view>
         </view>
