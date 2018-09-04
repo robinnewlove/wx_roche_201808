@@ -10,7 +10,8 @@ import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import {
     ARR_TIME_STEP,
-    DAY_TEXT
+    DAY_TEXT,
+    GLS_TEXT,
 }                               from 'config/base.config'
 
 // Page(Object) 函数用来注册一个页面。接受一个 Object 类型参数，其指定页面的初始数据、生命周期函数、事件处理函数等。
@@ -18,6 +19,7 @@ Page(Handle({
     // 页面的初始数据
     data: {
         arrTimeStep: ARR_TIME_STEP,
+        glsText: GLS_TEXT,
         userInfo: {},
         objUser: {},
     },

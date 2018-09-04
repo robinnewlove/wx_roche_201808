@@ -36,8 +36,8 @@
                 <text class="time">{{objUser.TestDate}} {{arrTimeStep[objUser.TimeStep]}}</text>
             </view>
             <view class="prompt">
-                <text class="prompt-text">你的血糖指数属于</text>
-                <text class="prompt-text prompt-text-strong">健康</text>
+                <text class="prompt-text" wx:if="{{glsText[objUser.Gls]}}">你的血糖指数属于</text>
+                <text class="prompt-text prompt-text-strong">{{glsText[objUser.Gls]}}</text>
             </view>
         </view>
     </view>
@@ -70,47 +70,15 @@
                 <text class="plan-title-text">今天的测糖计划</text>
             </view>
             <view class="plan-con">
-                <view class="plan-item">
-                    <view class="plan-item-check">
-                        <view class="plan-item-check-icon"></view>
-                    </view>
-                    <text class="plan-item-text">空腹</text>
-                </view>
-                <view class="plan-item">
+                <view class="plan-item"
+                      wx:for="{{arrTimeStep}}"
+                      wx:for-item="item"
+                      wx:for-index="index"
+                      wx:key="item">
                     <view class="plan-item-check">
                         <image class="plan-item-check-icon"></image>
                     </view>
-                    <text class="plan-item-text">空腹</text>
-                </view>
-                <view class="plan-item">
-                    <view class="plan-item-check">
-                        <image class="plan-item-check-icon"></image>
-                    </view>
-                    <text class="plan-item-text">空腹</text>
-                </view>
-                <view class="plan-item">
-                    <view class="plan-item-check">
-                        <image class="plan-item-check-icon"></image>
-                    </view>
-                    <text class="plan-item-text">空腹</text>
-                </view>
-                <view class="plan-item">
-                    <view class="plan-item-check">
-                        <image class="plan-item-check-icon"></image>
-                    </view>
-                    <text class="plan-item-text">空腹</text>
-                </view>
-                <view class="plan-item">
-                    <view class="plan-item-check">
-                        <image class="plan-item-check-icon"></image>
-                    </view>
-                    <text class="plan-item-text">空腹</text>
-                </view>
-                <view class="plan-item">
-                    <view class="plan-item-check">
-                        <image class="plan-item-check-icon"></image>
-                    </view>
-                    <text class="plan-item-text">空腹</text>
+                    <text class="plan-item-text">{{item}}</text>
                 </view>
             </view>
         </view>
