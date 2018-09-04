@@ -47,7 +47,7 @@ Page(Handle({
     handleSubmit () {
         let result = this.checkData(this.data.arrData);
         if (!result.length) return;
-        let form = this.data.$params.from || '';
+        let form = this.data.$params.form || '';
         Router.push('questionnaire_three_index', {
             arrResult: result,
             arrData: this.data.arrParams,
