@@ -87,6 +87,7 @@ Page(Handle({
         scrollLeft: 0,
     },
     onReady () {
+        deltaX = 0;
         var query = wx.createSelectorQuery();
         query.select('.rule-item').boundingClientRect((rect) => {
             let {width} = rect;
@@ -135,8 +136,9 @@ Page(Handle({
         if ( type === '1' && value < 20) {
             value = (value * 10 + 1) / 10;
         }
+        if (value !== 0) value = value.toFixed(1);
         this.setData({
-            ['objHidden.Bloodsugar.value']: value.toFixed(1),
+            ['objHidden.Bloodsugar.value']: value,
         });
         this.countScrollLeft();
     },
