@@ -38,10 +38,7 @@ Page(Handle({
             months,
         })
     },
-    // 保存提交
-    handleSubmit() {
-
-    },
+    // 获取血糖记录
     getRecommendSugar() {
         let {
             sTime,
@@ -67,6 +64,6 @@ Page(Handle({
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        url ? Router.push(url) : Router.root();
+        url ? Router.push(url) : Router.root('home_index');
     }
 }));

@@ -54,15 +54,18 @@
                     <text class="plan-button-text">在线问诊</text>
                 </view>
                 <view class="plan-button"
-                      data-params="objUser"
-                      data-url="record_index"
+                      data-params="{{objUser}}"
+                      data-url="mine_report_index"
                       bindtap="handleJump">
                     <image class="plan-button-icon"
                            mode="aspectFit" src="../../assets/images/home-icon-xtbg.png"></image>
                     <text class="plan-button-text">血糖报告</text>
                 </view>
             </view>
-            <view class="plan-add"></view>
+            <view class="plan-add"
+                  data-params="{{objUser}}"
+                  data-url="record_index"
+                  bindtap="handleJump"></view>
             <view class="plan-inner">
                 <view class="plan-title">
                     <image class="plan-title-icon"

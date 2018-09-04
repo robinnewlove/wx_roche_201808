@@ -115,7 +115,7 @@ Page(Handle({
         };
         data.TimeStep = this.data.arrTimeStep.indexOf(this.data.timeStep) + 1;
         return Http(options).then((res) => {
-           console.log(res);
+           Router.push('result_index', data);
         }).catch((err) => {
             Toast.error(err);
         });
