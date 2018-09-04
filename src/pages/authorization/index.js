@@ -30,7 +30,7 @@ Page({
         }).then((result) => {
             return Auth.updateToken(result);
         }).then(() => {
-            Router.pop();
+            return Router.root('home_index');
         }).catch((err) => {
             Toast.error(err);
         })

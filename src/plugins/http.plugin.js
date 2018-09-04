@@ -62,7 +62,7 @@ class Http {
                             Toast.error('token 已失效，请重新登录');
                             Auth.logout().finally(() => {
                                 setTimeout(() => {
-                                    return Router.root('home_index');
+                                    return Router.push('authorization_index');
                                 }, 1000)
                             });
                             return;
