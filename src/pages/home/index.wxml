@@ -76,7 +76,14 @@
                       wx:for-index="index"
                       wx:key="item">
                     <view class="plan-item-check">
-                        <image class="plan-item-check-icon"></image>
+                        <image class="plan-item-check-icon"
+                               wx:for="{{objUser.PlanTimeSteps}}"
+                               wx:for-item="ite"
+                               wx:for-index="ind"
+                               wx:key="ite"
+                               wx:if="{{ite === index + 1}}"
+                               mode="aspectFit"
+                               src="../../assets/images/home-step-icon-1.png"></image>
                     </view>
                     <text class="plan-item-text">{{item}}</text>
                 </view>
