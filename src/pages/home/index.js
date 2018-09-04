@@ -49,8 +49,9 @@ Page(Handle({
         // if (AccessToken || OpenId) throw 'not login';
         // 获取用户数据
         this.getUserInfo().then(() => {
+            console.log(1)
             if (!IsArchives) return Router.push('questionnaire_one_index');
-            this.getIndexSugar();
+            return this.getIndexSugar();
         }).catch((err) => {
             let { code } = err;
             if (code === -1) return Router.push('authorization_index');

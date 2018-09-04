@@ -47,7 +47,7 @@ export default {
     getUserInfo: (options) => new Promise((resolve, reject) => {
         wx.getSetting({
             success: (res) => {
-                if (!res.authSetting['scope.userInfo']) return reject();
+                if (!res.authSetting['scope.userInfo']) return reject({code: -1, errMsg: 'user no auth'});
                 wx.getUserInfo({
                     success: res => {
                         resolve(res);

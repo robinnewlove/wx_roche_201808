@@ -8,17 +8,19 @@ import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import { getDate }              from 'wow-cool/lib/date.lib'
-
-const arrTimeStep = ['空腹', '早餐后', '午餐前', '午餐后', '晚餐前', '晚餐后', '睡前'];
+import {
+    ARR_TIME_STEP,
+    DAY_TEXT
+}                               from 'config/base.config'
 
 Page(Handle({
     data: {
-        arrTimeStep,
+        arrTimeStep: ARR_TIME_STEP,
         result: '',
         DayCount: '',
         Desc: '',
         dayTime: [],
-        dayText: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+        dayText: DAY_TEXT,
     },
     onLoad () {
         this.initData();
