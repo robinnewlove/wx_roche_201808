@@ -7,7 +7,7 @@ import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
-import { getDate }              from 'wow-cool/lib/date.lib'
+import { getDate, formatData }  from 'wow-cool/lib/date.lib'
 import {
     ARR_TIME_STEP,
     DAY_TEXT
@@ -21,68 +21,99 @@ Page({
         Desc: '',
         dayTime: [],
         dayText: DAY_TEXT,
-        sTime: getDate(0, 'yyyy-MM-dd'),
-        eTime: getDate(6, 'yyyy-MM-dd'),
+        sTime: '',
+        eTime: '',
+
+        vSTime1: '',
+        vETime1: '',
+        vSTime2: '',
+        vETime2: '',
+
+        curTime: new Date().getTime(),
     },
     onLoad () {
+        this.getDay();
         this.initData();
         this.getRecommendSugar();
     },
+
+    handlePreOrNext (e) {
+        let { currentTarget } = e;
+        let count = +currentTarget.dataset.count;
+        let date = new Date(this.data.curTime);
+        date.setDate(date.getDate() + count);
+        this.setData({
+            curTime: date.getTime(),
+        });
+        this.getDay();
+        this.initData();
+        this.getRecommendSugar();
+    },
+
     // 获取日期
-    getDay (date) {
+    getDay () {
+        let date = new Date(this.data.curTime);
         let day = date.getDay();
         let result = '';
         switch (day){
             case 0:
                 result = {
-                    sTime: getDate(-6, 'yyyy-MM-dd'),
-                    eTime: getDate(0, 'yyyy-MM-dd'),
+                    sTime: getDate(-6, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    eTime: getDate(0, 'yyyy-MM-dd', new Date(this.data.curTime)),
                 };
                 break;
             case 1:
                 result = {
-                    sTime: getDate(0, 'yyyy-MM-dd'),
-                    eTime: getDate(6, 'yyyy-MM-dd'),
+                    sTime: getDate(0, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    eTime: getDate(6, 'yyyy-MM-dd', new Date(this.data.curTime)),
                 };
                 break;
             case 2:
                 result = {
-                    sTime: getDate(-1, 'yyyy-MM-dd'),
-                    eTime: getDate(5, 'yyyy-MM-dd'),
+                    sTime: getDate(-1, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    eTime: getDate(5, 'yyyy-MM-dd', new Date(this.data.curTime)),
                 };
                 break;
             case 3:
                 result = {
-                    sTime: getDate(-2, 'yyyy-MM-dd'),
-                    eTime: getDate(4, 'yyyy-MM-dd'),
+                    sTime: getDate(-2, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    eTime: getDate(4, 'yyyy-MM-dd', new Date(this.data.curTime)),
                 };
                 break;
             case 4:
                 result = {
-                    sTime: getDate(-3, 'yyyy-MM-dd'),
-                    eTime: getDate(3, 'yyyy-MM-dd'),
+                    sTime: getDate(-3, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    eTime: getDate(3, 'yyyy-MM-dd', new Date(this.data.curTime)),
                 };
                 break;
             case 5:
                 result = {
-                    sTime: getDate(-4, 'yyyy-MM-dd'),
-                    eTime: getDate(2, 'yyyy-MM-dd'),
+                    sTime: getDate(-4, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    eTime: getDate(2, 'yyyy-MM-dd', new Date(this.data.curTime)),
                 };
                 break;
             case 6:
                 result = {
-                    sTime: getDate(5, 'yyyy-MM-dd'),
-                    eTime: getDate(1, 'yyyy-MM-dd'),
+                    sTime: getDate(5, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    eTime: getDate(1, 'yyyy-MM-dd', new Date(this.data.curTime)),
                 };
                 break;
         }
+        let {sTime, eTime} = result;
+        this.setData( {
+            sTime,
+            eTime,
+            vSTime1: formatData('yyyy/MM/dd', new Date(sTime)),
+            vETime1: formatData('yyyy/MM/dd', new Date(eTime)),
+            vSTime2: formatData('MM/dd', new Date(sTime)),
+            vETime2: formatData('MM/dd', new Date(eTime)),
+        });
         return result;
     },
-
+    // 获取报告
     getRecommendSugar () {
-        let date = this.getDay();
-        let Stime = getDate(0, 'yyyy-MM-dd');
-        let Etime = getDate(6, 'yyyy-MM-dd');
+        let Stime = this.data.sTime;
+        let Etime = this.data.eTime;
         let options = {
             url: 'RocheApi/GetRecommendSugar',
             loading: true,
@@ -104,11 +135,6 @@ Page({
         });
     },
     initData (arr) {
-        let dayText = [];
-        for (let i = 0; i < 7; i++) {
-            let cur = new Date();
-            dayText.push(new Date(cur.setDate(cur.getDate() + i)).getDay())
-        }
         if (arr) {
             arr.forEach((item) => {
                 let { Day, TimeStep } = item;
@@ -129,7 +155,7 @@ Page({
             result[x] = [];
             for(let y = 0; y < 8; y++){
                 if (y === 0) {
-                    result[x][y] = dayText[x];
+                    result[x][y] = (x+1) % 7;
                 } else {
                     result[x][y] = -1;
                 }
