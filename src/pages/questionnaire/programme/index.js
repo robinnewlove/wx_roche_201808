@@ -85,6 +85,6 @@ Page(Handle({
     },
     // 立即开始测糖
     handleJump () {
-        Router.root();
+        Router.root('home_index');
     }
 }));
