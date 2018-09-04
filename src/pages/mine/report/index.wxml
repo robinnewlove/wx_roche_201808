@@ -9,19 +9,19 @@
         </view>
     </view>
     <view class="tab">
-        <view class="tab-btn">
-            <view class="btn"
-                  data-count="-7"
-                  bindtap="handlePreOrNext"></view>
+        <view class="tab-btn"
+              data-count="-7"
+              bindtap="handlePreOrNext">
+            <view class="btn"></view>
         </view>
         <view class="tab-prompt">
             <text class="tab-prompt-text">本周</text>
             <text class="tab-prompt-text">{{vSTime2}} - {{vETime2}}</text>
         </view>
-        <view class="tab-btn right">
-            <view class="btn"
-                  data-count="7"
-                  bindtap="handlePreOrNext"></view>
+        <view class="tab-btn right"
+              data-count="7"
+              bindtap="handlePreOrNext">
+            <view class="btn"></view>
         </view>
     </view>
     <view class="table">

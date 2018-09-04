@@ -132,7 +132,7 @@ Page(Handle({
         if (type === '0' && value >= 0.1) {
             value = (value * 10 - 1) / 10;
         }
-        if ( type === '1' && value < 10) {
+        if ( type === '1' && value < 20) {
             value = (value * 10 + 1) / 10;
         }
         this.setData({
