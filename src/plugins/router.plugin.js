@@ -27,7 +27,7 @@ export default {
 
 function handle(url, params, key, resolve, reject) {
     url = RouterConfig[url] || '';
-    url = `${url}?params=${encodeURIComponent(JSON.stringify(params))}`;
+    if(key !== 'switchTab') url = `${url}?params=${encodeURIComponent(JSON.stringify(params))}`;
     if (!url) return reject('未找到对应页面');
     wx[key]({
         url,

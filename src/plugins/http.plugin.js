@@ -91,7 +91,7 @@ class Http {
 
 export default (options = {}) => {
     let { loading, navLoading } = options;
-    if (typeof loading === 'undefined' || loading) wx.showLoading();
+    if (typeof loading === 'undefined' || loading) wx.showLoading({title: '加载中'});
     if (typeof navLoading === 'undefined' || navLoading) wx.showNavigationBarLoading();
     return new Http(options).finally(() => {
         if (typeof loading === 'undefined' || loading) wx.hideLoading();
