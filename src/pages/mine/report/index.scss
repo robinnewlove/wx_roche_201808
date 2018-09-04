@@ -139,6 +139,14 @@
 .text{
     font-size: 21rpx;
 }
+.status{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    width: 30rpx;
+    height: 4rpx;
+    background-color: #ebebeb;
+}
 
 .explain{
     @extend %df;

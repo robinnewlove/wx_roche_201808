@@ -77,7 +77,7 @@ Page({
                 if (y === 0) {
                     result[x][y] = dayText[x];
                 } else {
-                    result[x][y] = 0;
+                    result[x][y] = -1;
                 }
             }
         }
