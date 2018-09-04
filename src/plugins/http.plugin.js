@@ -51,7 +51,14 @@ class Http {
                         if (statusCode !== 200 || !data) {
                             return reject(errMsg);
                         }
-                        if (statusCode === 201) {
+                        let {
+                            Status,
+                            Message,
+                            Data,
+                            Id,
+                            Extend,
+                        } = data;
+                        if (Status === 201) {
                             Toast.error('token 已失效，请重新登录');
                             Auth.logout().finally(() => {
                                 setTimeout(() => {
@@ -60,13 +67,6 @@ class Http {
                             });
                             return;
                         }
-                        let {
-                            Status,
-                            Message,
-                            Data,
-                            Id,
-                            Extend,
-                        } = data;
                         if (Status !== 0) {
                             return reject(Message);
                         }

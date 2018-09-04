@@ -2,7 +2,7 @@
     <view class="header">
         <text class="header-prompt">您的专属测糖方案</text>
         <view class="time">
-            <text class="time-text">时间：2018/08/05 - 2018/08/11</text>
+            <text class="time-text">时间：{{sTime}} - {{eTime}}</text>
             <view class="time-btn">
                 <text class="time-btn-text">修改时间</text>
             </view>

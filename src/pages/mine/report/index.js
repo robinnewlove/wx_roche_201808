@@ -21,12 +21,66 @@ Page({
         Desc: '',
         dayTime: [],
         dayText: DAY_TEXT,
+        sTime: getDate(0, 'yyyy-MM-dd'),
+        eTime: getDate(6, 'yyyy-MM-dd'),
     },
     onLoad () {
         this.initData();
         this.getRecommendSugar();
     },
+    // 获取日期
+    getDay (date) {
+        let day = date.getDay();
+        let result = '';
+        switch (day){
+            case 0:
+                result = {
+                    sTime: getDate(-6, 'yyyy-MM-dd'),
+                    eTime: getDate(0, 'yyyy-MM-dd'),
+                };
+                break;
+            case 1:
+                result = {
+                    sTime: getDate(0, 'yyyy-MM-dd'),
+                    eTime: getDate(6, 'yyyy-MM-dd'),
+                };
+                break;
+            case 2:
+                result = {
+                    sTime: getDate(-1, 'yyyy-MM-dd'),
+                    eTime: getDate(5, 'yyyy-MM-dd'),
+                };
+                break;
+            case 3:
+                result = {
+                    sTime: getDate(-2, 'yyyy-MM-dd'),
+                    eTime: getDate(4, 'yyyy-MM-dd'),
+                };
+                break;
+            case 4:
+                result = {
+                    sTime: getDate(-3, 'yyyy-MM-dd'),
+                    eTime: getDate(3, 'yyyy-MM-dd'),
+                };
+                break;
+            case 5:
+                result = {
+                    sTime: getDate(-4, 'yyyy-MM-dd'),
+                    eTime: getDate(2, 'yyyy-MM-dd'),
+                };
+                break;
+            case 6:
+                result = {
+                    sTime: getDate(5, 'yyyy-MM-dd'),
+                    eTime: getDate(1, 'yyyy-MM-dd'),
+                };
+                break;
+        }
+        return result;
+    },
+
     getRecommendSugar () {
+        let date = this.getDay();
         let Stime = getDate(0, 'yyyy-MM-dd');
         let Etime = getDate(6, 'yyyy-MM-dd');
         let options = {
