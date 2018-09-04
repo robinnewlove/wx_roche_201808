@@ -35,6 +35,7 @@
 /*标尺*/
 .ruler{
     @extend %w100;
+    @extend %pr;
     @extend %bsb;
     height: 110rpx;
     background-color: #fff;
@@ -45,6 +46,15 @@
     .rule-item:first-child{
         margin-left: 20rpx;
     }
+}
+.rule-type{
+    @extend %pa;
+    @extend %t50;
+    @extend %l50;
+    width: 11rpx;
+    height: 104rpx;
+    margin-top: -52rpx;
+    margin-left: -5rpx;
 }
 
 .rule-item{

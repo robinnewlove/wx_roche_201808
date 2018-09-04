@@ -42,10 +42,11 @@ Page(Handle({
                     }
                 ]
             },
-            Bloodsugar: {
+            RedProtein: {
                 label: '糖化血红蛋白值',
                 placeholder: '请输入',
-                value: 0,
+                value: '',
+                type: 'digit',
                 use_check: [
                     {
                         nonempty: true,
@@ -67,7 +68,20 @@ Page(Handle({
         },
         arrRuler: 101,
         arrTimeStep: ARR_TIME_STEP,
-        timeStep: '空腹'
+        timeStep: '空腹',
+        objHidden: {
+            Bloodsugar: {
+                label: '糖化血红蛋白值',
+                placeholder: '请输入',
+                value: 0,
+                use_check: [
+                    {
+                        nonempty: true,
+                        prompt: '请输入糖化血红蛋白值'
+                    }
+                ]
+            },
+        }
     },
     handleScroll (e) {
         let { detail } = e;
@@ -78,7 +92,7 @@ Page(Handle({
     handleAddOrSub (e) {
         let { currentTarget } = e;
         let type = currentTarget.dataset.type || '1';
-        let value = this.data.objInput.Bloodsugar.value || 0;
+        let value = this.data.objHidden.Bloodsugar.value || 0;
         value = +value;
         if (type === '0' && value > 0.1) {
             value = (value * 10 - 1) / 10;
@@ -87,7 +101,7 @@ Page(Handle({
             value = (value * 10 + 1) / 10;
         }
         this.setData({
-            ['objInput.Bloodsugar.value']: value,
+            ['objHidden.Bloodsugar.value']: value,
         });
     },
     // 选择时间段
@@ -101,17 +115,24 @@ Page(Handle({
     // 保存提交
     handleSubmit() {
         if (Data.check(this.data.objInput)) return;
+        if (Data.check(this.data.objHidden)) return;
         this.setTestSugar();
     },
     // 提交设置
     setTestSugar() {
-        let data = Data.filter(this.data.objInput);
+        let data1 = Data.filter(this.data.objInput);
+        let data2 = Data.filter(this.data.objHidden);
+        let data = {
+            ...data1,
+            ...data2,
+        };
+        data.TimeStep = this.data.arrTimeStep.indexOf(this.data.timeStep) + 1;
+        data.RedProtein = +data.RedProtein;
         let options = {
             url: 'RocheApi/SetTestSugar',
             loading: true,
             data,
         };
-        data.TimeStep = this.data.arrTimeStep.indexOf(this.data.timeStep) + 1;
         return Http(options).then(() => {
             return Router.push('result_index', data);
         }).catch((err) => {
