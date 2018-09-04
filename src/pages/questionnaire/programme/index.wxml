@@ -23,22 +23,19 @@
               wx:for-item="item"
               wx:for-index="index"
               wx:key="item">
-            <view class="td td-1-0"><text class="text">周一</text></view>
-            <view class="td td-suc"><view class="status"><view class="status-spot"></view></view></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
+            <view class="td {{ ind === 0 && 'td-1-0'}} {{ite === 1 && 'td-suc'}}"
+                  wx:for="{{item}}"
+                  wx:for-item="ite"
+                  wx:for-index="ind"
+                  wx:key="ite">
+                <text class="text">{{dayText[ite]}}</text>
+                <view class="status"><view class="status-spot"></view></view>
+            </view>
         </view>
-
-
-        <!--<view class="td td-1-0"><text class="text">周一</text></view>-->
-        <!--<view class="td td-suc"><view class="status"><view class="status-spot"></view></view></view>-->
         <text class="table-prompt">*您也可以根据您的时间，调整测糖日，如改为每周二四六测糖</text>
     </view>
-    <view class="button">
+    <view class="button"
+          bindtap="handleJump">
         <text class="button-text">立即开始测糖</text>
     </view>
 </view>

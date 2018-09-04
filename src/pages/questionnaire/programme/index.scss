@@ -57,6 +57,7 @@
     &.td-0-0{
         background-color: #ebebeb;
         text{
+            @extend %db;
             @extend %fwb;
             color: #8c8c8c;
         }
@@ -64,13 +65,18 @@
     &.td-0-1{
         background-color: #67d5d6;
         text{
+            @extend %db;
             color: #fff;
         }
     }
     &.td-1-0{
         font-size: 18rpx;
         text{
+            @extend %db;
             color: #67d5d6;
+        }
+        .status{
+            @extend %dn;
         }
     }
     &.td-suc{
@@ -88,6 +94,7 @@
     }
 }
 .text{
+    @extend %dn;
     font-size: 21rpx;
 }
 .status{
