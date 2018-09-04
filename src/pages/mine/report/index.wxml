@@ -39,7 +39,7 @@
               wx:for-item="item"
               wx:for-index="index"
               wx:key="item">
-            <view class="td {{ ind === 0 && 'td-1-0'}} {{ite === 1 && 'td-suc'}}"
+            <view class="td {{ ind === 0 && 'td-1-0'}} {{ite === 1 && 'td-suc'}} {{ite.type}}"
                   wx:for="{{item}}"
                   wx:for-item="ite"
                   wx:for-index="ind"
@@ -47,16 +47,6 @@
                 <text class="text" wx:if="{{ite !== -1}}">{{ind === 0 ? dayText[ite] : ite.Bloodsugar}}</text>
                 <view class="status" wx:if="{{ite === -1}}"></view>
             </view>
-        </view>
-        <view class="tr">
-            <view class="td td-1-0"><text class="text">周一</text></view>
-            <view class="td up"><text class="text">1</text></view>
-            <view class="td nor"><text class="text">1</text></view>
-            <view class="td low"><text class="text">1</text></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
-            <view class="td"><view class="status"></view></view>
         </view>
     </view>
     <view class="explain">

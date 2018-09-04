@@ -5,7 +5,6 @@ import './index.wxml'
 
 import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
-import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import { getDate, formatData }  from 'wow-cool/lib/date.lib'
 import {
@@ -13,7 +12,7 @@ import {
     DAY_TEXT
 }                               from 'config/base.config'
 
-Page({
+Page(Handle({
     data: {
         arrTimeStep: ARR_TIME_STEP,
         result: '',
@@ -138,13 +137,16 @@ Page({
     initData (arr) {
         if (arr) {
             arr.forEach((item) => {
-                let { Day, TimeStep, Bloodsugar} = item;
+                let { Day, TimeStep, Bloodsugar,Gls} = item;
                 this.data.dayTime.forEach((it, ind) => {
                     if (Day === 7) Day = 0;
                     if (it[0] === Day) {
                         let sItem = `dayTime[${ind}][${TimeStep}]`;
                         this.setData({
-                            [sItem]: item,
+                            [sItem]: {
+                                ...item,
+                                type: Gls === 3 ? 'nor' : Gls < 3 ? 'low' : 'up',
+                            },
                         });
                     }
                 });
@@ -166,4 +168,4 @@ Page({
             dayTime: result
         });
     },
-});
+}));
