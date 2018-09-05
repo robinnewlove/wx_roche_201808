@@ -56,7 +56,6 @@
                 <view class="plan-button"
                       data-params="{{objUser}}"
                       data-url="mine_report_index"
-                      data-auth="auth"
                       bindtap="handleJump">
                     <image class="plan-button-icon"
                            mode="aspectFit" src="../../assets/images/home-icon-xtbg.png"></image>

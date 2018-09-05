@@ -63,7 +63,10 @@ Page(Handle({
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        let IsMember = this.data.objUser.IsMember;
-        if (url) Router.push(url, { IsMember });
+        let { IsPerfect } = this.data.objUser;
+        if ( url === 'mine_report_index' && !IsPerfect ) {
+            return Router.push('mine_info_index', { from: 'mine_index'});
+        }
+        Router.push(url);
     }
 }));

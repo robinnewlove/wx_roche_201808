@@ -79,10 +79,9 @@ Page(Handle({
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        let auth = currentTarget.dataset.auth;
         let params = currentTarget.dataset.params;
-        let {IsPerfect} = this.data.objUser;
-        if ( auth && !IsPerfect ) {
+        let { IsPerfect } = this.data.objUser;
+        if ( url === 'mine_report_index' && !IsPerfect ) {
             return Router.push('mine_info_index', { from: 'home_index'});
         }
         Router.push(url, params);
