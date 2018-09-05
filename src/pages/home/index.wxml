@@ -86,7 +86,7 @@
                                    wx:key="ite"
                                    wx:if="{{ite.TimeStep === index + 1}}"
                                    mode="aspectFit"
-                                   src="{{ite.TimeStep ? '../../assets/images/home-step-icon-2.png' : '../../assets/images/home-step-icon-1.png'}}"></image>
+                                   src="{{ite.IsComplete ? '../../assets/images/home-step-icon-2.png' : '../../assets/images/home-step-icon-1.png'}}"></image>
                         </view>
                         <text class="plan-item-text">{{item}}</text>
                     </view>
