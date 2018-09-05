@@ -48,7 +48,7 @@
             <image class="plan-bg"
                    mode="aspectFit" src="../../assets/images/home-plan-bg.png"></image>
             <view class="plan-top">
-                <view class="plan-button">
+                <view class="plan-button" wx:if="{{objUser.IsMember}}">
                     <image class="plan-button-icon"
                            mode="aspectFit" src="../../assets/images/home-icon-zxwz.png"></image>
                     <text class="plan-button-text">在线问诊</text>

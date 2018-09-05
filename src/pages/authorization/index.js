@@ -8,6 +8,8 @@ import Auth                     from 'plugins/auth.plugin'
 import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
 
+const app = getApp();
+
 Page({
     // 授权并登录
     bindGetUserInfo (e){
@@ -22,6 +24,7 @@ Page({
                 url: 'WechatApi/UserLogin',
                 data: {
                     code: result,
+                    sceneid: app.globalData.sceneid,
                 },
                 loading: true,
                 auth: false,

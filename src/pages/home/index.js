@@ -38,8 +38,10 @@ Page(Handle({
     firFun (info) {
         // 获取用户数据
         this.getUserInfo().then(() => {
-            let { IsArchives,  } = info;
-            if (!IsArchives) return Router.push('questionnaire_one_index');
+            let { IsArchives, IsMember} = info;
+            if (!IsArchives) {
+                return IsMember ? Router.push('questionnaire_pay_index') : Router.push('questionnaire_one_index');
+            }
             return this.getIndexSugar();
         }).catch((err) => {
             let { code } = err;
