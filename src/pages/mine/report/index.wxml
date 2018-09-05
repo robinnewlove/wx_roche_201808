@@ -65,7 +65,7 @@
     </view>
     <view class="weekly">
         <view class="weekly-head">
-            <text class="header-text">坚持30天养成测糖好习惯</text>
+            <text>坚持30天养成测糖好习惯</text>
         </view>
         <view class="weekly-cell">
             <view class="weekly-cell-text">
@@ -74,6 +74,29 @@
             </view>
             <text class="weekly-cell-time">22</text>
             <text class="weekly-cell-unit">次</text>
+        </view>
+        <view class="weekly-info">
+            <view class="weekly-info-item nor">
+                <text>正常次数</text>
+                <view class="weekly-info-con">
+                    <text class="weekly-info-num">8</text>
+                    <text class="weekly-info-unit">次</text>
+                </view>
+            </view>
+            <view class="weekly-info-item low">
+                <text>正常次数</text>
+                <view class="weekly-info-con">
+                    <text class="weekly-info-num">8</text>
+                    <text class="weekly-info-unit">次</text>
+                </view>
+            </view>
+            <view class="weekly-info-item up">
+                <text>正常次数</text>
+                <view class="weekly-info-con">
+                    <text class="weekly-info-num">8</text>
+                    <text class="weekly-info-unit">次</text>
+                </view>
+            </view>
         </view>
     </view>
     <view class="footer">

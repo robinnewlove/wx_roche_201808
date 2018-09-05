@@ -178,9 +178,14 @@
 .weekly-head{
     @extend %df;
     @extend %jcc;
+    @extend %bsb;
     height: 268rpx;
-    padding: 0 60rpx;
+    padding: 45rpx 60rpx 0;
     background: linear-gradient( #24a3db , #51c5de);
+    text{
+        font-size: 46rpx;
+        color: #fff;
+    }
 }
 .weekly-cell{
     @extend %df;
@@ -190,22 +195,58 @@
     height: 170rpx;
     background-color: #fff;
     border-radius: 10rpx;
+    box-shadow: 0 2rpx 10rpx 0 rgba(0,0,0,0.1);
     text{
         color: #28aeeb;
     }
 }
 .weekly-cell-text{
+    margin-right: 56rpx;
     text{
         @extend %db;
-        font-size: 46rpx;
+        font-size: 36rpx;
     }
 }
 .weekly-cell-time{
-    font-size: 46rpx;
+    font-size: 100rpx;
 }
 .weekly-cell-unit{
-    font-size: 46rpx;
+    margin: 60rpx 0 0 10rpx;
+    font-size: 22rpx;
 }
+
+.weekly-info{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    height: 314rpx;
+    //background-image: linear-gradient(#fff, #e8e8e8);
+}
+.weekly-info-item{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %fdc;
+    width: 200rpx;
+    height: 220rpx;
+    margin: 0 8rpx;
+    &.nor{
+        background-color: #f4fbfe;
+    }
+    &.low{
+        background-color: #f9fdf5;
+    }
+    &.up{
+        background-color: #fff8f6;
+    }
+    text{
+
+    }
+}
+.weekly-info-con{
+    
+}
+
 
 .footer{
     @extend %df;
