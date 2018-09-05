@@ -46,9 +46,8 @@ Page(Handle({
             return Auth.updateToken({IsArchives: true});
         }).then(() => {
             if (this.data.form) Router.pop();
-            else Router.push('questionnaire_programme_index', {
-                IsMember: this.data.IsMember,
-            }, true)
+            else if(this.data.IsMember) Router.push('questionnaire_programme_index', {}, true);
+            else Router.push('questionnaire_programme_index', {}, true);
         }).catch((err) => {
             Toast.error(err);
         });
