@@ -51,6 +51,7 @@ Page(Handle({
         Router.push('questionnaire_three_index', {
             arrResult: result,
             arrData: this.data.arrParams,
+            IsMember: this.data.$params.IsMember || '',
             form,
         }, true);
     },

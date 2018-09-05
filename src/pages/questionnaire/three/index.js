@@ -16,14 +16,16 @@ Page(Handle({
         arrData: [],
         arrResult: [],
         form: '',
+        IsMember: '',
     },
     onLoad (options) {
         let params = Router.getParams(options);
-        let {arrData, arrResult, form} = params;
+        let {arrData, arrResult, form, IsMember} = params;
         this.setData({
             arrData,
             arrResult,
             form,
+            IsMember,
         })
     },
     // 提交下一步
@@ -44,7 +46,9 @@ Page(Handle({
             return Auth.updateToken({IsArchives: true});
         }).then(() => {
             if (this.data.form) Router.pop();
-            else Router.push('questionnaire_programme_index', {}, true)
+            else Router.push('questionnaire_programme_index', {
+                IsMember: this.data.IsMember,
+            }, true)
         }).catch((err) => {
             Toast.error(err);
         });

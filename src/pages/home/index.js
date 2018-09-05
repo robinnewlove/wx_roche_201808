@@ -38,7 +38,7 @@ Page(Handle({
     firFun (info) {
         // 获取用户数据
         this.getUserInfo().then(() => {
-            let { IsArchives } = info;
+            let { IsArchives,  } = info;
             if (!IsArchives) return Router.push('questionnaire_one_index');
             return this.getIndexSugar();
         }).catch((err) => {
