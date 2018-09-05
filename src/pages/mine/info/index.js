@@ -93,13 +93,12 @@ Page(Handle({
     // 设置用户信息
     setUserInfo () {
         let data = Data.filter(this.data.objInput);
-        let IsMember = this.data.$params.IsMember;
-        data.IsMember = IsMember ? 1 : 0;
+        let from = this.data.$params.from || '';
         this.getOrSetUserInfo(data).then((res) => {
             Toast.error('设置成功');
             setTimeout(() => {
-                Router.pop();
-            }, 2000);
+               from ? Router.push('mine_report_index') : Router.pop();
+            }, 1000);
         }).catch((err) => {
             Toast.error(err);
         });

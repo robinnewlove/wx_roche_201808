@@ -79,7 +79,12 @@ Page(Handle({
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
+        let auth = currentTarget.dataset.auth;
         let params = currentTarget.dataset.params;
-        if (url) Router.push(url, params);
+        let {IsPerfect} = this.data.objUser;
+        if ( auth && !IsPerfect ) {
+            return Router.push('mine_info_index', { from: 'home_index'});
+        }
+        Router.push(url, params);
     },
 }));
