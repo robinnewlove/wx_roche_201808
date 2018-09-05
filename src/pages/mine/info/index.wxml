@@ -149,7 +149,7 @@
         </picker>
         <view class="form-button"
               bindtap="handleSubmit">
-            <text class="form-button-text">下一步</text>
+            <text class="form-button-text">{{$params.from ? '下一步' : '保存'}}</text>
         </view>
     </view>
 </view>

@@ -95,9 +95,9 @@ Page(Handle({
         let data = Data.filter(this.data.objInput);
         let from = this.data.$params.from || '';
         this.getOrSetUserInfo(data).then((res) => {
-            Toast.error('设置成功');
+            !from && Toast.error('保存成功');
             setTimeout(() => {
-               from ? Router.push('mine_report_index') : Router.pop();
+               from ? Router.push('mine_report_index', {}, true) : Router.pop();
             }, 1000);
         }).catch((err) => {
             Toast.error(err);
