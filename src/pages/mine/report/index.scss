@@ -232,19 +232,52 @@
     margin: 0 8rpx;
     &.nor{
         background-color: #f4fbfe;
+        text{
+            color: #28aeeb;
+        }
+        .weekly-info-con{
+            border-top: 1rpx solid #28aeeb;
+        }
     }
     &.low{
         background-color: #f9fdf5;
+        text{
+            color: #93d143;
+        }
+        .weekly-info-con{
+            border-top: 1rpx solid #93d143;
+        }
     }
     &.up{
         background-color: #fff8f6;
+        text{
+            color: #ff7f52;
+        }
+        .weekly-info-con{
+            border-top: 1rpx solid #ff7f52;
+        }
     }
     text{
-
+        font-size: 30rpx;
+    }
+    .weekly-info-num{
+        font-size: 100rpx;
+    }
+    .weekly-info-unit{
+        font-size: 22rpx;
+        margin-top: 55rpx;
+        margin-left: 5rpx;
     }
 }
 .weekly-info-con{
-    
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    width: 140rpx;
+    margin-top: 20rpx;
+    text{
+        @extend %db;
+    }
 }
 
 
