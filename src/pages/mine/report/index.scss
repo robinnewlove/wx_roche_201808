@@ -182,6 +182,30 @@
     padding: 0 60rpx;
     background: linear-gradient( #24a3db , #51c5de);
 }
+.weekly-cell{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    margin: -128rpx 60rpx 0;
+    height: 170rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+    text{
+        color: #28aeeb;
+    }
+}
+.weekly-cell-text{
+    text{
+        @extend %db;
+        font-size: 46rpx;
+    }
+}
+.weekly-cell-time{
+    font-size: 46rpx;
+}
+.weekly-cell-unit{
+    font-size: 46rpx;
+}
 
 .footer{
     @extend %df;

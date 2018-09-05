@@ -67,7 +67,14 @@
         <view class="weekly-head">
             <text class="header-text">坚持30天养成测糖好习惯</text>
         </view>
-
+        <view class="weekly-cell">
+            <view class="weekly-cell-text">
+                <text>本周总计</text>
+                <text>测糖次数</text>
+            </view>
+            <text class="weekly-cell-time">22</text>
+            <text class="weekly-cell-unit">次</text>
+        </view>
     </view>
     <view class="footer">
         <view class="footer-item">
