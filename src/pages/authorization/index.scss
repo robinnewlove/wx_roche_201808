@@ -1,20 +1,42 @@
 @import '../../assets/scss/define';
-.header{
-    @extend %df;
-    @extend %jcc;
-    padding-top: 100rpx;
+.wrap,
+.inner{
+    @extend %pa;
+    @extend %t0;
+    @extend %l0;
+    @extend %r0;
+    @extend %b0;
 }
-.logo{
-    width: 350rpx;
-    height: 220rpx;
-    background-color: red;
+.image{
+    @extend %w100;
+    @extend %h100;
+}
+.inner{
+    @extend %df;
+    @extend %fdc;
+    @extend %pr;
+    @extend %jcc;
+    @extend %aic;
+    text{
+        @extend %cfff;
+    }
+}
+.title{
+    font-size: 60rpx;
+}
+.prompt{
+
+    font-size: 36rpx;
 }
 .button{
     @extend %df;
+    @extend %pa;
     @extend %aic;
     @extend %jcc;
-    margin: 60rpx;
     height: 80rpx;
+    left: 60rpx;
+    right: 60rpx;
+    bottom: 80rpx;
     color: #fff;
     font-size: 36rpx;
     background: linear-gradient(to right, #39e2ee , #28aeeb);

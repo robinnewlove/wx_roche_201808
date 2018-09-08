@@ -1,13 +1,18 @@
 <!--index.wxml-->
-<view>
-    <view class="header">
-        <image class="logo"></image>
+<view class="wrap">
+    <image class="image"
+           mode="scaleToFill"
+           src="../../assets/images/login_bg.jpg"></image>
+    <view class="inner">
+        <text class="title">罗氏360°控糖服务</text>
+        <text class="prompt">定制专属控糖方案 时刻追踪血糖情况</text>
+        <text class="prompt">守护您的健康生活</text>
     </view>
     <button
         class="button"
         open-type="getUserInfo"
         bindgetuserinfo="bindGetUserInfo"
-    >用户授权快速登录</button>
+    >立即使用</button>
 </view>
 
 

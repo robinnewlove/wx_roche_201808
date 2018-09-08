@@ -29,7 +29,7 @@
 
         <!--血糖-->
         <view class="main">
-            <view class="inner">
+            <view class="inner nor">
                 <view class="con">
                     <text class="num">{{objUser.Bloodsugar}}</text>
                     <text class="unit">mmol/L</text>
