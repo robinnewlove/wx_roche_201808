@@ -10,6 +10,7 @@ import Handle                   from 'mixins/mixin.handle'
 import InputMixin               from 'mixins/input.mixin'
 import RouterMixin              from 'mixins/router.mixin'
 import Data                     from 'utils/data.util'
+import { formatData }           from 'wow-cool/lib/date.lib'
 import {
     ARR_TIME_STEP,
 }                               from 'config/base.config'
@@ -22,7 +23,7 @@ Page(Handle({
             TestDate: {
                 label: '测量日期',
                 placeholder: '请输入',
-                value: '',
+                value: formatData('yyyy-MM-dd', new Date()),
                 mode: 'date',
                 use_check: [
                     {
@@ -34,7 +35,7 @@ Page(Handle({
             TestTime: {
                 label: '测量时间',
                 placeholder: '请输入',
-                value: '',
+                value: formatData('hh:mm', new Date()),
                 mode: 'time',
                 use_check: [
                     {
@@ -59,12 +60,6 @@ Page(Handle({
                 label: '备注',
                 placeholder: '请输入',
                 value: '',
-                use_check: [
-                    {
-                        nonempty: true,
-                        prompt: '请输入备注'
-                    }
-                ]
             },
         },
         arrRuler: 101,
