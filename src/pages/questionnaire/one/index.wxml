@@ -61,13 +61,38 @@
                         type="text"
                         value="{{objInput.Brithday.value}}"
                         disabled
-                        placeholder="请输入您的出生年月"/>
+                        placeholder="请选择您的出生年月"/>
                 </view>
+                <view class="arrow"></view>
             </view>
         </picker>
+        <view class="agreement">
+            <view class="agreement-check">
+                <view class="agreement-check-inner"></view>
+            </view>
+            <text>我已阅读并同意</text>
+            <text class="agreement-text">《罗氏360控糖服务隐私声明》</text>
+        </view>
         <view class="form-button"
               bindtap="handleSubmit">
             <text class="form-button-text">下一步</text>
+        </view>
+    </view>
+
+    <view class="pop-wrap">
+        <view class="pop-inner">
+            <view class="pop-header">
+                <image></image>
+                <text>隐私条款</text>
+            </view>
+            <scroll-view scroll-y class="pop-con">
+                <text>罗氏诊断产品（上海）有限公司（以下简称“罗氏”）一向重视用户的个人信息及隐私的保护，并希望您通过本《隐私声明》了解并认可我们对涉及个人隐私信息的搜集、使用和共享。本《隐私声明》项下所涉及信息由我们或服务供应商通过由我们负责运营和管理的网络资产（例如移动网站、应用或微信服务号等，以下简称“网站”）进行征集。本《隐私声明》与您使用罗氏的服务息息相关，请您务必仔细阅读、充分理解。当您勾选同意栏，或继续使用罗氏网站，即表示您已阅读并同意本《隐私声明》的各项条款，并同意通过网站向我们提供您的各项个人信息。</text>
+                <text>罗氏诊断产品（上海）有限公司（以下简称“罗氏”）一向重视用户的个人信息及隐私的保护，并希望您通过本《隐私声明》了解并认可我们对涉及个人隐私信息的搜集、使用和共享。本《隐私声明》项下所涉及信息由我们或服务供应商通过由我们负责运营和管理的网络资产（例如移动网站、应用或微信服务号等，以下简称“网站”）进行征集。本《隐私声明》与您使用罗氏的服务息息相关，请您务必仔细阅读、充分理解。当您勾选同意栏，或继续使用罗氏网站，即表示您已阅读并同意本《隐私声明》的各项条款，并同意通过网站向我们提供您的各项个人信息。</text>
+                <text>罗氏诊断产品（上海）有限公司（以下简称“罗氏”）一向重视用户的个人信息及隐私的保护，并希望您通过本《隐私声明》了解并认可我们对涉及个人隐私信息的搜集、使用和共享。本《隐私声明》项下所涉及信息由我们或服务供应商通过由我们负责运营和管理的网络资产（例如移动网站、应用或微信服务号等，以下简称“网站”）进行征集。本《隐私声明》与您使用罗氏的服务息息相关，请您务必仔细阅读、充分理解。当您勾选同意栏，或继续使用罗氏网站，即表示您已阅读并同意本《隐私声明》的各项条款，并同意通过网站向我们提供您的各项个人信息。</text>
+            </scroll-view>
+            <view class="pop-button">
+                <text>返回</text>
+            </view>
         </view>
     </view>
 </view>

@@ -97,6 +97,52 @@
     color: #969696;
     margin-left: 20rpx;
 }
+.arrow{
+    width: 20rpx;
+    height: 20rpx;
+    transform: rotate(45deg);
+    border-color: #c0c0c0;
+    border-top-width: 1rpx;
+    border-top-style: solid;
+    border-right-width: 1rpx;
+    border-right-style: solid;
+    margin: 0 60rpx 0 -30rpx;
+}
+
+.agreement{
+    @extend %df;
+    @extend %aic;
+    margin-top: 110rpx;
+    padding: 0 60rpx;
+    text{
+        font-size: 28rpx;
+    }
+}
+.agreement-check{
+    //@extend %pr;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %bsb;
+    width: 30rpx;
+    height: 30rpx;
+    border: 2rpx solid #28aeeb;
+    margin-right: 20rpx;
+    text{
+        font-size: 28rpx;
+    }
+}
+.agreement-check-inner{
+    width: 18rpx;
+    height: 18rpx;
+    background-color: #28aeeb;
+}
+.agreement-text{
+    color: #28aeeb;
+}
+
+
+
 .form-button{
     @extend %df;
     @extend %aic;
@@ -109,4 +155,67 @@
 .form-button-text{
     color: #fff;
     font-size: 36rpx;
+}
+
+
+.pop-wrap{
+    z-index: 9;
+    @extend %pf;
+    @extend %t0;
+    @extend %l0;
+    @extend %r0;
+    @extend %b0;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    background-color: rgba(0,0,0,0.4);
+}
+.pop-inner{
+    @extend %bsb;
+    @extend %pr;
+    height: 920rpx;
+    width: 668rpx;
+    background-color: #fff;
+    border-radius: 5rpx;
+    padding: 0 60rpx;
+}
+.pop-header{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    padding: 40rpx 0 20rpx;
+    image{
+        width: 70rpx;
+        height: 70rpx;
+        background-color: red;
+        margin-right: 20rpx;
+    }
+    text{
+        font-size: 48rpx;
+        color: #28aeeb;
+    }
+}
+.pop-con{
+    height: 620rpx;
+    text{
+        font-size: 26rpx;
+        color: #6a6a6a;
+    }
+}
+.pop-button{
+    @extend %pa;
+    @extend %l50;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    border-radius: 34rpx;
+    margin-left: -200rpx;
+    width: 400rpx;
+    height: 68rpx;
+    bottom: 45rpx;
+    background: linear-gradient(to right, #39e2ee , #28aeeb);
+    text{
+        color: #ffffff;
+        font-size: 30rpx;
+    }
 }
