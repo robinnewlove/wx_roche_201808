@@ -33,11 +33,10 @@ Page(Handle({
             loading: true,
         };
         return Http(options).then((res) => {
-            let arrData = [...res];
-            arrData.pop();
+            let arr = res || [];
             this.setData({
-                arrParams: res.slice(3),
-                arrData: arrData || []
+                arrParams: arr.slice(2) || [],
+                arrData:  arr.slice(0,2) || []
             })
         }).catch((err) => {
             Toast.error(err);
@@ -48,7 +47,7 @@ Page(Handle({
         let result = this.checkData(this.data.arrData);
         if (!result.length) return;
         let form = this.data.$params.form || '';
-        Router.push('questionnaire_three_index', {
+        Router.push('questionnaire_copy_index', {
             arrResult: result,
             arrData: this.data.arrParams,
             IsMember: this.data.$params.IsMember || '',

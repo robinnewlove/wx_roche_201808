@@ -17,6 +17,7 @@ Page(Handle({
         arrResult: [],
         form: '',
         IsMember: '',
+        arrParams: [],
     },
     onLoad (options) {
         let params = Router.getParams(options);
