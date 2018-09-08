@@ -61,10 +61,11 @@ class Http {
                         if (Status === 201) {
                             Toast.error('token 已失效，请重新登录');
                             Auth.logout().finally(() => {
+                                let pages = getCurrentPages();    //获取加载的页面
+                                let first_url = pages[0].route;    //当前页面url
+                                let cur_url = pages[pages.length-1].route;    //当前页面url
                                 setTimeout(() => {
-                                    Router.root('home_index').finally(() => {
-                                        Router.push('authorization_index');
-                                    });
+                                    cur_url === first_url ? Router.push('authorization_index') : Router.root('home_index');
                                 }, 1000)
                             });
                             return;
