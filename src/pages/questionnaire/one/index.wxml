@@ -46,8 +46,13 @@
                 <view class="from-code"
                       bindtap="handleCode"
                       data-tel="{{item.use_code.tel}}"
-                      wx:if="{{item.use_code}}">
+                      data-count="{{item.use_code.count}}"
+                      hidden="{{!(item.use_code && count === 0)}}">
                     <text>获取验证码</text>
+                </view>
+                <view class="from-code from-code-disabled"
+                      hidden="{{!(item.use_code && count !== 0)}}">
+                    <text>{{count}}s</text>
                 </view>
             </view>
             <picker

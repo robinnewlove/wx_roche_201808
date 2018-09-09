@@ -124,7 +124,7 @@ export const PAY_QUESTION = {
         ],
         use_code: {
             tel: 'Mobile',
-            count: 60,
+            count: 10,
         },
     },
 };
