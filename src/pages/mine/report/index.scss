@@ -280,6 +280,91 @@
     }
 }
 
+.reminder{
+
+}
+.reminder-title{
+    @extend %df;
+    @extend %aic;
+    padding: 0 60rpx;
+    text{
+        font-size: 46rpx;
+        color: #555555;
+        margin-right: 20rpx;
+    }
+    image{
+        width: 68rpx;
+        height: 68rpx;
+        background-color: red;
+    }
+}
+.reminder-num{
+    @extend %df;
+    @extend %aic;
+    padding: 0 60rpx;
+    text{
+        font-size: 100rpx;
+        color: #ff7f52;
+    }
+}
+.reminder-num-prompt{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %bsb;
+    width: 68rpx;
+    height: 44rpx;
+    border-top-right-radius: 22rpx;
+    border-bottom-right-radius: 22rpx;
+    border: 2rpx solid #ff7f52;
+    border-left: none;
+    margin: 20rpx 0 0 30rpx;
+    text{
+        font-size: 22rpx;
+        color: #ff7f52;
+    }
+}
+.reminder-text{
+    //@extend %df;
+    padding: 0 60rpx;
+    text{
+        font-size: 30rpx;
+        color: #6b6b6b;
+    }
+    .color{
+        color: #5ec2f0;
+    }
+}
+.proposal{
+    @extend %pr;
+    @extend %bsb;
+    margin: 40rpx 20rpx 0;
+    padding: 20rpx 40rpx;
+    border: 2rpx solid #bee7f9;
+    line-height: 1.5;
+    text{
+        @extend %db;
+        font-size: 30rpx;
+        color: #5ec2f0;
+    }
+}
+.proposal-text{
+    margin-top: 10rpx;
+}
+.proposal-arrow{
+    @extend %pa;
+    top: -10rpx;
+    left: 40rpx;
+    width: 20rpx;
+    height: 20rpx;
+    transform: rotate(-45deg);
+    border-color: #bee7f9;
+    border-top-width: 2rpx;
+    border-top-style: solid;
+    border-right-width: 2rpx;
+    border-right-style: solid;
+    background-color: #fff;
+}
 
 .footer{
     @extend %df;

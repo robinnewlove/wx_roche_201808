@@ -101,26 +101,25 @@
     </view>
     <view class="reminder">
         <view class="reminder-title">
-            <text></text>
+            <text>空腹或餐前血糖</text>
             <image></image>
         </view>
         <view class="reminder-num">
-            <text></text>
+            <text>8.8</text>
             <view class="reminder-num-prompt">
                 <text>平均</text>
             </view>
         </view>
         <view class="reminder-text">
-            <text></text>
+            <text>您在报告周期内共监测了</text><text class="color">23</text><text>次空腹或餐前血糖您在报告周期内的平均空腹或餐前血糖水平是N1A 有点偏高。</text>
         </view>
         <view class="proposal">
             <view class="proposal-arrow"></view>
-            <text></text>
-            <text class="proposal-text">
-
-            </text>
+            <text>建议:</text>
+            <text class="proposal-text">三餐不要过量可以适当增加运动量。发生了N1H次空腹或餐前血糖升高的情况，需要警惕哦。适当增加运动并减少热量摄入，晚餐不宜吃的太多、时间不宜太晚，尽量避免夜宵。</text>
         </view>
     </view>
+
     <view class="footer">
         <view class="footer-item">
             <image class="left-icon" mode="aspectFit" src="../../../assets/images/xtbg-icon-4.png"></image>
