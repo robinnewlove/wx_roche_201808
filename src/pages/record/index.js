@@ -19,7 +19,7 @@ let deltaX = 0;
 Page(Handle({
     mixins: [RouterMixin, InputMixin],
     data: {
-        min: 6,
+        min: 0,
         objInput: {
             TestDate: {
                 label: '测量日期',
@@ -63,12 +63,12 @@ Page(Handle({
                 value: '',
             },
         },
-        arrRuler: 71,
+        arrRuler: 101,
         arrTimeStep: ARR_TIME_STEP,
         timeStep: '空腹',
         objHidden: {
             Bloodsugar: {
-                value: '6.0',
+                value: 6,
                 use_check: [
                     {
                         nonempty: true,
@@ -87,7 +87,8 @@ Page(Handle({
             let {width} = rect;
             this.setData({
                 ruleWidth: width
-            })
+            });
+            this.countScrollLeft();
         }).exec();
     },
 
@@ -124,7 +125,7 @@ Page(Handle({
         let type = currentTarget.dataset.type || '1';
         let value = +this.data.objHidden.Bloodsugar.value || 0;
         value = +value;
-        if (type === '0' && value > 6) {
+        if (type === '0' && value > 0) {
             value = (value * 10 - 1) / 10;
         }
         if ( type === '1' && value < 20) {
