@@ -8,7 +8,6 @@ module.exports = {
     "mine_report_index": "/pages/mine/report/index",
     "questionnaire_copy_index": "/pages/questionnaire/copy/index",
     "questionnaire_one_index": "/pages/questionnaire/one/index",
-    "questionnaire_pay_index": "/pages/questionnaire/pay/index",
     "questionnaire_programme_index": "/pages/questionnaire/programme/index",
     "questionnaire_three_index": "/pages/questionnaire/three/index",
     "questionnaire_two_index": "/pages/questionnaire/two/index",

@@ -19,6 +19,7 @@ let deltaX = 0;
 Page(Handle({
     mixins: [RouterMixin, InputMixin],
     data: {
+        min: 6,
         objInput: {
             TestDate: {
                 label: '测量日期',
@@ -44,36 +45,34 @@ Page(Handle({
                     }
                 ]
             },
-            RedProtein: {
-                label: '糖化血红蛋白值',
-                placeholder: '请输入',
-                value: '',
-                type: 'digit',
-                use_check: [
-                    {
-                        nonempty: true,
-                        prompt: '请输入糖化血红蛋白值'
-                    }
-                ]
-            },
+            // RedProtein: {
+            //     label: '糖化血红蛋白值',
+            //     placeholder: '请输入',
+            //     value: '',
+            //     type: 'digit',
+            //     use_check: [
+            //         {
+            //             nonempty: true,
+            //             prompt: '请输入糖化血红蛋白值'
+            //         }
+            //     ]
+            // },
             Remark: {
                 label: '备注',
                 placeholder: '请输入',
                 value: '',
             },
         },
-        arrRuler: 101,
+        arrRuler: 71,
         arrTimeStep: ARR_TIME_STEP,
         timeStep: '空腹',
         objHidden: {
             Bloodsugar: {
-                label: '糖化血红蛋白值',
-                placeholder: '请输入',
-                value: 0,
+                value: '6.0',
                 use_check: [
                     {
                         nonempty: true,
-                        prompt: '请输入糖化血红蛋白值'
+                        prompt: '请输入当前血糖值'
                     }
                 ]
             },
@@ -83,7 +82,7 @@ Page(Handle({
     },
     onReady () {
         deltaX = 0;
-        var query = wx.createSelectorQuery();
+        let query = wx.createSelectorQuery();
         query.select('.rule-item').boundingClientRect((rect) => {
             let {width} = rect;
             this.setData({
@@ -100,12 +99,12 @@ Page(Handle({
             value = ((num * 100 * scrollLeft) / 100).toFixed(1);
         }
         this.setData({
-            'objHidden.Bloodsugar.value': value
+            'objHidden.Bloodsugar.value': +value + this.data.min
         });
     },
 
     countScrollLeft () {
-        let value = this.data.objHidden.Bloodsugar.value;
+        let value = +this.data.objHidden.Bloodsugar.value - this.data.min;
         let width = this.data.ruleWidth;
         let num = (2 / (width * 10));
         let scrollLeft = Math.floor(value / num);
@@ -123,9 +122,9 @@ Page(Handle({
     handleAddOrSub (e) {
         let { currentTarget } = e;
         let type = currentTarget.dataset.type || '1';
-        let value = this.data.objHidden.Bloodsugar.value || 0;
+        let value = +this.data.objHidden.Bloodsugar.value || 0;
         value = +value;
-        if (type === '0' && value >= 0.1) {
+        if (type === '0' && value > 6) {
             value = (value * 10 - 1) / 10;
         }
         if ( type === '1' && value < 20) {
@@ -133,7 +132,7 @@ Page(Handle({
         }
         if (value !== 0) value = value.toFixed(1);
         this.setData({
-            ['objHidden.Bloodsugar.value']: value,
+            'objHidden.Bloodsugar.value': +value,
         });
         this.countScrollLeft();
     },
@@ -160,7 +159,7 @@ Page(Handle({
             ...data2,
         };
         data.TimeStep = this.data.arrTimeStep.indexOf(this.data.timeStep) + 1;
-        data.RedProtein = +data.RedProtein;
+        // data.RedProtein = +data.RedProtein;
         let options = {
             url: 'RocheApi/SetTestSugar',
             loading: true,
