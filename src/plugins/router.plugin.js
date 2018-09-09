@@ -18,9 +18,9 @@ export default {
     },
 
     getParams (options) {
-        if(!options) return '';
+        if(!options) return {};
         let {params} = options;
-        if(!params) return '';
+        if(!params) return {};
         return JSON.parse(decodeURIComponent(options.params));
     }
 };

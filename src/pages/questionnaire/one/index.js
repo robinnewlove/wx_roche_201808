@@ -7,52 +7,19 @@ import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import InputMixin               from 'mixins/input.mixin'
+import RouterMixin              from 'mixins/router.mixin'
 import UserMixin                from 'mixins/user.mixin'
 import Data                     from 'utils/data.util'
 import { formatData }           from 'wow-cool/lib/date.lib'
+import {
+    FREE_QUESTION,
+    PAY_QUESTION,
+}                               from 'config/questionnaire.config'
 
 Page(Handle({
-    mixins: [InputMixin, UserMixin],
+    mixins: [InputMixin, UserMixin, RouterMixin],
     data: {
-        objInput: {
-            Name: {
-                label: '姓名',
-                placeholder: '请输入您的姓名',
-                value: '',
-                use_check: [
-                    {
-                        nonempty: true,
-                        prompt: '请输入您的姓名'
-                    }
-                ]
-            },
-            Sex: {
-                label: '性别',
-                value: 1,
-                use_radio: [
-                    {
-                        label: '男',
-                        value: 1,
-                    },
-                    {
-                        label: '女',
-                        value: 0,
-                    }
-                ]
-            },
-            Brithday: {
-                value: '',
-                label: '出生年月',
-                use_check: [
-                    {
-                        nonempty: true,
-                        prompt: '请输入您的出生年月'
-                    }
-                ],
-                start: '1901-01-01',
-                end: formatData('yyyy-MM-dd'),
-            }
-        },
+        objInput: {},
         is_pop: false,
         objHidden: {
             is_agree: {
@@ -67,8 +34,19 @@ Page(Handle({
         },
 
     },
-    onLoad () {
+    onLoad (options) {
+        this.getParamsByUrl(options);
+        this.initData();
         this.fetchUserInfo();
+    },
+    // 初始化参数
+    initData () {
+        let objInput = {};
+        if (!this.data.$params.IsMember) objInput = PAY_QUESTION;
+        else objInput = FREE_QUESTION;
+        this.setData({
+            objInput,
+        })
     },
     // 提交下一步
     handleSubmit () {
@@ -80,7 +58,9 @@ Page(Handle({
     setUserInfo () {
         let data = Data.filter(this.data.objInput);
         this.getOrSetUserInfo(data).then(() => {
-            Router.push('questionnaire_two_index', {}, true,);
+            Router.push('questionnaire_two_index', {
+                ...this.data.$params,
+            }, true,);
         }).catch((err) => {
             Toast.error(err);
         });
@@ -98,12 +78,14 @@ Page(Handle({
             Toast.error(err);
         });
     },
+    // 协议
     handleAgree() {
         let type = this.data.objHidden.is_agree.value;
         this.setData({
             'objHidden.is_agree.value': !type,
         })
     },
+    // 弹窗
     handlePop(e) {
         let { currentTarget } = e;
         let is_pop = currentTarget.dataset.value;
