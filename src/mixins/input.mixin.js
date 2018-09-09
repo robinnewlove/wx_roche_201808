@@ -6,7 +6,8 @@ const handle = function (e) {
     } = e;
     let key = currentTarget.dataset.key;
     let obj = currentTarget.dataset.obj;
-    let value = detail.value || currentTarget.dataset.value || '';
+    let value = typeof detail.value === 'undefined' ?
+        currentTarget.dataset.value : detail.value;
     if (obj) {
         let sItem = `${obj}.${key}.value`;
         this.setData({

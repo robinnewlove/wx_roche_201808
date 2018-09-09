@@ -16,6 +16,8 @@ Page(Handle({
     data: {
         objInput: {
             Name: {
+                label: '姓名',
+                placeholder: '请输入您的姓名',
                 value: '',
                 use_check: [
                     {
@@ -25,16 +27,30 @@ Page(Handle({
                 ]
             },
             Sex: {
+                label: '性别',
                 value: 1,
+                use_radio: [
+                    {
+                        label: '男',
+                        value: 1,
+                    },
+                    {
+                        label: '女',
+                        value: 0,
+                    }
+                ]
             },
             Brithday: {
                 value: '',
+                label: '出生年月',
                 use_check: [
                     {
                         nonempty: true,
                         prompt: '请输入您的出生年月'
                     }
-                ]
+                ],
+                start: '1901-01-01',
+                end: formatData('yyyy-MM-dd'),
             }
         },
         is_pop: false,
@@ -49,8 +65,7 @@ Page(Handle({
                 ]
             },
         },
-        start: '1901-01-01',
-        end: formatData('yyyy-MM-dd'),
+
     },
     onLoad () {
         this.fetchUserInfo();

@@ -8,64 +8,61 @@
         <text class="sub-title">基本信息</text>
     </view>
     <view class="from-wrap">
-        <view class="from-item">
-            <label class="from-label">姓名</label>
-            <view class="from-value">
-                <input
-                    bindinput="bindInput"
-                    data-obj="objInput"
-                    data-key="Name"
-                    type="text"
-                    minlength="20"
-                    value="{{objInput.Name.value}}"
-                    placeholder="请输入您的姓名"/>
-            </view>
-        </view>
-        <view class="from-item">
-            <label class="from-label">性别</label>
-            <view class="from-value"></view>
-            <view class="from-radio">
-                <view class="from-radio-item"
-                      bindtap="bindTap"
-                      data-obj="objInput"
-                      data-key="Sex"
-                      data-value="1">
-                    <image class="from-radio-image"
-                           mode="aspectFit"
-                           src="{{objInput.Sex.value == 1 ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
-                    <text class="from-radio-text">男</text>
-                </view>
-                <view class="from-radio-item"
-                      bindtap="bindTap"
-                      data-obj="objInput"
-                      data-key="Sex"
-                      data-value="0">
-                    <image class="from-radio-image"
-                           mode="aspectFit"
-                           src="{{objInput.Sex.value == 0 ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
-                    <text class="from-radio-text">女</text>
-                </view>
-            </view>
-        </view>
-        <picker
-            bindchange="bindChange"
-            data-obj="objInput"
-            data-key="Brithday"
-            mode="date"
-            end="{{end}}"
-            start="{{start}}">
-            <view class="from-item">
-                <label class="from-label">出生年月</label>
+        <block wx:for="{{objInput}}"
+               wx:for-index="key"
+               wx:key="key"
+               wx:for-item="item">
+            <view class="from-item" wx:if="{{key !== 'Brithday'}}">
+                <label class="from-label">{{item.label}}</label>
                 <view class="from-value">
                     <input
-                        type="text"
-                        value="{{objInput.Brithday.value}}"
-                        disabled
-                        placeholder="请选择您的出生年月"/>
+                        wx:if="{{!item.use_radio}}"
+                        bindinput="bindInput"
+                        data-obj="objInput"
+                        data-key="{{key}}"
+                        type="{{item.type || 'text'}}"
+                        minlength="20"
+                        value="{{item.value}}"
+                        placeholder="{{item.placeholder}}"/>
                 </view>
-                <view class="arrow"></view>
+                <view class="from-radio" wx:if="{{item.use_radio}}">
+                    <view class="from-radio-item"
+                          wx:for="{{item.use_radio}}"
+                          wx:for-item="radio"
+                          wx:for-index="index"
+                          wx:key="index"
+                          bindtap="bindTap"
+                          data-obj="objInput"
+                          data-key="{{key}}"
+                          data-value="{{radio.value}}">
+                        <image class="from-radio-image"
+                               mode="aspectFit"
+                               src="{{item.value == radio.value ? '../../../assets/images/select-ative-icon.png' : '../../../assets/images/select-nor-icon.png'}}"></image>
+                        <text class="from-radio-text">{{radio.label}}</text>
+                    </view>
+                </view>
             </view>
-        </picker>
+            <picker
+                wx:if="{{key === 'Brithday'}}"
+                bindchange="bindChange"
+                data-obj="objInput"
+                data-key="{{key}}"
+                mode="date"
+                end="{{item.end}}"
+                start="{{item.start}}">
+                <view class="from-item">
+                    <label class="from-label">出生年月</label>
+                    <view class="from-value">
+                        <input
+                            type="text"
+                            value="{{item.value}}"
+                            disabled
+                            placeholder="{{item.placeholder}}"/>
+                    </view>
+                    <view class="arrow"></view>
+                </view>
+            </picker>
+        </block>
         <view class="agreement">
             <view class="agreement-check" bindtap="handleAgree">
                 <view class="agreement-check-inner"
