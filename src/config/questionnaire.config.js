@@ -112,4 +112,19 @@ export const PAY_QUESTION = {
             }
         ]
     },
+    Code: {
+        label: '验证码',
+        placeholder: '请输入验证码',
+        value: '',
+        use_check: [
+            {
+                nonempty: true,
+                prompt: '请输入验证码'
+            }
+        ],
+        use_code: {
+            tel: 'Mobile',
+            count: 60,
+        },
+    },
 };

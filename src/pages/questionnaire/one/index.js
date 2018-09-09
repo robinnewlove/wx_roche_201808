@@ -9,6 +9,7 @@ import Handle                   from 'mixins/mixin.handle'
 import InputMixin               from 'mixins/input.mixin'
 import RouterMixin              from 'mixins/router.mixin'
 import UserMixin                from 'mixins/user.mixin'
+import CodeMixin                from 'mixins/code.mixin'
 import Data                     from 'utils/data.util'
 import { formatData }           from 'wow-cool/lib/date.lib'
 import {
@@ -17,7 +18,7 @@ import {
 }                               from 'config/questionnaire.config'
 
 Page(Handle({
-    mixins: [InputMixin, UserMixin, RouterMixin],
+    mixins: [InputMixin, UserMixin, RouterMixin, CodeMixin],
     data: {
         objInput: {},
         is_pop: false,
