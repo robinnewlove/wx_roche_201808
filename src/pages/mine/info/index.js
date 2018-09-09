@@ -69,8 +69,8 @@ Page(Handle({
                 },
             },
             RedProtein: {
-                label: '糖化血红蛋白',
-                placeholder: '请输入',
+                label: '糖化血红蛋白值',
+                placeholder: '请输入糖化血红蛋白值',
                 value: '',
                 use_check: [
                     {
