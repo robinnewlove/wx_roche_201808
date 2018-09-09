@@ -3,21 +3,99 @@ import './index.json'
 import './index.scss'
 import './index.wxml'
 
-import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import InputMixin               from 'mixins/input.mixin'
 import UserMixin                from 'mixins/user.mixin'
+import CodeMixin                from 'mixins/code.mixin'
 import RouterMixin              from 'mixins/router.mixin'
 import Data                     from 'utils/data.util'
 import { formatData }           from 'wow-cool/lib/date.lib'
 
 Page(Handle({
-    mixins: [InputMixin, UserMixin, RouterMixin],
+    mixins: [InputMixin, UserMixin, RouterMixin, CodeMixin],
     data: {
         objInput: {
+            Height: {
+                label: '身高',
+                placeholder: '请输入您的身高',
+                value: '',
+                use_check: [
+                    {
+                        nonempty: true,
+                        prompt: '请输入您的身高'
+                    }
+                ],
+                unit: 'cm',
+            },
+            Weight: {
+                label: '体重',
+                placeholder: '请输入您的体重',
+                value: '',
+                use_check: [
+                    {
+                        nonempty: true,
+                        prompt: '请输入您的体重'
+                    }
+                ],
+                unit: 'kg',
+            },
+            Mobile: {
+                label: '手机号',
+                placeholder: '请输入您的手机号',
+                type: 'tel',
+                value: '',
+                use_check: [
+                    {
+                        nonempty: true,
+                        prompt: '请输入您的手机号'
+                    }
+                ]
+            },
+            SmsCode: {
+                label: '验证码',
+                placeholder: '请输入验证码',
+                value: '',
+                use_check: [
+                    {
+                        nonempty: true,
+                        prompt: '请输入验证码'
+                    }
+                ],
+                use_code: {
+                    tel: 'Mobile',
+                    count: 10,
+                },
+            },
+            RedProtein: {
+                label: '糖化血红蛋白',
+                placeholder: '请输入',
+                value: '',
+                use_check: [
+                    {
+                        nonempty: true,
+                        prompt: '请输入糖化血红蛋白值'
+                    }
+                ]
+            },
+            LowSugar: {
+                label: '是否患有有低血糖',
+                value: 1,
+                use_radio: [
+                    {
+                        label: '是',
+                        value: 1,
+                    },
+                    {
+                        label: '否',
+                        value: 2,
+                    }
+                ]
+            },
             Name: {
+                label: '姓名',
+                placeholder: '请输入您的姓名',
                 value: '',
                 use_check: [
                     {
@@ -27,53 +105,26 @@ Page(Handle({
                 ]
             },
             Sex: {
+                label: '性别',
                 value: 1,
+                use_radio: [
+                    {
+                        label: '男',
+                        value: 1,
+                    },
+                    {
+                        label: '女',
+                        value: 2,
+                    }
+                ]
             },
             Brithday: {
                 value: '',
+                label: '出生年月',
                 use_check: [
                     {
                         nonempty: true,
                         prompt: '请输入您的出生年月'
-                    }
-                ]
-            },
-            Height: {
-                value: '',
-                use_check: [
-                    {
-                        nonempty: true,
-                        prompt: '请输入您的身高'
-                    }
-                ]
-            },
-            Weight: {
-                value: '',
-                use_check: [
-                    {
-                        nonempty: true,
-                        prompt: '请输入您的体重'
-                    }
-                ]
-            },
-            Mobile: {
-                value: '',
-                use_check: [
-                    {
-                        nonempty: true,
-                        prompt: '请输入您的手机号'
-                    }
-                ]
-            },
-            LowSugar: {
-                value: 1,
-            },
-            RedProtein: {
-                value: '',
-                use_check: [
-                    {
-                        nonempty: true,
-                        prompt: '请输入糖化血红蛋白值'
                     }
                 ]
             },

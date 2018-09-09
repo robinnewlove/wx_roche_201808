@@ -74,6 +74,26 @@
     font-size: 36rpx;
     color: #969696;
 }
+.from-code{
+    @extend %df;
+    @extend %bsb;
+    @extend %aic;
+    @extend %jcc;
+    width: 152rpx;
+    height: 60rpx;
+    border: 2rpx solid #28aeeb;
+    margin-right: 60rpx;
+    text{
+        color: #28aeeb;
+        font-size: 26rpx;
+    }
+    &.from-code-disabled{
+        border: 2rpx solid #ddd;
+        text{
+            color: #999;
+        }
+    }
+}
 .from-radio{
     @extend %df;
     @extend %aic;
