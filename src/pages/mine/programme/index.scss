@@ -20,7 +20,7 @@
     @extend %jcc;
     padding: 20rpx 30rpx;
     text{
-        color: #5ad1d2;
+        color: #28aeeb;
     }
 }
 .prompt-text{
@@ -61,7 +61,7 @@
         }
     }
     &.td-0-1{
-        background-color: #67d5d6;
+        background-color: #28aeeb;
         text{
             @extend %db;
             color: #fff;
@@ -71,7 +71,7 @@
         font-size: 18rpx;
         text{
             @extend %db;
-            color: #67d5d6;
+            color: #28aeeb;
         }
         .status{
             @extend %dn;
@@ -82,7 +82,7 @@
             @extend %pr;
             width: 15rpx;
             height: 15rpx;
-            border: 2rpx solid #67d5d6;
+            border: 2rpx solid #28aeeb;
             border-radius: 50%;
             background-color: #fff;
         }
@@ -108,7 +108,7 @@
     width: 6rpx;
     height: 6rpx;
     border-radius: 50%;
-    background-color: #67d5d6;
+    background-color: #28aeeb;
 }
 .table-prompt{
     @extend %db;

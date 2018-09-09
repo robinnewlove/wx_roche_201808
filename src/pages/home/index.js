@@ -39,9 +39,7 @@ Page(Handle({
         // 获取用户数据
         this.getUserInfo().then(() => {
             let { IsArchives, IsMember} = info;
-            if (!IsArchives) {
-                return IsMember ? Router.push('questionnaire_pay_index') : Router.push('questionnaire_one_index');
-            }
+            if (!IsArchives) return Router.push('questionnaire_one_index', { IsMember });
             return this.getIndexSugar();
         }).catch((err) => {
             let { code } = err;

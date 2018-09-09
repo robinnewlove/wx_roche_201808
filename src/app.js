@@ -2,11 +2,6 @@ import './app.json'
 import './app.wxss'
 import 'utils/es6-promise.util'
 
-import Auth                     from 'plugins/auth.plugin'
-import Http                     from 'plugins/http.plugin'
-import Toast                    from 'plugins/toast.plugin'
-import Router                   from 'plugins/router.plugin'
-
 // app.js
 App({
     // 生命周期函数--监听小程序初始化,
