@@ -19,7 +19,6 @@ let deltaX = 0;
 Page(Handle({
     mixins: [RouterMixin, InputMixin],
     data: {
-        min: 0,
         objInput: {
             TestDate: {
                 label: '测量日期',
@@ -68,7 +67,7 @@ Page(Handle({
         timeStep: '空腹',
         objHidden: {
             Bloodsugar: {
-                value: 6,
+                value: '6.0',
                 use_check: [
                     {
                         nonempty: true,
@@ -100,12 +99,12 @@ Page(Handle({
             value = ((num * 100 * scrollLeft) / 100).toFixed(1);
         }
         this.setData({
-            'objHidden.Bloodsugar.value': +value + this.data.min
+            'objHidden.Bloodsugar.value': value
         });
     },
 
     countScrollLeft () {
-        let value = +this.data.objHidden.Bloodsugar.value - this.data.min;
+        let value = +this.data.objHidden.Bloodsugar.value;
         let width = this.data.ruleWidth;
         let num = (2 / (width * 10));
         let scrollLeft = Math.floor(value / num);
@@ -133,16 +132,16 @@ Page(Handle({
         }
         if (value !== 0) value = value.toFixed(1);
         this.setData({
-            'objHidden.Bloodsugar.value': +value,
+            'objHidden.Bloodsugar.value': value,
         });
         this.countScrollLeft();
     },
     // 选择时间段
     handleTimeStep (e) {
         let { currentTarget } = e;
-        let value = currentTarget.dataset.value;
+        let timeStep = currentTarget.dataset.value;
         this.setData({
-            timeStep: value,
+            timeStep,
         });
     },
     // 保存提交
@@ -160,7 +159,7 @@ Page(Handle({
             ...data2,
         };
         data.TimeStep = this.data.arrTimeStep.indexOf(this.data.timeStep) + 1;
-        // data.RedProtein = +data.RedProtein;
+        data.Bloodsugar = +data.Bloodsugar;
         let options = {
             url: 'RocheApi/SetTestSugar',
             loading: true,

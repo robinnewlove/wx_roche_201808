@@ -32,7 +32,7 @@
                   wx:for-index="key"
                   wx:key="key">
                 <view class="rule-item-sign"></view>
-                <text wx:if="{{item % 5 === 0}}" class="rule-item-value-text">{{(item / 5) + min}}</text>
+                <text wx:if="{{item % 5 === 0}}" class="rule-item-value-text">{{(item / 5)}}</text>
             </view>
             <view class="rule-null-item"></view>
         </scroll-view>
