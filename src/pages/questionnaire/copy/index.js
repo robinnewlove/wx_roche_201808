@@ -26,27 +26,23 @@ Page(Handle({
     },
     // 初始化数据
     initData () {
-        let {arrData, arrResult, form, IsMember} = this.data.$params;
+        let {arrData, arrResult} = this.data.$params;
         let arrParams = arrData.slice(1);
         arrData = arrData.slice(0,1);
         this.setData({
             arrData,
             arrResult,
-            arrParams,
-            form,
-            IsMember,
+            arrParams
         })
     },
     // 提交下一步
     handleSubmit () {
         let result = this.checkData(this.data.arrData);
         if (!result.length) return;
-        let form = this.data.$params.form || '';
         Router.push('questionnaire_three_index', {
-            arrResult: result,
+            ...this.data.$params,
+            arrResult: [...result, ...this.data.$params.arrResult],
             arrData: this.data.arrParams,
-            IsMember: this.data.$params.IsMember || '',
-            form,
         }, true);
     },
 

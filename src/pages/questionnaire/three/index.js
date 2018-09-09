@@ -9,24 +9,22 @@ import Router                   from 'plugins/router.plugin'
 import Toast                    from 'plugins/toast.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import QueMixin                 from 'mixins/questionnaire.mixin'
+import RouterMixin              from 'mixins/router.mixin'
 
 Page(Handle({
-    mixins: [QueMixin],
+    mixins: [QueMixin, RouterMixin],
     data: {
         arrData: [],
-        arrResult: [],
-        form: '',
-        IsMember: '',
-        arrParams: [],
     },
     onLoad (options) {
-        let params = Router.getParams(options);
-        let {arrData, arrResult, form, IsMember} = params;
+        this.getParamsByUrl(options);
+        this.initData();
+    },
+    // 初始化数据
+    initData() {
+        let {arrData} = this.data.$params;
         this.setData({
             arrData,
-            arrResult,
-            form,
-            IsMember,
         })
     },
     // 提交下一步
@@ -34,7 +32,7 @@ Page(Handle({
         let result = this.checkData(this.data.arrData);
         if (!result.length) return;
         let data = [
-            ...this.data.arrResult,
+            ...this.data.$params.arrResult,
             ...result,
         ];
         Auth.getToken().then((res) => {
@@ -46,8 +44,8 @@ Page(Handle({
         }).then(() => {
             return Auth.updateToken({IsArchives: true});
         }).then(() => {
-            if (this.data.form) Router.pop();
-            else if(this.data.IsMember) Router.push('questionnaire_programme_index', {}, true);
+            if (this.data.$params.form) Router.pop();
+            else if(this.data.$params.IsMember) Router.push('questionnaire_programme_index', {}, true);
             else Router.push('questionnaire_programme_index', {}, true);
         }).catch((err) => {
             Toast.error(err);

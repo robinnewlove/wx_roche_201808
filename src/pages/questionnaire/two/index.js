@@ -46,12 +46,10 @@ Page(Handle({
     handleSubmit () {
         let result = this.checkData(this.data.arrData);
         if (!result.length) return;
-        let form = this.data.$params.form || '';
         Router.push('questionnaire_copy_index', {
+            ...this.data.$params,
             arrResult: result,
             arrData: this.data.arrParams,
-            IsMember: this.data.$params.IsMember || '',
-            form,
         }, true);
     },
 
