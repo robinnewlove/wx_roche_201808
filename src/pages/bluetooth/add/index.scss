@@ -7,10 +7,9 @@
     background-color: #28aeeb;
     height: 100rpx;
     image{
-        width: 50rpx;
-        height: 50rpx;
+        width: 40rpx;
+        height: 36rpx;
         margin-right: 10rpx;
-        background-color: red;
     }
     text{
         font-size: 32rpx;
@@ -18,6 +17,9 @@
     }
 }
 .inner{
+    @extend %oh;
+}
+.before{
     @extend %oh;
     @extend %df;
     @extend %fdc;
@@ -27,10 +29,30 @@
         margin: 170rpx 0 64rpx;
         width: 205rpx;
         height: 205rpx;
-        background-color: red;
     }
     text{
         font-size: 46rpx;
+        color: #ababab;
+    }
+
+}
+.after{
+    @extend %df;
+    @extend %fdc;
+    @extend %jcc;
+    @extend %aic;
+    line-height: 1.6;
+    image{
+        margin: 75rpx 0 40rpx;
+        width: 390rpx;
+        height: 550rpx;
+    }
+    text{
+        font-size: 46rpx;
+        color: #6b6b6b;
+    }
+    .no-text{
+        font-size: 36rpx;
         color: #ababab;
     }
 }
@@ -75,6 +97,19 @@
     text{
         font-size: 32rpx;
         color: #fff;
+    }
+}
+.form-button{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    margin: 42rpx 60rpx 0;
+    height: 80rpx;
+    background: linear-gradient(to right, #39e2ee , #28aeeb);
+    border-radius: 40rpx;
+    .form-button-text{
+        color: #fff;
+        font-size: 36rpx;
     }
 }
 
