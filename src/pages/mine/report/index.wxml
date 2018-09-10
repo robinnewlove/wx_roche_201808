@@ -113,7 +113,8 @@
         <view class="reminder-text">
             <text>{{weekReport.FastingBeforeReport}}</text>
         </view>
-        <view class="proposal">
+        <view class="proposal"
+              wx:if="{{weekReport.FastingBeforeDesc}}">
             <view class="proposal-arrow"></view>
             <text>建议:</text>
             <text class="proposal-text">{{weekReport.FastingBeforeDesc}}</text>
@@ -133,7 +134,8 @@
         <view class="reminder-text">
             <text>{{weekReport.AfterReport}}</text>
         </view>
-        <view class="proposal">
+        <view class="proposal"
+              wx:if="{{weekReport.AfterDesc}}">
             <view class="proposal-arrow"></view>
             <text>建议:</text>
             <text class="proposal-text">{{weekReport.AfterDesc}}</text>
@@ -153,7 +155,8 @@
         <view class="reminder-text">
             <text>{{weekReport.LowReport}}</text>
         </view>
-        <view class="proposal">
+        <view class="proposal"
+              wx:if="{{weekReport.LowDesc}}">
             <view class="proposal-arrow"></view>
             <text>建议:</text>
             <text class="proposal-text">{{weekReport.LowDesc}}</text>
