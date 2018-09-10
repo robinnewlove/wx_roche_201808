@@ -43,7 +43,7 @@ Page(Handle({
     // 初始化参数
     initData () {
         let objInput = {};
-        if (!this.data.$params.IsMember) objInput = PAY_QUESTION;
+        if (this.data.$params.IsMember) objInput = PAY_QUESTION;
         else objInput = FREE_QUESTION;
         this.setData({
             objInput,
