@@ -9,10 +9,10 @@
         <text>并且已经开机</text>
     </view>
     <view class="tel">
-        <text>如果有问题，请拨打落实</text>
-        <text class="tel-text"></text>
-        <text class="tel-text"></text>
-        <text></text>
+        <text>如有问题，您可以拨打罗氏客户关爱热线</text>
+        <text class="tel-text">800 820 2777（固话）</text>
+        <text class="tel-text">400 820 2777（手机）</text>
+        <text>工作时间每天8：00-20：00（法定节假日除外）</text>
     </view>
     <view class="prompt">
         <text>部分安卓机型，无法正常使用蓝牙连接</text>

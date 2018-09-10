@@ -18,29 +18,63 @@
     }
 }
 .inner{
+    @extend %oh;
+    @extend %df;
+    @extend %fdc;
+    @extend %jcc;
+    @extend %aic;
     image{
-        
+        margin: 170rpx 0 64rpx;
+        width: 205rpx;
+        height: 205rpx;
+        background-color: red;
     }
     text{
-
+        font-size: 46rpx;
+        color: #ababab;
     }
 }
 .tel{
+    @extend %df;
+    @extend %fdc;
+    @extend %jcc;
+    @extend %aic;
+    margin-top: 95rpx;
+    line-height: 1.6;
     text{
-
+        font-size: 28rpx;
+        color: #28aeeb;
+    }
+    text:last-child{
+        font-size: 24rpx;
     }
     .tel-text{
-
+        font-size: 36rpx;
     }
 }
 .prompt{
+    @extend %df;
+    @extend %fdc;
+    @extend %jcc;
+    @extend %aic;
+    margin-top: 40rpx;
     text{
-
+        font-size: 30rpx;
+        color: #6b6b6b;
     }
 }
 .link{
+    @extend %df;
+    @extend %jcc;
+    @extend %aic;
+    width: 410rpx;
+    height: 60rpx;
+    border-radius: 20rpx;
+    background-color: #ababab;
+    margin-top: 15rpx;
     text{
-
+        font-size: 32rpx;
+        color: #fff;
     }
 }
 
