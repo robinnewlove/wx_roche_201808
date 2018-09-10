@@ -55,7 +55,7 @@ export default {
                     case 4:
                         let answerTag = {};
                         Answers.forEach((it) => {
-                            if (it.Id === check) answerTag = it;
+                            if (it.ChooseNum === check) answerTag = it;
                         });
                         let {AnswerTags} = answerTag;
                         if (!AnswerTags || !AnswerTags.length) {
