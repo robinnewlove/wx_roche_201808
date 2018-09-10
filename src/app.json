@@ -1,8 +1,7 @@
 {
     "pages": [
-        "pages/mine/introduce/index",
-        "pages/authorization/index",
         "pages/home/index",
+        "pages/authorization/index",
         "pages/bluetooth/add/index",
         "pages/bluetooth/index",
         "pages/bluetooth/measure/index",
@@ -10,6 +9,7 @@
         "pages/bluetooth/transfer/index",
         "pages/mine/index",
         "pages/mine/info/index",
+        "pages/mine/introduce/index",
         "pages/mine/programme/index",
         "pages/mine/report/index",
         "pages/questionnaire/activation/index",
