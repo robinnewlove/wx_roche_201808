@@ -1,0 +1,76 @@
+@import '../../../assets/scss/define';
+/*头部*/
+.header{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    background-color: #28aeeb;
+    height: 100rpx;
+    image{
+        width: 50rpx;
+        height: 50rpx;
+        margin-right: 10rpx;
+        background-color: red;
+    }
+    text{
+        font-size: 32rpx;
+        color: #fff;
+    }
+}
+.inner{
+    image{
+        
+    }
+    text{
+
+    }
+}
+.tel{
+    text{
+
+    }
+    .tel-text{
+
+    }
+}
+.prompt{
+    text{
+
+    }
+}
+.link{
+    text{
+
+    }
+}
+
+.pop-wrap{
+    @extend %pf;
+    @extend %t0;
+    @extend %l0;
+    @extend %r0;
+    @extend %b0;
+    background-color: rgba(0,0,0,0.5);
+}
+.pop-inner{
+
+}
+.pop-title{
+
+}
+.pop-prompt{
+    text{
+
+    }
+}
+.pop-input{
+
+}
+.pop-btn{
+
+}
+.pop-btn-item{
+    text{
+
+    }
+}

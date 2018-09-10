@@ -175,12 +175,12 @@
                     <text>整体</text>
                 </view>
             </view>
-            <view class="reminder-data-item low">
-                <text>{{weekReport.AvgAfterVal}}</text>
-                <view class="prompt-text">
-                    <text>餐后</text>
-                </view>
-            </view>
+            <!--<view class="reminder-data-item low">-->
+                <!--<text>{{weekReport.AvgAfterVal}}</text>-->
+                <!--<view class="prompt-text">-->
+                    <!--<text>餐后</text>-->
+                <!--</view>-->
+            <!--</view>-->
             <view class="reminder-data-item up">
                 <text>{{weekReport.DayMaxVal}}</text>
                 <view class="prompt-text">
@@ -191,9 +191,9 @@
         <view class="reminder-text">
             <text>{{weekReport.WholeReport}}</text>
         </view>
-        <view class="reminder-text" wx:if="{{weekReport.PPGE}}">
-            <text>{{weekReport.PPGE}}</text>
-        </view>
+        <!--<view class="reminder-text" wx:if="{{weekReport.PPGE}}">-->
+            <!--<text>{{weekReport.PPGE}}</text>-->
+        <!--</view>-->
         <view class="reminder-text">
             <text>{{weekReport.DayMaxWholeReport}}</text>
         </view>

@@ -1,0 +1,43 @@
+<view>
+    <view class="header">
+        <image></image>
+        <text>寻找设备中，请耐心等待...</text>
+    </view>
+    <view class="inner">
+        <image src="../../../assets/images/bdly-explain-bg1.jpg"></image>
+        <text>请确保待绑定设备在手机旁边</text>
+        <text>并且已经开机</text>
+    </view>
+    <view class="tel">
+        <text>如果有问题，请拨打落实</text>
+        <text class="tel-text"></text>
+        <text class="tel-text"></text>
+        <text></text>
+    </view>
+    <view class="prompt">
+        <text>部分安卓机型，无法正常使用蓝牙连接</text>
+        <view class="link"
+              data-url="record_index"
+              bindtap="handleJump">
+            <text>点击前往手动记录</text>
+        </view>
+    </view>
+
+    <view class="pop-wrap" hidden="{{true}}">
+        <view class="pop-inner">
+            <text class="pop-title"></text>
+            <view class="pop-prompt">
+                <text></text>
+            </view>
+            <input class="pop-input" type="text"/>
+            <view class="pop-btn">
+                <view class="pop-btn-item">
+                    <text>取消</text>
+                </view>
+                <view class="pop-btn-item">
+                    <text>配对</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
