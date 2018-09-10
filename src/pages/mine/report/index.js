@@ -190,5 +190,19 @@ Page(Handle({
                 weekReport,
             })
         });
+    },
+    handlePreviewImage() {
+        // wx.previewImage({
+        //     current: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2854560059,552756199&fm=27&gp=0.jpg',
+        //     urls: ['https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2854560059,552756199&fm=27&gp=0.jpg'] // 需要预览的图片http链接列表
+        // });
+        // wx.getImageInfo({// 获取图片信息（此处可不要）
+        //     src: 'assets/images/xtbg-ewm-icon.png',
+        //     success: function (res) {
+        //         console.log(res.width)
+        //         console.log(res.height)
+        //     }
+        // })
+
     }
 }));

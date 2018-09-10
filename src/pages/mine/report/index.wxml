@@ -207,7 +207,10 @@
             <text class="footer-text">需要继续加油！</text>
         </view>
         <view class="footer-item">
-            <image class="right-icon" mode="aspectFit" src="../../../assets/images/xtbg-ewm-icon.png"></image>
+            <image class="right-icon"
+                   bindtap="handlePreviewImage"
+                   mode="aspectFit"
+                   src="../../../assets/images/xtbg-ewm-icon.png"></image>
             <text class="footer-text">关注罗氏血糖仪官方微信号</text>
             <text class="footer-text">获取更多控糖秘诀！</text>
         </view>

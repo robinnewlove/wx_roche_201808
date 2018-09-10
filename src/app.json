@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/mine/report/index",
         "pages/bluetooth/measure/index",
         "pages/questionnaire/one/index",
         "pages/home/index",
@@ -12,7 +13,6 @@
         "pages/mine/info/index",
         "pages/mine/introduce/index",
         "pages/mine/programme/index",
-        "pages/mine/report/index",
         "pages/questionnaire/copy/index",
         "pages/questionnaire/programme/index",
         "pages/questionnaire/three/index",
