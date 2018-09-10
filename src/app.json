@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/home/index",
         "pages/authorization/index",
+        "pages/home/index",
         "pages/bluetooth/add/index",
         "pages/bluetooth/index",
         "pages/bluetooth/measure/index",
