@@ -8,6 +8,7 @@
     height: 268rpx;
     padding: 0 60rpx;
     background: linear-gradient( #24a3db , #51c5de);
+    line-height: 1.5;
     text{
         color: #fff;
     }
@@ -18,7 +19,6 @@
 .header-text{
     @extend %db;
     font-size: 30rpx;
-    margin-right: 26rpx;
 }
 
 .tab{
@@ -281,7 +281,7 @@
 }
 
 .reminder{
-
+    margin-bottom: 70rpx;
 }
 .reminder-title{
     @extend %df;
@@ -324,9 +324,65 @@
         color: #ff7f52;
     }
 }
+
+.reminder-data{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    margin: 30rpx 0 40rpx;
+    justify-content: space-between;
+}
+.reminder-data-item{
+    @extend %df1;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %fdc;
+    text{
+        font-size: 100rpx;
+    }
+    &.nor{
+        text{
+            color: #28aeeb;
+        }
+        .prompt-text{
+            border-color: #28aeeb;
+        }
+    }
+    &.low{
+        text{
+            color: #93d143;
+        }
+        .prompt-text{
+            border-color: #93d143;
+        }
+    }
+    &.up{
+        text{
+            color: #ff7f52;
+        }
+        .prompt-text{
+            border-color: #ff7f52;
+        }
+    }
+}
+.prompt-text{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    @extend %bsb;
+    width: 124rpx;
+    height: 44rpx;
+    border: 2rpx solid #ddd;
+    border-radius: 22rpx;
+    text{
+        font-size: 22rpx;
+    }
+}
+
 .reminder-text{
-    //@extend %df;
     padding: 0 60rpx;
+    margin-bottom: 30rpx;
     text{
         font-size: 30rpx;
         color: #6b6b6b;

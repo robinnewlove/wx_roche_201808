@@ -23,19 +23,19 @@ Page(Handle({
         sTime: '',
         eTime: '',
 
-        vSTime1: '',
-        vETime1: '',
         vSTime2: '',
         vETime2: '',
 
         curTime: new Date().getTime(),
+        weekReport: {},
     },
     onLoad () {
         this.getDay();
         this.initData();
         this.getRecommendSugar();
+        this.getWeekReport();
     },
-
+    // 上下周
     handlePreOrNext (e) {
         let { currentTarget } = e;
         let count = +currentTarget.dataset.count;
@@ -47,8 +47,8 @@ Page(Handle({
         this.getDay();
         this.initData();
         this.getRecommendSugar();
+        this.getWeekReport();
     },
-
     // 获取日期
     getDay () {
         let date = new Date(this.data.curTime);
@@ -102,10 +102,8 @@ Page(Handle({
         this.setData( {
             sTime,
             eTime,
-            vSTime1: formatData('yyyy/MM/dd', new Date(sTime)),
-            vETime1: formatData('yyyy/MM/dd', new Date(eTime)),
-            vSTime2: formatData('MM/dd', new Date(sTime)),
-            vETime2: formatData('MM/dd', new Date(eTime)),
+            vSTime2: formatData('MM月dd日', new Date(sTime)),
+            vETime2: formatData('MM月dd日', new Date(eTime)),
         });
         return result;
     },
@@ -134,6 +132,7 @@ Page(Handle({
             Toast.error(err);
         });
     },
+    // 初始化数据
     initData (arr) {
         if (arr) {
             arr.forEach((item) => {
@@ -168,4 +167,28 @@ Page(Handle({
             dayTime: result
         });
     },
+    // 获取周报
+    getWeekReport () {
+        let Stime = this.data.sTime;
+        let Etime = this.data.eTime;
+        let options = {
+            url: 'RocheApi/GetWeekReport',
+            loading: true,
+            data: {
+                Stime,
+                Etime,
+            }
+        };
+        let weekReport;
+        return Http(options).then((res) => {
+            weekReport = res || {};
+        }).catch((err) => {
+            Toast.error(err);
+            weekReport = {};
+        }).finally(() => {
+            this.setData({
+                weekReport,
+            })
+        });
+    }
 }));
