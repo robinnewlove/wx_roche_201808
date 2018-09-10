@@ -1,6 +1,6 @@
 {
     "pages": [
-        "pages/test/index",
+        "pages/questionnaire/activation/index",
         "pages/home/index",
         "pages/authorization/index",
         "pages/bluetooth/add/index",
@@ -19,7 +19,8 @@
         "pages/questionnaire/three/index",
         "pages/questionnaire/two/index",
         "pages/record/index",
-        "pages/result/index"
+        "pages/result/index",
+        "pages/test/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

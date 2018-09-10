@@ -1,0 +1,25 @@
+<view>
+   <view class="inner">
+       <image src="../../../assets/images/hyjh-bg.jpg"></image>
+       <text class="title">罗氏360°稳糖计划</text>
+       <view class="con before">
+           <view class="con-title" hidden="{{check}}">
+               <text>输入10位服务码  即刻激活服务</text>
+           </view>
+           <input type="number"
+                  focus="{{true}}"
+                  data-key="code"
+                  value="{{code}}" maxlength="10" class="con-input"/>
+           <button class="con-button"
+               bindtap="handleClick"
+           >提交</button>
+       </view>
+       <view class="con after" hidden="{{!check}}">
+           <text class="con-prompt">您的服务已开通</text>
+           <button class="con-button"
+                   data-url="questionnaire_programme_index"
+                   bindtap="handleJump"
+           >查看我的计划</button>
+       </view>
+   </view>
+</view>

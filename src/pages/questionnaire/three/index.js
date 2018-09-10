@@ -45,7 +45,7 @@ Page(Handle({
             return Auth.updateToken({IsArchives: true});
         }).then(() => {
             if (this.data.$params.form) Router.pop();
-            else if(this.data.$params.IsMember) Router.push('questionnaire_programme_index', {}, true);
+            else if(this.data.$params.IsMember) Router.push('questionnaire_activation_index', {}, true);
             else Router.push('questionnaire_programme_index', {}, true);
         }).catch((err) => {
             Toast.error(err);
