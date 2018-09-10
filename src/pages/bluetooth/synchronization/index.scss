@@ -32,19 +32,3 @@
     color: #fff;
     font-size: 36rpx;
 }
-.prompt{
-    @extend %df;
-    @extend %aic;
-    @extend %fdc;
-    @extend %jcc;
-    padding: 70rpx 0 60rpx;
-    line-height: 1.5;
-    text{
-        font-size: 30rpx;
-        color: #6b6b6b;
-    }
-    .link{
-        color: #28aeeb;
-        border-bottom: 2rpx solid #28aeeb;
-    }
-}

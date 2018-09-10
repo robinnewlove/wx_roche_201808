@@ -1,57 +1,33 @@
-<view>
+<view class="wrap">
     <view class="header">
-        <image src="../../../assets/images/lylj-ing-icon.jpg"></image>
-        <text>寻找设备中，请耐心等待...</text>
+        <text>传输已完成</text>
     </view>
-    <view class="inner"  hidden="{{true}}">
-        <view class="before" hidden="{{true}}">
-            <image src="../../../assets/images/lylj-null-icon.jpg"></image>
-            <text>请确保待绑定设备在手机旁边</text>
-            <text>并且已经开机</text>
+    <view class="session">
+        <view class="time">
+            <text></text>
         </view>
-        <view class="after">
-            <image src="../../../assets/images/lylj-result-icon.jpg"></image>
-            <text>罗氏Connect血糖仪</text>
-            <text class="no-text">00:60:19:40:3D:60</text>
+        <view class="con">
+            <view class="con-item">
+                <text class="label"></text>
+                <text class="value"></text>
+                <text class="unit"></text>
+            </view>
+            <view class="con-line"></view>
+            <view class="con-item">
+                <text class="label"></text>
+                <text class="value"></text>
+            </view>
         </view>
-        <view class="form-button"
-              data-url="bluetooth_add_index"
+    </view>
+    <view class="footer">
+        <view class="footer-button calendar-title"
               bindtap="handleJump">
-            <text class="form-button-text">绑定</text>
+            <text class="footer-button-text">返回首页</text>
         </view>
-    </view>
-    <view hidden="{{true}}">
-        <view class="tel">
-            <text>如有问题，您可以拨打罗氏客户关爱热线</text>
-            <text class="tel-text">800 820 2777（固话）</text>
-            <text class="tel-text">400 820 2777（手机）</text>
-            <text>工作时间每天8：00-20：00（法定节假日除外）</text>
-        </view>
-        <view class="prompt">
-            <text>部分安卓机型，无法正常使用蓝牙连接</text>
-            <view class="link"
-                  data-url="record_index"
-                  bindtap="handleJump">
-                <text>点击前往手动记录</text>
-            </view>
-        </view>
-    </view>
-
-    <view class="pop-wrap" hidden="{{true}}">
-        <view class="pop-inner">
-            <text class="pop-title">蓝牙配对请求</text>
-            <view class="pop-prompt">
-                <text class="color">“Performa Connect血糖仪”</text><text>想与您的手机配对，请输入血糖仪上显示的代码</text>
-            </view>
-            <input class="pop-input" type="number"/>
-            <view class="pop-btn">
-                <view class="pop-btn-item">
-                    <text>取消</text>
-                </view>
-                <view class="pop-btn-item">
-                    <text>配对</text>
-                </view>
-            </view>
+        <view class="footer-button calendar-title"
+              data-url="mine_programme_index"
+              bindtap="handleJump">
+            <text class="footer-button-text">我的测糖方案</text>
         </view>
     </view>
 </view>
