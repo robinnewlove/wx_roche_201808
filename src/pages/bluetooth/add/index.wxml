@@ -17,8 +17,8 @@
         </view>
         <view class="form-button"
               hidden="{{blueTooth}}"
-              data-url="bluetooth_add_index"
-              bindtap="handleJump">
+              data-value="{{true}}"
+              bindtap="handlePop">
             <text class="form-button-text">绑定</text>
         </view>
     </view>
@@ -39,15 +39,20 @@
         </view>
     </view>
 
-    <view class="pop-wrap" hidden="{{true}}">
+    <view class="pop-wrap" hidden="{{!isPop}}">
         <view class="pop-inner">
             <text class="pop-title">蓝牙配对请求</text>
             <view class="pop-prompt">
                 <text class="color">“Performa Connect血糖仪”</text><text>想与您的手机配对，请输入血糖仪上显示的代码</text>
             </view>
-            <input class="pop-input" type="number"/>
+            <input class="pop-input"
+                   bindinput="bindInput"
+                   data-key="deviceId"
+                   value="{{deviceId}}"
+                   type="number"/>
             <view class="pop-btn">
-                <view class="pop-btn-item">
+                <view class="pop-btn-item"
+                      data-value="{{false}}">
                     <text>取消</text>
                 </view>
                 <view class="pop-btn-item">

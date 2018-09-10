@@ -32,7 +32,7 @@ Page(Handle({
             },
             {
                 label: '绑定 performa connect',
-                url: '',
+                url: 'bluetooth_index',
                 value: '',
             }
         ]

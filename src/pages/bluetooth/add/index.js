@@ -5,18 +5,24 @@ import './index.wxml'
 
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
-import SDKServiceMixin          from 'services/sdk.services.mixin'
+import InputMixin               from 'mixins/input.mixin'
+import SDK                      from 'services/sdk.services'
 import Toast                    from 'plugins/toast.plugin'
 
 Page(Handle({
-    mixins: [SDKServiceMixin],
+    mixins: [InputMixin],
     data: {
         blueTooth: '',
+        isPop: false,
+        deviceId: '',
     },
     onLoad() {
         // 搜索蓝牙
+        this.searchRoche()
+    },
+    searchRoche () {
         let blueTooth;
-        this.searchRoche().then((res) => {
+        SDK.searchRoche().then((res) => {
             console.log('成功',res);
             blueTooth = res || {};
         }).catch((err) => {
@@ -33,5 +39,23 @@ Page(Handle({
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
         Router.push(url);
+    },
+    // 绑定
+    handlePop (e) {
+        let { currentTarget } = e;
+        let isPop = currentTarget.dataset.value;
+        this.setData({ isPop })
+    },
+    // 配对
+    handlePairRoche() {
+        let deviceId = this.data.deviceId;
+        if (!deviceId) return Toast.error('请输入血糖仪上显示的代码');
+        SDK.pairRoche(deviceId).then((res) => {
+            console.log('成功',res);
+
+        }).catch((err) => {
+            Toast.error(err);
+            console.log(err)
+        })
     }
 }));
