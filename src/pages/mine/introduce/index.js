@@ -37,6 +37,6 @@ Page(Handle({
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        Router.push(url, {}, true);
+        Router.push(url);
     }
 }));

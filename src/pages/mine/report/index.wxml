@@ -203,8 +203,8 @@
         <view class="footer-item">
             <image class="left-icon" mode="aspectFit" src="../../../assets/images/xtbg-icon-4.png"></image>
             <text class="left-prompt">医生提示</text>
-            <text class="footer-text">您的测糖目标未达成</text>
-            <text class="footer-text">需要继续加油！</text>
+            <text class="footer-text">科学规范地监测3个月</text>
+            <text class="footer-text">可有效管理血糖，坚持哦！</text>
         </view>
         <view class="footer-item">
             <image class="right-icon"

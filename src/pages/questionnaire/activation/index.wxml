@@ -9,7 +9,10 @@
            <input type="number"
                   focus="{{true}}"
                   data-key="code"
-                  value="{{code}}" maxlength="10" class="con-input"/>
+                  bindinput="bindInput"
+                  value="{{code}}"
+                  maxlength="10"
+                  class="con-input"/>
            <button class="con-button"
                bindtap="handleClick"
            >提交</button>

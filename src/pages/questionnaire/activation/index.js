@@ -25,7 +25,7 @@ Page(Handle({
     // 购买会员
     setMemberInfo () {
         let Code = this.data.code;
-        if (!Code) Toast.error('请输入10位服务码');
+        if (!Code) return Toast.error('请输入10位服务码');
         let options = {
             url: 'RocheApi/SetMemberInfo',
             data: {
