@@ -17,5 +17,6 @@ module.exports = {
     "questionnaire_three_index": "/pages/questionnaire/three/index",
     "questionnaire_two_index": "/pages/questionnaire/two/index",
     "record_index": "/pages/record/index",
-    "result_index": "/pages/result/index"
+    "result_index": "/pages/result/index",
+    "test_index": "/pages/test/index"
 }

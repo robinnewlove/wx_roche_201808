@@ -1,20 +1,22 @@
 <view>
     <view class="header">
         <image src="../../../assets/images/lylj-ing-icon.jpg"></image>
-        <text>寻找设备中，请耐心等待...</text>
+        <text>{{blueTooth ? '已发现1个设备，点击绑定' : '寻找设备中，请耐心等待...'}}</text>
     </view>
-    <view class="inner"  hidden="{{true}}">
-        <view class="before" hidden="{{true}}">
+    <view class="inner">
+        <view class="before" hidden="{{blueTooth === ''}}">
             <image src="../../../assets/images/lylj-null-icon.jpg"></image>
             <text>请确保待绑定设备在手机旁边</text>
             <text>并且已经开机</text>
         </view>
-        <view class="after">
+        <view class="after" hidden="{{blueTooth}}">
             <image src="../../../assets/images/lylj-result-icon.jpg"></image>
-            <text>罗氏Connect血糖仪</text>
-            <text class="no-text">00:60:19:40:3D:60</text>
+            <!--<text>罗氏Connect血糖仪</text>-->
+            <text>{{blueTooth.name}}</text>
+            <text class="no-text">{{blueTooth.deviceId}}</text>
         </view>
         <view class="form-button"
+              hidden="{{blueTooth}}"
               data-url="bluetooth_add_index"
               bindtap="handleJump">
             <text class="form-button-text">绑定</text>

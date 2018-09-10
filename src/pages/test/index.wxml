@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="wrap">
+    <button
+        class="button"
+        bindtap="handleJump1"
+    >付费测试</button>
+    <button
+        class="button"
+        bindtap="handleJump2"
+    >免费测试</button>
+</view>
+
+

@@ -1,0 +1,40 @@
+@import '../../assets/scss/define';
+.wrap,
+.inner{
+    @extend %pa;
+    @extend %t0;
+    @extend %l0;
+    @extend %r0;
+    @extend %b0;
+}
+.image{
+    @extend %w100;
+    @extend %h100;
+}
+.inner{
+    @extend %df;
+    @extend %fdc;
+    @extend %pr;
+    @extend %jcc;
+    @extend %aic;
+    text{
+        @extend %cfff;
+    }
+}
+.title{
+    font-size: 60rpx;
+}
+.prompt{
+
+    font-size: 36rpx;
+}
+.button{
+    @extend %aic;
+    @extend %jcc;
+    height: 80rpx;
+    margin: 60rpx 60rpx;
+    color: #fff;
+    font-size: 36rpx;
+    background: linear-gradient(to right, #39e2ee , #28aeeb);
+    border-radius: 40rpx;
+}

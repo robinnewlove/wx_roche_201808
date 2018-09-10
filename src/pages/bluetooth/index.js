@@ -7,9 +7,6 @@ import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 
 Page(Handle({
-    data: {
-
-    },
     // 跳转
     handleJump (e) {
         let { currentTarget } = e;
