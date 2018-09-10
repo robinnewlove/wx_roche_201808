@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/questionnaire/one/index",
         "pages/bluetooth/measure/index",
+        "pages/questionnaire/one/index",
         "pages/home/index",
         "pages/authorization/index",
         "pages/bluetooth/add/index",

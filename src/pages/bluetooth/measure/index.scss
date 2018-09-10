@@ -1,77 +1,15 @@
 @import '../../../assets/scss/define';
-.wrap{
-
-}
-
-/*用户*/
-.user{
+/*头部*/
+.header{
     @extend %df;
     @extend %aic;
+    @extend %jcc;
+    background-color: #28aeeb;
     height: 100rpx;
-    margin-top: 30rpx;
-    padding-left: 29rpx;
-}
-.user-image{
-    margin-right: 27rpx;
-    width: 100rpx;
-    height: 100rpx;
-    background-color: #aaaaaa;
-    border-radius: 50%;
-}
-.user-info{
-    @extend %df1;
-}
-.user-text{
-    @extend %db;
-    font-size: 30rpx;
-    color: #000;
-}
-.user-name{
-    font-weight: bold;
-}
-.user-prompt{
-    @extend %df;
-    @extend %aic;
-}
-.user-strong-text{
-    color: #28aeeb;
-    padding: 0 10rpx;
-}
-
-
-
-/*蓝牙*/
-.blue-tooth{
-    @extend %pa;
-    @extend %bsb;
-    @extend %df;
-    @extend %aic;
-    top: 30rpx;
-    right: 0;
-    width: 120rpx;
-    height: 100rpx;
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border: solid #28aeeb 2rpx;
-    border-right: none;
-    padding-left: 52rpx;
-}
-.blue-tooth-icon{
-    @extend %pa;
-    @extend %t50;
-    margin-top: -21rpx;
-    left: 20rpx;
-    width: 25rpx;
-    height: 43rpx;
-}
-.blue-tooth-bar{
-    width: 8rpx;
-    height: 100rpx;
-    background-color: #fff;
-}
-.blue-tooth-text{
-    font-size: 28rpx;
-    color: #28aeeb;
+    text{
+        font-size: 32rpx;
+        color: #fff;
+    }
 }
 
 /*血糖*/
@@ -79,7 +17,7 @@
     @extend %df;
     @extend %aic;
     @extend %jcc;
-    margin-top: 17rpx;
+    margin-top: 150rpx;
 }
 .inner{
     @extend %pr;
@@ -162,11 +100,19 @@
     margin-left: 5rpx;
 }
 
-.footer{
-    @extend %pf;
-    @extend %l0;
-    @extend %r0;
-    @extend %b0;
-    height: 88rpx;
-    background-image: linear-gradient(to right, #3bddf2, #2cbdf0);
+.form-button{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    margin: 40rpx 60rpx 0;
+    height: 80rpx;
+    background: linear-gradient(to right, #39e2ee , #28aeeb);
+    border-radius: 40rpx;
+    &:last-child{
+        margin-bottom: 80rpx;
+    }
+}
+.form-button-text{
+    color: #fff;
+    font-size: 36rpx;
 }

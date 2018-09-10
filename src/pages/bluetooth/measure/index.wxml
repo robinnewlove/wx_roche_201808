@@ -1,62 +1,36 @@
 <!--index.wxml-->
 <view class="wrap">
-    <view hidden="{{loading}}">
-        <!--用户-->
-        <view class="user">
-            <image class="user-image"
-                   src="{{userInfo.avatarUrl}}"></image>
-            <view class="user-info">
-                <text class="user-name user-text"
-                >{{objUser.Name || userInfo.nickName}}</text>
-                <view class="user-prompt">
-                    <text class="user-text">罗氏血糖管家已守护您</text>
-                    <text class="user-text user-strong-text"
-                    >{{objUser.LoginDays}}</text>
-                    <text class="user-text">天</text>
-                </view>
-            </view>
-        </view>
-        <!--/用户-->
-
-        <!--蓝牙-->
-        <view class="blue-tooth"
-              data-url="bluetooth_index"
-              bindtap="handleJump">
-            <image class="blue-tooth-icon"
-                   mode="aspectFit" src="../../../assets/images/blue-tooth-icon.png"></image>
-            <view class="blue-tooth-bar"></view>
-            <text class="blue-tooth-text">同步血糖</text>
-        </view>
-        <!--/蓝牙-->
-
-        <!--血糖-->
-        <view class="main">
-            <view class="inner {{arrClass[objUser.Gls]}}">
-                <view class="con">
-                    <text class="num">{{objUser.Bloodsugar}}</text>
-                    <text class="unit">mmol/L</text>
-                    <text class="time">{{objUser.TestDate}} {{arrTimeStep[objUser.TimeStep]}}</text>
-                </view>
-                <view class="prompt">
-                    <text class="prompt-text" wx:if="{{glsText[objUser.Gls]}}">你的血糖指数属于</text>
-                    <text class="prompt-text prompt-text-strong">{{glsText[objUser.Gls]}}</text>
-                </view>
-            </view>
-        </view>
-        <!--/血糖-->
-
-        <!--底部button-->
-        <view class="footer">
-            <view class="button-item">
-                <image src="../../../assets/images/home-icon-xtbg.png"></image>
-                <text></text>
-            </view>
-            <view class="button-item">
-                <image src="../../../assets/images/home-icon-jhb.png"></image>
-                <text></text>
-            </view>
-        </view>
-        <!--/底部button-->
+    <view class="header">
+        <text>传输已完成</text>
     </view>
-    <loading hidden="{{!loading}}">加载中</loading>
+
+    <!--血糖-->
+    <view class="main">
+        <view class="inner {{arrClass[objUser.Gls]}}">
+            <view class="con">
+                <text class="num">{{objUser.Bloodsugar}}</text>
+                <text class="unit">mmol/L</text>
+                <text class="time">{{objUser.TestDate}} {{arrTimeStep[objUser.TimeStep]}}</text>
+            </view>
+            <view class="prompt">
+                <text class="prompt-text" wx:if="{{glsText[objUser.Gls]}}">你的血糖指数属于</text>
+                <text class="prompt-text prompt-text-strong">{{glsText[objUser.Gls]}}</text>
+            </view>
+        </view>
+    </view>
+    <!--/血糖-->
+
+    <!--底部button-->
+    <view class="button-item">
+        <text></text>
+    </view>
+    <view class="form-button"
+          bindtap="handleSubmit">
+        <text class="form-button-text">本月测糖进度</text>
+    </view>
+    <view class="form-button"
+          bindtap="handleSubmit">
+        <text class="form-button-text">历史测糖记录</text>
+    </view>
+    <!--/底部button-->
 </view>
