@@ -12,7 +12,7 @@
     }
 }
 .inner{
-    height: 1250rpx;
+    height: 1695rpx;
     image{
         @extend %db;
         @extend %w100;
@@ -23,7 +23,7 @@
     @extend %df;
     @extend %aic;
     @extend %jcc;
-    margin: 42rpx 60rpx 0;
+    margin: 42rpx 60rpx 80rpx;
     height: 80rpx;
     background: linear-gradient(to right, #39e2ee , #28aeeb);
     border-radius: 40rpx;
