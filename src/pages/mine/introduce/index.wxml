@@ -24,7 +24,8 @@
         </view>
     </view>
     <view class="button"
-          bindtap="handleClick">
+          data-url="questionnaire_activation_index"
+          bindtap="handleJump">
         <text class="button-text"
         >{{$params.IsMember ? '我已购买过会员，立即开通' : '我还没有购买过会员'}}</text>
     </view>

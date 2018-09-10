@@ -1,7 +1,9 @@
 {
     "pages": [
-        "pages/questionnaire/activation/index",
         "pages/home/index",
+        "pages/questionnaire/one/index",
+        "pages/test/index",
+        "pages/questionnaire/activation/index",
         "pages/authorization/index",
         "pages/bluetooth/add/index",
         "pages/bluetooth/index",
@@ -14,13 +16,11 @@
         "pages/mine/programme/index",
         "pages/mine/report/index",
         "pages/questionnaire/copy/index",
-        "pages/questionnaire/one/index",
         "pages/questionnaire/programme/index",
         "pages/questionnaire/three/index",
         "pages/questionnaire/two/index",
         "pages/record/index",
-        "pages/result/index",
-        "pages/test/index"
+        "pages/result/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
