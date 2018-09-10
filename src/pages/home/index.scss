@@ -264,8 +264,8 @@
 }
 .plan-item-check-icon{
     @extend %pa;
-    @extend %l0;
-    @extend %t0;
+    top: -1rpx;
+    left: -1rpx;
     width: 44rpx;
     height: 44rpx;
 }
