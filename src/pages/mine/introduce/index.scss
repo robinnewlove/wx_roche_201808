@@ -1,5 +1,12 @@
 @import '../../../assets/scss/define';
 /*头部*/
+.inner{
+    height: 2004rpx;
+    image{
+        @extend %w100;
+        @extend %h100;
+    }
+}
 .header{
     @extend %bsb;
     @extend %oh;
@@ -45,4 +52,34 @@
 .button-text{
     color: #fff;
     font-size: 36rpx;
+}
+.footer{
+    @extend %df;
+    justify-content: space-between;
+    padding: 50rpx 60rpx 35rpx;
+    border-top: 1rpx solid #f0eff5;
+}
+.footer-button{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    width: 289rpx;
+    height: 68rpx;
+    border-radius: 34rpx;
+    background-image: linear-gradient(to right, #3bddf2, #2cbdf0);
+    &.color{
+        background-image: none;
+        background-color: #1e3666;
+    }
+}
+.footer-button-text{
+    font-size: 30rpx;
+    color: #fff;
+}
+.prompt{
+    @extend %db;
+    @extend %tac;
+    font-size: 24rpx;
+    color: #555555;
+    margin-bottom: 80rpx;
 }

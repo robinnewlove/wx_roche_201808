@@ -1,6 +1,6 @@
 <view>
     <view class="header">
-        <text class="header-text">坚持{{DayCount}}天养成测糖好习惯</text>
+        <text class="header-text">坚持30天养成测糖好习惯</text>
         <text class="header-text">控糖结果看的见</text>
     </view>
     <view class="prompt">
