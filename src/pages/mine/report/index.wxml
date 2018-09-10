@@ -20,7 +20,7 @@
     </view>
     <view class="table-head">
         <view class="table-title">
-            <image></image>
+            <image mode="aspectFit" src="../../../assets/images/xtbg-icon-5.png"></image>
             <text>本周血糖</text>
         </view>
         <view class="explain">
@@ -102,7 +102,7 @@
     <view class="reminder">
         <view class="reminder-title">
             <text>空腹或餐前血糖</text>
-            <image></image>
+            <image mode="aspectFit" src="../../../assets/images/xtbg-icon-9.png"></image>
         </view>
         <view class="reminder-num">
             <text>{{weekReport.AvgFastingBeforeVal}}</text>
@@ -123,7 +123,7 @@
     <view class="reminder">
         <view class="reminder-title">
             <text>餐后血糖</text>
-            <image></image>
+            <image mode="aspectFit" src="../../../assets/images/xtbg-icon-8.png"></image>
         </view>
         <view class="reminder-num">
             <text>{{weekReport.AvgAfterVal}}</text>
@@ -144,7 +144,7 @@
     <view class="reminder">
         <view class="reminder-title">
             <text>低血糖</text>
-            <image></image>
+            <image mode="aspectFit" src="../../../assets/images/xtbg-icon-6.png"></image>
         </view>
         <view class="reminder-num">
             <text>{{weekReport.AvgLowVal}}</text>
@@ -165,8 +165,8 @@
 
     <view class="reminder">
         <view class="reminder-title">
-            <text>餐前血糖</text>
-            <image></image>
+            <text>血糖波动</text>
+            <image mode="aspectFit" src="../../../assets/images/xtbg-icon-7.png"></image>
         </view>
         <view class="reminder-data">
             <view class="reminder-data-item nor">
@@ -191,8 +191,8 @@
         <view class="reminder-text">
             <text>{{weekReport.WholeReport}}</text>
         </view>
-        <view class="reminder-text">
-            <text>{{weekReport.DayMaxWholeReport}}</text>
+        <view class="reminder-text" wx:if="{{weekReport.PPGE}}">
+            <text>{{weekReport.PPGE}}</text>
         </view>
         <view class="reminder-text">
             <text>{{weekReport.DayMaxWholeReport}}</text>
@@ -207,7 +207,7 @@
             <text class="footer-text">需要继续加油！</text>
         </view>
         <view class="footer-item">
-            <image class="right-icon"></image>
+            <image class="right-icon" mode="aspectFit" src="../../../assets/images/xtbg-ewm-icon.png"></image>
             <text class="footer-text">关注罗氏血糖仪官方微信号</text>
             <text class="footer-text">获取更多控糖秘诀！</text>
         </view>

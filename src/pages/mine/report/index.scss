@@ -64,7 +64,6 @@
     image{
         width: 68rpx;
         height: 68rpx;
-        background-color: red;
         margin-right: 15rpx;
     }
     text{
@@ -173,7 +172,7 @@
 }
 
 .weekly{
-
+    margin-top: 60rpx;
 }
 .weekly-head{
     @extend %df;
@@ -295,7 +294,6 @@
     image{
         width: 68rpx;
         height: 68rpx;
-        background-color: red;
     }
 }
 .reminder-num{
@@ -426,7 +424,8 @@
     @extend %df;
     @extend %aic;
     line-height: 1.5;
-    margin-top: 40rpx;
+    padding: 80rpx 0;
+    background-color: #f5f5f5;
     text{
         color: #28aeeb;
     }
@@ -439,20 +438,19 @@
     @extend %jcc;
 }
 .left-icon{
-    width: 75rpx;
-    height: 75rpx;
+    width: 79rpx;
+    height: 83rpx;
 }
 .left-prompt{
     @extend %fwb;
-    font-size: 30rpx;
-    margin: 5rpx 0;
+    font-size: 46rpx;
+    margin: 10rpx 0;
 }
 .footer-text{
-    font-size: 22rpx;
+    font-size: 30rpx;
 }
 .right-icon{
-    width: 100rpx;
-    height: 100rpx;
+    width: 171rpx;
+    height: 171rpx;
     margin: 10rpx 0;
-    background-color: red;
 }
