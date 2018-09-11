@@ -43,7 +43,10 @@
     </view>
     <!--/标尺-->
     <!--时间-->
-    <scroll-view scroll-x class="time">
+    <scroll-view
+        scroll-left="{{timeScrollLeft}}"
+        scroll-x
+        class="time">
         <view class="time-item {{timeStep === item && 'time-item-active'}}"
               bindtap="handleTimeStep"
               data-value="{{item}}"

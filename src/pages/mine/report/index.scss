@@ -185,6 +185,9 @@
         font-size: 46rpx;
         color: #fff;
     }
+    &.null{
+        height: 140rpx;
+    }
 }
 .weekly-cell{
     @extend %df;

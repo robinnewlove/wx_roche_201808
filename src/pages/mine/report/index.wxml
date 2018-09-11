@@ -64,7 +64,7 @@
         </view>
     </view>
     <view class="weekly">
-        <view class="weekly-head">
+        <view class="weekly-head {{!weekReport.HaveReport && 'null'}}">
             <text>{{weekReport.HaveReport ? weekReport.MonitorSummary : '暂无周报'}}</text>
         </view>
         <block wx:if="{{weekReport.HaveReport}}">

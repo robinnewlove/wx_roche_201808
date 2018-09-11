@@ -11,8 +11,10 @@ import InputMixin               from 'mixins/input.mixin'
 import RouterMixin              from 'mixins/router.mixin'
 import Data                     from 'utils/data.util'
 import { formatData }           from 'wow-cool/lib/date.lib'
+import WowCool                  from 'wow-cool/lib/array.lib'
 import {
     ARR_TIME_STEP,
+    ARR_TIME_STEP_KEY,
 }                               from 'config/base.config'
 
 let deltaX = 0;
@@ -38,6 +40,8 @@ Page(Handle({
                 placeholder: '请输入',
                 value: formatData('hh:mm', new Date()),
                 mode: 'time',
+                start: '',
+                end: '',
                 use_check: [
                     {
                         nonempty: true,
@@ -53,7 +57,7 @@ Page(Handle({
         },
         arrRuler: 101,
         arrTimeStep: ARR_TIME_STEP,
-        timeStep: '空腹',
+        timeStep: '',
         objHidden: {
             Bloodsugar: {
                 value: '6.0',
@@ -67,6 +71,7 @@ Page(Handle({
         },
         ruleWidth: 0,
         scrollLeft: 0,
+        timeScrollLeft: 0,
     },
     onReady () {
         deltaX = 0;
@@ -79,7 +84,32 @@ Page(Handle({
             this.countScrollLeft();
         }).exec();
     },
-
+    onLoad() {
+        this.initData()
+    },
+    initData () {
+        let time = formatData('hh:dd');
+        let cur = +time.replace(':', '');
+        let index = WowCool.findFirstIndexForArr(ARR_TIME_STEP_KEY, (item) => {
+            let { start, end } = item;
+            start = +start.replace(':', '');
+            end = +end.replace(':', '');
+            return (cur >= start && cur <= end);
+        });
+        if (index > 4) this.setData({timeScrollLeft: 500});
+        this.setData({
+            timeStep: ARR_TIME_STEP[index]
+        });
+        this.setStartAndEnd(index, time);
+    },
+    setStartAndEnd (index, value) {
+        let { start, end } = ARR_TIME_STEP_KEY[index];
+        this.setData({
+            'objInput.TestTime.start': start,
+            'objInput.TestTime.end': end,
+            'objInput.TestTime.value': value || start,
+        });
+    },
     countNum (scrollLeft) {
         let value = 0;
         if (+scrollLeft !== 0) {
@@ -132,6 +162,8 @@ Page(Handle({
         this.setData({
             timeStep,
         });
+        let index = ARR_TIME_STEP.indexOf(timeStep);
+        this.setStartAndEnd(index);
     },
     // 保存提交
     handleSubmit() {
