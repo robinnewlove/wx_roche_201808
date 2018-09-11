@@ -7,6 +7,7 @@ import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
+import Auth                     from 'plugins/auth.plugin'
 import {
     ARR_TIME_STEP,
     DAY_TEXT,
@@ -60,7 +61,9 @@ Page(Handle({
             this.setData({
                 objUser: res || {},
                 'objView[2].value': IsPerfect ? '已完善' : '待完善',
-            })
+            });
+            let { IsMember } = res;
+            Auth.updateToken({ IsMember });
         }).catch((err) => {
             Toast.error(err);
         });

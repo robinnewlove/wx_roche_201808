@@ -61,7 +61,9 @@ Page(Handle({
                 objUser: res || {},
                 loading: false,
             });
+            let { IsMember } = res;
             app.globalData.userInfo.IsMember = res.IsMember;
+            Auth.updateToken({IsMember});
         }).catch((err) => {
             Toast.error(err);
         });
