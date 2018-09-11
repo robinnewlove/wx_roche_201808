@@ -87,8 +87,18 @@ Page(Handle({
     onLoad() {
         this.initData()
     },
+    handleChange(e){
+        this.bindChange(e);
+        let time = this.data.objInput.TestTime.value;
+        this.judgeTimeStep(time);
+    },
     initData () {
-        let time = formatData('hh:dd');
+        let time = this.data.objInput.TestTime.value;
+        let index = this.judgeTimeStep(time);
+        this.setStartAndEnd(index, time);
+    },
+    judgeTimeStep (time = '') {
+        time = time || formatData('hh:dd');
         let cur = +time.replace(':', '');
         let index = WowCool.findFirstIndexForArr(ARR_TIME_STEP_KEY, (item) => {
             let { start, end } = item;
@@ -100,13 +110,11 @@ Page(Handle({
         this.setData({
             timeStep: ARR_TIME_STEP[index]
         });
-        this.setStartAndEnd(index, time);
+        return index;
     },
     setStartAndEnd (index, value) {
         let { start, end } = ARR_TIME_STEP_KEY[index];
         this.setData({
-            'objInput.TestTime.start': start,
-            'objInput.TestTime.end': end,
             'objInput.TestTime.value': value || start,
         });
     },

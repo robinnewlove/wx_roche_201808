@@ -80,8 +80,27 @@
                 </view>
             </view>
             <picker
-                wx:if="{{item.mode}}"
+                wx:if="{{item.mode === 'date'}}"
                 bindchange="bindChange"
+                data-obj="objInput"
+                data-key="{{key}}"
+                mode="{{item.mode}}"
+                end="{{item.end}}"
+                start="{{item.start}}">
+                <view class="input-item">
+                    <label class="input-label">{{item.label}}</label>
+                    <view class="input-value">
+                        <input
+                            type="text"
+                            disabled
+                            value="{{item.value}}"
+                            placeholder="{{item.placeholder}}"/>
+                    </view>
+                </view>
+            </picker>
+            <picker
+                wx:if="{{item.mode === 'time'}}"
+                bindchange="handleChange"
                 data-obj="objInput"
                 data-key="{{key}}"
                 mode="{{item.mode}}"
