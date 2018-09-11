@@ -49,7 +49,7 @@
                    bindinput="bindInput"
                    data-key="deviceId"
                    value="{{deviceId}}"
-                   focus="{{true}}"
+                   focus="{{isPop}}"
                    type="number"/>
             <view class="pop-btn">
                 <view class="pop-btn-item"

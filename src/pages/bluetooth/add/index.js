@@ -15,6 +15,7 @@ Page(Handle({
         blueTooth: '',
         isPop: false,
         deviceId: '',
+        deviceId1: '',
     },
     onLoad() {
         // 搜索蓝牙
@@ -24,6 +25,9 @@ Page(Handle({
         let blueTooth = '';
         SDK.searchRoche().then((res) => {
             console.log('成功',res);
+            this.setData({
+                deviceId1: res.deviceId,
+            })
             blueTooth = res || {};
         }).catch((err) => {
             setTimeout(() => {
@@ -54,12 +58,16 @@ Page(Handle({
     handlePop (e) {
         let { currentTarget } = e;
         let isPop = currentTarget.dataset.value;
-        this.setData({ isPop })
+        this.setData({
+            deviceId: '',
+            isPop,
+        })
     },
     // 配对
     handlePairRoche() {
-        let deviceId = this.data.deviceId;
+        let deviceId = this.data.deviceId1;
         if (!deviceId) return Toast.error('请输入血糖仪上显示的代码');
+        console.log(deviceId);
         SDK.pairRoche(deviceId).then((res) => {
             console.log('成功',res);
             this.setData({ isPop: false });
