@@ -19,6 +19,7 @@ Page(Handle({
         Auth.getToken().then((info) => {
             let { UserID } = info;
             src = src.replace('${pin{pin}', UserID);
+            src = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdb4ec24f4b3a5e19&redirect_uri=${encodeURIComponent(src)}&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect`;
             console.log(src);
             this.setData({
                 '$params.src': src,

@@ -9,6 +9,8 @@ import InputMixin               from 'mixins/input.mixin'
 import SDK                      from 'services/sdk.services'
 import Toast                    from 'plugins/toast.plugin'
 
+const app = getApp();
+
 Page(Handle({
     mixins: [InputMixin],
     data: {
@@ -27,7 +29,8 @@ Page(Handle({
             console.log('成功',res);
             this.setData({
                 deviceId1: res.deviceId,
-            })
+            });
+            app.globalData.blueTooth = res;
             blueTooth = res || {};
         }).catch((err) => {
             setTimeout(() => {

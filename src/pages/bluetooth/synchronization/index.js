@@ -18,13 +18,17 @@ const {
 } = EVENT_NAME;
 
 const EVENT_FUN = {};
+const app = getApp();
 
 Page(Handle({
     data: {
-
+        blueTooth: {},
     },
     //
     onLoad() {
+        this.setData({
+            blueTooth: app.globalData.blueTooth
+        });
         this.monitorEvent();
     },
     // 数据同步
@@ -33,7 +37,7 @@ Page(Handle({
     },
     // 同步数据
     syncData () {
-        SDK.syncData().then((res) => {
+        SDK.syncData(this.data.blueTooth.deviceId).then((res) => {
             console.log('准备同步数据', res);
         }).catch((err) => {
             console.log('准备同步数据异常', err);

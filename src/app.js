@@ -34,5 +34,6 @@ App({
     globalData: {
         userInfo: null,
         sceneid: '',
-    }
+        blueTooth: {},
+    },
 });
