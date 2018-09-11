@@ -60,7 +60,8 @@ Page(Handle({
             this.setData({
                 objUser: res || {},
                 loading: false,
-            })
+            });
+            app.globalData.userInfo.IsMember = res.IsMember;
         }).catch((err) => {
             Toast.error(err);
         });

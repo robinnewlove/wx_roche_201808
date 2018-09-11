@@ -14,6 +14,7 @@ import {
     ARR_TIME_STEP,
     DAY_TEXT,
     GLS_TEXT,
+    WEB_LINK,
 }                               from 'config/base.config'
 
 const app = getApp();
@@ -52,7 +53,6 @@ Page(Handle({
             let day = new Date(time).getDate();
             records.indexOf(day) === -1 && records.push(day);
         });
-        console.log(records)
         let resultData = this.data.resultData;
         resultData.forEach((item) => {
             item.forEach((ite) => {
@@ -61,7 +61,6 @@ Page(Handle({
                 })
             })
         });
-        console.log(resultData)
         this.setData({
             progress,
             records,
@@ -109,6 +108,8 @@ Page(Handle({
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        url ? Router.push(url) : Router.root('home_index');
+        if (!url) return Router.root('home_index');
+        let {IsMember} = this.data.userInfo;
+        IsMember ? Router.push('web_index', WEB_LINK.JKZD) : Router.push(url);
     }
 }));

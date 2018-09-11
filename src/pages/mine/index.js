@@ -73,7 +73,7 @@ Page(Handle({
         if ( url === 'mine_report_index' && !IsPerfect ) {
             return Router.push('mine_info_index', { from: 'mine_index'});
         }
-        if (url === 'mine_programme_index' && !IsMember) {
+        if (url === 'mine_programme_index' && IsMember) {
             return Router.push('web_index', WEB_LINK.JKZD);
         }
         Router.push(url);

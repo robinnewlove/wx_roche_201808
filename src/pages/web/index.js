@@ -14,7 +14,10 @@ Page(Handle({
         this.initData();
     },
     initData () {
-        let { title } = this.data.$params;
+        let { title, src } = this.data.$params;
+        this.setData({
+            '$params.src': src,
+        });
         wx.setNavigationBarTitle({title})
     }
 }));
