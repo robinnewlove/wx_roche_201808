@@ -53,9 +53,10 @@ Page(Handle({
         SDK.pairRoche(deviceId).then((res) => {
             console.log('成功',res);
             this.setData({ isPop: false });
+            Router.push('bluetooth_synchronization_index');
         }).catch((err) => {
             Toast.error(err);
             console.log(err)
         })
-    }
+    },
 }));
