@@ -31,7 +31,8 @@ let uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
         if (stat.isFile() && ext_name === '.js') {
             let page_name = name_arr.join('/').replace('.js', '');
             entry[page_name] = full_path;
-        } else if (['js','css','img','scss', 'images', 'image'].indexOf(last_dir) === -1 && stat.isDirectory()) {
+        } else if (['js','css','img','scss', 'images',
+                'image', 'config', 'mixins', 'plugins', 'services', 'utils'].indexOf(last_dir) === -1 && stat.isDirectory()) {
             let sub_dir = path.join(dir, file);
             walkFun(sub_dir);
         }
@@ -47,6 +48,10 @@ const config = {
     resolve: {
         alias: {
             'utils': path.resolve(__dirname, '../src/utils/'),
+            'config': path.resolve(__dirname, '../src/config/'),
+            'plugins': path.resolve(__dirname, '../src/plugins/'),
+            'services': path.resolve(__dirname, '../src/services/'),
+            'mixins': path.resolve(__dirname, '../src/mixins/'),
         }
     },
     module: {
@@ -64,6 +69,19 @@ const config = {
                     fallback: 'style-loader',
                     use: 'css-loader'
                 }),
+            },
+            {
+                test: /.scss$/,
+                exclude: /node_modules/,
+                use: ExtractTextPlugin.extract({
+                    use: [{
+                        loader: "css-loader"
+                    }, {
+                        loader: "sass-loader"
+                    }],
+                    // 在开发环境使用 style-loader
+                    fallback: "style-loader"
+                })
             },
             // {
             //     test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,

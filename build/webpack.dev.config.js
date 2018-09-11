@@ -23,7 +23,8 @@ let walkFun = '';
         if (stat.isFile() && ext_name === '.js') {
             let page_name = name_arr.join('/').replace('.js', '');
             entry[page_name] = full_path;
-        } else if (['js','css','img','scss', 'images', 'image'].indexOf(last_dir) === -1 && stat.isDirectory()) {
+        } else if (['js','css','img','scss', 'images',
+                'image', 'config', 'mixins', 'plugins', 'services', 'utils'].indexOf(last_dir) === -1 && stat.isDirectory()) {
             let sub_dir = path.join(dir, file);
             walkFun(sub_dir);
         }
