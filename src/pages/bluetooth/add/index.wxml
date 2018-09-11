@@ -4,25 +4,25 @@
         <text>{{blueTooth ? '已发现1个设备，点击绑定' : '寻找设备中，请耐心等待...'}}</text>
     </view>
     <view class="inner">
-        <view class="before" hidden="{{blueTooth === ''}}">
+        <view class="before" hidden="{{blueTooth !== ''}}">
             <image src="../../../assets/images/lylj-null-icon.jpg"></image>
             <text>请确保待绑定设备在手机旁边</text>
             <text>并且已经开机</text>
         </view>
-        <view class="after" hidden="{{blueTooth}}">
+        <view class="after" hidden="{{blueTooth === null || blueTooth === ''}}">
             <image src="../../../assets/images/lylj-result-icon.jpg"></image>
             <!--<text>罗氏Connect血糖仪</text>-->
             <text>{{blueTooth.name}}</text>
             <text class="no-text">{{blueTooth.deviceId}}</text>
         </view>
         <view class="form-button"
-              hidden="{{blueTooth}}"
+              hidden="{{blueTooth === null || blueTooth === ''}}"
               data-value="{{true}}"
               bindtap="handlePop">
             <text class="form-button-text">绑定</text>
         </view>
     </view>
-    <view hidden="{{true}}">
+    <view hidden="{{blueTooth !== null}}">
         <view class="tel">
             <text>如有问题，您可以拨打罗氏客户关爱热线</text>
             <text class="tel-text">800 820 2777（固话）</text>
@@ -52,10 +52,12 @@
                    type="number"/>
             <view class="pop-btn">
                 <view class="pop-btn-item"
-                      data-value="{{false}}">
+                      data-value="{{false}}"
+                      bindtap="handlePop">
                     <text>取消</text>
                 </view>
-                <view class="pop-btn-item">
+                <view class="pop-btn-item"
+                      bindtap="handlePairRoche">
                     <text>配对</text>
                 </view>
             </view>
