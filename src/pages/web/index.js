@@ -11,9 +11,10 @@ Page(Handle({
     // 生命周期回调—监听页面加载
     onLoad (options) {
         this.getParamsByUrl(options);
+        this.initData();
     },
     initData () {
-        let {title} = this.data.$params;
+        let { title } = this.data.$params;
         wx.setNavigationBarTitle({title})
     }
 }));

@@ -12,6 +12,7 @@ import {
     ARR_TIME_STEP,
     DAY_TEXT,
     GLS_TEXT,
+    WEB_LINK,
 }                               from 'config/base.config'
 
 const app = getApp();
@@ -25,7 +26,8 @@ Page(Handle({
         objUser: {},
         show: false,
         loading: true,
-        arrClass: ['low', 'low', 'lit', 'nor', 'up']
+        arrClass: ['low', 'low', 'lit', 'nor', 'up'],
+        objWeb: WEB_LINK.ZXWZ
     },
     // 生命周期回调—监听页面显示
     onShow () {
