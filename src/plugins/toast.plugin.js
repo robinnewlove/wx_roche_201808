@@ -1,11 +1,15 @@
 
 export default {
     error (err) {
-        if (!err) return;
-        console.log(err);
-        let msg = err.errMsg || err;
+        if (typeof err === 'undefined') return;
+        let msg = '';
+        if (typeof err === 'object') {
+            msg = err.errMsg || err.Message || JSON.stringify(err);
+        } else {
+            msg = err;
+        }
         wx.showToast({
-            title: msg || '',
+            title: msg,
             icon: 'none',
             duration: 3000
         })

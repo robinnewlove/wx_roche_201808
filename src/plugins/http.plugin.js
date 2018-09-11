@@ -35,7 +35,6 @@ class Http {
             }).finally(() => {
                 this._log('请求参数', this.data);
                 if (this.auth && !this.data.OpenId) {
-                    Toast.error('您还未登录，请登录');
                     return Router.push('authorization_index');
                 }
                 wx.request({
@@ -59,14 +58,11 @@ class Http {
                             Extend,
                         } = data;
                         if (Status === 201) {
-                            Toast.error('token 已失效，请重新登录');
                             Auth.logout().finally(() => {
                                 let pages = getCurrentPages();    //获取加载的页面
                                 let first_url = pages[0].route;    //当前页面url
                                 let cur_url = pages[pages.length-1].route;    //当前页面url
-                                setTimeout(() => {
-                                    cur_url === first_url ? Router.push('authorization_index') : Router.root('home_index');
-                                }, 1000)
+                                cur_url === first_url ? Router.push('authorization_index') : Router.root('home_index');
                             });
                             return;
                         }
