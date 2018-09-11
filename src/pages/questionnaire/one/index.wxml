@@ -22,7 +22,7 @@
                         data-obj="objInput"
                         data-key="{{key}}"
                         type="{{item.type || 'text'}}"
-                        minlength="{{item.max || 20}}"
+                        maxlength="{{item.max || 20}}"
                         value="{{item.value}}"
                         placeholder="{{item.placeholder}}"/>
                 </view>
@@ -61,8 +61,7 @@
                 data-obj="objInput"
                 data-key="{{key}}"
                 mode="date"
-                end="{{item.end}}"
-                start="{{item.start}}">
+                end="{{item.end}}">
                 <view class="from-item">
                     <label class="from-label">出生年月</label>
                     <view class="from-value">

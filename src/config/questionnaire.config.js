@@ -74,12 +74,16 @@ export const PAY_QUESTION = {
                 nonempty: true,
                 prompt: '请输入您的出生年月'
             }
-        ]
+        ],
+        start: '1901-01-01',
+        end: formatData('yyyy-MM-dd'),
     },
     Height: {
         label: '身高',
         placeholder: '请输入您的身高',
         value: '',
+        type: 'digit',
+        max: 6,
         use_check: [
             {
                 nonempty: true,
@@ -92,6 +96,8 @@ export const PAY_QUESTION = {
         label: '体重',
         placeholder: '请输入您的体重',
         value: '',
+        type: 'digit',
+        max: 6,
         use_check: [
             {
                 nonempty: true,
@@ -103,8 +109,9 @@ export const PAY_QUESTION = {
     Mobile: {
         label: '手机号',
         placeholder: '请输入您的手机号',
-        type: 'tel',
+        type: 'number',
         value: '',
+        max: 11,
         use_check: [
             {
                 nonempty: true,
@@ -116,6 +123,8 @@ export const PAY_QUESTION = {
         label: '验证码',
         placeholder: '请输入验证码',
         value: '',
+        type: 'number',
+        max: 6,
         use_check: [
             {
                 nonempty: true,

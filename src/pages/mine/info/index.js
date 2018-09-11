@@ -21,6 +21,8 @@ Page(Handle({
                 label: '身高',
                 placeholder: '请输入您的身高',
                 value: '',
+                type: 'digit',
+                max: 6,
                 use_check: [
                     {
                         nonempty: true,
@@ -33,6 +35,8 @@ Page(Handle({
                 label: '体重',
                 placeholder: '请输入您的体重',
                 value: '',
+                type: 'digit',
+                max: 6,
                 use_check: [
                     {
                         nonempty: true,
@@ -44,8 +48,9 @@ Page(Handle({
             Mobile: {
                 label: '手机号',
                 placeholder: '请输入您的手机号',
-                type: 'tel',
+                type: 'number',
                 value: '',
+                max: 11,
                 use_check: [
                     {
                         nonempty: true,
@@ -56,7 +61,9 @@ Page(Handle({
             SmsCode: {
                 label: '验证码',
                 placeholder: '请输入验证码',
+                type: 'number',
                 value: '',
+                max: 6,
                 use_check: [
                     {
                         nonempty: true,
@@ -71,6 +78,7 @@ Page(Handle({
             RedProtein: {
                 label: '糖化血红蛋白值',
                 placeholder: '请输入糖化血红蛋白值',
+                type: 'digit',
                 value: '',
                 use_check: [
                     {
