@@ -7,6 +7,12 @@ import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
+import {
+    ARR_TIME_STEP,
+    DAY_TEXT,
+    GLS_TEXT,
+    WEB_LINK,
+}                               from 'config/base.config'
 
 const app = getApp();
 
@@ -63,9 +69,12 @@ Page(Handle({
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        let { IsPerfect } = this.data.objUser;
+        let { IsPerfect, IsMember } = this.data.objUser;
         if ( url === 'mine_report_index' && !IsPerfect ) {
             return Router.push('mine_info_index', { from: 'mine_index'});
+        }
+        if (url === 'mine_programme_index' && !IsMember) {
+            return Router.push('web_index', WEB_LINK.JKZD);
         }
         Router.push(url);
     }

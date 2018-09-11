@@ -20,9 +20,8 @@
        <view class="con after" hidden="{{!check}}">
            <text class="con-prompt">您的服务已开通</text>
            <button class="con-button"
-                   data-url="questionnaire_programme_index"
                    bindtap="handleJump"
-           >查看我的计划</button>
+           >返回首页</button>
        </view>
    </view>
 </view>
