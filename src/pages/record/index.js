@@ -25,6 +25,7 @@ Page(Handle({
                 placeholder: '请输入',
                 value: formatData('yyyy-MM-dd', new Date()),
                 mode: 'date',
+                end: formatData('yyyy-MM-dd', new Date()),
                 use_check: [
                     {
                         nonempty: true,
@@ -37,6 +38,7 @@ Page(Handle({
                 placeholder: '请输入',
                 value: formatData('hh:mm', new Date()),
                 mode: 'time',
+                end: formatData('hh:mm', new Date()),
                 use_check: [
                     {
                         nonempty: true,

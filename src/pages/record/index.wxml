@@ -82,6 +82,7 @@
                 data-obj="objInput"
                 data-key="{{key}}"
                 mode="{{item.mode}}"
+                end="{{item.end}}"
                 start="{{item.start}}">
                 <view class="input-item">
                     <label class="input-label">{{item.label}}</label>
