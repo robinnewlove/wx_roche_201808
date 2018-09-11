@@ -14,6 +14,9 @@ export default {
                 },
                 fail: (err) => {
                     reject(err);
+                },
+                complete: () => {
+                    Loading.hideNavigationBarLoading();
                 }
             });
         }).catch((err) => {

@@ -35,7 +35,7 @@ Page(Handle({
         }).catch((err) => {
             setTimeout(() => {
                 Toast.confirm({
-                    content: '链接设备需要打开蓝牙，请确认手机蓝牙是否已打开',
+                    content: '链接设备需要打开蓝牙，请确认手机蓝牙是否已打开？',
                 }).then((res) => {
                     let { cancel, confirm } = res;
                     confirm && this.searchRoche();
@@ -79,5 +79,13 @@ Page(Handle({
             Toast.error(err);
             console.log(err)
         })
+    },
+    onUnload () {
+        let {deviceId} = app.globalData.blueTooth;
+        deviceId && SDK.disconnectDevice(deviceId).then((res) => {
+            console.log('断开蓝牙链接成功',res);
+        }).catch((err) => {
+            console.log('断开蓝牙链接失败',err);
+        });
     },
 }));

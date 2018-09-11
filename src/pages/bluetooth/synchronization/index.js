@@ -48,13 +48,21 @@ Page(Handle({
     },
     // 监听事件
     monitorEvent () {
-        for (let key in EVENT_NAME) {
-            let event = EVENT_NAME[key];
-            let name = key.substring(0, 1) + key.substring(1).toLocaleLowerCase();
-            EVENT_FUN[key] = this[`on${name}Handle`].bind(this);
-            console.log(event, EVENT_FUN[key]);
-            SDK.on(event, EVENT_FUN[key]);
-        }
+        SDK.on(ERROR, this.onErrorHandle.bind(this));
+        SDK.on(END, this.onEndHandle.bind(this));
+        SDK.on(CHANGE, this.onChangeHandle.bind(this));
+        SDK.on(INFO, this.onInfoHandle.bind(this));
+        SDK.on(CONTEXT, this.onContextHandle.bind(this));
+
+
+
+        // for (let key in EVENT_NAME) {
+        //     let event = EVENT_NAME[key];
+        //     let name = key.substring(0, 1) + key.substring(1).toLocaleLowerCase();
+        //     EVENT_FUN[key] = this[`on${name}Handle`].bind(this);
+        //     console.log(event, EVENT_FUN[key]);
+        //     SDK.on(event, EVENT_FUN[key]);
+        // }
     },
     // 错误事件
     onErrorHandle (e) {
@@ -78,9 +86,9 @@ Page(Handle({
     },
     // 销毁事件
     destroyEvent () {
-        for (let key in EVENT_FUN) {
-            let eventFun = EVENT_NAME[key];
-            SDK.off(key, eventFun);
-        }
+        // for (let key in EVENT_FUN) {
+        //     let eventFun = EVENT_NAME[key];
+        //     SDK.off(key, eventFun);
+        // }
     }
 }));
