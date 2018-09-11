@@ -44,18 +44,6 @@ Page(Handle({
                     }
                 ]
             },
-            // RedProtein: {
-            //     label: '糖化血红蛋白值',
-            //     placeholder: '请输入',
-            //     value: '',
-            //     type: 'digit',
-            //     use_check: [
-            //         {
-            //             nonempty: true,
-            //             prompt: '请输入糖化血红蛋白值'
-            //         }
-            //     ]
-            // },
             Remark: {
                 label: '备注',
                 placeholder: '请输入',
