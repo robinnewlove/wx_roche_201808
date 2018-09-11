@@ -23,6 +23,8 @@ const app = getApp();
 Page(Handle({
     data: {
         blueTooth: {},
+        infoList: [],
+        contextList: [],
     },
     //
     onLoad() {
@@ -37,9 +39,11 @@ Page(Handle({
     },
     // 同步数据
     syncData () {
+        Loading.showLoading();
         SDK.syncData(this.data.blueTooth.deviceId).then((res) => {
             console.log('准备同步数据', res);
         }).catch((err) => {
+            Loading.hideLoading();
             console.log('准备同步数据异常', err);
         })
     },
@@ -48,47 +52,49 @@ Page(Handle({
     },
     // 监听事件
     monitorEvent () {
-        SDK.on(ERROR, this.onErrorHandle.bind(this));
-        SDK.on(END, this.onEndHandle.bind(this));
-        SDK.on(CHANGE, this.onChangeHandle.bind(this));
-        SDK.on(INFO, this.onInfoHandle.bind(this));
-        SDK.on(CONTEXT, this.onContextHandle.bind(this));
-
-
-
-        // for (let key in EVENT_NAME) {
-        //     let event = EVENT_NAME[key];
-        //     let name = key.substring(0, 1) + key.substring(1).toLocaleLowerCase();
-        //     EVENT_FUN[key] = this[`on${name}Handle`].bind(this);
-        //     console.log(event, EVENT_FUN[key]);
-        //     SDK.on(event, EVENT_FUN[key]);
-        // }
+        for (let key in EVENT_NAME) {
+            let event = EVENT_NAME[key];
+            let name = key.substring(0, 1) + key.substring(1).toLocaleLowerCase();
+            EVENT_FUN[key] = this[`on${name}Handle`].bind(this);
+            SDK.on(event, EVENT_FUN[key]);
+        }
     },
     // 错误事件
     onErrorHandle (e) {
+        Toast.error(e);
+        Loading.hideLoading();
         console.log('错误事件', e);
     },
     // 成功结束
     onEndHandle (e) {
-        console.log('成功结束', e);
+        Loading.hideLoading();
+        Router.push('bluetooth_transfer_index', this.data);
     },
     // 连接状态的改变事件
     onChangeHandle (e) {
+        Loading.hideLoading();
+        Toast.error(e);
         console.log('连接状态的改变事件', e);
     },
     // 详情事件
     onInfoHandle (e) {
+        let infoList = this.data.infoList;
+        infoList.push(e);
+        this.setData({infoList});
         console.log('详情事件', e);
     },
     // 附加信息事件
     onContextHandle (e) {
+        let contextList = this.data.contextList;
+        contextList.push(e);
+        this.setData({contextList});
         console.log('附加信息事件', e);
     },
     // 销毁事件
     destroyEvent () {
-        // for (let key in EVENT_FUN) {
-        //     let eventFun = EVENT_NAME[key];
-        //     SDK.off(key, eventFun);
-        // }
+        for (let key in EVENT_FUN) {
+            let eventFun = EVENT_NAME[key];
+            SDK.off(key, eventFun);
+        }
     }
 }));

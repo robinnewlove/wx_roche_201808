@@ -5,7 +5,7 @@ export default {
         console.log(err);
         let msg = err.errMsg || err;
         wx.showToast({
-            title: msg,
+            title: msg || '',
             icon: 'none',
             duration: 3000
         })

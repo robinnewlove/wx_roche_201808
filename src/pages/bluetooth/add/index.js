@@ -16,8 +16,6 @@ Page(Handle({
     data: {
         blueTooth: '',
         isPop: false,
-        deviceId: '',
-        deviceId1: '',
     },
     onLoad() {
         // 搜索蓝牙
@@ -26,10 +24,6 @@ Page(Handle({
     searchRoche () {
         let blueTooth = '';
         SDK.searchRoche().then((res) => {
-            console.log('成功',res);
-            this.setData({
-                deviceId1: res.deviceId,
-            });
             app.globalData.blueTooth = res;
             blueTooth = res || {};
         }).catch((err) => {
@@ -57,27 +51,36 @@ Page(Handle({
         let url = currentTarget.dataset.url;
         Router.push(url);
     },
-    // 绑定
-    handlePop (e) {
-        let { currentTarget } = e;
-        let isPop = currentTarget.dataset.value;
-        this.setData({
-            deviceId: '',
-            isPop,
-        })
-    },
+    // // 绑定
+    // handlePop (e) {
+    //     let { currentTarget } = e;
+    //     let isPop = currentTarget.dataset.value;
+    //     this.setData({
+    //         deviceId: '',
+    //         isPop,
+    //     })
+    // },
     // 配对
     handlePairRoche() {
-        let deviceId = this.data.deviceId1;
-        if (!deviceId) return Toast.error('请输入血糖仪上显示的代码');
-        console.log(deviceId);
+        let { deviceId } = this.data.blueTooth;
+        if (!deviceId) {
+            Toast.error('没有发现设备，请先搜索设备');
+            return this.searchRoche();
+        }
+        let result = {};
         SDK.pairRoche(deviceId).then((res) => {
-            console.log('成功',res);
-            this.setData({ isPop: false });
-            Router.push('bluetooth_synchronization_index');
+            result = {errCode: 0};
         }).catch((err) => {
-            Toast.error(err);
-            console.log(err)
+            result = err;
+        }).finally(() => {
+            let { errCode } = result;
+            if (errCode !== 0 && errCode !== -1) return Toast.error(result);
+            Toast.confirm({
+                content: '是否配对成功？',
+            }).then((res) => {
+                let { confirm } = res;
+                confirm && Router.push('bluetooth_synchronization_index');
+            });
         })
     },
     onUnload () {

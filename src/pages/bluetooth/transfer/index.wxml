@@ -2,40 +2,25 @@
     <view class="header">
         <text>传输已完成</text>
     </view>
-    <view class="session">
+    <view class="session"
+          wx:for="{{$params.infoList}}"
+          wx:for-item="item"
+          wx:for-index="index"
+          wx:key="index">
         <view class="time">
             <text>记录时间：</text>
-            <text class="color">2018-08-21 16:45</text>
+            <text class="color">{{item.date}}</text>
         </view>
         <view class="con">
             <view class="con-item">
-                <text class="label">晚餐前</text>
-                <text class="value">5.5</text>
+                <text class="label">{{item.date}}</text>
+                <text class="value">{{item.data}}</text>
                 <text class="unit">mmol/L</text>
             </view>
             <view class="con-line"></view>
             <view class="con-item">
                 <text class="label">血糖状态</text>
-                <text class="value">正常</text>
-                <text class="unit"></text>
-            </view>
-        </view>
-    </view>
-    <view class="session">
-        <view class="time">
-            <text>记录时间：</text>
-            <text class="color">2018-08-21 16:45</text>
-        </view>
-        <view class="con">
-            <view class="con-item">
-                <text class="label">晚餐前</text>
-                <text class="value">5.5</text>
-                <text class="unit">mmol/L</text>
-            </view>
-            <view class="con-line"></view>
-            <view class="con-item">
-                <text class="label">血糖状态</text>
-                <text class="value">正常</text>
+                <text class="value">{{item.date}}</text>
                 <text class="unit"></text>
             </view>
         </view>
