@@ -21,13 +21,23 @@ Page(Handle({
         this.searchRoche()
     },
     searchRoche () {
-        let blueTooth;
+        let blueTooth = '';
         SDK.searchRoche().then((res) => {
             console.log('成功',res);
             blueTooth = res || {};
         }).catch((err) => {
-            Toast.error('');
-            blueTooth = null;
+            setTimeout(() => {
+                Toast.confirm({
+                    content: '链接设备需要打开蓝牙，请确认手机蓝牙是否已打开',
+                }).then((res) => {
+                    let { cancel, confirm } = res;
+                    confirm && this.searchRoche();
+                    cancel && Router.pop();
+                });
+                this.setData({
+                    blueTooth: null,
+                })
+            }, 1000);
         }).finally(() => {
             this.setData({
                 blueTooth

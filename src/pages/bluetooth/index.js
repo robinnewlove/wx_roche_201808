@@ -13,7 +13,7 @@ Page(Handle({
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        Authorize(SCOPE.userLocation).then(() => {
+        Authorize(SCOPE.userLocation, '添加设备需要地理位置授权').then(() => {
             Router.push(url);
         }).catch(() => {
             Toast.error('连接设备需要授权哦')

@@ -9,5 +9,17 @@ export default {
             icon: 'none',
             duration: 3000
         })
-    }
+    },
+    confirm: (options = {}) => new Promise((resolve, reject) => {
+        wx.showModal({
+            title: '温馨提示',
+            ...options,
+            success: res=>{
+                resolve(res);
+            },
+            fail: err => {
+                reject(err);
+            },
+        });
+    })
 }
