@@ -26,7 +26,7 @@ Page(Handle({
             console.log('成功',res);
             blueTooth = res || {};
         }).catch((err) => {
-            Toast.error(err);
+            Toast.error('');
             blueTooth = null;
         }).finally(() => {
             this.setData({

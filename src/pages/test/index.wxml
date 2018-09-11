@@ -8,6 +8,10 @@
         class="button"
         bindtap="handleJump2"
     >免费测试</button>
+    <button
+        class="button"
+        bindtap="handleJump3"
+    >进入首页</button>
 </view>
 
 
