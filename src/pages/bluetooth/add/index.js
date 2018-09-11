@@ -52,7 +52,7 @@ Page(Handle({
         if (!deviceId) return Toast.error('请输入血糖仪上显示的代码');
         SDK.pairRoche(deviceId).then((res) => {
             console.log('成功',res);
-
+            this.setData({ isPop: false });
         }).catch((err) => {
             Toast.error(err);
             console.log(err)
