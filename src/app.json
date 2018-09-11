@@ -1,6 +1,5 @@
 {
     "pages": [
-        "pages/questionnaire/one/index",
         "pages/home/index",
         "pages/authorization/index",
         "pages/bluetooth/add/index",
@@ -15,12 +14,14 @@
         "pages/mine/report/index",
         "pages/questionnaire/activation/index",
         "pages/questionnaire/copy/index",
+        "pages/questionnaire/one/index",
         "pages/questionnaire/programme/index",
         "pages/questionnaire/three/index",
         "pages/questionnaire/two/index",
         "pages/record/index",
         "pages/result/index",
-        "pages/test/index"
+        "pages/test/index",
+        "pages/web/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

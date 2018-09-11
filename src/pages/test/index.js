@@ -45,6 +45,6 @@ Page({
         Router.push('questionnaire_one_index', { IsMember:false});
     },
     handleJump3() {
-        Router.push('home_index');
+        Router.root('home_index');
     }
 });

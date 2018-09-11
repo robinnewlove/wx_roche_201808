@@ -19,5 +19,6 @@ module.exports = {
     "questionnaire_two_index": "/pages/questionnaire/two/index",
     "record_index": "/pages/record/index",
     "result_index": "/pages/result/index",
-    "test_index": "/pages/test/index"
+    "test_index": "/pages/test/index",
+    "web_index": "/pages/web/index"
 }
