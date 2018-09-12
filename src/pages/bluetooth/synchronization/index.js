@@ -78,6 +78,33 @@ Page(Handle({
     },
     // 处理数据
     processingData() {
+        let { infoList, contextList } = this.data;
+        let result = [];
+        infoList.forEach((info) => {
+            let date = info.date;
+            let cur = formatData('hh:dd', new Date(date));
+            let index = WowCool.findFirstIndexForArr(ARR_TIME_STEP_KEY, (item) => {
+                let { start, end } = item;
+                start = +start.replace(':', '');
+                end = +end.replace(':', '');
+                return (cur >= start && cur <= end);
+            });
+            info.step = ARR_TIME_STEP[index];
+            result.push({
+                Bloodsugar: +info.data.toFixed(1),
+                TimeStep: index + 1,
+                TestDate: formatData('yyyy-MM-dd', new Date(date)),
+                TestTime: formatData('hh:mm', new Date(date)),
+            })
+        });
+
+        Router.push('bluetooth_transfer_index', {
+            infoList,
+            contextList,
+        });
+    },
+    // 处理数据
+    processingData1() {
         let {infoList, contextList} = this.data;
         infoList.forEach((info) => {
             contextList.forEach((cont) => {
