@@ -35,7 +35,7 @@
                 <view class="con">
                     <text class="num">{{objUser.Bloodsugar}}</text>
                     <text class="unit">mmol/L</text>
-                    <text class="time">{{objUser.TestDate}} {{arrTimeStep[objUser.TimeStep]}}</text>
+                    <text class="time">{{objUser.TestDate}} {{arrTimeStep[objUser.TimeStep - 1]}}</text>
                 </view>
                 <view class="prompt">
                     <text class="prompt-text" wx:if="{{glsText[objUser.Gls]}}">你的血糖指数属于</text>

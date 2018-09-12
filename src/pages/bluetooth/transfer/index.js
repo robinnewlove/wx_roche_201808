@@ -17,6 +17,10 @@ const app = getApp();
 
 Page(Handle({
     mixins: [RouterMixin],
+    data: {
+        arrTimeStep: ARR_TIME_STEP,
+        glsText: GLS_TEXT,
+    },
     onLoad(options) {
         this.getParamsByUrl(options);
     },

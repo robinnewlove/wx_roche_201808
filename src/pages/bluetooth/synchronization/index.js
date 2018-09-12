@@ -3,6 +3,7 @@ import './index.json'
 import './index.scss'
 import './index.wxml'
 
+import Auth                     from 'plugins/auth.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import SDK, { EVENT_NAME }      from 'services/sdk.services'
@@ -31,6 +32,7 @@ Page(Handle({
         blueTooth: {},
         infoList: [],
         contextList: [],
+        result: [],
     },
     //
     onLoad() {
@@ -89,47 +91,45 @@ Page(Handle({
                 end = +end.replace(':', '');
                 return (cur >= start && cur <= end);
             });
-            info.step = ARR_TIME_STEP[index];
             result.push({
                 Bloodsugar: +info.data.toFixed(1),
                 TimeStep: index + 1,
                 TestDate: formatData('yyyy-MM-dd', new Date(date)),
                 TestTime: formatData('hh:mm', new Date(date)),
+                Remark: '',
             })
         });
-
-        Router.push('bluetooth_transfer_index', {
-            infoList,
-            contextList,
-        });
+        this.setData({result});
     },
     // 处理数据
-    processingData1() {
-        let {infoList, contextList} = this.data;
-        infoList.forEach((info) => {
-            contextList.forEach((cont) => {
-                if (info.seqNum === cont.seqNum) {
-                    info = {
-                        ...cont,
-                        ...info,
-                    }
+    setTestSugarList() {
+        let data = this.data.result;
+        Auth.getToken().then((res) => {
+            let { OpenId } = res;
+            data.forEach((item) => {
+                item.OpenId = OpenId
+            });
+            let options = {
+                url: 'RocheApi/SetTestSugarList',
+                loading: false,
+                data,
+                useOpenId: false,
+                auth: false,
+            };
+            return Http(options)
+        }).then((res) => {
+            let data = res || [];
+            data.forEach((item) => {
+                if (item.TestDate) {
+                    item.TestDate = item.TestDate.replace(/[^0-9]/ig, '');
+                    item.TestDate = formatData('yyyy-MM-dd hh:mm:ss', new Date(+item.TestDate));
                 }
             });
-            let date = info.date;
-            if (date) {
-                let cur = formatData('hh:dd', new Date(date));
-                let index = WowCool.findFirstIndexForArr(ARR_TIME_STEP_KEY, (item) => {
-                    let { start, end } = item;
-                    start = +start.replace(':', '');
-                    end = +end.replace(':', '');
-                    return (cur >= start && cur <= end);
-                });
-                info.step = ARR_TIME_STEP[index];
-            }
-        });
-        Router.push('bluetooth_transfer_index', {
-            infoList,
-            contextList,
+            Router.push('bluetooth_transfer_index', {
+                data,
+            });
+        }).catch((err) => {
+            Toast.error(err);
         });
     },
     // 连接状态的改变事件
