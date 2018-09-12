@@ -84,7 +84,7 @@ export default {
 
     // 取消事件
     off(event_name, callback) {
-        SDK.on(event_name, callback);
+        SDK.off(event_name, callback);
         return this;
     },
 }
