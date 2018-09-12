@@ -72,7 +72,7 @@ Page(Handle({
                 ],
                 use_code: {
                     tel: 'Mobile',
-                    count: 10,
+                    count: 60,
                 },
             },
             RedProtein: {

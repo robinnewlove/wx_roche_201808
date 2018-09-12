@@ -133,7 +133,7 @@ export const PAY_QUESTION = {
         ],
         use_code: {
             tel: 'Mobile',
-            count: 10,
+            count: 60,
         },
     },
 };
