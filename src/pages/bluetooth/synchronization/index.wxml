@@ -1,4 +1,4 @@
-<view>
+<view class="view-wrap">
     <view class="header">
         <text>通过蓝牙将血糖数据</text>
         <text>传输到小程序的方法说明</text>

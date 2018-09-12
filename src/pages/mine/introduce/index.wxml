@@ -28,7 +28,6 @@
     </view>
     <view class="footer">
         <view class="footer-button color"
-              data-url="questionnaire_activation_index"
               bindtap="handleJump">
             <text class="footer-button-text">我有激活码</text>
         </view>

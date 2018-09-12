@@ -15,30 +15,9 @@ Page(Handle({
     onLoad (options) {
         this.getParamsByUrl(options);
     },
-    // 购买会员
-    handleClick () {
-        this.setMemberInfo();
-    },
-    // 购买会员
-    setMemberInfo () {
-        let options = {
-            url: 'RocheApi/SetMemberInfo',
-            data: {
-                code: 'abdd',
-            },
-            loading: true,
-        };
-        return Http(options).then((res) => {
-            console.log(res);
-        }).catch((err) => {
-            Toast.error(err);
-        })
-    },
     // 跳转
     handleJump (e) {
-        let { currentTarget } = e;
-        let url = currentTarget.dataset.url;
-        Router.push(url);
+        Router.push('questionnaire_one_index', { IsMember: true });
     },
     handleJumpApp () {
         console.log(1)
