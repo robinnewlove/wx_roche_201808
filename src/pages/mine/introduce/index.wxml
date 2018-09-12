@@ -32,11 +32,19 @@
               bindtap="handleJump">
             <text class="footer-button-text">我有激活码</text>
         </view>
-        <view class="footer-button"
-              data-url="questionnaire_activation_index"
-              bindtap="handleJump">
+        <view class="footer-button color"
+              bindtap="handleJumpApp">
             <text class="footer-button-text">续订购买</text>
         </view>
+        <!--<navigator-->
+            <!--class="footer-button"-->
+            <!--target="miniProgram"-->
+            <!--open-type="navigate"-->
+            <!--app-id="wxa3eefe9efc0fcfeb"-->
+            <!--path="/pages/shop/index?storeId=7360299"-->
+            <!--version="develop" >-->
+            <!--<text class="footer-button-text">续订购买</text>-->
+        <!--</navigator>-->
     </view>
     <text class="prompt">仅提供健康咨询或者健康建议，不属于诊疗活动</text>
 </view>

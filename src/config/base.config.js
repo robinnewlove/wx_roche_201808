@@ -25,3 +25,7 @@ export const WEB_LINK = {
         src: 'https://jkys-wechat.91jkys.com/user/third/login?pin=${pin{pin}&accessId=roche&page=HEALTH_MANAGE',
     },
 };
+
+export const SHOP_APP = {
+
+};
