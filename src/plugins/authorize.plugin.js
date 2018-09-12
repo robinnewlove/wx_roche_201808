@@ -1,7 +1,7 @@
 export default (scope, content) => new Promise((resolve, reject) => {
     wx.authorize({
         scope,
-        success: () => {
+        success: (res) => {
             resolve(res);
         },
         fail: () => {
