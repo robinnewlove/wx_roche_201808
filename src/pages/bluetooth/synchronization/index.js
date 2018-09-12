@@ -129,7 +129,6 @@ Page(Handle({
                     item.TestDateShow = formatData('yyyy-MM-dd', new Date(+item.TestDate)) + ' ' + item.TestTime;
                 }
             });
-            this.destroyEvent();
             Router.push('bluetooth_transfer_index', {
                 data,
             });
