@@ -8,6 +8,7 @@ import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import SDK, { EVENT_NAME }      from 'services/sdk.services'
 import Toast                    from 'plugins/toast.plugin'
+import Http                     from 'plugins/http.plugin'
 import Loading                  from 'plugins/loading.plugin'
 import { formatData }           from 'wow-cool/lib/date.lib'
 import WowCool                  from 'wow-cool/lib/array.lib'
@@ -75,8 +76,10 @@ Page(Handle({
     },
     // 成功结束
     onEndHandle (e) {
+        console.log('成功结束', e);
         Loading.hideLoading();
         this.processingData();
+        this.setTestSugarList();
     },
     // 处理数据
     processingData() {
@@ -85,6 +88,7 @@ Page(Handle({
         infoList.forEach((info) => {
             let date = info.date;
             let cur = formatData('hh:dd', new Date(date));
+            cur = +cur.replace(':', '');
             let index = WowCool.findFirstIndexForArr(ARR_TIME_STEP_KEY, (item) => {
                 let { start, end } = item;
                 start = +start.replace(':', '');
@@ -121,10 +125,11 @@ Page(Handle({
             let data = res || [];
             data.forEach((item) => {
                 if (item.TestDate) {
-                    item.TestDate = item.TestDate.replace(/[^0-9]/ig, '');
-                    item.TestDate = formatData('yyyy-MM-dd hh:mm:ss', new Date(+item.TestDate));
+                    item.TestDateShow = item.TestDate.replace(/[^0-9]/ig, '');
+                    item.TestDateShow = formatData('yyyy-MM-dd hh:mm:ss', new Date(+item.TestDate));
                 }
             });
+            this.destroyEvent();
             Router.push('bluetooth_transfer_index', {
                 data,
             });
@@ -135,11 +140,11 @@ Page(Handle({
     // 连接状态的改变事件
     onChangeHandle (e) {
         Loading.hideLoading();
-        Toast.error(e);
         console.log('连接状态的改变事件', e);
     },
     // 详情事件
     onInfoHandle (e) {
+        Loading.showLoading();
         let infoList = this.data.infoList;
         infoList.push(e);
         this.setData({infoList});
@@ -147,6 +152,7 @@ Page(Handle({
     },
     // 附加信息事件
     onContextHandle (e) {
+        Loading.showLoading();
         let contextList = this.data.contextList;
         contextList.push(e);
         this.setData({contextList});

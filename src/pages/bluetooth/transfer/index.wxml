@@ -9,7 +9,7 @@
           wx:key="index">
         <view class="time">
             <text>记录时间：</text>
-            <text class="color">{{item.TestDate}}</text>
+            <text class="color">{{item.TestDateShow}}</text>
         </view>
         <view class="con">
             <view class="con-item">

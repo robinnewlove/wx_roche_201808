@@ -8,6 +8,7 @@ import Handle                   from 'mixins/mixin.handle'
 import InputMixin               from 'mixins/input.mixin'
 import SDK                      from 'services/sdk.services'
 import Toast                    from 'plugins/toast.plugin'
+import Loading                  from 'plugins/loading.plugin'
 
 const app = getApp();
 
@@ -58,12 +59,14 @@ Page(Handle({
             Toast.error('没有发现设备，请先搜索设备');
             return this.searchRoche();
         }
+        Loading.showLoading();
         let result = {};
         SDK.pairRoche(deviceId).then((res) => {
             result = {errCode: 0};
         }).catch((err) => {
             result = err;
         }).finally(() => {
+            Loading.hideLoading();
             let { errCode } = result;
             if (errCode !== 0 && errCode !== -1) return Toast.error(result);
             Toast.confirm({
