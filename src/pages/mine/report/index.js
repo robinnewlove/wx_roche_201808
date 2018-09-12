@@ -35,14 +35,22 @@ Page(Handle({
         this.getRecommendSugar();
         this.getWeekReport();
     },
+    // 获取当前时间下一周
+
     // 上下周
     handlePreOrNext (e) {
         let { currentTarget } = e;
         let count = +currentTarget.dataset.count;
         let date = new Date(this.data.curTime);
         date.setDate(date.getDate() + count);
+
+        let curTime = date.getTime();
+        let { sTime, eTime } = this.getDay(new Date().getTime());
+        let endTime = new Date(eTime).getTime();
+        if (curTime > endTime) return Toast.error('下一周还没开始哦');
+
         this.setData({
-            curTime: date.getTime(),
+            curTime,
         });
         this.getDay();
         this.initData();
@@ -50,61 +58,64 @@ Page(Handle({
         this.getWeekReport();
     },
     // 获取日期
-    getDay () {
-        let date = new Date(this.data.curTime);
+    getDay (cTime) {
+        let curTime = cTime || this.data.curTime;
+        let date = new Date(curTime);
         let day = date.getDay();
         let result = '';
         switch (day){
             case 0:
                 result = {
-                    sTime: getDate(-6, 'yyyy-MM-dd', new Date(this.data.curTime)),
-                    eTime: getDate(0, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    sTime: getDate(-6, 'yyyy-MM-dd', new Date(curTime)),
+                    eTime: getDate(0, 'yyyy-MM-dd', new Date(curTime)),
                 };
                 break;
             case 1:
                 result = {
-                    sTime: getDate(0, 'yyyy-MM-dd', new Date(this.data.curTime)),
-                    eTime: getDate(6, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    sTime: getDate(0, 'yyyy-MM-dd', new Date(curTime)),
+                    eTime: getDate(6, 'yyyy-MM-dd', new Date(curTime)),
                 };
                 break;
             case 2:
                 result = {
-                    sTime: getDate(-1, 'yyyy-MM-dd', new Date(this.data.curTime)),
-                    eTime: getDate(5, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    sTime: getDate(-1, 'yyyy-MM-dd', new Date(curTime)),
+                    eTime: getDate(5, 'yyyy-MM-dd', new Date(curTime)),
                 };
                 break;
             case 3:
                 result = {
-                    sTime: getDate(-2, 'yyyy-MM-dd', new Date(this.data.curTime)),
-                    eTime: getDate(4, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    sTime: getDate(-2, 'yyyy-MM-dd', new Date(curTime)),
+                    eTime: getDate(4, 'yyyy-MM-dd', new Date(curTime)),
                 };
                 break;
             case 4:
                 result = {
-                    sTime: getDate(-3, 'yyyy-MM-dd', new Date(this.data.curTime)),
-                    eTime: getDate(3, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    sTime: getDate(-3, 'yyyy-MM-dd', new Date(curTime)),
+                    eTime: getDate(3, 'yyyy-MM-dd', new Date(curTime)),
                 };
                 break;
             case 5:
                 result = {
-                    sTime: getDate(-4, 'yyyy-MM-dd', new Date(this.data.curTime)),
-                    eTime: getDate(2, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    sTime: getDate(-4, 'yyyy-MM-dd', new Date(curTime)),
+                    eTime: getDate(2, 'yyyy-MM-dd', new Date(curTime)),
                 };
                 break;
             case 6:
                 result = {
-                    sTime: getDate(5, 'yyyy-MM-dd', new Date(this.data.curTime)),
-                    eTime: getDate(1, 'yyyy-MM-dd', new Date(this.data.curTime)),
+                    sTime: getDate(5, 'yyyy-MM-dd', new Date(curTime)),
+                    eTime: getDate(1, 'yyyy-MM-dd', new Date(curTime)),
                 };
                 break;
         }
         let {sTime, eTime} = result;
-        this.setData( {
-            sTime,
-            eTime,
-            vSTime2: formatData('MM月dd日', new Date(sTime)),
-            vETime2: formatData('MM月dd日', new Date(eTime)),
-        });
+        if (!cTime) {
+            this.setData( {
+                sTime,
+                eTime,
+                vSTime2: formatData('MM月dd日', new Date(sTime)),
+                vETime2: formatData('MM月dd日', new Date(eTime)),
+            });
+        }
         return result;
     },
     // 获取报告

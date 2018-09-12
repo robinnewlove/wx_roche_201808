@@ -65,7 +65,7 @@
     </view>
     <view class="weekly">
         <view class="weekly-head {{!weekReport.HaveReport && 'null'}}">
-            <text>{{weekReport.HaveReport ? weekReport.MonitorSummary : '暂无周报'}}</text>
+            <text>{{weekReport.HaveReport ? weekReport.MonitorSummary : '您本周的您的监测频率过低，无法生成报告'}}</text>
         </view>
         <block wx:if="{{weekReport.HaveReport}}">
             <view class="weekly-cell">
