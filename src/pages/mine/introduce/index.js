@@ -8,6 +8,7 @@ import Toast                    from 'plugins/toast.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import RouterMixin              from 'mixins/router.mixin'
 import Router                   from 'plugins/router.plugin'
+import { SHOP_APP }             from 'config/base.config'
 
 Page(Handle({
     mixins: [RouterMixin],
@@ -42,9 +43,7 @@ Page(Handle({
     handleJumpApp () {
         console.log(1)
         wx.navigateToMiniProgram({
-            appId: 'wxa3eefe9efc0fcfeb', // 要跳转的小程序的appid
-            path: 'pages/shop/index?storeId=7360299', // 跳转的目标页面
-            envVersion: 'develop',
+            ...SHOP_APP,
             success(res) {
                 // 打开成功
             }
