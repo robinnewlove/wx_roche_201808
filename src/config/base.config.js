@@ -29,5 +29,5 @@ export const WEB_LINK = {
 export const SHOP_APP = {
     appId: 'wxa3eefe9efc0fcfeb', // 要跳转的小程序的appid
     path: 'pages/shop/index?storeId=7360299', // 跳转的目标页面
-    envVersion: 'develop',
+    envVersion: 'release',
 };
