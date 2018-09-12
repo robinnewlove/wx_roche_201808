@@ -125,8 +125,8 @@ Page(Handle({
             let data = res || [];
             data.forEach((item) => {
                 if (item.TestDate) {
-                    item.TestDateShow = item.TestDate.replace(/[^0-9]/ig, '');
-                    item.TestDateShow = formatData('yyyy-MM-dd hh:mm:ss', new Date(+item.TestDate));
+                    item.TestDate = item.TestDate.replace(/[^0-9]/ig, '');
+                    item.TestDateShow = formatData('yyyy-MM-dd', new Date(+item.TestDate)) + ' ' + item.TestTime;
                 }
             });
             this.destroyEvent();
@@ -161,7 +161,7 @@ Page(Handle({
     // 销毁事件
     destroyEvent () {
         for (let key in EVENT_FUN) {
-            let eventFun = EVENT_NAME[key];
+            let eventFun = EVENT_FUN[key];
             SDK.off(key, eventFun);
         }
     }
