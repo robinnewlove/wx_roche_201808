@@ -87,6 +87,7 @@ Page(Handle({
         let result = [];
         infoList.forEach((info) => {
             let date = info.date;
+            date = date.replace(/-/g, '\/');
             let cur = formatData('hh:dd', new Date(date));
             cur = +cur.replace(':', '');
             let index = WowCool.findFirstIndexForArr(ARR_TIME_STEP_KEY, (item) => {
