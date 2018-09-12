@@ -161,8 +161,10 @@ Page(Handle({
     // 销毁事件
     destroyEvent () {
         for (let key in EVENT_FUN) {
+            let eventName = EVENT_NAME[key];
             let eventFun = EVENT_FUN[key];
-            SDK.off(key, eventFun);
+            console.log('调用了销毁事件',eventName,eventFun);
+            SDK.off(eventName, eventFun);
         }
     }
 }));
