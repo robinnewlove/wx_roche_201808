@@ -7,7 +7,7 @@
             <image class="user-image"
                    src="{{userInfo.avatarUrl}}"></image>
         </view>
-        <text class="prompt">您的本次</text>
+        <text class="prompt">您的本次血糖值</text>
         <view class="num-info">
             <text class="num-value">{{$params.Bloodsugar}}</text>
             <text class="num-unit">mmol/L</text>
