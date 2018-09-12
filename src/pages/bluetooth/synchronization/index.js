@@ -8,6 +8,12 @@ import Handle                   from 'mixins/mixin.handle'
 import SDK, { EVENT_NAME }      from 'services/sdk.services'
 import Toast                    from 'plugins/toast.plugin'
 import Loading                  from 'plugins/loading.plugin'
+import { formatData }           from 'wow-cool/lib/date.lib'
+import WowCool                  from 'wow-cool/lib/array.lib'
+import {
+    ARR_TIME_STEP,
+    ARR_TIME_STEP_KEY,
+}                               from 'config/base.config'
 
 const {
     ERROR,
@@ -68,7 +74,36 @@ Page(Handle({
     // 成功结束
     onEndHandle (e) {
         Loading.hideLoading();
-        Router.push('bluetooth_transfer_index', this.data);
+        this.processingData();
+    },
+    // 处理数据
+    processingData() {
+        let {infoList, contextList} = this.data;
+        infoList.forEach((info) => {
+            contextList.forEach((cont) => {
+                if (info.seqNum === cont.seqNum) {
+                    info = {
+                        ...cont,
+                        ...info,
+                    }
+                }
+            });
+            let date = info.date;
+            if (date) {
+                let cur = formatData('hh:dd', new Date(date));
+                let index = WowCool.findFirstIndexForArr(ARR_TIME_STEP_KEY, (item) => {
+                    let { start, end } = item;
+                    start = +start.replace(':', '');
+                    end = +end.replace(':', '');
+                    return (cur >= start && cur <= end);
+                });
+                info.step = ARR_TIME_STEP[index];
+            }
+        });
+        Router.push('bluetooth_transfer_index', {
+            infoList,
+            contextList,
+        });
     },
     // 连接状态的改变事件
     onChangeHandle (e) {

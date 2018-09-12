@@ -13,7 +13,7 @@
         </view>
         <view class="con">
             <view class="con-item">
-                <text class="label">晚餐前</text>
+                <text class="label">{{item.step}}</text>
                 <text class="value">{{item.data}}</text>
                 <text class="unit">mmol/L</text>
             </view>

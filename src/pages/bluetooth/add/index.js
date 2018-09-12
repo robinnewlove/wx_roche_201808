@@ -51,15 +51,6 @@ Page(Handle({
         let url = currentTarget.dataset.url;
         Router.push(url);
     },
-    // // 绑定
-    // handlePop (e) {
-    //     let { currentTarget } = e;
-    //     let isPop = currentTarget.dataset.value;
-    //     this.setData({
-    //         deviceId: '',
-    //         isPop,
-    //     })
-    // },
     // 配对
     handlePairRoche() {
         let { deviceId } = this.data.blueTooth;
