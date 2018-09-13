@@ -107,6 +107,7 @@ Page(Handle({
             return (cur >= start && cur <= end);
         });
         if (index > 4) this.setData({timeScrollLeft: 500});
+        if (index < 3) this.setData({timeScrollLeft: 0});
         this.setData({
             timeStep: ARR_TIME_STEP[index]
         });

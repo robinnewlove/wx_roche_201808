@@ -23,7 +23,7 @@ Page(Handle({
         objUser: {},
         objView: [
             {
-                label: '我的测糖方案',
+                label: '我的控糖方案',
                 url: 'mine_programme_index',
                 value: '',
             },
@@ -35,6 +35,11 @@ Page(Handle({
             {
                 label: '个人信息',
                 url: 'mine_info_index',
+                value: '',
+            },
+            {
+                label: '更新糖病信息',
+                url: 'questionnaire_two_index',
                 value: '',
             },
             {
@@ -79,6 +84,6 @@ Page(Handle({
         if (url === 'mine_programme_index' && IsMember) {
             return Router.push('web_index', WEB_LINK.JKZD);
         }
-        Router.push(url);
+        Router.push(url, {form: 'mine_index'});
     }
 }));

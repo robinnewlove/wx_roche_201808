@@ -1,6 +1,7 @@
 <!--index.wxml-->
 <view class="wrap">
     <view hidden="{{loading}}">
+        <view class="view-bg"></view>
         <!--用户-->
         <view class="user">
             <image class="user-image"

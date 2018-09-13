@@ -1,8 +1,15 @@
 @import '../../assets/scss/define';
-.wrap{
-
+.view-bg{
+    @extend %pf;
+    @extend %b0;
+    @extend %l0;
+    @extend %r0;
+    height: 200rpx;
+    background-color: #4bc2e0;
 }
-
+.wrap{
+    background-color: #fff;
+}
 /*用户*/
 .user{
     @extend %df;

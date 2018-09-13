@@ -33,7 +33,7 @@
         <view class="footer-button"
               data-url="mine_programme_index"
               bindtap="handleJump">
-            <text class="footer-button-text">我的测糖方案</text>
+            <text class="footer-button-text">我的控糖方案</text>
         </view>
     </view>
 </view>

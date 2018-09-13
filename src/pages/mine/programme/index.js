@@ -98,6 +98,6 @@ Page(Handle({
     handleJump(e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        if (url) Router.push(url, {form: 'mine_programme'});
+        if (url) Router.push(url, {form: 'mine_programme_index'});
     }
 }));
