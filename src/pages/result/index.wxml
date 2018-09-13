@@ -13,8 +13,8 @@
             <text class="num-unit">mmol/L</text>
         </view>
         <text class="conclusion-text">{{glsText[$params.Gls]}}</text>
-        <progress class="progress" stroke-width="3" percent="{{progress}}" color="#54edf6" active/>
-        <text class="text">您本月坚持测糖{{$params.TestSugarCount}}次，完成进度{{progress}}%</text>
+        <progress class="progress" stroke-width="3" percent="{{$params.Speed}}" color="#54edf6" active/>
+        <text class="text">您本月坚持测糖{{$params.TestSugarCount}}次，完成进度{{$params.Speed}}%</text>
     </view>
     <!--/头部-->
     <!--日历-->

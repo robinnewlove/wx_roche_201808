@@ -28,7 +28,7 @@ Page(Handle({
         preDay: 0,
         nextDay: 0,
         months: 0,
-        progress: 0,
+        // progress: 0,
         records: []
     },
     onLoad (options) {
@@ -46,7 +46,7 @@ Page(Handle({
             PlanCount,
             Records,
         } = data;
-        let progress = Math.floor(TestSugarCount / PlanCount * 100);
+        // let progress = Math.floor(TestSugarCount / PlanCount * 100);
         let records = [];
         Records.forEach((item) => {
             let time = +item.replace(/[^0-9]/ig, '');
@@ -62,7 +62,7 @@ Page(Handle({
             })
         });
         this.setData({
-            progress,
+            // progress,
             records,
             resultData,
         });
