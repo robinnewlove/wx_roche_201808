@@ -84,8 +84,13 @@ Page(Handle({
             this.countScrollLeft();
         }).exec();
     },
-    onLoad() {
-        this.initData()
+    onShow() {
+        this.setData({
+            'objInput.TestDate.value': formatData('yyyy-MM-dd'),
+            'objInput.TestDate.end': formatData('yyyy-MM-dd'),
+            'objInput.TestTime.value': formatData('hh:mm'),
+        });
+        this.initData();
     },
     handleChange(e){
         this.bindChange(e);
