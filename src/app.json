@@ -1,8 +1,8 @@
 {
     "pages": [
+        "pages/test/index",
         "pages/questionnaire/activation/index",
         "pages/mine/report/index",
-        "pages/test/index",
         "pages/bluetooth/index",
         "pages/home/index",
         "pages/authorization/index",

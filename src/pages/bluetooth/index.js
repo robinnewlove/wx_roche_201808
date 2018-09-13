@@ -81,7 +81,7 @@ Page(Handle({
         let url = currentTarget.dataset.url;
         if (url === 'bluetooth_synchronization_index') {
             Store.get($BLUE_TOOTH_DEVICE_ID_LIST).then(() =>{
-                Router.push(url, {from: 'bluetooth_index'});
+                this.handleSync();
             }).catch(() => {
                 return Toast.confirm({
                     content: '您还未配对过设备，请先去配对设备',

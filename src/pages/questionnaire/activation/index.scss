@@ -59,13 +59,16 @@ page{
         color: #000;
     }
 }
-.con-input-value{
-    @extend %bsb;
-    @extend %tac;
+.con-input{
     border: 1rpx solid #ababab;
     margin-top: 47rpx;
     width: 450rpx;
     height: 80rpx;
+    input{
+        @extend %tac;
+        @extend %w100;
+        @extend %h100;
+    }
 }
 .con-button{
     @extend %aic;

@@ -6,13 +6,14 @@
            <view class="con-title">
                <text>输入10位服务码  即刻激活服务</text>
            </view>
-           <input type="number"
-                  focus="{{true}}"
-                  data-key="code"
-                  bindinput="bindInput"
-                  value="{{code}}"
-                  maxlength="10"
-                  class="con-input-value"/>
+           <view class="con-input">
+               <input type="number"
+                      focus="{{true}}"
+                      data-key="code"
+                      bindinput="bindInput"
+                      value="{{code}}"
+                      maxlength="10"/>
+           </view>
            <button class="con-button"
                bindtap="handleClick"
            >提交</button>

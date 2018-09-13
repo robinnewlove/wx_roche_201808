@@ -1,9 +1,9 @@
 <view>
     <view class="header">
-        <text class="header-title">您的专属测糖方案</text>
+        <text class="header-title">您的专属控糖方案</text>
     </view>
     <view class="prompt">
-        <text class="prompt-text">以下是推荐给您的专属测糖方案</text>
+        <text class="prompt-text">以下是推荐给您的专属控糖方案</text>
         <text class="prompt-time">{{desc1}}</text>
         <text class="prompt-text">{{desc2}}</text>
     </view>
@@ -36,6 +36,6 @@
     <view class="button"
           data-url="questionnaire_two_index"
           bindtap="handleJump">
-        <text class="button-text">更新测糖方案</text>
+        <text class="button-text">更新控糖方案</text>
     </view>
 </view>
