@@ -76,7 +76,8 @@ Page(Handle({
                 content: '是否配对成功？',
             }).then((res) => {
                 let { confirm } = res;
-                Store.set($BLUE_TOOTH_DEVICE_ID_LIST, [this.data.blueTooth]);
+                console.log(this.data.blueTooth)
+                confirm && Store.set($BLUE_TOOTH_DEVICE_ID_LIST, [this.data.blueTooth]);
                 confirm && Router.push('bluetooth_synchronization_index');
             });
         })

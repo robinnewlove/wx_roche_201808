@@ -7,7 +7,6 @@
         <image src="../../../assets/images/sjtb-explain-bg.jpg"></image>
     </view>
     <view class="form-button"
-          data-url="bluetooth_add_index"
           bindtap="handleSync">
         <text class="form-button-text">数据同步</text>
     </view>

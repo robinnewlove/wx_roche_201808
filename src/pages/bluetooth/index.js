@@ -8,13 +8,16 @@ import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
+import Store                    from 'plugins/store.plugin'
+import {
+    $BLUE_TOOTH_DEVICE_ID_LIST,
+    $BLUE_TOOTH_DATA,
+}                               from 'config/store.config'
 import {
     ARR_TIME_STEP,
     DAY_TEXT,
     GLS_TEXT,
 }                               from 'config/base.config'
-
-const app = getApp();
 
 Page(Handle({
     // 页面的初始数据
@@ -23,30 +26,29 @@ Page(Handle({
         glsText: GLS_TEXT,
         userInfo: {},
         objUser: {},
-        show: false,
-        loading: true,
+        objData: '',
         arrClass: ['low', 'low', 'lit', 'nor', 'up']
     },
     // 生命周期回调—监听页面显示
     onShow () {
-        Auth.getToken().then((info) => {
-            this.firFun(info);
-        }).catch(() => {
-            Router.push('authorization_index');
-        });
+        this.getUserInfo();
+        this.getIndexSugar();
+        this.initData();
     },
-    // 用户登录执行的函数
-    firFun (info) {
-        // 获取用户数据
-        this.getUserInfo().then(() => {
-            let { IsArchives, IsMember} = info;
-            if (!IsArchives) return Router.push('questionnaire_one_index', { IsMember });
-            return this.getIndexSugar();
-        }).catch((err) => {
-            let { code } = err;
-            if (code === -1) return Router.push('authorization_index');
-            Toast.error(err);
-        });
+    handleSubmit () {
+        Store.remove($BLUE_TOOTH_DEVICE_ID_LIST)
+    },
+    handleSubmit1 () {
+        Store.remove($BLUE_TOOTH_DATA)
+    },
+    initData() {
+        Store.get($BLUE_TOOTH_DATA).then((res) => {
+            console.log(res)
+            let objData = res[0];
+            this.setData({
+                objData,
+            })
+        })
     },
     // 首页个人血糖基本信息
     getIndexSugar () {
@@ -57,7 +59,6 @@ Page(Handle({
         return Http(options).then((res) => {
             this.setData({
                 objUser: res || {},
-                loading: false,
             })
         }).catch((err) => {
             Toast.error(err);
@@ -67,22 +68,29 @@ Page(Handle({
     getUserInfo () {
         return Auth.getUserInfo().then((info) => {
             // 用户已经授权
-            let {userInfo} = info;
+            let { userInfo } = info;
             this.setData({
                 userInfo: userInfo,
             });
-            app.globalData.userInfo = userInfo;
         })
     },
     // 跳转
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        let params = currentTarget.dataset.params;
-        let { IsPerfect } = this.data.objUser;
-        if ( url === 'mine_report_index' && !IsPerfect ) {
-            return Router.push('mine_info_index', { from: 'home_index'});
+        if (url === 'bluetooth_synchronization_index') {
+            Store.get($BLUE_TOOTH_DEVICE_ID_LIST).then(() =>{
+                Router.push(url, {from: 'bluetooth_index'});
+            }).catch(() => {
+                return Toast.confirm({
+                    content: '您还未配对过设备，请先去配对设备',
+                }).then((res) => {
+                    let { confirm } = res;
+                    confirm && Router.push('bluetooth_explain_index');
+                });
+            });
+            return;
         }
-        Router.push(url, params);
+        Router.push(url);
     },
 }));

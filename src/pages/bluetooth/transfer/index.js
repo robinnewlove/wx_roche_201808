@@ -5,7 +5,11 @@ import './index.wxml'
 
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
-import RouterMixin              from 'mixins/router.mixin'
+import Store                    from 'plugins/store.plugin'
+import {
+    $BLUE_TOOTH_DEVICE_ID_LIST,
+    $BLUE_TOOTH_DATA,
+}                               from 'config/store.config'
 import {
     ARR_TIME_STEP,
     DAY_TEXT,
@@ -16,13 +20,15 @@ import {
 const app = getApp();
 
 Page(Handle({
-    mixins: [RouterMixin],
     data: {
         arrTimeStep: ARR_TIME_STEP,
         glsText: GLS_TEXT,
+        $params: ''
     },
-    onLoad(options) {
-        this.getParamsByUrl(options);
+    onLoad() {
+        Store.get($BLUE_TOOTH_DEVICE_ID_LIST).then(($params) => {
+            this.setData({$params})
+        }).catch(() => {})
     },
     // 跳转
     handleJump (e) {

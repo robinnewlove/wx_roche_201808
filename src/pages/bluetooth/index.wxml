@@ -14,9 +14,10 @@
             </view>
         </view>
     </view>
+
     <!--蓝牙-->
     <view class="blue-tooth"
-          data-url="bluetooth_index"
+          data-url="bluetooth_synchronization_index"
           bindtap="handleJump">
         <image class="blue-tooth-icon"
                mode="aspectFit" src="../../assets/images/blue-tooth-icon.png"></image>
@@ -29,13 +30,14 @@
     <view class="main">
         <view class="inner {{arrClass[objUser.Gls]}}">
             <view class="con">
-                <text class="num">{{objUser.Bloodsugar}}</text>
+                <text class="num">{{objData.Bloodsugar ? objData.Bloodsugar : '--'}}</text>
                 <text class="unit">mmol/L</text>
-                <text class="time">{{objUser.TestDate}} {{arrTimeStep[objUser.TimeStep]}}</text>
+                <text class="time">{{objData.TestDate}} {{arrTimeStep[objData.TimeStep]}}</text>
             </view>
             <view class="prompt">
-                <text class="prompt-text" wx:if="{{glsText[objUser.Gls]}}">你的血糖指数属于</text>
-                <text class="prompt-text prompt-text-strong">{{glsText[objUser.Gls]}}</text>
+                <text class="prompt-text" wx:if="{{!objData.Bloodsugar}}">暂无数据</text>
+                <text class="prompt-text" wx:if="{{glsText[objData.Gls]}}">你的血糖指数属于</text>
+                <text class="prompt-text prompt-text-strong">{{glsText[objData.Gls]}}</text>
             </view>
         </view>
     </view>
@@ -46,11 +48,21 @@
         <text></text>
     </view>
     <view class="form-button"
+          data-url="result_index"
+          bindtap="handleJump">
+        <text class="form-button-text">本月测糖进度</text>
+    </view>
+    <view class="form-button"
+          data-url="bluetooth_transfer_index"
+          bindtap="handleJump">
+        <text class="form-button-text">历史测糖记录</text>
+    </view>
+    <view class="form-button"
           bindtap="handleSubmit">
         <text class="form-button-text">本月测糖进度</text>
     </view>
     <view class="form-button"
-          bindtap="handleSubmit">
+          bindtap="handleSubmit1">
         <text class="form-button-text">历史测糖记录</text>
     </view>
     <!--/底部button-->
