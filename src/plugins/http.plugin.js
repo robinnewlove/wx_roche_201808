@@ -32,7 +32,7 @@ class Http {
                 } = res;
                 this.useOpenId && (this.data.OpenId = OpenId);
                 this.url = `${this.url}?access_token=${AccessToken}`
-            }).finally(() => {
+            }).catch(() => {}).finally(() => {
                 this._log('请求参数', this.data);
                 if (this.auth && !this.data.OpenId) {
                     return Router.push('authorization_index');

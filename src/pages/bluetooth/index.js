@@ -43,12 +43,11 @@ Page(Handle({
     },
     initData() {
         Store.get($BLUE_TOOTH_DATA).then((res) => {
-            console.log(res)
             let objData = res[0];
             this.setData({
                 objData,
             })
-        })
+        }).catch(() => {})
     },
     // 首页个人血糖基本信息
     getIndexSugar () {

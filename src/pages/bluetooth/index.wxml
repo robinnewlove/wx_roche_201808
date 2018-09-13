@@ -32,7 +32,7 @@
             <view class="con">
                 <text class="num">{{objData.Bloodsugar ? objData.Bloodsugar : '--'}}</text>
                 <text class="unit">mmol/L</text>
-                <text class="time">{{objData.TestDate}} {{arrTimeStep[objData.TimeStep]}}</text>
+                <text class="time">{{objData.TestDate}} {{arrTimeStep[objData.TimeStep - 1]}}</text>
             </view>
             <view class="prompt">
                 <text class="prompt-text" wx:if="{{!objData.Bloodsugar}}">暂无数据</text>
