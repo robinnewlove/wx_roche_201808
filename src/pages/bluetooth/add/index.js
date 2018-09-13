@@ -9,7 +9,10 @@ import InputMixin               from 'mixins/input.mixin'
 import SDK                      from 'services/sdk.services'
 import Toast                    from 'plugins/toast.plugin'
 import Loading                  from 'plugins/loading.plugin'
-
+import Store                    from 'plugins/store.plugin'
+import {
+    $BLUE_TOOTH_DEVICE_ID_LIST
+}                               from 'config/store.config'
 const app = getApp();
 
 Page(Handle({
@@ -73,6 +76,7 @@ Page(Handle({
                 content: '是否配对成功？',
             }).then((res) => {
                 let { confirm } = res;
+                Store.set($BLUE_TOOTH_DEVICE_ID_LIST, [this.data.blueTooth]);
                 confirm && Router.push('bluetooth_synchronization_index');
             });
         })
