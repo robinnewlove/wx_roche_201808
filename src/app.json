@@ -26,7 +26,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "罗氏血糖管家",
+        "navigationBarTitleText": "360°稳糖管家",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {

@@ -9,7 +9,7 @@
                 <text class="user-name user-text"
                 >{{objUser.Name || userInfo.nickName}}</text>
                 <view class="user-prompt">
-                    <text class="user-text">罗氏血糖管家已守护您</text>
+                    <text class="user-text">360°稳糖管家已守护您</text>
                     <text class="user-text user-strong-text"
                     >{{objUser.LoginDays}}</text>
                     <text class="user-text">天</text>

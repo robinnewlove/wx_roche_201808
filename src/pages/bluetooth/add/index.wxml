@@ -11,7 +11,6 @@
         </view>
         <view class="after" hidden="{{blueTooth === null || blueTooth === ''}}">
             <image src="../../../assets/images/lylj-result-icon.jpg"></image>
-            <!--<text>罗氏Connect血糖仪</text>-->
             <text>{{blueTooth.name}}</text>
             <text class="no-text">{{blueTooth.deviceId}}</text>
         </view>
