@@ -59,11 +59,11 @@
     </view>
     <view class="form-button"
           bindtap="handleSubmit">
-        <text class="form-button-text">本月测糖进度</text>
+        <text class="form-button-text">清除设备</text>
     </view>
     <view class="form-button"
           bindtap="handleSubmit1">
-        <text class="form-button-text">历史测糖记录</text>
+        <text class="form-button-text">清除数据</text>
     </view>
     <!--/底部button-->
 </view>

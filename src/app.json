@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/test/index",
         "pages/bluetooth/index",
         "pages/home/index",
         "pages/authorization/index",
@@ -20,7 +21,6 @@
         "pages/questionnaire/two/index",
         "pages/record/index",
         "pages/result/index",
-        "pages/test/index",
         "pages/web/index"
     ],
     "window": {
