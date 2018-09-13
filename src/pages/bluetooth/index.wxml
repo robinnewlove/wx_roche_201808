@@ -20,7 +20,7 @@
           data-url="bluetooth_synchronization_index"
           bindtap="handleJump">
         <image class="blue-tooth-icon"
-               mode="aspectFit" src="../../assets/images/blue-tooth-icon.png"></image>
+               mode="aspectFit" src="../../assets/images/tbxt-icon.png"></image>
         <view class="blue-tooth-bar"></view>
         <text class="blue-tooth-text">同步数据</text>
     </view>
@@ -43,27 +43,52 @@
     </view>
     <!--/血糖-->
 
+    <!--<view class="form-button"-->
+          <!--data-url="result_index"-->
+          <!--bindtap="handleJump">-->
+        <!--<text class="form-button-text">本月测糖进度</text>-->
+    <!--</view>-->
+    <!--<view class="form-button"-->
+          <!--data-url="bluetooth_transfer_index"-->
+          <!--bindtap="handleJump">-->
+        <!--<text class="form-button-text">历史测糖记录</text>-->
+    <!--</view>-->
+    <!--<view class="form-button"-->
+          <!--bindtap="handleSubmit">-->
+        <!--<text class="form-button-text">清除设备</text>-->
+    <!--</view>-->
+    <!--<view class="form-button"-->
+          <!--bindtap="handleSubmit1">-->
+        <!--<text class="form-button-text">清除数据</text>-->
+    <!--</view>-->
+
+    <view class="button-wrap">
+        <view class="button-item"
+              data-url="bluetooth_synchronization_index"
+              bindtap="handleJump">
+            <text>数据同步操作说明</text>
+        </view>
+        <view class="button-item"
+              data-url="bluetooth_add_index"
+              bindtap="handleJump">
+            <text>添加蓝牙设备</text>
+        </view>
+    </view>
+
     <!--底部button-->
-    <view class="button-item">
-        <text></text>
-    </view>
-    <view class="form-button"
-          data-url="result_index"
-          bindtap="handleJump">
-        <text class="form-button-text">本月测糖进度</text>
-    </view>
-    <view class="form-button"
-          data-url="bluetooth_transfer_index"
-          bindtap="handleJump">
-        <text class="form-button-text">历史测糖记录</text>
-    </view>
-    <view class="form-button"
-          bindtap="handleSubmit">
-        <text class="form-button-text">清除设备</text>
-    </view>
-    <view class="form-button"
-          bindtap="handleSubmit1">
-        <text class="form-button-text">清除数据</text>
+    <view class="footer">
+        <view class="footer-button"
+              data-url="bluetooth_transfer_index"
+              bindtap="handleJump">
+            <image mode="aspectFit" src="../../assets/images/home-icon-xtbg.png"></image>
+            <text>历史测糖记录</text>
+        </view>
+        <view class="footer-button"
+              data-url="result_index"
+              bindtap="handleJump">
+            <image mode="aspectFit" src="../../assets/images/home-icon-jhb.png"></image>
+            <text>本月测糖进度</text>
+        </view>
     </view>
     <!--/底部button-->
 </view>

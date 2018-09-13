@@ -202,7 +202,7 @@
     <view class="footer">
         <view class="footer-item">
             <image class="left-icon" mode="aspectFit" src="../../../assets/images/xtbg-icon-4.png"></image>
-            <text class="left-prompt">医生提示</text>
+            <text class="left-prompt">健康顾问</text>
             <text class="footer-text">科学规范地监测3个月</text>
             <text class="footer-text">可有效管理血糖，坚持哦！</text>
         </view>

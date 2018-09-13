@@ -109,7 +109,8 @@ Page(Handle({
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
         if (!url) return Router.root('home_index');
-        let {IsMember} = this.data.userInfo;
-        IsMember ? Router.push('web_index', WEB_LINK.JKZD) : Router.push(url);
+        if (url) return Router.root(url);
+        // let {IsMember} = this.data.userInfo;
+        // IsMember ? Router.push('web_index', WEB_LINK.JKZD) : Router.push(url);
     }
 }));

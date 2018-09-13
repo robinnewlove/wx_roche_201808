@@ -83,7 +83,7 @@
             <text bindtap="handleAgree">我已阅读并同意</text>
             <text class="agreement-text"
                   data-value="{{true}}"
-                  bindtap="handlePop">《罗氏360控糖服务隐私声明》</text>
+                  bindtap="handlePop">《360°稳糖管家服务隐私声明》</text>
         </view>
         <view class="form-button"
               bindtap="handleSubmit">

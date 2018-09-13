@@ -46,9 +46,9 @@
             <text class="footer-button-text">返回首页</text>
         </view>
         <view class="footer-button calendar-title"
-              data-url="mine_programme_index"
+              data-url="mine_index"
               bindtap="handleJump">
-            <text class="footer-button-text">我的测糖方案</text>
+            <text class="footer-button-text">返回个人中心</text>
         </view>
     </view>
 </view>

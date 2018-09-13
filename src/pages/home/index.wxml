@@ -39,7 +39,7 @@
                     <text class="time">{{objUser.TestDate}} {{arrTimeStep[objUser.TimeStep - 1]}}</text>
                 </view>
                 <view class="prompt">
-                    <text class="prompt-text" wx:if="{{glsText[objUser.Gls]}}">你的血糖指数属于</text>
+                    <text class="prompt-text" wx:if="{{glsText[objUser.Gls]}}">你的血糖数值属于</text>
                     <text class="prompt-text prompt-text-strong">{{glsText[objUser.Gls]}}</text>
                 </view>
             </view>
@@ -58,7 +58,7 @@
                       wx:if="{{objUser.IsMember}}">
                     <image class="plan-button-icon"
                            mode="aspectFit" src="../../assets/images/home-icon-zxwz.png"></image>
-                    <text class="plan-button-text">在线问诊</text>
+                    <text class="plan-button-text">在线咨询</text>
                 </view>
                 <view class="plan-button" wx:if="{{!objUser.IsMember}}"></view>
                 <view class="plan-button"

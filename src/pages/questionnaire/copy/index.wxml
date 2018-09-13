@@ -11,7 +11,7 @@
               wx:for-index="index">
             <view class="title-wrap">
                 <text class="title-text"
-                >{{index + 1}}.{{item.Name}}</text>
+                >3.{{item.Name}}</text>
             </view>
             <view class="from-select"
                   bindtap="handleCheck"

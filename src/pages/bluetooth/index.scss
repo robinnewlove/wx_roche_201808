@@ -66,10 +66,10 @@
 .blue-tooth-icon{
     @extend %pa;
     @extend %t50;
-    margin-top: -21rpx;
-    left: 20rpx;
-    width: 25rpx;
-    height: 43rpx;
+    margin-top: -18rpx;
+    left: 12rpx;
+    width: 36rpx;
+    height: 36rpx;
 }
 .blue-tooth-bar{
     width: 8rpx;
@@ -184,4 +184,55 @@
 .form-button-text{
     color: #fff;
     font-size: 36rpx;
+}
+
+
+.button-wrap{
+    @extend %df;
+    justify-content: space-between;
+    padding: 110rpx 60rpx 0;
+}
+.button-item{
+    @extend %df;
+    @extend %jcc;
+    @extend %aic;
+    width: 294rpx;
+    height: 68rpx;
+    border-radius: 34rpx;
+    background-color: #1e3666;
+    &:last-child{
+        background-color: transparent;
+        background: linear-gradient(to right, #39e2ee , #28aeeb);
+    }
+    text{
+        font-size: 30rpx;
+        color: #fff;
+    }
+}
+
+.footer{
+    @extend %df;
+    @extend %pf;
+    @extend %b0;
+    @extend %w100;
+    @extend %l0;
+    height: 110rpx;
+    background: linear-gradient(to right, #39e2ee , #28aeeb);
+}
+.footer-button{
+    @extend %h100;
+    @extend %df1;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    image{
+        width: 40rpx;
+        height: 40rpx;
+        margin-right: 10rpx;
+    }
+    text{
+        @extend %fwb;
+        @extend %cfff;
+        font-size: 36rpx;
+    }
 }

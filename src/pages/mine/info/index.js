@@ -88,7 +88,7 @@ Page(Handle({
                 ]
             },
             LowSugar: {
-                label: '是否患有有低血糖',
+                label: '是否曾出现过低血糖',
                 value: 1,
                 use_radio: [
                     {

@@ -1,7 +1,7 @@
 <view>
    <view class="inner">
        <image src="../../../assets/images/hyjh-bg.jpg"></image>
-       <text class="title">罗氏360°稳糖计划</text>
+       <text class="title">360°稳糖服务</text>
        <view class="con before">
            <view class="con-title" hidden="{{check}}">
                <text>输入10位服务码  即刻激活服务</text>
