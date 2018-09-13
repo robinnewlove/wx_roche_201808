@@ -139,10 +139,9 @@ export default {
         }).then(() => {
             // let pages = getCurrentPages();    //获取加载的页面
             // let cur_url = pages[pages.length-1].route;    //当前页面url
-            let index = 1;
-            if (!this.data.$params || !this.data.$params.from) index = 3;
+            if (!this.data.$params || !this.data.$params.from) return Router.pop(2);
             // if (cur_url === 'pages/bluetooth/index') this.initData();
-            Router.pop(index);
+            this.initData && this.initData();
         }).catch((err) => {
             Toast.error(err);
         });

@@ -9,6 +9,7 @@ import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import Store                    from 'plugins/store.plugin'
+import SyncMixin                from 'mixins/sync-data.mixin'
 import {
     $BLUE_TOOTH_DEVICE_ID_LIST,
     $BLUE_TOOTH_DATA,
@@ -20,6 +21,7 @@ import {
 }                               from 'config/base.config'
 
 Page(Handle({
+    mixins: [SyncMixin],
     // 页面的初始数据
     data: {
         arrTimeStep: ARR_TIME_STEP,

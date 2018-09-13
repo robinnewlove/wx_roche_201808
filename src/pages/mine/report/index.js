@@ -11,7 +11,7 @@ import {
     ARR_TIME_STEP,
     DAY_TEXT
 }                               from 'config/base.config'
-
+let type = false;
 Page(Handle({
     data: {
         arrTimeStep: ARR_TIME_STEP,
@@ -30,6 +30,7 @@ Page(Handle({
         weekReport: {},
     },
     onLoad () {
+        type = false;
         this.getDay();
         this.initData();
         this.getRecommendSugar();
@@ -39,6 +40,9 @@ Page(Handle({
 
     // 上下周
     handlePreOrNext (e) {
+        if (type) return;
+        type = true;
+        setTimeout(() => {type = false}, 1000);
         let { currentTarget } = e;
         let count = +currentTarget.dataset.count;
         let date = new Date(this.data.curTime);
@@ -146,21 +150,31 @@ Page(Handle({
     // 初始化数据
     initData (arr) {
         if (arr) {
+            let result = {};
             arr.forEach((item) => {
-                let { Day, TimeStep, Bloodsugar,Gls} = item;
+                let { Day, TimeStep, Bloodsugar, Gls} = item;
                 this.data.dayTime.forEach((it, ind) => {
                     if (Day === 7) Day = 0;
-                    if (it[0] === Day) {
+                    if (it[0] === Day && TimeStep !== 0) {
                         let sItem = `dayTime[${ind}][${TimeStep}]`;
-                        this.setData({
-                            [sItem]: {
-                                ...item,
-                                type: Gls === 3 ? 'nor' : Gls < 3 ? 'low' : 'up',
-                            },
-                        });
+                        let key = `key_${ind}${TimeStep}`;
+                        result[key] = {
+                            sItem: sItem,
+                            item: item,
+                            type: Gls === 3 ? 'nor' : Gls < 3 ? 'low' : 'up',
+                        };
                     }
                 });
             });
+            for (let key in result) {
+                let {sItem, item, type} = result[key];
+                this.setData({
+                    [sItem]: {
+                        ...item,
+                        type,
+                    },
+                });
+            }
             return;
         }
         let result = [];

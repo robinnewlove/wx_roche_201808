@@ -128,6 +128,9 @@
 }
 .text{
     font-size: 21rpx;
+    &.num{
+        font-size: 36rpx;
+    }
 }
 .status{
     @extend %df;
@@ -145,7 +148,7 @@
 .explain-item{
     @extend %df;
     @extend %aic;
-    margin: 0 15rpx;
+    margin: 0 10rpx;
     &.up{
         text{
             color: #ff7f52;
@@ -165,10 +168,10 @@
 .explain-icon{
     width: 30rpx;
     height: 30rpx;
-    margin-right: 15rpx;
+    margin-right: 10rpx;
 }
 .explain-text{
-    font-size: 22rpx;
+    font-size: 36rpx;
 }
 
 .weekly{
@@ -186,7 +189,7 @@
         color: #fff;
     }
     &.null{
-        height: 140rpx;
+        height: 180rpx;
     }
 }
 .weekly-cell{

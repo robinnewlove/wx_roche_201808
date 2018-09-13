@@ -58,14 +58,16 @@
                   wx:for-item="ite"
                   wx:for-index="ind"
                   wx:key="ite">
-                <text class="text" wx:if="{{ite !== -1}}">{{ind === 0 ? dayText[ite] : ite.Bloodsugar}}</text>
+                <text class="text {{ite.Bloodsugar && 'num'}}"
+                      wx:if="{{ite !== -1}}"
+                >{{ind === 0 ? dayText[ite] : ite.Bloodsugar}}</text>
                 <view class="status" wx:if="{{ite === -1}}"></view>
             </view>
         </view>
     </view>
     <view class="weekly">
         <view class="weekly-head {{!weekReport.HaveReport && 'null'}}">
-            <text>{{weekReport.HaveReport ? weekReport.MonitorSummary : '您本周的您的监测频率过低，无法生成报告'}}</text>
+            <text>{{weekReport.HaveReport ? weekReport.MonitorSummary : '您本周的您的监测频率过低，请进一步完善血糖值获得更完整的周报哦'}}</text>
         </view>
         <block wx:if="{{weekReport.HaveReport}}">
             <view class="weekly-cell">
@@ -177,12 +179,6 @@
                         <text>整体</text>
                     </view>
                 </view>
-                <!--<view class="reminder-data-item low">-->
-                <!--<text>{{weekReport.AvgAfterVal}}</text>-->
-                <!--<view class="prompt-text">-->
-                <!--<text>餐后</text>-->
-                <!--</view>-->
-                <!--</view>-->
                 <view class="reminder-data-item up">
                     <text>{{weekReport.DayMaxVal}}</text>
                     <view class="prompt-text">
