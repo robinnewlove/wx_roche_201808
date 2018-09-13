@@ -26,9 +26,13 @@ Page(Handle({
         $params: ''
     },
     onLoad() {
-        Store.get($BLUE_TOOTH_DEVICE_ID_LIST).then(($params) => {
+        Store.get($BLUE_TOOTH_DATA).then(($params) => {
+            console.log($params)
             this.setData({$params})
-        }).catch(() => {})
+        }).catch((err) => {
+
+            console.log(err)
+        })
     },
     // 跳转
     handleJump (e) {

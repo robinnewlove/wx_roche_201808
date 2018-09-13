@@ -3,7 +3,7 @@
         <text>{{$params ? '传输已完成' : '暂无数据'}}</text>
     </view>
     <view class="session"
-          wx:for="{{$params.data}}"
+          wx:for="{{$params}}"
           wx:for-item="item"
           wx:for-index="index"
           wx:key="index">
