@@ -47,6 +47,9 @@ Page(Handle({
         else objInput = FREE_QUESTION;
         this.setData({
             objInput,
+        });
+        this.setData({
+            'objInput.Brithday.end': formatData('yyyy-MM-dd'),
         })
     },
     // 提交下一步

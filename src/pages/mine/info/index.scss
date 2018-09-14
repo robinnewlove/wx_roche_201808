@@ -99,6 +99,9 @@
     @extend %aic;
     padding-right: 60rpx;
     justify-content: flex-end;
+    .from-radio-item:first-child{
+        padding-left: 0;
+    }
 }
 .from-radio-item{
     @extend %df1;

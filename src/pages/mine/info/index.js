@@ -141,6 +141,9 @@ Page(Handle({
         end: formatData('yyyy-MM-dd'),
     },
     onLoad (options) {
+        this.setData({
+            end: formatData('yyyy-MM-dd'),
+        });
         this.getParamsByUrl(options);
         this.fetchUserInfo();
     },
