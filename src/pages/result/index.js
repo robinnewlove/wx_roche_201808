@@ -42,7 +42,7 @@ Page(Handle({
     },
     initData(data){
         if (!data) return;
-        let { Speed, Records, PlanCount, TestSugarCount } = data;
+        let { Speed, Records, PlanCount, TestSugarCount, TestDays } = data;
         let records = [];
         Records.forEach((item) => {
             let time = +item.replace(/[^0-9]/ig, '');
@@ -60,7 +60,7 @@ Page(Handle({
         this.setData({
             progress: Speed,
             records,
-            count: TestSugarCount,
+            count: TestDays,
             resultData,
         });
     },

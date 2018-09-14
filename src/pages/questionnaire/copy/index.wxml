@@ -1,5 +1,5 @@
 <view>
-    <view class="banner">
+    <view class="banner {{$params.form && 'banner-from'}}">
         <text class="title" wx:if="{{!$params.form}}">第二步</text>
         <text class="prompt-text">回答3个相关问题</text>
         <text class="prompt-text">即可获得您的专属控糖计划</text>

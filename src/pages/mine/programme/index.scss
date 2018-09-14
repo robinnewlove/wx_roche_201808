@@ -39,8 +39,11 @@
     @extend %df;
     @extend %aic;
     @extend %bsb;
-    height: 60rpx;
+    height: 65rpx;
     border-bottom: 1rpx solid #ebebeb;
+    &:first-child{
+        height: 72rpx;
+    }
 }
 .td{
     @extend %h100;
@@ -93,7 +96,7 @@
 }
 .text{
     @extend %dn;
-    font-size: 21rpx;
+    font-size: 24rpx;
 }
 .status{
     @extend %df;
