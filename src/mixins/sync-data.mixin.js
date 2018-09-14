@@ -153,6 +153,9 @@ export default {
                     item.TestDateShow = formatData('yyyy-MM-dd', new Date(+item.TestDate)) + ' ' + item.TestTime;
                     item.TestDate = formatData('yyyy-MM-dd', new Date(+item.TestDate));
                 }
+                if (item.Bloodsugar) {
+                    item.Bloodsugar = item.Bloodsugar.toFixed(1);
+                }
             });
             return Store.set($BLUE_TOOTH_DATA, data);
         }).then(() => {

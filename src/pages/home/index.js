@@ -56,9 +56,10 @@ Page(Handle({
             url: 'RocheApi/GetIndexSugar',
             loading: false,
         };
-        return Http(options).then((res) => {
+        return Http(options).then((res = '') => {
             this.setData({
                 objUser: res || {},
+                'objUser.Bloodsugar': res.Bloodsugar ? res.Bloodsugar.toFixed(1) : res.Bloodsugar,
                 loading: false,
             });
             let { IsMember } = res;

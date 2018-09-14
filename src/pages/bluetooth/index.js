@@ -48,6 +48,9 @@ Page(Handle({
             let objData = res[0];
             this.setData({
                 objData,
+            });
+            this.setData({
+                'objUser.Bloodsugar': objData.Bloodsugar ? objData.Bloodsugar.toFixed(1) : objData.Bloodsugar,
             })
         }).catch(() => {})
     },
