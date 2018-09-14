@@ -175,11 +175,15 @@
     @extend %jcc;
     margin: 40rpx 60rpx 0;
     height: 80rpx;
-    background: linear-gradient(to right, #39e2ee , #28aeeb);
+    background-image: linear-gradient(to right, #39e2ee , #28aeeb);
     border-radius: 40rpx;
     &:last-child{
         margin-bottom: 80rpx;
     }
+}
+.form-button-te{
+    background-image: none;
+    background-color: #1e3666;
 }
 .form-button-text{
     color: #fff;
