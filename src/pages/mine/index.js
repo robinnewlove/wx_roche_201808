@@ -38,12 +38,12 @@ Page(Handle({
                 value: '',
             },
             {
-                label: '更新糖病信息',
+                label: '更新疾病信息',
                 url: 'questionnaire_two_index',
                 value: '',
             },
             {
-                label: '绑定 performa connect',
+                label: '绑定 Performa Connect',
                 url: 'bluetooth_index',
                 value: '',
             }

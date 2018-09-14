@@ -92,6 +92,6 @@ Page(Handle({
             });
             return;
         }
-        Router.push(url);
+        Router.push(url, {Bloodsugar: this.data.Bloodsugar});
     },
 }));

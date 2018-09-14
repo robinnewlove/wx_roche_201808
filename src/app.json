@@ -1,6 +1,8 @@
 {
     "pages": [
         "pages/test/index",
+        "pages/result/index",
+        "pages/mine/report/index",
         "pages/mine/info/index",
         "pages/home/index",
         "pages/authorization/index",
@@ -12,7 +14,6 @@
         "pages/mine/index",
         "pages/mine/introduce/index",
         "pages/mine/programme/index",
-        "pages/mine/report/index",
         "pages/questionnaire/activation/index",
         "pages/questionnaire/copy/index",
         "pages/questionnaire/one/index",
@@ -20,7 +21,6 @@
         "pages/questionnaire/three/index",
         "pages/questionnaire/two/index",
         "pages/record/index",
-        "pages/result/index",
         "pages/web/index"
     ],
     "window": {

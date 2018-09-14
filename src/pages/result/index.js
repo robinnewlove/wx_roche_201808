@@ -28,8 +28,9 @@ Page(Handle({
         preDay: 0,
         nextDay: 0,
         months: 0,
-        // progress: 0,
-        records: []
+        progress: 0,
+        records: [],
+        count: 0,
     },
     onLoad (options) {
         this.setData({
@@ -37,16 +38,11 @@ Page(Handle({
         });
         this.getParamsByUrl(options);
         this.getCalendar();
-        this.initData(this.data.$params);
-        this.getRecommendSugar();
+        this.getTestMonth();
     },
     initData(data){
-        let {
-            TestSugarCount,
-            PlanCount,
-            Records,
-        } = data;
-        // let progress = Math.floor(TestSugarCount / PlanCount * 100);
+        if (!data) return;
+        let { Speed, Records, PlanCount, TestSugarCount } = data;
         let records = [];
         Records.forEach((item) => {
             let time = +item.replace(/[^0-9]/ig, '');
@@ -62,8 +58,9 @@ Page(Handle({
             })
         });
         this.setData({
-            // progress,
+            progress: Speed,
             records,
+            count: TestSugarCount,
             resultData,
         });
     },
@@ -83,24 +80,13 @@ Page(Handle({
         })
     },
     // 获取血糖记录
-    getRecommendSugar() {
-        let {
-            sTime,
-            eTime,
-        } = getMonthDay(new Date().getMonth());
-        let Stime = formatData('yyyy-MM-dd', new Date(sTime));
-        let Etime = formatData('yyyy-MM-dd', new Date(eTime));
+    getTestMonth() {
         let options = {
-            url: 'RocheApi/GetRecommendSugar',
+            url: 'RocheApi/GetTestMonth',
             loading: true,
-            data: {
-                Stime,
-                Etime,
-                Type: 2,
-            }
         };
         return Http(options).then((res) => {
-            console.log(res);
+            this.initData(res);
         }).catch((err) => {
             Toast.error(err);
         });

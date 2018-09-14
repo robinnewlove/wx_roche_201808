@@ -201,7 +201,7 @@ Page(Handle({
             data,
         };
         return Http(options).then((res) => {
-            return Router.push('result_index', res);
+            return Router.push('result_index', {Bloodsugar: res.Bloodsugar});
         }).catch((err) => {
             Toast.error(err);
         });
