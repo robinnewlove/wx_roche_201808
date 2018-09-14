@@ -25,7 +25,7 @@
         </view>
         <view class="base-border"></view>
         <view class="base-item">
-            <text class="base-label">平均血糖</text>
+            <text class="base-label">周平均血糖</text>
             <text class="base-value">{{objUser.Bloodsugar}}</text>
         </view>
     </view>

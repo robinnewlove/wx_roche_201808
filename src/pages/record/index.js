@@ -89,13 +89,14 @@ Page(Handle({
             'objInput.TestDate.value': formatData('yyyy-MM-dd'),
             'objInput.TestDate.end': formatData('yyyy-MM-dd'),
             'objInput.TestTime.value': formatData('hh:mm'),
+            'objInput.TestTime.end': formatData('hh:mm'),
         });
         this.initData();
     },
     handleChange(e){
         this.bindChange(e);
         let time = this.data.objInput.TestTime.value;
-        this.judgeTimeStep(time);
+        // this.judgeTimeStep(time);
     },
     initData () {
         let time = this.data.objInput.TestTime.value;
@@ -177,7 +178,7 @@ Page(Handle({
             timeStep,
         });
         let index = ARR_TIME_STEP.indexOf(timeStep);
-        this.setStartAndEnd(index);
+        // this.setStartAndEnd(index);
     },
     // 保存提交
     handleSubmit() {
