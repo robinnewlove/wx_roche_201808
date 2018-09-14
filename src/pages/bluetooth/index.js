@@ -92,6 +92,7 @@ Page(Handle({
             });
             return;
         }
+        if (url === 'mine_index') return Router.root('mine_index');
         Router.push(url, {Bloodsugar: this.data.Bloodsugar, from: 'bluetooth_index'});
     },
 }));
