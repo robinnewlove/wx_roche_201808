@@ -17,7 +17,6 @@
 
     <!--蓝牙-->
     <view class="blue-tooth"
-          data-url="bluetooth_synchronization_index"
           bindtap="handleJump">
         <image class="blue-tooth-icon"
                mode="aspectFit" src="../../assets/images/tbxt-icon.png"></image>
@@ -53,14 +52,14 @@
           <!--bindtap="handleJump">-->
         <!--<text class="form-button-text">历史测糖记录</text>-->
     <!--</view>-->
-    <view class="form-button"
-          bindtap="handleSubmit">
-        <text class="form-button-text">清除设备</text>
-    </view>
-    <view class="form-button"
-          bindtap="handleSubmit1">
-        <text class="form-button-text">清除数据</text>
-    </view>
+    <!--<view class="form-button"-->
+          <!--bindtap="handleSubmit">-->
+        <!--<text class="form-button-text">清除设备</text>-->
+    <!--</view>-->
+    <!--<view class="form-button"-->
+          <!--bindtap="handleSubmit1">-->
+        <!--<text class="form-button-text">清除数据</text>-->
+    <!--</view>-->
 
     <view class="button-wrap">
         <view class="button-item"

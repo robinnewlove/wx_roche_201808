@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/test/index",
+        "pages/bluetooth/index",
         "pages/result/index",
         "pages/mine/report/index",
         "pages/mine/info/index",
@@ -8,7 +9,6 @@
         "pages/authorization/index",
         "pages/bluetooth/add/index",
         "pages/bluetooth/explain/index",
-        "pages/bluetooth/index",
         "pages/bluetooth/synchronization/index",
         "pages/bluetooth/transfer/index",
         "pages/mine/index",

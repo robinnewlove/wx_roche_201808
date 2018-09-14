@@ -79,7 +79,7 @@ Page(Handle({
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        if (url === 'bluetooth_synchronization_index') {
+        if (!url) {
             Store.get($BLUE_TOOTH_DEVICE_ID_LIST).then(() =>{
                 this.handleSync();
             }).catch(() => {
