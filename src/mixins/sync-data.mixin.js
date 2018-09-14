@@ -36,7 +36,7 @@ export default {
             this.syncData();
         }).catch((err) => {
             let { errCode } = err;
-            if (errCode === -999) return Router.push('bluetooth_explain_index');
+            if (errCode === -999) return Toast.error('您还未配对过设备，请先去配对设备');
             Toast.error('同步数据需要地理位置授权哦')
         });
     },
