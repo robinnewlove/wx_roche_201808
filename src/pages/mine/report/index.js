@@ -31,6 +31,9 @@ Page(Handle({
     },
     onLoad () {
         type = false;
+        this.setData({
+            curTime: new Date().getTime(),
+        });
         this.getDay();
         this.initData();
         this.getRecommendSugar();
@@ -67,6 +70,7 @@ Page(Handle({
         let date = new Date(curTime);
         let day = date.getDay();
         let result = '';
+        console.log('day', day)
         switch (day){
             case 0:
                 result = {
@@ -106,12 +110,13 @@ Page(Handle({
                 break;
             case 6:
                 result = {
-                    sTime: getDate(5, 'yyyy-MM-dd', new Date(curTime)),
+                    sTime: getDate(-5, 'yyyy-MM-dd', new Date(curTime)),
                     eTime: getDate(1, 'yyyy-MM-dd', new Date(curTime)),
                 };
                 break;
         }
         let {sTime, eTime} = result;
+        console.log(result)
         if (!cTime) {
             this.setData( {
                 sTime,
