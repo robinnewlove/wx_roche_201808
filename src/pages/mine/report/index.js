@@ -171,6 +171,7 @@ Page(Handle({
                 this.setData({
                     [sItem]: {
                         ...item,
+                        Bloodsugar: item.Bloodsugar && item.Bloodsugar.toFixed(1),
                         type,
                     },
                 });

@@ -43,7 +43,7 @@ Page(Handle({
                 value: '',
             },
             {
-                label: '绑定 Performa Connect',
+                label: '绑定Performa Connect血糖仪',
                 url: 'bluetooth_index',
                 value: '',
             }
