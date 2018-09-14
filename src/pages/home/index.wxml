@@ -49,8 +49,7 @@
 
         <!--计划-->
         <view class="plan">
-            <image class="plan-bg"
-                   mode="aspectFit" src="../../assets/images/home-plan-bg.png"></image>
+            <image class="plan-bg" src="../../assets/images/home-plan-bg.png"></image>
             <view class="plan-top">
                 <view class="plan-button"
                       data-params="{{objWeb}}"
