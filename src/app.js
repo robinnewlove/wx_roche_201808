@@ -1,5 +1,5 @@
 // const ald = require('./utils/ald-stat.js')
-import ald              from 'utils/ald-stat.js'
+// import ald              from 'utils/ald-stat.js'
 import './app.json'
 import './app.wxss'
 import 'utils/es6-promise.util'

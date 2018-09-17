@@ -61,7 +61,11 @@
     </scroll-view>
     <!--/时间-->
     <!--表单-->
-    <view class="form">
+    <form bindsubmit="handleSubmit"
+          class="form"
+          report-submit>
+        <input type="text" hidden value="{{objHidden.Bloodsugar.value}}" name="Bloodsugar"/>
+        <input type="text" hidden value="{{timeStep}}" name="TimeStep"/>
         <block wx:for="{{objInput}}"
                wx:for-index="key"
                wx:for-item="item"
@@ -71,6 +75,7 @@
                 <label class="input-label">{{item.label}}</label>
                 <view class="input-value">
                     <input
+                        name="{{key}}"
                         type="{{item.type || 'text'}}"
                         bindinput="bindInput"
                         data-obj="objInput"
@@ -93,6 +98,7 @@
                         <input
                             type="text"
                             disabled
+                            name="{{key}}"
                             value="{{item.value}}"
                             placeholder="{{item.placeholder}}"/>
                     </view>
@@ -112,16 +118,18 @@
                         <input
                             type="text"
                             disabled
+                            name="{{key}}"
                             value="{{item.value}}"
                             placeholder="{{item.placeholder}}"/>
                     </view>
                 </view>
             </picker>
         </block>
-        <view class="form-button"
-              bindtap="handleSubmit">
+        <!--<button>Submit</button>-->
+        <button class="form-button"
+                formType="submit">
             <text class="form-button-text">保存</text>
-        </view>
-    </view>
+        </button>
+    </form>
     <!--/表单-->
 </view>
