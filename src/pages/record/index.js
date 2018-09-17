@@ -185,23 +185,26 @@ Page(Handle({
         if (Data.check(this.data.objInput)) return;
         if (Data.check(this.data.objHidden)) return;
         let {value, formId} = e.detail;
-        let data = {};
-        data.TimeStep = this.data.arrTimeStep.indexOf(value.TimeStep) + 1;
-        data.Bloodsugar = +value.Bloodsugar;
+        this.setTestSugar();
+        this.sendMessageTest(formId);
+    },
+
+    // 提交formid
+    sendMessageTest (form_id) {
         let options = {
-            url: 'RocheApi/SetTestSugar',
+            url: 'WechatApi/SendMessageTest',
             loading: true,
             data: {
-                ...value,
-                ...data,
-            },
+                form_id,
+            }
         };
         return Http(options).then((res) => {
-            return Router.push('result_index', {Bloodsugar: res.Bloodsugar});
+
         }).catch((err) => {
             Toast.error(err);
         });
     },
+
     // 提交设置
     setTestSugar() {
         let data1 = Data.filter(this.data.objInput);
@@ -223,12 +226,4 @@ Page(Handle({
             Toast.error(err);
         });
     },
-
-    formSubmit (e) {
-        // 获取表单id
-        let {value, formId} = e.detail;
-        console.log(value);
-        console.log(formId);
-
-    }
 }));
