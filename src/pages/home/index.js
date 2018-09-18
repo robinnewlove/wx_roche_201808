@@ -29,6 +29,12 @@ Page(Handle({
         arrClass: ['low', 'low', 'lit', 'nor', 'up'],
         objWeb: WEB_LINK.ZXWZ
     },
+    onLoad (options) {
+        let scene = '';
+        if (options.scene) scene = decodeURIComponent(options.scene);
+        console.log(options);
+        app.globalData.sceneid = scene;
+    },
     // 生命周期回调—监听页面显示
     onShow () {
         Auth.getToken().then((info) => {

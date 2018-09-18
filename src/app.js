@@ -1,5 +1,5 @@
 // const ald = require('./utils/ald-stat.js')
-// import ald              from 'utils/ald-stat.js'
+import ald              from 'utils/ald-stat.js'
 import './app.json'
 import './app.wxss'
 import 'utils/es6-promise.util'
@@ -9,8 +9,8 @@ App({
     // 生命周期函数--监听小程序初始化,
     // 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
     onLaunch (options) {
-        let { scene } = options;
-        this.globalData.sceneid = scene;
+        // let { scene } = options;
+        // this.globalData.sceneid = scene;
     },
 
     // 生命周期函数--监听小程序显示

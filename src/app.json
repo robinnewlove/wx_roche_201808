@@ -1,7 +1,6 @@
 {
     "pages": [
         "pages/home/index",
-        "pages/record/index",
         "pages/authorization/index",
         "pages/bluetooth/add/index",
         "pages/bluetooth/explain/index",
@@ -19,6 +18,7 @@
         "pages/questionnaire/programme/index",
         "pages/questionnaire/three/index",
         "pages/questionnaire/two/index",
+        "pages/record/index",
         "pages/result/index",
         "pages/test/index",
         "pages/web/index"
