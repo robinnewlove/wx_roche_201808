@@ -17,7 +17,7 @@ export const GLS_TEXT = ['', '低血糖', '血糖偏低', '健康', '高血糖']
 
 export const WEB_LINK = {
     ZXWZ: {
-        title: '在线问诊',
+        title: '在线咨询',
         src: 'https://jkys-wechat.91jkys.com/user/third/login?pin=${pin{pin}&accessId=roche&page=DIAGNOSE_ONLINE',
     },
     JKZD: {
