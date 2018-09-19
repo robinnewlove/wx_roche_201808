@@ -206,7 +206,7 @@
             <image class="right-icon"
                    bindtap="handlePreviewImage"
                    mode="aspectFit"
-                   src="../../../assets/images/xtbg-ewm-icon.png"></image>
+                   src="../../../assets/images/xtbg-ewm-icon.jpg"></image>
             <text class="footer-text">关注罗氏血糖仪官方微信号</text>
             <text class="footer-text">获取更多控糖秘诀！</text>
         </view>
