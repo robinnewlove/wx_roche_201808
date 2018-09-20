@@ -8,6 +8,7 @@ import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import Auth                     from 'plugins/auth.plugin'
+import WebViewMixin             from 'mixins/webview.mixin'
 import {
     ARR_TIME_STEP,
     DAY_TEXT,
@@ -18,6 +19,7 @@ import {
 const app = getApp();
 
 Page(Handle({
+    mixins: [WebViewMixin],
     data: {
         userInfo: '',
         objUser: {},
@@ -82,7 +84,7 @@ Page(Handle({
             return Router.push('mine_info_index', { from: 'mine_index'});
         }
         if (url === 'mine_programme_index' && IsMember) {
-            return Router.push('web_index', WEB_LINK.JKZD);
+            return this.jumpWebView(WEB_LINK.JKZD);
         }
         Router.push(url, {form: 'mine_index'});
     }

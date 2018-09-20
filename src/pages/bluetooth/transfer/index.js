@@ -6,6 +6,7 @@ import './index.wxml'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import Store                    from 'plugins/store.plugin'
+import WebViewMixin             from 'mixins/webview.mixin'
 import {
     $BLUE_TOOTH_DEVICE_ID_LIST,
     $BLUE_TOOTH_DATA,
@@ -20,6 +21,7 @@ import {
 const app = getApp();
 
 Page(Handle({
+    mixins: [WebViewMixin],
     data: {
         arrTimeStep: ARR_TIME_STEP,
         glsText: GLS_TEXT,
@@ -40,6 +42,6 @@ Page(Handle({
         let url = currentTarget.dataset.url;
         let { IsMember } = app.globalData.userInfo;
         if (!url) return Router.root('home_index');
-        IsMember ? Router.push('web_index', WEB_LINK.JKZD) : Router.push(url);
+        IsMember ? this.jumpWebView(WEB_LINK.JKZD) : Router.push(url);
     }
 }));

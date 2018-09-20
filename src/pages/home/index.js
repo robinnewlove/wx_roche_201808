@@ -8,6 +8,7 @@ import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
+import WebViewMixin             from 'mixins/webview.mixin'
 import {
     ARR_TIME_STEP,
     DAY_TEXT,
@@ -18,6 +19,7 @@ import {
 const app = getApp();
 
 Page(Handle({
+    mixins: [WebViewMixin],
     // 页面的初始数据
     data: {
         arrTimeStep: ARR_TIME_STEP,
@@ -94,6 +96,9 @@ Page(Handle({
         let { IsPerfect } = this.data.objUser;
         if ( url === 'mine_report_index' && !IsPerfect ) {
             return Router.push('mine_info_index', { from: 'home_index'});
+        }
+        if ( url === 'web_index') {
+            return this.jumpWebView(params);
         }
         Router.push(url, params);
     },
