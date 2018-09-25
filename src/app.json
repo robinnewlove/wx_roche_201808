@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/consult/index",
         "pages/home/index",
         "pages/authorization/index",
         "pages/bluetooth/add/index",

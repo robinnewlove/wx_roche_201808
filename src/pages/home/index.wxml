@@ -53,7 +53,7 @@
             <view class="plan-top">
                 <view class="plan-button"
                       data-params="{{objWeb}}"
-                      data-url="web_index"
+                      data-url="consult_index"
                       bindtap="handleJump"
                       wx:if="{{objUser.IsMember}}">
                     <image class="plan-button-icon"
