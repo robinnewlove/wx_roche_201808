@@ -86,6 +86,6 @@ Page(Handle({
         if (url === 'mine_programme_index' && IsMember) {
             return this.jumpWebView(WEB_LINK.JKZD);
         }
-        Router.push(url, {form: 'mine_index'});
+        Router.push(url, {form: 'mine_index', IsMember});
     }
 }));

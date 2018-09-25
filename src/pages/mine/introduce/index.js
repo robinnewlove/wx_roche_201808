@@ -3,8 +3,6 @@ import './index.json'
 import './index.scss'
 import './index.wxml'
 
-import Http                     from 'plugins/http.plugin'
-import Toast                    from 'plugins/toast.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import RouterMixin              from 'mixins/router.mixin'
 import Router                   from 'plugins/router.plugin'
@@ -20,7 +18,6 @@ Page(Handle({
         Router.push('questionnaire_one_index', { IsMember: true });
     },
     handleJumpApp () {
-        console.log(1)
         wx.navigateToMiniProgram({
             ...SHOP_APP,
             success(res) {
