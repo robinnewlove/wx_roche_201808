@@ -29,7 +29,7 @@ Page(Handle({
         userInfo: {},
         objUser: {},
         objData: '',
-        arrClass: ['low', 'low', 'lit', 'nor', 'up']
+        arrClass: ['low', 'lit', 'lit', 'nor', 'up']
     },
     // 生命周期回调—监听页面显示
     onShow () {

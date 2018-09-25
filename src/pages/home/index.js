@@ -28,7 +28,7 @@ Page(Handle({
         objUser: {},
         show: false,
         loading: true,
-        arrClass: ['low', 'low', 'lit', 'nor', 'up'],
+        arrClass: ['low', 'lit', 'lit', 'nor', 'up'],
         objWeb: WEB_LINK.ZXWZ
     },
     onLoad (options) {
