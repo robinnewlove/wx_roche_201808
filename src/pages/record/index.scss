@@ -50,6 +50,10 @@
     margin-top: -50rpx;
     margin-left: -72rpx;
 }
+.rule-inner{
+    @extend %dib;
+    @extend %h100;
+}
 .rule-item{
     @extend %pr;
     @extend %dib;
@@ -60,6 +64,9 @@
         .rule-item-sign{
             height: 21rpx;
         }
+    }
+    &:last-child{
+        width: 1rpx;
     }
 }
 .rule-null-item{

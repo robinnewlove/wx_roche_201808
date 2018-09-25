@@ -55,7 +55,7 @@ Page(Handle({
                 value: '',
             },
         },
-        arrRuler: 101,
+        arrRuler: 151,
         arrTimeStep: ARR_TIME_STEP,
         timeStep: '',
         objHidden: {
@@ -161,7 +161,7 @@ Page(Handle({
         if (type === '0' && value > 0) {
             value = (value * 10 - 1) / 10;
         }
-        if ( type === '1' && value < 20) {
+        if ( type === '1' && value < 30) {
             value = (value * 10 + 1) / 10;
         }
         if (value !== 0) value = value.toFixed(1);

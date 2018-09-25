@@ -26,13 +26,15 @@
             class="ruler"
             bindscroll="handleScroll">
             <view class="rule-null-item"></view>
-            <view class="rule-item {{item % 5 === 0 && 'rule-item-value'}}"
-                  wx:for="{{arrRuler}}"
-                  wx:for-item="item"
-                  wx:for-index="key"
-                  wx:key="key">
-                <view class="rule-item-sign"></view>
-                <text wx:if="{{item % 5 === 0}}" class="rule-item-value-text">{{(item / 5)}}</text>
+            <view class="rule-inner">
+                <view class="rule-item {{item % 5 === 0 && 'rule-item-value'}}"
+                      wx:for="{{arrRuler}}"
+                      wx:for-item="item"
+                      wx:for-index="key"
+                      wx:key="key">
+                    <view class="rule-item-sign"></view>
+                    <text wx:if="{{item % 5 === 0}}" class="rule-item-value-text">{{(item / 5)}}</text>
+                </view>
             </view>
             <view class="rule-null-item"></view>
         </scroll-view>
