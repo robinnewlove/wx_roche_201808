@@ -37,4 +37,6 @@
             </view>
         </view>
     </view>
+    <import src="../../../templates/bluetooth-explain/index.wxml"/>
+    <template is="bluetoothExplain"></template>
 </view>

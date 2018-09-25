@@ -26,7 +26,7 @@
     @extend %jcc;
     @extend %aic;
     image{
-        margin: 170rpx 0 64rpx;
+        margin: 150rpx 0 50rpx;
         width: 205rpx;
         height: 205rpx;
     }
@@ -61,7 +61,7 @@
     @extend %fdc;
     @extend %jcc;
     @extend %aic;
-    margin-top: 95rpx;
+    margin-top: 80rpx;
     line-height: 1.6;
     text{
         font-size: 28rpx;
@@ -185,4 +185,10 @@
         font-size: 36rpx;
         color: #fff;
     }
+}
+.bluetooth{
+    @extend %pf;
+    @extend %b0;
+    @extend %l0;
+    @extend %r0;
 }

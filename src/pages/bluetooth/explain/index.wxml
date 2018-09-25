@@ -17,4 +17,6 @@
               data-url="record_index"
               bindtap="handleJump">点击前往手动记录</text>
     </view>
+    <import src="../../../templates/bluetooth-explain/index.wxml"/>
+    <template is="bluetoothExplain"></template>
 </view>
