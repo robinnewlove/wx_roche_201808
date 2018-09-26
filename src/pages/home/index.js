@@ -95,7 +95,7 @@ Page(Handle({
         let params = currentTarget.dataset.params;
         let { IsPerfect } = this.data.objUser;
         if ( url === 'mine_report_index' && !IsPerfect ) {
-            return Router.push('mine_info_index', { from: 'home_index'});
+            return Router.push('mine_info_index', { from: 'home_index', IsMember: app.globalData.userInfo.IsMember});
         }
         if ( url === 'web_index') {
             return this.jumpWebView(params);
