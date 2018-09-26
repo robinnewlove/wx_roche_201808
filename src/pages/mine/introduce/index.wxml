@@ -33,7 +33,7 @@
         </view>
         <view class="footer-button"
               bindtap="handleJumpApp">
-            <text class="footer-button-text">{{params$.IsMember ? '续订购买' : '升级购买'}}</text>
+            <text class="footer-button-text">{{$params.IsMember ? '续订购买' : '升级购买'}}</text>
         </view>
         <!--<navigator-->
             <!--class="footer-button"-->

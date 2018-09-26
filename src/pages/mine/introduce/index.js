@@ -15,7 +15,9 @@ Page(Handle({
     },
     // 跳转
     handleJump (e) {
-        Router.push('questionnaire_one_index', { IsMember: true });
+        this.data.$params.IsMember
+            ? Router.push('questionnaire_activation_index', { IsMember: true })
+            : Router.push('questionnaire_one_index', { IsMember: true })
     },
     handleJumpApp () {
         wx.navigateToMiniProgram({
