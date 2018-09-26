@@ -120,6 +120,7 @@ export default {
                 return (cur >= start && cur <= end);
             });
             result.push({
+                BuleRecordId: info.seqNum,
                 Bloodsugar: +info.data.toFixed(1),
                 TimeStep: index + 1,
                 TestDate: formatData('yyyy-MM-dd', new Date(date)),
