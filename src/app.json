@@ -1,5 +1,7 @@
 {
     "pages": [
+        "pages/questionnaire/two/index",
+        "pages/test/index",
         "pages/home/index",
         "pages/bluetooth/synchronization/index",
         "pages/bluetooth/add/index",
@@ -18,10 +20,8 @@
         "pages/questionnaire/one/index",
         "pages/questionnaire/programme/index",
         "pages/questionnaire/three/index",
-        "pages/questionnaire/two/index",
         "pages/record/index",
         "pages/result/index",
-        "pages/test/index",
         "pages/web/index"
     ],
     "window": {

@@ -23,6 +23,7 @@ Page(Handle({
     onLoad (options) {
         this.getParamsByUrl(options);
         this.initData();
+        this.getSurveyDetails();
     },
     // 初始化数据
     initData () {

@@ -1,5 +1,26 @@
+import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
 export default {
+    data: {
+        arrResult: [],
+    },
+    // 获取问题答案
+    getSurveyDetails () {
+        let options = {
+            url: 'RocheApi/GetSurveyDetails',
+            loading: true,
+        };
+        return Http(options).then((res) => {
+            let arrResult = res || [];
+            this.setData({
+                arrResult,
+            });
+            this.assignmentData(this.data.arrData, this.data.arrResult);
+        }).catch((err) => {
+            Toast.error(err);
+        });
+    },
+
     // 校验
     checkData (data) {
         let result = [];
@@ -150,5 +171,48 @@ export default {
                 }
                 break;
         }
-    }
+    },
+
+    // 反显赋值
+    assignmentData (question, result) {
+        if (!question.length || !result.length) return;
+        result.forEach((res_item, res_index) => {
+            question.forEach((que_item, que_index) => {
+                if (res_item.QuestionId + '' === que_item.Code) {
+                    let { Type, Answers } = que_item;
+                    let { ChooseResult } = res_item;
+                    switch (Type) {
+                        // 单选
+                        case 1:
+                            que_item.check = ChooseResult[0].ChooseNum;
+                            break;
+                        // 复选
+                        case 2:
+                            ChooseResult.forEach((cho_item) => {
+                                Answers.forEach((ans_item) => {
+                                    ans_item.check = cho_item.ChooseNum === ans_item.ChooseNum;
+                                })
+                            });
+                            break;
+                        // 问答
+                        case 3:
+                            que_item.check = ChooseResult[0].AnswerName;
+                            break;
+                        // 子集
+                        case 4:
+                            que_item.check = ChooseResult[0].ChooseNum;
+                            Answers.forEach((ans_item) => {
+                                if (ans_item.ChooseNum === ChooseResult[0].ChooseNum) {
+                                    ans_item.check = ChooseResult[0].AnswerTags[0].Id;
+                                }
+                            });
+                            break;
+                    }
+                }
+            })
+        });
+        this.setData({
+            arrData: question,
+        })
+    },
 }

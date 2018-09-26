@@ -20,11 +20,13 @@ Page(Handle({
         end: formatData('yyyy-MM-dd'),
         type: true,
         arrParams: [],
+        arrResult: [],
     },
     // 生命周期回调—监听页面加载
     onLoad (options) {
         this.getParamsByUrl(options);
         this.getArchives();
+        this.getSurveyDetails();
     },
     // 获取文档
     getArchives () {
@@ -36,12 +38,14 @@ Page(Handle({
             let arr = res || [];
             this.setData({
                 arrParams: arr.slice(2) || [],
-                arrData:  arr.slice(0,2) || []
-            })
+                arrData:  arr.slice(0,2) || [],
+            });
+            this.assignmentData(this.data.arrData, this.data.arrResult);
         }).catch((err) => {
             Toast.error(err);
         });
     },
+
     // 提交下一步
     handleSubmit () {
         let result = this.checkData(this.data.arrData);
