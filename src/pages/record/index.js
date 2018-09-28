@@ -9,6 +9,7 @@ import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import InputMixin               from 'mixins/input.mixin'
 import RouterMixin              from 'mixins/router.mixin'
+import FormIdMixin              from 'mixins/formid.mixin'
 import Data                     from 'utils/data.util'
 import { formatData }           from 'wow-cool/lib/date.lib'
 import WowCool                  from 'wow-cool/lib/array.lib'
@@ -19,7 +20,7 @@ import {
 
 let deltaX = 0;
 Page(Handle({
-    mixins: [RouterMixin, InputMixin],
+    mixins: [RouterMixin, InputMixin, FormIdMixin],
     data: {
         objInput: {
             TestDate: {
@@ -187,7 +188,7 @@ Page(Handle({
         if (Data.check(this.data.objHidden)) return;
         let {value, formId} = e.detail;
         this.getTestSugar();
-        this.sendMessageTest(formId);
+        this.setWechatFormId(formId);
     },
 
     //
