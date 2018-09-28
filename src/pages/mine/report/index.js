@@ -202,7 +202,6 @@ Page(Handle({
     },
     // 获取周报
     getWeekReport () {
-        return;
         let Stime = this.data.sTime;
         let Etime = this.data.eTime;
         let options = {
