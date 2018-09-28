@@ -72,6 +72,7 @@ Page(Handle({
         ruleWidth: 0,
         scrollLeft: 0,
         timeScrollLeft: 0,
+        is_pop: false,
     },
     onReady () {
         deltaX = 0;
@@ -185,8 +186,15 @@ Page(Handle({
         if (Data.check(this.data.objInput)) return;
         if (Data.check(this.data.objHidden)) return;
         let {value, formId} = e.detail;
-        this.setTestSugar();
+        this.getTestSugar();
         this.sendMessageTest(formId);
+    },
+
+    //
+    handleClose () {
+        this.setData({
+            is_pop: false,
+        })
     },
 
     // 提交formid
@@ -200,6 +208,29 @@ Page(Handle({
         };
         return Http(options).then((res) => {
 
+        }).catch((err) => {
+            Toast.error(err);
+        });
+    },
+
+    // 验证是否当前时间段是否有数据
+    getTestSugar() {
+        let data1 = Data.filter(this.data.objInput);
+        let data2 = Data.filter(this.data.objHidden);
+        let data = {
+            ...data1,
+            ...data2,
+        };
+        data.TimeStep = this.data.arrTimeStep.indexOf(this.data.timeStep) + 1;
+        data.Bloodsugar = +data.Bloodsugar;
+        let options = {
+            url: 'RocheApi/GetTestSugar',
+            loading: true,
+            data,
+        };
+        return Http(options).then((res) => {
+            let { Id } = res;
+            Id > 0 ? this.setData({is_pop: true}) : this.setTestSugar();
         }).catch((err) => {
             Toast.error(err);
         });
@@ -224,6 +255,8 @@ Page(Handle({
             return Router.push('result_index', {Bloodsugar: res.Bloodsugar});
         }).catch((err) => {
             Toast.error(err);
+        }).finally(() => {
+            this.setData({is_pop: false});
         });
     },
 }));

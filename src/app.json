@@ -1,13 +1,12 @@
 {
     "pages": [
+        "pages/record/index",
         "pages/home/index",
-        "pages/questionnaire/two/index",
-        "pages/test/index",
-        "pages/bluetooth/synchronization/index",
+        "pages/authorization/index",
         "pages/bluetooth/add/index",
         "pages/bluetooth/explain/index",
-        "pages/authorization/index",
         "pages/bluetooth/index",
+        "pages/bluetooth/synchronization/index",
         "pages/bluetooth/transfer/index",
         "pages/consult/index",
         "pages/mine/index",
@@ -20,8 +19,9 @@
         "pages/questionnaire/one/index",
         "pages/questionnaire/programme/index",
         "pages/questionnaire/three/index",
-        "pages/record/index",
+        "pages/questionnaire/two/index",
         "pages/result/index",
+        "pages/test/index",
         "pages/web/index"
     ],
     "window": {

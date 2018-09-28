@@ -134,4 +134,21 @@
         </button>
     </form>
     <!--/表单-->
+    <!--弹窗-->
+    <view class="pop-wrap" hidden="{{!is_pop}}">
+        <view class="pop-inner">
+            <view class="pop-header">
+                <image src="../../assets/images/jlxt-pop-icon.png"></image>
+                <text>记录血糖数值</text>
+            </view>
+            <view class="pop-con">
+                <text>您今日已经记录过本餐点的血糖数值了。如需更新覆盖该餐点的血糖数值，请点击确认；如需修改餐点，请点击返回</text>
+            </view>
+            <view class="pop-footer">
+                <button class="pop-button color" bindtap="handleClose"><text>返回修改餐点</text></button>
+                <button class="pop-button" bindtap="setTestSugar"><text>确认更新</text></button>
+            </view>
+        </view>
+    </view>
+    <!--/弹窗-->
 </view>

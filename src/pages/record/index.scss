@@ -200,3 +200,71 @@
     color: #999;
     font-size: 32rpx;
 }
+
+// 弹窗
+.pop-wrap{
+    @extend %pf;
+    @extend %t0;
+    @extend %r0;
+    @extend %l0;
+    @extend %b0;
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 99;
+}
+.pop-inner{
+    @extend %pr;
+    @extend %bsb;
+    padding-top: 50rpx;
+    width: 670rpx;
+    height: 476rpx;
+    background-color: #fff;
+    border-radius: 10rpx;
+}
+.pop-header{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    image{
+        width: 62rpx;
+        height: 62rpx;
+        margin-right: 10rpx;
+    }
+    text{
+        font-size: 48rpx;
+        color: #28aeeb;
+    }
+}
+.pop-con{
+    margin-top: 40rpx;
+    line-height: 1.2;
+    padding: 0 55rpx;
+    text{
+        font-size: 26rpx;
+        color: #555;
+    }
+}
+.pop-footer{
+    @extend %df;
+    justify-content: space-between;
+    padding: 50rpx 20rpx 0;
+}
+.pop-button{
+    @extend %df;
+    @extend %aic;
+    @extend %jcc;
+    width: 280rpx;
+    height: 68rpx;
+    border-radius: 34rpx;
+    background-image: linear-gradient(to right, #3bddf2, #2cbdf0);
+    &.color{
+        background-image: none;
+        background-color: #1e3666;
+    }
+    text{
+        font-size: 30rpx;
+        color: #fff;
+    }
+}
