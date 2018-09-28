@@ -91,6 +91,7 @@ Page(Handle({
             'objInput.TestDate.value': formatData('yyyy-MM-dd'),
             'objInput.TestDate.end': formatData('yyyy-MM-dd'),
             'objInput.TestTime.value': formatData('hh:mm'),
+            'objInput.TestTime.end': formatData('hh:mm'),
         });
         this.initData();
     },
@@ -98,6 +99,19 @@ Page(Handle({
         this.bindChange(e);
         let time = this.data.objInput.TestTime.value;
         // this.judgeTimeStep(time);
+    },
+    handleDateChange (e) {
+        this.bindChange(e);
+        let date = this.data.objInput.TestDate.value;
+        let cur = formatData('yyyy-MM-dd');
+        date === cur
+            ? this.setData({
+            'objInput.TestTime.value': formatData('hh:mm'),
+            'objInput.TestTime.end': formatData('hh:mm'),
+        })
+            : this.setData({
+            'objInput.TestTime.end': '',
+        })
     },
     initData () {
         let time = this.data.objInput.TestTime.value;
