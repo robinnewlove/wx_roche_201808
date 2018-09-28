@@ -28,6 +28,7 @@ Page(Handle({
 
         curTime: new Date().getTime(),
         weekReport: {},
+        isCurWeek: true,
     },
     onLoad () {
         type = false;
@@ -54,10 +55,12 @@ Page(Handle({
         let curTime = date.getTime();
         let { sTime, eTime } = this.getDay(new Date().getTime());
         let endTime = new Date(eTime).getTime();
+        let strTime = new Date(sTime).getTime();
         if (curTime > endTime) return Toast.error('下一周还没开始哦');
 
         this.setData({
             curTime,
+            isCurWeek: (curTime < endTime && curTime > strTime),
         });
         this.getDay();
         this.initData();
@@ -70,7 +73,6 @@ Page(Handle({
         let date = new Date(curTime);
         let day = date.getDay();
         let result = '';
-        console.log('day', day)
         switch (day){
             case 0:
                 result = {
