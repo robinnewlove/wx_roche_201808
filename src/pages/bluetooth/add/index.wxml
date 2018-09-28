@@ -21,7 +21,7 @@
             <text class="form-button-text">绑定</text>
         </view>
     </view>
-    <view hidden="{{blueTooth !== null}}">
+    <view hidden="{{blueTooth}}">
         <view class="tel">
             <text>如有问题，您可以拨打罗氏客户关爱热线</text>
             <text class="tel-text">800 820 2777（固话）</text>

@@ -201,11 +201,13 @@ export default {
                         // 子集
                         case 4:
                             que_item.check = ChooseResult[0].ChooseNum;
-                            Answers.forEach((ans_item) => {
-                                if (ans_item.ChooseNum === ChooseResult[0].ChooseNum) {
-                                    ans_item.check = ChooseResult[0].AnswerTags[0].Id;
-                                }
-                            });
+                            if (ChooseResult[0].AnswerTags && ChooseResult[0].AnswerTags.length) {
+                                Answers.forEach((ans_item) => {
+                                    if (ans_item.ChooseNum === ChooseResult[0].ChooseNum) {
+                                        ans_item.check = ChooseResult[0].AnswerTags[0].Id;
+                                    }
+                                });
+                            }
                             break;
                     }
                 }

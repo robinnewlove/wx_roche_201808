@@ -14,7 +14,7 @@
         </view>
         <text class="conclusion-text">{{glsText[$params.Gls]}}</text>
         <progress class="progress" stroke-width="3" percent="{{progress}}" color="#54edf6" active/>
-        <text class="text">你本月坚持了{{count}}天，目前的进度为{{progress}}%</text>
+        <text class="text">您本月坚持测糖{{count}}次，完成进度{{progress}}%</text>
     </view>
     <!--/头部-->
     <!--日历-->

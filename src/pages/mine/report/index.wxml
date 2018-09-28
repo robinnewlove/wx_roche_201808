@@ -189,9 +189,9 @@
             <view class="reminder-text">
                 <text>{{weekReport.WholeReport}}</text>
             </view>
-            <view class="reminder-text">
-                <text>{{weekReport.DayMaxWholeReport}}</text>
-            </view>
+            <!--<view class="reminder-text">-->
+                <!--<text>{{weekReport.DayMaxWholeReport}}</text>-->
+            <!--</view>-->
         </view>
     </block>
 
