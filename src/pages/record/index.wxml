@@ -142,11 +142,11 @@
                 <text>记录血糖数值</text>
             </view>
             <view class="pop-con">
-                <text>您今日已经记录过本餐点的血糖数值了。如需更新覆盖该餐点的血糖数值，请点击确认；如需修改餐点，请点击返回</text>
+                <text>您今日已有相同监测点的血糖记录了，如需更新请点击确认，若要修改监测点请点击返回。</text>
             </view>
             <view class="pop-footer">
-                <button class="pop-button color" bindtap="handleClose"><text>返回修改餐点</text></button>
-                <button class="pop-button" bindtap="setTestSugar"><text>确认更新</text></button>
+                <button class="pop-button color" bindtap="handleClose"><text>返回</text></button>
+                <button class="pop-button" bindtap="setTestSugar"><text>确认</text></button>
             </view>
         </view>
     </view>
