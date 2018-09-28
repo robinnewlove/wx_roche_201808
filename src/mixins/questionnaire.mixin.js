@@ -24,6 +24,7 @@ export default {
     // 校验
     checkData (data) {
         let result = [];
+        console.log(data);
         try {
             data.forEach((item) => {
                 let {Type, Code, check, Name, Answers, tagid, tag} = item;
@@ -205,6 +206,8 @@ export default {
                                 Answers.forEach((ans_item) => {
                                     if (ans_item.ChooseNum === ChooseResult[0].ChooseNum) {
                                         ans_item.check = ChooseResult[0].AnswerTags[0].Id;
+                                        que_item.tag = ChooseResult[0].AnswerTags[0].Tag;
+                                        que_item.tagid = ChooseResult[0].AnswerTags[0].Id;
                                     }
                                 });
                             }

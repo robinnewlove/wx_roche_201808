@@ -91,7 +91,6 @@ Page(Handle({
             'objInput.TestDate.value': formatData('yyyy-MM-dd'),
             'objInput.TestDate.end': formatData('yyyy-MM-dd'),
             'objInput.TestTime.value': formatData('hh:mm'),
-            'objInput.TestTime.end': formatData('hh:mm'),
         });
         this.initData();
     },

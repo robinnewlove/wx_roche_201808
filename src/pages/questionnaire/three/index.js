@@ -45,7 +45,7 @@ Page(Handle({
         }).then(() => {
             return Auth.updateToken({IsArchives: true});
         }).then(() => {
-            if (this.data.$params.form === 'mine_programme_index') Router.pop();
+            if (this.data.$params.form === 'mine_programme_index') Router.push('questionnaire_programme_index', {}, true);
             else if(this.data.$params.IsMember) Router.push('questionnaire_activation_index', {}, true);
             else Router.push('questionnaire_programme_index', {}, true);
         }).catch((err) => {
