@@ -9,12 +9,13 @@ import Handle                   from 'mixins/mixin.handle'
 import InputMixin               from 'mixins/input.mixin'
 import UserMixin                from 'mixins/user.mixin'
 import CodeMixin                from 'mixins/code.mixin'
+import FormIdMixin              from 'mixins/formid.mixin'
 import RouterMixin              from 'mixins/router.mixin'
 import Data                     from 'utils/data.util'
 import { formatData }           from 'wow-cool/lib/date.lib'
 
 Page(Handle({
-    mixins: [InputMixin, UserMixin, RouterMixin, CodeMixin],
+    mixins: [InputMixin, UserMixin, RouterMixin, CodeMixin, FormIdMixin],
     data: {
         objInput: {
             Height: {
@@ -148,8 +149,10 @@ Page(Handle({
         this.fetchUserInfo();
     },
     // 提交下一步
-    handleSubmit () {
+    handleSubmit (e) {
         if (Data.check(this.data.objInput)) return;
+        let { formId } = e.detail;
+        this.setWechatFormId(formId);
         this.setUserInfo();
     },
     // 设置用户信息

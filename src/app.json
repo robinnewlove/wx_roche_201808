@@ -1,5 +1,7 @@
 {
     "pages": [
+        "pages/questionnaire/one/index",
+        "pages/mine/info/index",
         "pages/record/index",
         "pages/home/index",
         "pages/authorization/index",
@@ -10,13 +12,11 @@
         "pages/bluetooth/transfer/index",
         "pages/consult/index",
         "pages/mine/index",
-        "pages/mine/info/index",
         "pages/mine/introduce/index",
         "pages/mine/programme/index",
         "pages/mine/report/index",
         "pages/questionnaire/activation/index",
         "pages/questionnaire/copy/index",
-        "pages/questionnaire/one/index",
         "pages/questionnaire/programme/index",
         "pages/questionnaire/three/index",
         "pages/questionnaire/two/index",

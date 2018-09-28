@@ -7,7 +7,9 @@
         <text class="prompt-text">从而更好的为您服务</text>
         <text class="sub-title">基本信息</text>
     </view>
-    <view class="from-wrap">
+    <form class="from-wrap"
+          bindsubmit="handleSubmit"
+          report-submit>
         <block wx:for="{{objInput}}"
                wx:for-index="key"
                wx:key="key"
@@ -85,11 +87,11 @@
                   data-value="{{true}}"
                   bindtap="handlePop">《360°稳糖管家服务隐私声明》</text>
         </view>
-        <view class="form-button"
-              bindtap="handleSubmit">
+        <button class="form-button"
+                formType="submit">
             <text class="form-button-text">下一步</text>
-        </view>
-    </view>
+        </button>
+    </form>
 
     <view class="pop-wrap" wx:if="{{is_pop}}">
         <view class="pop-inner">

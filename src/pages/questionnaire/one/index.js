@@ -10,6 +10,7 @@ import InputMixin               from 'mixins/input.mixin'
 import RouterMixin              from 'mixins/router.mixin'
 import UserMixin                from 'mixins/user.mixin'
 import CodeMixin                from 'mixins/code.mixin'
+import FormIdMixin              from 'mixins/formid.mixin'
 import Data                     from 'utils/data.util'
 import { formatData }           from 'wow-cool/lib/date.lib'
 import {
@@ -18,7 +19,7 @@ import {
 }                               from 'config/questionnaire.config'
 
 Page(Handle({
-    mixins: [InputMixin, UserMixin, RouterMixin, CodeMixin],
+    mixins: [InputMixin, UserMixin, RouterMixin, CodeMixin, FormIdMixin],
     data: {
         objInput: {},
         is_pop: false,
@@ -53,10 +54,12 @@ Page(Handle({
         })
     },
     // 提交下一步
-    handleSubmit () {
+    handleSubmit (e) {
         if (Data.check(this.data.objInput)) return;
         if (Data.check(this.data.objHidden)) return;
+        let {formId} = e.detail;
         this.setUserInfo();
+        this.setWechatFormId(formId);
     },
     // 设置用户信息
     setUserInfo () {

@@ -6,7 +6,9 @@
         <text class="prompt-text">为了提供精准报告</text>
         <text class="prompt-text">请完善以下个人信息</text>
     </view>
-    <view class="from-wrap">
+    <form class="from-wrap"
+          bindsubmit="handleSubmit"
+          report-submit>
         <view class="title-wrap">
             <text class="title-text">基本信息</text>
         </view>
@@ -78,9 +80,9 @@
                 </view>
             </picker>
         </block>
-        <view class="form-button"
-              bindtap="handleSubmit">
+        <button class="form-button"
+                formType="submit">
             <text class="form-button-text">{{$params.from ? '下一步' : '保存'}}</text>
-        </view>
-    </view>
+        </button>
+    </form>
 </view>
