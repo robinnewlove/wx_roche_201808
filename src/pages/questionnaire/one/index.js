@@ -59,7 +59,7 @@ Page(Handle({
         if (Data.check(this.data.objHidden)) return;
         let {formId} = e.detail;
         this.setUserInfo();
-        this.setWechatFormId(formId);
+        this.setWechatFormId(formId, 'questionnaire_one_index');
     },
     // 设置用户信息
     setUserInfo () {

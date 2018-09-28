@@ -152,7 +152,7 @@ Page(Handle({
     handleSubmit (e) {
         if (Data.check(this.data.objInput)) return;
         let { formId } = e.detail;
-        this.setWechatFormId(formId);
+        this.setWechatFormId(formId, 'mine_info_index');
         this.setUserInfo();
     },
     // 设置用户信息

@@ -201,7 +201,7 @@ Page(Handle({
         if (Data.check(this.data.objHidden)) return;
         let {value, formId} = e.detail;
         this.getTestSugar();
-        this.setWechatFormId(formId);
+        this.setWechatFormId(formId, 'record_index');
     },
 
     //
