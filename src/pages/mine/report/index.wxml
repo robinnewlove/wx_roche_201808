@@ -179,12 +179,12 @@
                         <text>整体</text>
                     </view>
                 </view>
-                <view class="reminder-data-item up">
-                    <text>{{weekReport.DayMaxVal}}</text>
-                    <view class="prompt-text">
-                        <text>单日最大</text>
-                    </view>
-                </view>
+                <!--<view class="reminder-data-item up">-->
+                    <!--<text>{{weekReport.DayMaxVal}}</text>-->
+                    <!--<view class="prompt-text">-->
+                        <!--<text>单日最大</text>-->
+                    <!--</view>-->
+                <!--</view>-->
             </view>
             <view class="reminder-text">
                 <text>{{weekReport.WholeReport}}</text>

@@ -1,12 +1,11 @@
 {
     "pages": [
         "pages/home/index",
-        "pages/test/index",
-        "pages/bluetooth/add/index",
-        "pages/bluetooth/synchronization/index",
         "pages/authorization/index",
+        "pages/bluetooth/add/index",
         "pages/bluetooth/explain/index",
         "pages/bluetooth/index",
+        "pages/bluetooth/synchronization/index",
         "pages/bluetooth/transfer/index",
         "pages/consult/index",
         "pages/mine/index",
@@ -22,6 +21,7 @@
         "pages/questionnaire/two/index",
         "pages/record/index",
         "pages/result/index",
+        "pages/test/index",
         "pages/web/index"
     ],
     "window": {

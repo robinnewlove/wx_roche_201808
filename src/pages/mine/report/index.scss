@@ -115,17 +115,17 @@
     }
     &.up{
         text{
-            color: #ff7f52;
+            color: #ff3a3a;
         }
     }
     &.nor{
         text{
-            color: #28aeeb;
+            color: #1bd7c9;
         }
     }
     &.low{
         text{
-            color: #93d143;
+            color: #29b1eb;
         }
     }
 }
@@ -154,17 +154,17 @@
     margin: 0 10rpx;
     &.up{
         text{
-            color: #ff7f52;
+            color: #ff3a3a;
         }
     }
     &.nor{
         text{
-            color: #28aeeb;
+            color: #1bd7c9;
         }
     }
     &.low{
         text{
-            color: #93d143;
+            color: #29b1eb;
         }
     }
 }
@@ -240,28 +240,28 @@
     &.nor{
         background-color: #f4fbfe;
         text{
-            color: #28aeeb;
+            color: #1bd7c9;
         }
         .weekly-info-con{
-            border-top: 1rpx solid #28aeeb;
+            border-top: 1rpx solid #1bd7c9;
         }
     }
     &.low{
         background-color: #f9fdf5;
         text{
-            color: #93d143;
+            color: #29b1eb;
         }
         .weekly-info-con{
-            border-top: 1rpx solid #93d143;
+            border-top: 1rpx solid #29b1eb;
         }
     }
     &.up{
         background-color: #fff8f6;
         text{
-            color: #ff7f52;
+            color: #ff3a3a;
         }
         .weekly-info-con{
-            border-top: 1rpx solid #ff7f52;
+            border-top: 1rpx solid #ff3a3a;
         }
     }
     text{
@@ -333,13 +333,14 @@
 
 .reminder-data{
     @extend %df;
-    @extend %aic;
-    @extend %jcc;
+    //@extend %aic;
+    //@extend %jcc;
+    padding: 0 60rpx;
     margin: 30rpx 0 40rpx;
-    justify-content: space-between;
+    //justify-content: space-between;
 }
 .reminder-data-item{
-    @extend %df1;
+    //@extend %df1;
     @extend %df;
     @extend %aic;
     @extend %jcc;
@@ -349,26 +350,26 @@
     }
     &.nor{
         text{
-            color: #28aeeb;
+            color: #1bd7c9;
         }
         .prompt-text{
-            border-color: #28aeeb;
+            border-color: #1bd7c9;
         }
     }
     &.low{
         text{
-            color: #93d143;
+            color: #29b1eb;
         }
         .prompt-text{
-            border-color: #93d143;
+            border-color: #29b1eb;
         }
     }
     &.up{
         text{
-            color: #ff7f52;
+            color: #ff3a3a;
         }
         .prompt-text{
-            border-color: #ff7f52;
+            border-color: #ff3a3a;
         }
     }
 }

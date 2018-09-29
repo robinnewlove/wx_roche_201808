@@ -191,7 +191,9 @@ export default {
                         case 2:
                             ChooseResult.forEach((cho_item) => {
                                 Answers.forEach((ans_item) => {
-                                    ans_item.check = cho_item.ChooseNum === ans_item.ChooseNum;
+                                    if (cho_item.ChooseNum === ans_item.ChooseNum) {
+                                        ans_item.check = true;
+                                    }
                                 })
                             });
                             break;
