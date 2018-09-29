@@ -146,7 +146,19 @@ Page(Handle({
             end: formatData('yyyy-MM-dd'),
         });
         this.getParamsByUrl(options);
+        this.initData();
         this.fetchUserInfo();
+    },
+    initData () {
+        let type = !this.data.$params.IsMember;
+        let objInput = {...this.data.objInput};
+        if (type) {
+            delete objInput.Mobile;
+            delete objInput.SmsCode;
+        }
+        this.setData({
+            objInput,
+        })
     },
     // 提交下一步
     handleSubmit (e) {
