@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node cmd -d dist&&node cmd -p&&node cmd -i -r BD&&node cmd -c&&webpack --watch --config ./build/webpack.dev.config.js",
     "test": "node cmd -d dist&&node cmd -p&&node cmd -i -r CS&&node cmd -c&&webpack --watch --config ./build/webpack.dev.config.js",
-    "build": "node cmd -d dist&&node cmd -p&&node cmd -i -r SC&&node cmd -c&&webpack --watch --config ./build/webpack.prod.config.js",
+    "build": "node cmd -d dist&&node cmd -p&&node cmd -i -r SC&&node cmd -c&&webpack --watch --config ./build/webpack.dev.config.js",
     "clear": "node cmd -d dist",
     "router": "node cmd -p"
   },

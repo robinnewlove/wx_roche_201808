@@ -1,3 +1,3 @@
 export default {
-    API_URL: 'https://api.sugarmini.com/',                                  // 接口
+    API_URL: 'https://www.sugarmini.com/',                                  // 接口
 }
