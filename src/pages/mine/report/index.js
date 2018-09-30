@@ -53,8 +53,8 @@ Page(Handle({
         date.setDate(date.getDate() + count);
         let curTime = date.getTime();
         let { sTime, eTime } = this.getDay(new Date().getTime());
-        let endTime = new Date(eTime + ' 23:59:59').getTime();
-        let strTime = new Date(sTime + ' 00:00:00').getTime();
+        let endTime = new Date(eTime.replace(/-/g, '\/') + ' 23:59:59').getTime();
+        let strTime = new Date(sTime.replace(/-/g, '\/') + ' 00:00:00').getTime();
         if (curTime > endTime) return Toast.error('下一周还没开始哦');
         this.setData({
             curTime,
