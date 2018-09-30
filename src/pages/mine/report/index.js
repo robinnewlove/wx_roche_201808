@@ -51,13 +51,11 @@ Page(Handle({
         let count = +currentTarget.dataset.count;
         let date = new Date(this.data.curTime);
         date.setDate(date.getDate() + count);
-
         let curTime = date.getTime();
         let { sTime, eTime } = this.getDay(new Date().getTime());
-        let endTime = new Date(eTime).getTime();
-        let strTime = new Date(sTime).getTime();
+        let endTime = new Date(eTime + ' 23:59:59').getTime();
+        let strTime = new Date(sTime + ' 00:00:00').getTime();
         if (curTime > endTime) return Toast.error('下一周还没开始哦');
-
         this.setData({
             curTime,
             isCurWeek: (curTime < endTime && curTime > strTime),
