@@ -35,7 +35,8 @@ Page(Handle({
         let scene = '';
         if (options.scene) scene = decodeURIComponent(options.scene);
         console.log(options);
-        app.globalData.sceneid = scene;
+        console.log(app.globalData.sceneid)
+        scene && (app.globalData.sceneid = scene);
     },
     // 生命周期回调—监听页面显示
     onShow () {

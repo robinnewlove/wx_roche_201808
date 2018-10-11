@@ -21,5 +21,6 @@ module.exports = {
     "record_index": "/pages/record/index",
     "result_index": "/pages/result/index",
     "test_index": "/pages/test/index",
+    "transition_index": "/pages/transition/index",
     "web_index": "/pages/web/index"
 }
