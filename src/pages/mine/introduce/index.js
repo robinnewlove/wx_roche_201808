@@ -11,6 +11,7 @@ import { SHOP_APP }             from 'config/base.config'
 Page(Handle({
     mixins: [RouterMixin],
     onLoad (options) {
+        wx.showShareMenu();
         this.getParamsByUrl(options);
     },
     // 跳转

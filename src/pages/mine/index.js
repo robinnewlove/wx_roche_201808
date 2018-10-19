@@ -51,6 +51,9 @@ Page(Handle({
             }
         ]
     },
+    onLoad(){
+        wx.showShareMenu();
+    },
     onShow () {
         this.setData({
             userInfo: app.globalData.userInfo,

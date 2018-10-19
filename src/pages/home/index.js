@@ -32,6 +32,7 @@ Page(Handle({
         objWeb: WEB_LINK.ZXWZ
     },
     onLoad (options) {
+        wx.showShareMenu();
         let scene = '';
         if (options.scene) scene = decodeURIComponent(options.scene);
         console.log(options);

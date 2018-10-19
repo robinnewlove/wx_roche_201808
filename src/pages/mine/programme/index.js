@@ -23,6 +23,9 @@ Page(Handle({
         dayTime: [],
         dayText: DAY_TEXT,
     },
+    onLoad(){
+        wx.showShareMenu();
+    },
     onShow () {
         this.initData();
         this.getRecommendSugar();

@@ -31,6 +31,7 @@ Page(Handle({
         isCurWeek: true,
     },
     onLoad () {
+        wx.showShareMenu();
         type = false;
         this.setData({
             curTime: new Date().getTime(),
