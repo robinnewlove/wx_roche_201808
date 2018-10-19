@@ -9,6 +9,7 @@ import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import WebViewMixin             from 'mixins/webview.mixin'
+import ShareMixin               from 'mixins/share.mixin'
 import {
     ARR_TIME_STEP,
     DAY_TEXT,
@@ -19,7 +20,7 @@ import {
 const app = getApp();
 
 Page(Handle({
-    mixins: [WebViewMixin],
+    mixins: [WebViewMixin, ShareMixin],
     // 页面的初始数据
     data: {
         arrTimeStep: ARR_TIME_STEP,

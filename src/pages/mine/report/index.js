@@ -6,6 +6,7 @@ import './index.wxml'
 import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
 import Handle                   from 'mixins/mixin.handle'
+import ShareMixin               from 'mixins/share.mixin'
 import { getDate, formatData }  from 'wow-cool/lib/date.lib'
 import {
     ARR_TIME_STEP,
@@ -13,6 +14,7 @@ import {
 }                               from 'config/base.config'
 let type = false;
 Page(Handle({
+    mixins: [ShareMixin],
     data: {
         arrTimeStep: ARR_TIME_STEP,
         result: '',

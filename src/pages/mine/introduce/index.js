@@ -5,11 +5,12 @@ import './index.wxml'
 
 import Handle                   from 'mixins/mixin.handle'
 import RouterMixin              from 'mixins/router.mixin'
+import ShareMixin               from 'mixins/share.mixin'
 import Router                   from 'plugins/router.plugin'
 import { SHOP_APP }             from 'config/base.config'
 
 Page(Handle({
-    mixins: [RouterMixin],
+    mixins: [RouterMixin, ShareMixin],
     onLoad (options) {
         wx.showShareMenu();
         this.getParamsByUrl(options);

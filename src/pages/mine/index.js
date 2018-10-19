@@ -7,6 +7,7 @@ import Http                     from 'plugins/http.plugin'
 import Toast                    from 'plugins/toast.plugin'
 import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
+import ShareMixin               from 'mixins/share.mixin'
 import Auth                     from 'plugins/auth.plugin'
 import WebViewMixin             from 'mixins/webview.mixin'
 import {
@@ -19,7 +20,7 @@ import {
 const app = getApp();
 
 Page(Handle({
-    mixins: [WebViewMixin],
+    mixins: [WebViewMixin, ShareMixin],
     data: {
         userInfo: '',
         objUser: {},
