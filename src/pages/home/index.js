@@ -53,7 +53,14 @@ Page(Handle({
         // 获取用户数据
         this.getUserInfo().then(() => {
             let { IsArchives, IsMember} = info;
-            if (!IsArchives) return Router.push('questionnaire_one_index', { IsMember });
+            if (!IsArchives)
+                return Router.push('questionnaire_one_index', { IsMember });
+            let {
+                to,
+            } = app.globalData;
+            app.globalData.to = '';
+            if  (to === 'ZXWZ' && IsMember)
+                return this.jumpWebView(WEB_LINK.ZXWZ);
             return this.getIndexSugar();
         }).catch((err) => {
             let { code } = err;
