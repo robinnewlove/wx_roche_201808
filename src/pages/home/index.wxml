@@ -55,7 +55,7 @@
                       data-params="{{objWeb}}"
                       data-url="consult_index"
                       bindtap="handleJump"
-                      wx:if="{{objUser.IsMember}}">
+                      wx:if="{{objUser.IsMember && objUser.IsUseCode}}">
                     <image class="plan-button-icon"
                            mode="aspectFit" src="../../assets/images/home-icon-zxwz.png"></image>
                     <text class="plan-button-text">在线咨询</text>

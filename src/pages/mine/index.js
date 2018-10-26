@@ -78,8 +78,12 @@ Page(Handle({
                 objUser: res || {},
                 'objView[3].value': IsPerfect ? '已完善' : '待完善',
             });
-            let { IsMember } = res;
-            Auth.updateToken({ IsMember });
+            let {
+                IsMember,
+                IsExpire,  // 是否过期
+                IsUseCode, // 是否核销
+            } = res;
+            Auth.updateToken({ IsMember, IsExpire, IsUseCode });
         }).catch((err) => {
             Toast.error(err);
         });
@@ -88,13 +92,22 @@ Page(Handle({
     handleJump (e) {
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
-        let { IsPerfect, IsMember } = this.data.objUser;
+        let { IsPerfect, IsMember, IsExpire, IsUseCode } = this.data.objUser;
         if ( ['mine_report_index', 'mine_month_index'].indexOf(url) > -1 && !IsPerfect ) {
             return Router.push('mine_info_index', { from: 'mine_index', to: url});
         }
         if (url === 'mine_programme_index' && IsMember) {
+            if (IsExpire) {
+                Toast.confirm({
+                    content: '你的会员VIP已过期，是否续期？',
+                }).then((res) => {
+                    let { confirm } = res;
+                    confirm && Router.push('mine_introduce_index');
+                });
+                return;
+            }
             return this.jumpWebView(WEB_LINK.JKZD);
         }
-        Router.push(url, {form: 'mine_index', IsMember});
+        Router.push(url, {form: 'mine_index', IsMember, IsExpire});
     }
 }));

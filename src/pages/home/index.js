@@ -30,7 +30,7 @@ Page(Handle({
         show: false,
         loading: true,
         arrClass: ['low', 'lit', 'lit', 'nor', 'up'],
-        objWeb: WEB_LINK.ZXWZ
+        objWeb: WEB_LINK.ZXWZ,
     },
     onLoad (options) {
         wx.showShareMenu();
@@ -80,9 +80,13 @@ Page(Handle({
                 'objUser.Bloodsugar': res.Bloodsugar ? res.Bloodsugar.toFixed(1) : res.Bloodsugar,
                 loading: false,
             });
-            let { IsMember } = res;
+            let {
+                IsMember,
+                IsExpire,  // 是否过期
+                IsUseCode, // 是否核销
+            } = res;
             app.globalData.userInfo.IsMember = res.IsMember;
-            Auth.updateToken({IsMember});
+            Auth.updateToken({IsMember, IsExpire, IsUseCode});
         }).catch((err) => {
             Toast.error(err);
         });
@@ -103,11 +107,20 @@ Page(Handle({
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
         let params = currentTarget.dataset.params;
-        let { IsPerfect } = this.data.objUser;
+        let { IsPerfect, IsMember, IsExpire, IsUseCode } = this.data.objUser;
         if ( url === 'mine_report_index' && !IsPerfect ) {
             return Router.push('mine_info_index', { from: 'home_index', IsMember: app.globalData.userInfo.IsMember});
         }
-        if ( url === 'web_index') {
+        if ( url === 'web_index' || url === 'consult_index' ) {
+            if (IsExpire) {
+                Toast.confirm({
+                    content: '你的会员VIP已过期，是否续期？',
+                }).then((res) => {
+                    let { confirm } = res;
+                    confirm && Router.push('mine_introduce_index');
+                });
+                return;
+            }
             return this.jumpWebView(params);
         }
         Router.push(url, params);
