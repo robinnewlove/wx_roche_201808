@@ -107,18 +107,47 @@ export default {
     // 处理数据
     processingData() {
         let { infoList, contextList } = this.data;
+        infoList.forEach((info) => {
+            contextList.forEach((context) => {
+                if (info.seqNum === context.seqNum) {
+                    info.mealPoint = context.mealPoint
+                }
+            })
+        });
         let result = [];
         infoList.forEach((info) => {
-            let date = info.date;
+            let { date,
+                mealPoint,
+            } = info;
+            let index;
             date = date.replace(/-/g, '\/');
             let cur = formatData('hh:dd', new Date(date));
             cur = +cur.replace(':', '');
-            let index = WowCool.findFirstIndexForArr(ARR_TIME_STEP_KEY, (item) => {
-                let { start, end } = item;
-                start = +start.replace(':', '');
-                end = +end.replace(':', '');
-                return (cur >= start && cur <= end);
-            });
+            switch (mealPoint) {
+                case 5:
+                    index = 6;
+                    break;
+                case 3:
+                    index = 0;
+                    break;
+                case 1:
+                    if (cur >= 0 && cur <= 1430) index = 2;
+                    else index = 4;
+                    break;
+                case 2:
+                    if (cur >= 0 && cur <= 1200) index = 1;
+                    else if (cur >= 1201 && cur <= 1700) index = 3;
+                    else index = 5;
+                    break;
+                default:
+                    index = WowCool.findFirstIndexForArr(ARR_TIME_STEP_KEY, (item) => {
+                        let { start, end } = item;
+                        start = +start.replace(':', '');
+                        end = +end.replace(':', '');
+                        return (cur >= start && cur <= end);
+                    });
+                    break;
+            }
             result.push({
                 BuleRecordId: info.seqNum,
                 Bloodsugar: +info.data.toFixed(1),
