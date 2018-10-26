@@ -36,6 +36,11 @@ Page(Handle({
                 value: '',
             },
             {
+                label: '我的血糖报告(月报)',
+                url: 'mine_month_index',
+                value: '',
+            },
+            {
                 label: '个人信息',
                 url: 'mine_info_index',
                 value: '',
@@ -71,7 +76,7 @@ Page(Handle({
             let { IsPerfect } = res;
             this.setData({
                 objUser: res || {},
-                'objView[2].value': IsPerfect ? '已完善' : '待完善',
+                'objView[3].value': IsPerfect ? '已完善' : '待完善',
             });
             let { IsMember } = res;
             Auth.updateToken({ IsMember });
@@ -84,8 +89,8 @@ Page(Handle({
         let { currentTarget } = e;
         let url = currentTarget.dataset.url;
         let { IsPerfect, IsMember } = this.data.objUser;
-        if ( url === 'mine_report_index' && !IsPerfect ) {
-            return Router.push('mine_info_index', { from: 'mine_index'});
+        if ( ['mine_report_index', 'mine_month_index'].indexOf(url) > -1 && !IsPerfect ) {
+            return Router.push('mine_info_index', { from: 'mine_index', to: url});
         }
         if (url === 'mine_programme_index' && IsMember) {
             return this.jumpWebView(WEB_LINK.JKZD);

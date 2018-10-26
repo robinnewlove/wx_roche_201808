@@ -171,10 +171,11 @@ Page(Handle({
     setUserInfo () {
         let data = Data.filter(this.data.objInput);
         let from = this.data.$params.from || '';
+        let url = this.data.$params.to || 'mine_report_index';
         this.getOrSetUserInfo(data).then((res) => {
             !from && Toast.error('保存成功');
             setTimeout(() => {
-               from ? Router.push('mine_report_index', {}, true) : Router.pop();
+               from ? Router.push(url, {}, true) : Router.pop();
             }, 1000);
         }).catch((err) => {
             Toast.error(err);

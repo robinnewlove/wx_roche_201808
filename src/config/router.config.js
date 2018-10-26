@@ -10,6 +10,7 @@ module.exports = {
     "mine_index": "/pages/mine/index",
     "mine_info_index": "/pages/mine/info/index",
     "mine_introduce_index": "/pages/mine/introduce/index",
+    "mine_month_index": "/pages/mine/month/index",
     "mine_programme_index": "/pages/mine/programme/index",
     "mine_report_index": "/pages/mine/report/index",
     "questionnaire_activation_index": "/pages/questionnaire/activation/index",
