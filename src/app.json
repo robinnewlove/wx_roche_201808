@@ -1,7 +1,6 @@
 {
     "pages": [
         "pages/home/index",
-        "pages/mine/month/index",
         "pages/authorization/index",
         "pages/bluetooth/add/index",
         "pages/bluetooth/explain/index",
@@ -12,6 +11,7 @@
         "pages/mine/index",
         "pages/mine/info/index",
         "pages/mine/introduce/index",
+        "pages/mine/month/index",
         "pages/mine/programme/index",
         "pages/mine/report/index",
         "pages/questionnaire/activation/index",

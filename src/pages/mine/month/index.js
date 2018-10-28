@@ -41,7 +41,7 @@ Page(Handle({
             cTime = formatData('yyyy-MM')
         }
 
-        let date = new Date(cTime.replace(/-/g, '\/'));
+        let date = new Date(cTime);
         if (type === '1') {
             date = new Date(date.setMonth(date.getMonth() + 1));
             cTime = formatData('yyyy-MM', date);
