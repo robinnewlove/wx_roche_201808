@@ -7,6 +7,8 @@ import Router                   from 'plugins/router.plugin'
 import Handle                   from 'mixins/mixin.handle'
 import Store                    from 'plugins/store.plugin'
 import WebViewMixin             from 'mixins/webview.mixin'
+import Auth                     from 'plugins/auth.plugin'
+import Toast                    from 'plugins/toast.plugin'
 import {
     $BLUE_TOOTH_DEVICE_ID_LIST,
     $BLUE_TOOTH_DATA,
@@ -42,6 +44,22 @@ Page(Handle({
         let url = currentTarget.dataset.url;
         let { IsMember } = app.globalData.userInfo;
         if (!url) return Router.root('home_index');
-        IsMember ? this.jumpWebView(WEB_LINK.JKZD) : Router.push(url);
+        Auth.getToken().then((info) => {
+            let {
+                IsExpire,  // 是否过期
+                IsUseCode, // 是否核销
+            } = info;
+            if (!IsMember) return Router.push(url);
+            if (IsExpire) {
+                Toast.confirm({
+                    content: '你的会员VIP已过期，是否续期？',
+                }).then((res) => {
+                    let { confirm } = res;
+                    confirm && Router.push('mine_introduce_index');
+                });
+                return;
+            }
+            this.jumpWebView(WEB_LINK.JKZD);
+        });
     }
 }));
