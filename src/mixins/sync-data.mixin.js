@@ -110,7 +110,8 @@ export default {
         infoList.forEach((info) => {
             contextList.forEach((context) => {
                 if (info.seqNum === context.seqNum) {
-                    info.mealPoint = context.mealPoint
+                    info.mealPoint = context.mealPoint;
+                    info.flag = context.flag;
                 }
             })
         });
@@ -155,6 +156,7 @@ export default {
                 TestDate: formatData('yyyy-MM-dd', new Date(date)),
                 TestTime: formatData('hh:mm', new Date(date)),
                 Remark: '',
+                BuleBack: JSON.stringify(info),
             })
         });
         this.setData({result});
