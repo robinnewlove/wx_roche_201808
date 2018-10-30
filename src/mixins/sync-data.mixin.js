@@ -197,6 +197,11 @@ export default {
             this.initData && this.initData();
         }).catch((err) => {
             Toast.error(err);
+        }).finally(() => {
+            this.setData({
+                infoList: [],
+                contextList: [],
+            })
         });
     },
     // 连接状态的改变事件
