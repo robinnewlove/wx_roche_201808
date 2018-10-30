@@ -31,7 +31,7 @@ Page(Handle({
                 value: '',
             },
             {
-                label: '我的血糖报告',
+                label: '我的血糖周报',
                 url: 'mine_report_index',
                 value: '',
             },

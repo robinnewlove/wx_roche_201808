@@ -20,7 +20,7 @@
     </view>
     <view class="weekly">
         <view class="weekly-head {{!weekReport.HaveReport && 'null'}}">
-            <text>{{weekReport.HaveReport ? weekReport.MonitorSummary : isCurWeek ? '您的月报将于下月一生成，请继续坚持定期测糖的好习惯哦！' : '您的监测频率过低，无法生成月报'}}</text>
+            <text>{{weekReport.HaveReport ? weekReport.MonitorSummary : isCurWeek ? '您的月报将于下月生成，请继续坚持定期测糖的好习惯哦！' : '您的监测频率过低，无法生成月报'}}</text>
         </view>
         <block wx:if="{{weekReport.HaveReport}}">
             <view class="weekly-cell">
