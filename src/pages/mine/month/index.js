@@ -31,7 +31,7 @@ Page(Handle({
         this.setData({
             cTime: formatData('yyyy-MM'),
         });
-        this.initData();
+        this.initData('-1');
         this.getMonthReport();
     },
     // 获取当前时间下一周

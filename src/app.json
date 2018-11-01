@@ -1,6 +1,5 @@
 {
     "pages": [
-        "pages/test/index",
         "pages/home/index",
         "pages/authorization/index",
         "pages/bluetooth/add/index",
@@ -23,6 +22,7 @@
         "pages/questionnaire/two/index",
         "pages/record/index",
         "pages/result/index",
+        "pages/test/index",
         "pages/transition/index",
         "pages/web/index"
     ],
